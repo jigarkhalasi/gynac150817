@@ -151,7 +151,7 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                 else {
                     $scope.signIn = 5;
                     $scope.dothisdone = data.Otp;
-                    $scope.logindata = data;
+                    $scope.logindata = data;                    
                     //$rootScope.authenticatedUser = data;
                     //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
                     //$scope.authenticLecture();
@@ -167,9 +167,16 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
     $scope.checkotp = function () {
         if ($scope.dothisdone == $scope.signin.otp) {
             $rootScope.authenticatedUser = $scope.logindata;
-            localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
-            $scope.authenticLecture();
-            $('#triggerSucsessfullySigninModal').trigger('click');
+            var webURL = 'api/gynac/signin?userId=' + $rootScope.authenticatedUser.UserInfo.User_Id;
+            dataService.postData(webURL, {}).then(function (data) {
+                console.log(data);                
+                localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
+                $scope.authenticLecture();
+                //$('#triggerSucsessfullySigninModal').trigger('click');                                
+                window.location.href = "/#/home";
+            }, function (errorMessage) {
+                console.log(errorMessage + ' Error......');
+            });
         }
         else {
             alert("Wrong OTP, Please check and verify.");
@@ -271,4 +278,5 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $state.go('signIn');
     }
 
+    
 }]);

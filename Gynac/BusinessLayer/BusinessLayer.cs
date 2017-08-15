@@ -32,7 +32,39 @@ namespace Gynac
                 else if (!String.IsNullOrWhiteSpace(response) && !response.Trim().Equals("0"))
                 {
                     SendMail(user.Email, EmailType.VerifyEmail, response);
+                    string support = ConfigurationManager.AppSettings["EmailForRegisterUser"].ToString();
+                    string body = (@"<b>New User Register " + user.First_Name + " " + user.Last_Name + "</b><br/></br>"
+                                        + "<table>"
+                                       + "<tr>"
+                                       + "<th>Firstname</th>"
+                                       + "<th>Lastname</th>  "
+                                       + "<th>Professional Speciality</th>     "
+                                       + "<th>Education Qualification</th>"
+                                       + "<th>Address</th>"
+                                       + "<th>City</th>"
+                                       + "<th>Country</th>"
+                                       + "<th>Telephone Number:</th>"
+                                       + "<th>Work Place</th>"
+                                       + "<th>Email</th>"
+                                       + "<th>How did you hear about Us?</th>"
+                                    + " </tr>"
+                                    + " <tr>"
+                                    + "   <td>" + user.First_Name + "</td>"
+                                    + "   <td>" + user.Last_Name + "</td>"
+                                    + "   <td>" + user.Professional_Specialty + "</td>"
+                                    + "   <td>" + user.Educational_Qualification + "</td>"
+                                    + "   <td>" + user.Street_Address + "</td>"
+                                    + "   <td>" + user.City_Town + "</td>"
+                                    + "   <td>" + user.Country + "</td>"
+                                    + "   <td>" + user.Mobile + "</td>"
+                                    + "   <td>" + user.Institution_Work_Place + "</td>"
+                                    + "   <td>" + user.Email + "</td>"
+                                    + "   <td>" + user.Where_Hear + "</td>"
+                                    + " </tr>"
+                                    + "</table>");
+                    SendMail(support, EmailType.Registration, "", body, "");
                     result = 1;
+
                 }
             }
             catch
@@ -61,6 +93,11 @@ namespace Gynac
                     message.From = new MailAddress(toAddress);
                     message.To.Add(ConfigurationManager.AppSettings["ContactUsEmailAddress"].ToString());
                 }
+                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp))
+                {
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString()); ;
+                    message.To.Add(toAddress);
+                }
                 else
                 {
                     message.From = new MailAddress(ConfigurationManager.AppSettings["EmailFromAddress"].ToString()); ;
@@ -75,12 +112,12 @@ namespace Gynac
                     case EmailType.VerifyEmail:
                         subject = "Email Verification";
                         mailUrl = ConfigurationManager.AppSettings["VerifyEmailUrl"].ToString();
-                        body = @"<b>Click the below link to verify the email address.</b> </ br> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
+                        body = @"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
                         break;
                     case EmailType.ForgotPassword:
                         subject = "Reset Password";
                         mailUrl = ConfigurationManager.AppSettings["ForgotPasswordUrl"].ToString();
-                        body = @"<b>Click the below link to reset password.</b> </ br> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Reset Password</a>";
+                        body = @"<b>Click the link below to reset your password</b> <br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Reset Password</a>";
                         break;
                     case EmailType.ResetPassword:
                         subject = "Password Changed";
@@ -97,6 +134,11 @@ namespace Gynac
                         mailUrl = "otp";
                         body = bodyData;
                         break;
+                    case EmailType.Registration:
+                        subject = "New Register User";
+                        mailUrl = "";
+                        body = bodyData;
+                        break;
                     default:
                         break;
                 }
@@ -105,7 +147,7 @@ namespace Gynac
                 message.Body = body;
 
                 smtpClient.Host = smtpHost;   // We use gmail as our smtp client
-                //smtpClient.Port = 465;
+                smtpClient.Port = 2525;
                 //smtpClient.EnableSsl = true;
                 //smtpClient.UseDefaultCredentials = true;
                 smtpClient.Credentials = new System.Net.NetworkCredential(smtpUser, smtpPassword);
@@ -474,6 +516,21 @@ namespace Gynac
             return result;
         }
 
+        //update the signout login
+        public int SignIn(int userId)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.SignIn(userId);
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
+
         //get notification
         public IEnumerable<NotificationModel> GetNotificationByUserId(int userId)
         {
@@ -749,7 +806,7 @@ namespace Gynac
             }
             return model;
         }
-        
+
 
         //encypted the videofike
         public static string Encrypt(string toEncrypt, bool useHashing)
@@ -826,7 +883,7 @@ namespace Gynac
             return UTF8Encoding.UTF8.GetString(resultArray);
         }
 
-        public string sendSMS(string otp, string Mobile,string message)
+        public string sendSMS(string otp, string Mobile, string message)
         {
             var result = "";
             try
@@ -863,7 +920,7 @@ namespace Gynac
             }
             catch
             {
-                
+
             }
             return result;
         }
@@ -875,6 +932,7 @@ namespace Gynac
         ForgotPassword = 1,
         ResetPassword = 2,
         ContactUs = 3,
-        Otp = 4
+        Otp = 4,
+        Registration = 5
     }
 }

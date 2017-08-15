@@ -196,16 +196,16 @@
                     </div>
                     <div class="col-md-12 all-form">
                         <div class="col-md-12 input-name text-center">
-                            <div class="checkbox checkbox-primary">
-                                <input id="checkbox2" type="checkbox">
-                                <label for="checkbox2"> I have read and agree to <a href="javascript:;" data-toggle="modal" data-target="#TermsAndConditions">Terms &amp; Conditions</a> and <a href="javascript:;" data-toggle="modal" data-target="#PrivacyPolicy">Privacy Policy</a> </label>
+                            <div class="checkbox checkbox-primary" >
+                                <input id="checkbox2" type="checkbox" ng-model="user.isChecked">
+                                <span> I have read and agree to <a href="javascript:;" data-toggle="modal" data-target="#TermsAndConditions">Terms &amp; Conditions</a> and <a href="javascript:;" data-toggle="modal" data-target="#PrivacyPolicy">Privacy Policy</a> </span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12 submit-button">
                         <div class="col-md-4"></div>
                         <div class="col-md-4 button-area">
-                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()">SUBMIT</button>
+                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()" ng-disabled="!user.isChecked">SUBMIT</button>
                         </div>
                         <div class="col-md-4"></div>
                     </div>
@@ -245,7 +245,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h3 class="modal-title">Sign Up</h3> </div>
                 <div class="modal-body">
-                    <p class="text-center">SSign up successfully done. Mail sent to your registered email ID . Please verify to proceed. </p>
+                    <p class="text-center">Sign up successfully done. Mail sent to your registered email ID . Please verify to proceed. </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToHome()">ok</button>

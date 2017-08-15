@@ -22,6 +22,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $sceProvider) {
           templateUrl: "gynacApp/local/controller/about/aboutPage.html",
           controller: "aboutController"
       })
+         .state('course', {
+             url: "/course",
+             templateUrl: "gynacApp/local/controller/course/coursePage.html",
+             controller: "courseController"
+         })
       .state('lecture', {
           url: "/lecture",
           templateUrl: "gynacApp/local/controller/lecture/lecturepage.html",

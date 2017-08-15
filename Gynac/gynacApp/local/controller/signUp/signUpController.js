@@ -12,6 +12,7 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
     }
     
     $scope.user = {};
+    $scope.user.isChecked = false;
     
     $scope.slide = function (dir) {
         $('#carousel-example-generic').carousel(dir);
