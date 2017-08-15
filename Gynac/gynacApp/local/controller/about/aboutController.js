@@ -1,6 +1,7 @@
 app.controller("aboutController",["$scope", "dataService", "$rootScope", "$state", function($scope, dataService, $rootScope, $state){
 	
-	$scope.clickMe = function(){
+    $scope.clickMe = function () {
+        //
 		var webURL = 'appData/zoneData.json'
 		dataService.getData(webURL).then(function (data) {
 			console.log(data)
