@@ -1,0 +1,123 @@
+﻿<section class="home about" style="margin-bottom:100px;">
+    <div class="slider-relative">
+        <nav class="navbar navbar-default nav-header">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav nav-list-left">
+                            <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
+                            <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
+                            <li class="li-1 state-active"><a class="a-1" href="#/lecture">Lecture</a></li>
+                            <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
+                            <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <!--<li class="li-1">
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
+
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                    <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Log-out</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
+                            <li class="li-3">
+                                <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row page-header banner-page">
+                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-7 sm-center">
+                    <h2>ULTRASOUND IN GYNECOLOGY</h2>
+                    <h2>4 - MONTH CERTIFICATION COURSE</h2>
+                </div>
+                <div class="col-sm-12 col-md-2 sm-center">
+                    <div class='btn-toolbar pull-right'>
+                        <div class='btn-group'> <a href="#/course" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container about-body">
+        <div class="row about-header">
+            <div class='btn-group'> <a href="#/lecture" class="btn btn-primary btn-custom">Back</a> </div>
+        </div>
+       
+        <div class="row about-header" ng-if="!display">
+            <h2 class="text-center magenta"><strong>{{ moduleImages[0].ModuleName}}</strong></h2>
+        </div>
+        <hr />
+        <small  style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll</small>
+        <div ng-repeat="imgdata in moduleImages" ng-if="!display">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>{{ imgdata.ModuleDesc}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img ng-src="{{imgdata.SampleImage}}" al alt="Dr.image" style="width:120px;height:120px">
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img ng-src="../../../../Images/images.jpg" alt=" dr.image" style="width:120px;height:120px" ng-show="imgdata.UserImageId === 0">
+                            <img ng-src="{{imgdata.UserImage }}" alt=" dr.image" style="width:120px;height:120px" ng-show="imgdata.UserImageId !== 0">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="file" name="{{$index}}" onchange="angular.element(this).scope().uploadFile(this);" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>Comment :- </span>{{ imgdata.Comment }}<span ng-if="imgdata.Comment === null">NA</span>
+                            <br />
+                            <span>
+                                Review :-
+                            </span>
+                            <span ng-if="imgdata.IsStatus === 'IsPending'">NA</span>
+                            <i class="fa fa-check-square text-success" aria-hidden="true" ng-if="imgdata.IsStatus === 'IsAccepted'"></i>
+                            <i class="fa fa-close text-danger" aria-hidden="true" ng-if="imgdata.IsStatus === 'IsRejected' "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

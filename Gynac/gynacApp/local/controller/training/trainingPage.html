@@ -1,0 +1,125 @@
+<section class="home training" style="padding-bottom:120px;">
+    <div class="slider-relative">
+        <nav class="navbar navbar-default nav-header">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav nav-list-left">
+                            <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
+                            <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
+                            <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
+                            <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
+                            <!--<li class="dropdown li-1 state-active"><a class="a-1" href="javascript:;">My Page</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <!--<li class="li-1">
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
+                            <li class="li-1 state-active"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
+                            <li class="dropdown li-1"><a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                    <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Sign-out</a></li>
+                                </ul>
+                            </li>
+                            <li class="li-3">
+                                <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
+                            </li>                            
+                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row page-header banner-page">
+                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-7 sm-center">
+                    <h2>ULTRASOUND IN GYNECOLOGY</h2>
+                    <h2>4 - MONTH CERTIFICATION COURSE</h2> </div>
+                <div class="col-sm-12 col-md-2 sm-center">
+                    <div class='btn-toolbar pull-right'>
+                        <div class='btn-group'> <a href="#/signUp#signTop" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="logo-sec">
+            <div class="logo-1">
+                <img src="gynacApp/local/img/GynAc-logo.jpg">
+            </div>
+            <div class="logo-2">
+                <img src="gynacApp/local/img/logo-1.png" class="">
+            </div>
+        </div>--></div>
+    <div class="training" ng-init="slide('next')">
+        <h2><strong class="magenta">Training Detail</strong></h2> </div>
+    <div class="container-fluid mypage-all">
+        <div class="main-page container">
+            <div class="col-md-6 main-training-left">
+                <div class="training-detail-left">
+                    <div class="training-title-left">
+                        <h3>Course Registered</h3> </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Name</th>
+                                <th>Date Of Registration</th>
+                                <th>Valid Till</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="list in authenticatedUser.ActiveUserCourse track by $index">
+                                <th scope="row">{{$index + 1}}</th>
+                                <td ng-bind="list.DrName"></td>
+                                <td ng-bind="list.Registered_Date | date:'MMM, dd yyyy'"></td>
+                                <td ng-bind="list.Registered_Till | date:'MMM, dd yyyy'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6 main-training-right">
+                <div class="training-detail-right">
+                    <div class="training-title-right">
+                        <h3>Course Completed</h3> </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Name</th>
+                                <th>Registration From To</th>
+                                <th>Completed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="list in authenticatedUser.ExpiredUserCourse track by $index">
+                                <th scope="row">{{$index + 1}}</th>
+                                <td ng-bind="list.DrName"></td>
+                                <td ng-bind="list.Registered_Date | date:'MMM, dd yyyy'"></td>
+                                <td ng-bind="list.Registered_Till | date:'MMM, dd yyyy'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,94 @@
+﻿<style>
+    #wizard-step-container {
+        margin: 20px 0;
+    }
+
+    #wizard-content-container {
+        margin: 20px 0;
+    }
+
+    #wizard-navigation-container {
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+        padding-top: 20px;
+    }
+</style>
+<div class="modal-header">
+    <h5>Question</h5>
+    
+</div>
+<div class="modal-body">
+    <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll</small>
+    <div id="wizard-container" ng-show="display">
+        <!--wizard-content-container-->
+        <div id="" ng-show="!completedQuestion">
+            <div ng-repeat="q in qmc.questionList.questions">
+                <div ng-show="($index + 1) === qmc.currentStep" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><label class="text-center">{{ q.question }}</label></h3>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img ng-src="{{q.ImagePath}}" al alt="Dr.image" style="width:150px;height:150px">
+                        </div>
+                        <div class="col-md-6">
+                            <div ng-repeat="o in q.option" ng-disabled="displayquestion">
+                                <label class="radio-inline" ng-click="qmc.setAns(q.question,o.id,q.ans,q.id)" ng-model="qmc.selectedOption">
+                                    <input type="radio" name="optradio{{q.id}}">{{ o.value }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div ng-show="completedQuestion">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No.question</th>
+                                <th>True/False</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="useans in qmc.ansUser">
+                                <td>{{useans.questionno}}</td>
+                                <td>
+                                    <span ng-if="useans.status === true "><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+                                    <span ng-if="useans.status === false"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total Question</td>
+                                <td><b>{{ qmc.totalQuestion}}</b></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <h3><label class="text-center">{{ q.question }}</label></h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="wizard-navigation-container">
+            <div class="pull-right">
+                <span class="btn-group">
+                    <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.gotoStep(qmc.currentStep - 1)"><i class="fa fa-arrow-left"></i></button>
+                    <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep >= qmc.questionList.questions.length" class="btn btn-primary" name="next" type="button" ng-click="qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-right"></i></button>
+                </span>
+                <!--<button ng-disabled="qmc.currentStep != qmc.questionList.questions.length && displayquestion" class="btn btn-success" name="next" type="button" ng-click="qmc.finishExam()"> <i class="fa fa-floppy-o"></i> Finish</button>-->
+                <button ng-show="!qmc.reject" ng-disabled="!completedQuestion" class="btn btn-success" name="next" type="button" ng-click="qmc.finishExam()"> <i class="fa fa-floppy-o"></i> Finish</button>
+                <button ng-show="qmc.reject" ng-click="completedQuestion = false; qmc.reject = false ; qmc.currentStep =1; qmc.ansUser=[];" class="btn btn-danger">Return </button>
+                <button class="btn" type="button" ng-click="qmc.cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</div>

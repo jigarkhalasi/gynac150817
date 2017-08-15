@@ -1,0 +1,140 @@
+<section class="home contact" style="margin-bottom:50px;">
+    <div class="slider-relative">
+        <nav class="navbar navbar-default nav-header">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav nav-list-left">
+                            <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
+                            <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
+                            <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
+                            <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
+                            <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="li-1 state-active"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <!--<li class="li-1">
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
+                            <li class="dropdown li-1"><a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                    <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Log-out</a></li>
+                                </ul>
+                            </li>
+                            <li class="li-3">
+                                <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
+                            </li>                            
+                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row page-header banner-page">
+                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-7 sm-center">
+                    <h2>ULTRASOUND IN GYNECOLOGY</h2>
+                    <h2>4 - MONTH CERTIFICATION COURSE</h2> </div>
+                <div class="col-sm-12 col-md-2 sm-center">
+                    <div class='btn-toolbar pull-right'>
+                        <div class='btn-group'> <a href="#/signUp#signTop" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="logo-sec">
+            <div class="logo-1">
+                <img src="gynacApp/local/img/GynAc-logo.jpg">
+            </div>
+            <div class="logo-2">
+                <img src="gynacApp/local/img/logo-1.png" class="">
+            </div>
+        </div>--></div>
+    <div class="container contact-body" ng-init="slide('next')">
+        <div class="row body-header">
+            <h2 class="text-center"><strong class="magenta">Contact Us</strong></h2> </div>
+        <div class="row body-inner">
+            <div class="col-sm-4 col-md-4 address">
+                <div class="col-sm-12 col-md-12">
+                    <h3 class="magenta">Address</h3> <address>
+						  		<p><strong>Gynecology Academy</strong></p>
+						  		<p>91, Bhuvaneswari Nagar</p>
+						  		<p>C V Raman Nagar</p>
+						  		<p>Bangalore - 560093</p>
+                    <p><strong><i class="fa fa-fw fa-phone" aria-hidden="true"></i></strong> +91 70198 49711</p>
+						  		
+							</address> <address>
+						  		<strong><i class="fa fa-envelope" aria-hidden="true"></i></strong>
+						  		<a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a>
+							</address> </div>
+            </div>
+            <div class="col-sm-8 col-md-8 form-group messages">
+                <div class="col-sm-12 col-md-12  all-form error-msg">
+                    <ul>
+                        <li ng-show="contactUsError.NameRequired">Name required!!</li>
+                        <li ng-show="contactUsError.emailRequired">Email Id required!!</li>
+                        <li ng-show="contactUsError.emailInvalid">Invalid Email Id</li>
+                        <li ng-show="contactUsError.SubjectRequired">Subject required!!</li>
+                        <li ng-show="contactUsError.BodyRequired">Body required!!</li>
+                    </ul>
+                    <br> </div>
+                <div class="col-sm-12 col-md-12 messages-inner name-email">
+                    <div class="col-sm-6 col-md-6 name">
+                        <input type="text" class="form-control" ng-model="contact.Name" name="" placeholder="Name"> </div>
+                    <div class="col-sm-6 col-md-6">
+                        <input type="text" class="form-control" ng-model="contact.FromAddress" name="" placeholder="Email"> </div>
+                </div>
+                <div class="col-sm-12 col-md-12 messages-inner">
+                    <input type="text" class="form-control" ng-model="contact.Subject" name="" placeholder="Subject"> </div>
+                <div class="col-sm-12 col-md-12 messages-inner">
+                    <textarea class="form-control" ng-model="contact.Body" placeholder="Message"></textarea>
+                </div>
+                <div class="col-sm-12 col-md-12 messages-inner">
+                    <button class="btn btn-primary magenta-backgound" ng-click="contactUs()">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row map">
+					<div class="col-sm-12 col-md-12">
+						<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:400px;width:100%;'><div id='gmap_canvas' style='height:400px;width:100%;'></div><div><small><a href="http://www.embedgooglemaps.com">Generate your Google map here, quick and easy!									Click here									Visit our website!</a></small></div><div><small><a href="https://top10geeks.com/top-10-best-running-shoes-men-2016/">With top10geeks.com, you can read everything about the best running shoes for men for the year 2016. We give insights in what is the best shoe to buy, by looking at it's qualities and value for money. However, it is important that you always try the shoe for yourself: you might have different preferences than what we are recommending. With our tips of the best running shoes for men, you cannot go wrong!</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(12.985867200000007,77.69673217656239),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(12.985867200000007,77.69673217656239)});infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>Gynecology Academy  91, Bhuvaneswari Nagar  C V Raman Nagar porus  Bangalore - 560093<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+					</div>
+					
+				</div>--></div>
+    <!--Sign up found modal-->
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerMailSentModal" data-toggle="modal" data-target="#MailSentModal" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="MailSentModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Email</h3> </div>
+                <div class="modal-body">
+                    <p class="text-center">Mail sent sucsessfully </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToHome()">ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

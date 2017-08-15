@@ -1,0 +1,495 @@
+<section class="home training">
+    <div class="slider-relative">
+        <nav class="navbar navbar-default nav-header">
+            <div class="container" id="latureTop">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav nav-list-left">
+                            <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
+                            <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
+                            <li class="li-1 state-active"><a class="a-1" href="#/lecture">Lecture</a></li>
+                            <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
+                            <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <!--<li class="li-1">
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                    <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Sign-out</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
+                            <li class="li-3">
+                                <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row page-header banner-page">
+                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-7 sm-center">
+                    <h2>ULTRASOUND IN GYNECOLOGY</h2>
+                    <h2>4 - MONTH CERTIFICATION COURSE</h2>
+                </div>
+                <div class="col-sm-12 col-md-2 sm-center">
+                    <div class='btn-toolbar pull-right'>
+                        <div class='btn-group'> <a href="#/course" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="logo-sec">
+            <div class="logo-1">
+                <img src="gynacApp/local/img/GynAc-logo.jpg">
+            </div>
+            <div class="logo-2">
+                <img src="gynacApp/local/img/logo-1.png" class="">
+            </div>
+        </div>-->
+    </div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="(Session, sessionValue) in userTalkList | groupBy: 'SessionName'" ng-init="outerIndex = $index">
+                <p>&nbsp;</p>
+                <h1>{{ Session }}</h1>
+                <p>A brief description of {{ Session }}</p>
+                <p>&nbsp;</p>
+                <div class="col-md-12" ng-repeat="(module, moduleValue) in sessionValue | groupBy: 'ModuleName'">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">                                    
+                                    <h3 class="panel-title">{{module}}</h3>
+                                </div>
+                                <div class="col col-xs-6 text-right">
+                                    <button type="button" class="btn btn-md btn-success btn-create" ng-click="goToImageSubmission(module)"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th class="hidden-xs">ID</th>
+                                        <th style="width: 500px;">Name</th>
+                                        <th style="width: 100px;">Duration</th>
+                                        <th>Summary of the Talk</th>
+                                        <th>Action</th>
+                                        <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="talk in moduleValue">
+                                        <td align="center" align="center" style="vertical-align: middle;">
+                                            <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
+                                            <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
+                                            <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'"></i>
+                                            <i class="fa fa-check-square text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'"></i>                                           
+                                        </td>
+                                        <!--{{talk.UserTalkId}}-->
+                                        <td class="hidden-xs">{{ outerIndex * userTalkList.length + $index + 1 }}</td>
+                                        <td>
+                                            <h4>{{talk.TalkName}}</h4>
+                                        </td>
+                                        <td>{{talk.Duration}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-default" ng-click="getTalkOverview(talk.TalkId)"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is a overview model pop -->
+        <div class="row">
+            <div class="modal fade in" aria-hidden="false" style="display: block;margin-top:150px;" ng-show="overviewDisplay">
+                <div class="modal-dialog modal-lg  model-height" role="document" style="border:4px solid #cccccc;">
+                    <div class="modal-content model-adjust">
+                        <div class="modal-header">
+                            <button type="button" class="close" ng-click="overviewDisplay=false"><strong><i class="fa fa-times" aria-hidden="true"></i></strong></button>
+                            <h4 class="modal-title model-heading">{{ overViewDetails[0].TalkName}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                {{ overViewDetails[0].Talkdesc}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <!--<div class="container training-body" ng-show="lecture" ng-init="slide('next')">
+        <div class="row training-header">
+            <h2 class="text-center"><strong class="magenta">Lectures</strong></h2> </div>
+        <div class="body-inner">
+            <div class="col-md-9 open-lec">
+                <div class="inner-block" ng-repeat="list in speakerVideoList">
+                    <div class="thumbnail">
+                        <div class="col-md-3 tra-img" ng-if="list.isActive"> <img ng-src="{{list.iconSrc}}" ng-click="openLecture(list)" alt="..."  style="cursor: pointer;"> </div>
+                        <div class="col-md-3 tra-img" ng-if="!list.isActive"> <img ng-src="{{list.iconSrc}}" alt="..."> </div>
+                        <div class="col-md-6 caption tra-description">
+                            <h4 ng-bind="list.title"></h4>
+                            <p ng-bind="list.des1"></p>
+                            <br ng-show="list.isExpand">
+                            <p ng-bind="list.des2" ng-show="list.isExpand"></p>
+                            <div style="text-align:right"> <i class="fa fa-plus-circle" style="font-size: 25px;" aria-hidden="true" ng-show="!list.isExpand" ng-click="list.isExpand = !list.isExpand"></i> <i class="fa fa-minus-circle" style="font-size: 25px;" aria-hidden="true" ng-show="list.isExpand" ng-click="list.isExpand = !list.isExpand"></i> </div>
+                            <p>-<span ng-bind="list.DrName"></span></p>
+                            <label> INR <i class="fa fa-inr" aria-hidden="true"></i> <span ng-bind="list.amount" style="font-weight: bold;"></span> /- </label>
+                            <div>
+                                <label> <span style="font-weight: bold;">Lecture validity is for 3 months from the date of purchase.</span> </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="col-md-12 detail-btn" ng-if="!list.isActive">
+                                <button class="btn btn-default form-control" ng-click="selectLecture(list)" ng-show="!list.isSelected">Add to Cart</button>
+                                <button class="btn btn-default form-control selecteditem" ng-click="selectLecture(list)" ng-show="list.isSelected">Remove from Cart</button>
+                            </div>
+                            <div class="col-md-12 detail-btn" ng-if="list.isActive">
+                                <button class="btn btn-default form-control selecteditem" ng-click="openLecture(list)" > Play</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-md-3 right">
+                <div class="thumbnail">
+                    <div class="caption upcome">
+                        <h4>CART</h4>
+                        <div class="row" style="margin-top: 8px;">
+                            <h5 class="col-md-6 text-right">Amount : </h5>
+                            <h5 class="col-md-6">
+                                         INR
+                                        <i class="fa fa-inr" aria-hidden="true"></i>
+                                        <span ng-bind="totalAmount" style="font-weight: bold;"></span>
+                                        /-
+                                    </h5> </div>
+                    </div>
+                    <div ng-repeat="list in speakerVideoList" ng-show="list.isSelected">
+                        <hr style="margin-bottom: 5px;">
+                        <div class="col-md-10 caption">
+                            <h4 ng-bind="list.title"></h4> </div>
+                        <div class="col-md-2 right" style="text-align:right;     padding: 5px;"> <i class="fa fa-times" aria-hidden="true" ng-click="selectLecture(list)" style="font-size:25px"></i> </div> <img ng-src="{{list.iconSrc}}" style="width: 90%; margin-left: 5%;" alt="..."> </div>
+                    <button class="btn btn-default form-control selecteditem margin-top10" ng-click="saveLecture()" ng-show="showPayBtn(speakerVideoList)">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--<div class="container training-body" ng-show="!lecture">
+        <div ng-show="fullview"> <span>
+                        <i class="fa fa-arrow-left back-btn" ng-click="lecture = true;" style="font-size:43px; padding-bottom: 15px;" aria-hidden="true"></i>
+                    </span>
+            <div class="row">
+                <div class="col-sm-4 col-md-4"> <img ng-src="{{currentLecture.profilePicSrc}}" alt="Dr.image" style="width:60%">
+                    <audio id="playAudio">
+                        <source type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                    <h3 style="margin:10px 0px" ng-bind="currentLecture.DrName"></h3>
+                    <p style="margin:10px 0px; font-size: 16px;" ng-bind="currentLecture.emailId"></p>
+                    <div class="video-pay-pause"> <i class="fa fa-play-circle-o play play-pause-disable" aria-hidden="true"></i> <i class="fa fa-pause pause" aria-hidden="true"></i> <span class="time"></span> </div>
+                </div>
+                <div class="col-sm-8 col-xs-8 col-md-8 col-lg-8 speaker-biography display-none lecture">
+                    <div class="slide-screen"> <img class="img" alt="" /> <img src="gynacApp/local/img/expand.png" class="expand" ng-click="fullview = false" alt="" />
+                        <div class="video-container normalview">
+                            <!--<video id="subVideo">
+
+                                </video>-->
+    <!--       </div>
+                </div>
+                <div class="carrousal">
+                    <div class="arrow left left-arrow"> <img src="gynacApp/local/img/lt.png" alt="" /> </div>
+                    <div class="strip left">
+                        <div class="strip-container"> </div>
+                    </div>
+                    <div class="arrow right right-arrow"> <img src="gynacApp/local/img/rt.png" alt="" /> </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--<div ng-hide="fullview">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 speaker-biography display-none lecture">
+                <div class="slide-screen" style="height: 550px"> <img src="gynacApp/local/img/torsion/Slide1.jpg" style="height: 100%; margin: 0 auto; display: block;" class="img" alt="" /> <img src="gynacApp/local/img/collapse.png" class="expand" ng-click="fullview = true" alt="" />
+                    <div class="video-container fullview">
+                        <!--<video class="subVideo fullViewVideo">
+
+                                    </video>-->
+    <!--</div>
+                    </div>
+                </div>
+                <div class="video-pay-pause" style=" text-align: center; margin-bottom: 50px;"> <i class="fa fa-play-circle-o play play-pause-disable" aria-hidden="true"></i> <i class="fa fa-pause pause" aria-hidden="true"></i> <span class="time"></span> </div>
+            </div>
+        </div>
+    </div>-->
+    
+    <!--Sign in  first modal-->
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerRequiredSigninModal" data-toggle="modal" data-target="#RequiredSigninSignInModal" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="RequiredSigninSignInModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Log In</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Log in required!! </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToLogin()">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Payment successfully modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerPaymentSuccessfully" data-toggle="modal" data-target="#PaymentSuccessfully" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="PaymentSuccessfully" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Payment</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">payment successfully done</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Error modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerPaymentError" data-toggle="modal" data-target="#PaymentError" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="PaymentError" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" style="color:red">Payment</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center" style="color:red">Payment Error!!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Terms and condition the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerLectureTermsAndConditions" data-toggle="modal" data-target="#LectureTermsAndConditions" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="LectureTermsAndConditions" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Terms & Conditions</h3>
+                </div>
+                <div class="modal-body" ng-init="checkedTermsCondition = false">
+                    <div id="contentFromHome"></div>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <input type="checkbox" ng-model="checkedTermsCondition"> <span><b>I HAVE READ AND AGREE TO THE ABOVE TERMS AND CONDITIONS</b></span>
+                    <button type="button" class="btn btn-default selecteditem " data-dismiss="modal" ng-click="playAfterTerms()" ng-disabled="checkedTermsCondition == false" style="    margin-left: 15px;">I AGREE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Countdown  the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerCountdown" data-toggle="modal" data-target="#Countdown" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="Countdown" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="closeCounterModel()">&times;</button>
+                    <h3 class="modal-title">{{currentLecture.title}}</h3>
+                </div>
+                <div class="modal-body" ng-init="checkedTermsCondition = false">
+                    <div>
+                        <h4>
+                            Your lecture is being prepared. Please wait for
+                            <span style="font-size: 22px; color:#9F1F63 "><b>{{counter}}</b></span>
+                            <span style="font-size: 22px; color:#9F1F63"><b>seconds</b></span>
+                        </h4>
+                    </div>
+                    <br>
+                    <div>
+                        <h4>Meanwhile, please go through the following</h4>
+                        <br>
+                        <ul style="margin-left: 20px; font-weight: 200; line-height: 1.8;" class="coundown-model-ul">
+                            <li>For viewing the video you will need a good and stable internet <span ng-dblclick="counter = 1">speed.</span></li>
+                            <li>
+                                You will be able to pause and resume the lecture at any time using the below icons
+                                <br> <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 30px; pointer-events: none;"></i> <i class="fa fa-pause" aria-hidden="true" style="font-size: 30px;    margin-left: 10px; pointer-events: none;"></i>
+                            </li>
+                            <li>
+                                You can switch backword / forward to any slide by using the 2 arrows in the slider control and then clicking on the desired slide thumbnail.
+                                <br> <img src="gynacApp/local/img/rtModel.png" alt="" /> <img src="gynacApp/local/img/ltModel.png" alt="" style="margin-left: 50px;" />
+                            </li>
+                            <li>
+                                You can toggle between enlarged and normal slide view by clicking:
+                                <br> <img src="gynacApp/local/img/expand.png" style="    margin-left: 12px;" class="" width="50px"> <img src="gynacApp/local/img/collapse.png" style="margin-left: 25px;" class="" width="50px">
+                            </li>
+                            <li>For any clarifications related to the subject of the lecture, please email the author</li>
+                            <li>For any technical assistance, please email <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a></li>
+                            <li>Downloading / Printing / Reproducing of any content is strictly prohibited</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer open-lec" style="display:none">
+                    <button type="button" class="btn btn-default play-audio selecteditem " data-dismiss="modal" id="playTriggerBtn" ng-disabled="checkedTermsCondition == false">I AGREED</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sub Countdown  the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerSubCountdown" data-toggle="modal" data-target="#SubCountdown" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="SubCountdown" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    <h3 class="modal-title">Countdown</h3>
+                </div>
+                <div class="modal-body" ng-init="checkedTermsCondition = false">
+                    <div class="text-center">
+                        <h1>opening in</h1> <span style="font-size: 50px"><b id="subcounter1">5</b></span>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display:none">
+                    <button type="button" class="btn btn-default selecteditem " data-dismiss="modal" id="playSubTriggerBtn"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Country have no payment  the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerNoPayment" data-toggle="modal" data-target="#NoPayment" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="NoPayment" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    <h3 class="modal-title">Payment</h3>
+                </div>
+                <div class="modal-body" ng-init="checkedTermsCondition = false">
+                    <div class="text-center">
+                        <h5 style="text-align: center;">
+                            Your registered country does not have an online payment option.
+                            Please email us at <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a> for other payment options.
+                        </h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default selecteditem " data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Country have no payment  the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerLateBuy" data-toggle="modal" data-target="#LateBuy" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="LateBuy" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Payment</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h5 style="text-align: center;">This site is going live and will accept payments from 7th Nov 2016. Please buy the talks from 7th Nov.</h5>
+                        <br>
+                        <h5 style="text-align: center;">
+                            Please email at
+                            <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a>
+                            for any clarifications.
+                        </h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default selecteditem " data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Country have no payment  the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerUnderDevelopment" data-toggle="modal" data-target="#underDevelopment" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="underDevelopment" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Under Development</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p>This Talk in under development</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default selecteditem " data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

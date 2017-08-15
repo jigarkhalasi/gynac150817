@@ -1,0 +1,49 @@
+﻿
+
+<div class="modal-header">
+    <h5>Video Play</h5>
+    <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll</small>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">  
+            <iframe id="myIframe" width="640" height="522" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                <p>Your browser does not support iframes.</p>
+            </iframe>            
+        </div>        
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form role="form">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span>{{currentLecture.FacultyName}}</span>
+                        <br />
+                        <span> {{currentLecture.Email}}</span>
+                        <img ng-src="{{currentLecture.ProfilePic}}" al alt="Dr.image" style="width:120px;height:120px">
+
+                    </div>
+
+                    <div class="col-xs-9">
+                        <div class="row">
+                            
+                            <br/>
+                            <label class="col-xs-12" for="TextArea">Comment</label>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><textarea class="form-control" id="comment" rows="5" ng-model="currentLecture.Comment"></textarea></div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" type="button" ng-click="vmc.updateVideoComment()">Send Email</button>
+    <button class="btn" type="button" ng-click="vmc.cancel()">Cancel</button>
+</div>

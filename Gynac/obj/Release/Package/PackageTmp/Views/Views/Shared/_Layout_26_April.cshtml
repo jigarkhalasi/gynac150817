@@ -1,0 +1,2012 @@
+﻿<!doctype html>
+<html ng-app="gynacApp">
+<head>
+    <title>Gynac</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Istep Up" />
+    <meta http-equiv="X-UA-compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=4, user-scalable=no">
+
+    @*<link href="gynacApp/local/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="gynacApp/local/css/style.css" rel="stylesheet" type="text/css">
+    <link href="gynacApp/local/css/font-awesome.min.css" rel="stylesheet" type="text/css">*@
+
+    <script type="text/javascript" src="gynacApp/vendor/lib/angular.min.js"></script>
+    <script type="text/javascript" src="gynacApp/vendor/lib/angular-ui-router.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.4/angular-filter.min.js"></script>
+
+    <script type="text/javascript" src="gynacApp/local/config/config.js"></script>
+    <script type="text/javascript" src="gynacApp/local/commonService/service.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/main/mainController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/about/aboutController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/contact/contactController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/faculty/facultyController.js"></script>
+
+    <script type="text/javascript" src="gynacApp/local/controller/home/homeController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/lecture/lectureController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/myProfile/myProfileController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/signIn/signInController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/signUp/signUpController.js"></script>
+    <script type="text/javascript" src="gynacApp/local/controller/training/trainingController.js"></script>
+
+
+    <!--<script type="text/javascript" src="gynacApp/local/controller/secondPage/secondpageController.js"></script>-->
+    <script src="gynacApp/vendor/lib/jquery-1.11.3.min.js"></script>
+    <script src="gynacApp/vendor/lib/bootstrap.min.js"></script>
+
+</head>
+<body ng-controller="mainCtrl">
+    <div class="loading" id="loading" style="display:none">
+        <img src="gynacApp/local/img/loader.gif">
+    </div>
+    <div ui-view></div>
+	
+	<!-- Startup model start here -->
+	
+	<button type="button" class="btn btn-info btn-lg" data-backdrop="static" data-toggle="modal" id="startupmodeltrigger" data-target="#startupModal" style="display:none">Open</button>
+	
+	<div class="modal fade" id="startupModal" role="dialog">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content" style="background-color: rgb(116,0,22); color: #fff; text-align: center;">
+			<div class="modal-header">			  
+			  <h4 class="modal-title">Important Message</h4>
+			</div>
+			<div class="modal-body">
+			  <div style=" background: black; width: 60%; margin: 0 auto;  padding: 15px;">
+  <h3>Certificate Course</h3><h3> in </h3> <h3>Gynecological Ultrasound </h3> <br> <i style=" color: #fff; font-size: 12px;"> By Dr. Mala Sibal &amp; Dr. Sonal Panchal <br> June 2017</i> <br>  </div>
+<br>
+<div>For details contact - support@gynac.org</div>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" style="color: rgb(116,0,22);font-weight: bold;" data-dismiss="modal">OK</button>
+			</div>
+		  </div>
+		</div>
+	</div>
+  
+  <!-- Startup model end here -->
+	
+	
+    <!--trigger InternalError found modal-->
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerInternalError" data-toggle="modal" data-target="#internalError" style="display:none">Open Modal</button>
+
+    <!-- Modal -->
+    <div id="internalError" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" style="color:red">Error</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center text-color" style="color:red">Internal server error please try again!!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToHome()">ok</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+
+      <footer class="footer">
+                <span>Copyright©gynac.org</span> |                 
+                <span> <a href="javascript:;" data-toggle="modal" data-target="#TermsAndConditions">Terms & Conditions</a></span> | 
+                <span> <a href="javascript:;" data-toggle="modal" data-target="#PrivacyPolicy">Privacy Policy</a></span> 
+            </footer>
+        
+            <!-- Terms and condition the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" id="triggerTermsAndConditions" data-toggle="modal" data-target="#TermsAndConditions" style="display:none">Open Modal</button>
+
+            <!-- Modal -->
+            <div id="TermsAndConditions" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Terms & Conditions</h3>
+                  </div>
+                  <div class="modal-body" id="termsCoditionsContain">
+                    
+<div class=WordSection1>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span lang=EN-IN style='font-family:"Times New Roman",serif'>TERMS
+AND CONDITIONS: GYNECOLOGY ACADEMY<o:p></o:p></span></u></b></p>
+
+<br><br>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><u><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></u></b></p>
+<br>
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>Welcome, and thank you for your
+interest in Gynecology Academy ("<b style='mso-bidi-font-weight:normal'>Gynecology
+Academy" </b>or <b style='mso-bidi-font-weight:normal'>"we" </b>or <b
+style='mso-bidi-font-weight:normal'>"us" </b>or <b style='mso-bidi-font-weight:
+normal'>"our"</b> or "<b style='mso-bidi-font-weight:normal'>GYNAC"),</b> which
+is a sole proprietorship that owns and operates the web site located at www.gynac.org
+and related application programming interfaces and online services (<b
+style='mso-bidi-font-weight:normal'>"Website"</b>) and all copyrighted
+educational or tutorial videos, information, materials, content, services, and
+products available at or through the Website ("<b style='mso-bidi-font-weight:
+normal'>Materials</b>"). <o:p></o:p></span></p>
+<br>
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>The Website is an educational and
+collaboration portal, offering e-learning and tutorial videos focusing on <span
+class=SpellE>Sonology</span> and Gynecology. <o:p></o:p></span></p>
+<br>
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>Gynecology Academy’s registered
+office is 91, <span class=SpellE>Bhuvaneshwari</span> Nagar, CV Raman Nagar, <span
+class=GramE>Bangalore</span>- 560093. Our contact information is </span><span
+lang=EN-IN><a href="mailto:support@gynac.org"><span style='font-family:"Times New Roman",serif;
+color:windowtext'>support@gynac.org</span></a></span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>. <o:p></o:p></span></p>
+<br>
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>The following Terms and Conditions
+("<b style='mso-bidi-font-weight:normal'>Terms")</b> are a legal contract
+between you ("<b style='mso-bidi-font-weight:
+normal'>You") </b>and Gynecology Academy regarding your use of the Website and
+the offered Services. The following Terms, along with our Privacy Policy,
+govern our relationship with you in relation to this website. Visitors and
+users of the Website are referred to individually as <b style='mso-bidi-font-weight:
+normal'>"User" </b>and collectively as <b style='mso-bidi-font-weight:normal'>"Users".<o:p></o:p></b></span></p>
+<br>
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>PLEASE READ THE FOLLOWING TERMS AND
+CONDITIONS CAREFULLY. BY REGISTERING FOR, ACCESSING, BROWSING, VIEWING OR USING
+THE WEBSITE AND/OR SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD,
+AND AGREE TO BE BOUND BY THE FOLLOWING TERMS AND CONDITIONS INCLUDING THE
+GYNECOLOGY ACADEMY PRIVACY POLICY AND ANY ADDITIONAL GUIDELINES. IF YOU
+DISAGREE WITH ANY PART OF THESE TERMS AND CONDITIONS, PLEASE DO NOT USE OUR
+WEBSITE. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><u><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Account Information and
+Usage<o:p></o:p></span></u></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Eligibility: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>This website is open to
+medical professionals, practitioners and academicians only. By clicking the "I
+agree" button, or by otherwise using or registering an account for the website,
+you represent that you have not be previously suspended or removed from the
+website by Gynecology Academy and that your registration and use of the
+website is in compliance with any and all applicable laws and regulations.<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>User Account: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>In order to access
+certain features of the website, including access to the educational videos,
+you must register for an account.<b style='mso-bidi-font-weight:normal'> </b>You
+will be required to provide your name, address, institution, medical
+qualification and contact details including your current email address and
+phone number. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>You
+agree that the information you provide to Gynecology Academy, whether at the
+registration or at any other time, will be true, accurate, current and
+complete, and shall ensure that this information is kept accurate and updated
+at all times. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>You
+may be asked to provide a password in connection with your account. You agree
+to accept responsibility for all activities that occur under your account, and
+you are solely responsible for maintaining the confidentiality of your account
+and password. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>If
+you have reason to believe that your account is no longer secure, then you
+agree to immediately notify us at </span><span lang=EN-IN><a
+href="mailto:support@gynac.org"><span style='font-family:"Times New Roman",serif;
+color:windowtext'>support@gynac.org</span></a></span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>. You may be liable for losses
+incurred by us or others due to any unauthorized use of your account. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Subscription Fees: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>We may require you to
+pay certain subscription fees to gain access to our Materials that you wish to
+subscribe for. These fees will be chargeable on a per-video basis. <span
+style='mso-spacerun:yes'>  </span>The amount of fees charged will be indicated
+by us on our website, or at the time of applying for an account.<span
+style='mso-spacerun:yes'>  </span>These fees are non-refundable. <b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Payment and Refund
+Transactions: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>For
+the purpose of ensuring transactions involving payment or refund of
+subscription fees for the Website, we may utilise the services of a third-party
+payment merchant or processor (<b style='mso-bidi-font-weight:normal'>"payment
+merchant"</b>) to bill Users. The processing of such payments or refunds shall
+be subject to the terms, conditions and privacy policies of the payment
+processor, in addition to our Terms and Privacy Policy. The payment merchant may
+collect your credit card information, as well as other personal information to
+process the payments or refund.<span style='mso-spacerun:yes'>  </span><b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>The
+terms of such payment or refund will also depend upon on your choice of payment
+method, which will be determined by agreements between the financial
+institution, credit card issuer <span class=GramE>or</span> other provider of
+your chosen payment method. (<b style='mso-bidi-font-weight:normal'>"<span
+class=GramE>payment</span> provider"</b>).<span style='mso-spacerun:yes'> 
+</span><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>By
+making a payment, you agree to pay us, through the payment merchant, all
+subscription fees at the prices stated for the applicable Service. You further
+authorize us to charge your chosen payment provider through the payment
+merchant, and agree to make such payment through the selected payment
+method.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+are not responsible for errors or delays by such payment merchant or payment
+provider, and shall not be under any liability whatsoever in respect of any
+loss or damage arising directly or indirectly out of the decline of
+authorization for any transaction. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Increase in subscription
+fees: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+may increase the subscription fees charged at any time and for any reason,
+provided, however, all subscriptions confirmed via a purchase order as
+processed by the payment merchant before such date of revision of prices shall
+be honoured by us at the original agreed price. Such increase in subscription
+fees will be indicated via notice on our Website<b style='mso-bidi-font-weight:
+normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Cancellation Policy: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Once subscription fees
+have been paid for access to our Services, and the user has been provided an
+account with access to our Services in accordance with such payment, users
+cannot cancel such subscription. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Grievance and Refund
+Policy: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+are committed to providing high quality e-learning and tutorial videos and
+Services on our Website. Any grievances or refund request relating to a
+particular video or Service or with our Website can be raised by you through
+email to us at the above specified contact address, or through the "contact us"
+link on our Website. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>All
+requests for grievances or refund will be reviewed by us individually. In cases
+for genuine causes for such refund, the final refunds shall be made after
+deducting Service Tax as is applicable in accordance with the current laws of
+India.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Depending
+upon the chosen payment method, refunds shall be issued to you, through our
+payment merchant, to your account maintained with your payment provider
+specified at the time of the original payment now being refunded, in accordance
+with the terms laid out in Clause 1.4 above. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.8<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Privacy Notice: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Your privacy is
+important to us. Please read our Privacy Policy carefully for information relating
+to our collection, use and disclosure of your personal information collected
+through your usage of our website. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Proprietary Materials on
+Website</span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Materials owned by us: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>The Website is owned and
+operated by Gynecology Academy. The visual interfaces, graphics, design,
+compilation, information, computer code (including source code or object code),
+software, Materials including content, educational videos and exercises, and all
+other elements of the Website<span style='mso-spacerun:yes'>  </span>are
+protected by Indian and international copyright and trademark laws,
+international conventions and other applicable laws governing intellectual
+property and proprietary rights. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Any
+materials provided on our Website by third parties, all Materials, and other
+Website contents are owned by or licensed to Gynecology Academy. Whether the
+whole or the part of the material is concerned, we reserve all rights therein
+and thereto not expressly granted by these Terms. Unless expressly indicated on
+the Website otherwise, you shall not download, distribute, sell, lease, modify
+or otherwise provide access to such content to any third party.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>All
+trademarks reproduced in this website, which are not the property of, or
+licensed to us, are acknowledged on the Website.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Materials provided by
+affiliated third parties: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>With
+our permission, certain registered medical experts, academicians and
+practitioners or other entities <b style='mso-bidi-font-weight:normal'>("affiliated
+third parties"</b>) may provide such educational videos, webcasts, material,
+information, content, exercises and related supplementary materials (to be
+understood within the meaning of "<b style='mso-bidi-font-weight:normal'>Materials</b>")on
+our Website, to be accessed and used by you in accordance with these Terms.
+Unless expressly indicated on the Website otherwise, you shall not download,
+distribute, sell, lease, modify or otherwise provide access to such content to
+any third party. <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Opinions
+and statements included in such audio or video tapes, transcripts, information,
+content, exercises, supplementary material or webcasts of such events are
+solely those of the individual persons or entities and are not necessarily
+adopted or endorsed or verified as accurate by Gynecology Academy.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>2.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Access License: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Upon the payment of
+subscription fees, we grant you a non-transferable license to access the
+Services paid for by you as are made available on the Website, subject to the
+payment of the applicable subscription fees, and in accordance and adherence
+with these Terms. Such access shall be provided for a specific time period,
+starting from the time at which payment is completed and such completion of
+payment is intimated to us by the payment merchant. <b style='mso-bidi-font-weight:
+normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><span
+style='mso-spacerun:yes'> </span>You shall be authorized to access such
+Services from any Internet connection. No other additional license, apart from
+as is provided to you by these Terms, is implied by the provision of such
+access license. </span><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>No right,
+title or interest to any trademarks, service marks or trade names of Gynecology
+Academy is hereby granted. Further, no rights to translation, reprinting, reuse
+of illustrations, recitation, broadcasting, reproduction in any way and
+transmission or information storage and retrieval, electronic adaptation,
+computer software, or by similar or dissimilar methodology now known or
+hereafter developed is hereby granted. Unauthorized or improper use of such
+materials may result in civil and criminal penalties.</span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><span
+style='mso-list:Ignore'>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Crediting Gynecology
+Academy: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>If
+you distribute, </span><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>publicly
+perform or display, transmit, publish, or otherwise make available any Materials
+or any derivative works thereof, you must also provide the following notice
+prominently along with such Materials or any derivative works thereof: "<b
+style='mso-bidi-font-weight:normal'>All Gynecology Academy content is
+available at ______________________. <o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'><br>
+</span></b><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Further,
+in case of such materials or Services being provided to us by third parties,
+you must also credit such third party or entity, in accordance with the
+information posted on our Website regarding the source of such information. </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Usage of our Website or
+Services<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Unauthorized usage of
+our Website or Services: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>You
+agree to abide by all procedures and requirements of Gynecology Academy,
+including but not limited to the following usages of our Website or Services,
+which are deemed as unauthorised by us. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'>
+<![if !supportLists]>
+<span lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif'>No
+Commercial Usage: </span></u><span lang=EN-IN style='font-family:"Times New Roman",serif'>
+You
+agree not to utilise our Website or Services for any commercial use or purpose,
+commercial advantage, or private monetary compensation unless expressly
+permitted in writing by Gynecology Academy. This would include, but is not
+limited to, providing training, support or editorial services that use or
+reference the Website, Services or any information or content contained therein
+in exchange for a fee. It is understood and accepted by you that the Website
+and Services are intended for personal, non-commercial use only.
+<span
+style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<br>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'>
+<![if !supportLists]>
+<span lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif'></span></u><span lang=EN-IN style='font-family:"Times New Roman",serif'>
+Should you wish to utilise any of our Materials or Services for such non-commercial use that requires you to distribute, publicly perform or display, transmit, publish, or otherwise make available any Materials, Services or any derivative works thereof (such as for academic or scholarly purposes), you agree that you are required to first ask for and obtain the express permission of Gynecology Academy to do so by emailing us on <a href="javascript:;"> <u>support@gynac.org</u></a> and must also provide the following notice prominently along with such Materials or any derivative works thereof:
+<span
+style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+
+<br>
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'>
+<![if !supportLists]>
+<span lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif'></span></u><span lang=EN-IN style='font-family:"Times New Roman",serif'>
+    <b>"All Gynecology Academy content is available at www.gynac.org."</b>
+<span
+style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+    
+<br>
+    
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'>
+<![if !supportLists]>
+<span lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif'></span></u><span lang=EN-IN style='font-family:"Times New Roman",serif'>
+Further, in case of such Materials or Services being provided to us by third parties, you must also credit such third party or entity, in accordance with the information posted on our Website regarding the source of such information. Please note that Gynecology Academy reserves all rights to refuse to provide such permission, and nothing in this clause must be understood as providing any rights to utilise our Materials or Services for any non-commercial usage, beyond those set out in clause 2.3 or any other part of these Terms. 
+<span
+style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>No
+Unauthorized Adaptation, collective or derivative works:</span></u><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'> You agree not to modify, adapt,
+translate or create derivative or collective works based upon the Website or
+Services or any part thereof, except and only to the extent expressly permitted
+by Gynecology Academy herein or to the extent the foregoing restriction is
+expressly prohibited by applicable law. </span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.1.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>No
+unauthorized promotional material: </span></u><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'>You agree not to create or sell advertisements,
+sponsorships, or promotions based upon the Website or Services or any part
+thereof, or the sale of advertisements, sponsorships, promotions on any website
+or blog containing any part of the information, material, videos or other
+Services provided on the website, including without limitation any "pop-up
+advertisements". </span><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif'>No
+unauthorized access of other Users’ accounts:</span></u><span lang=EN-IN
+style='font-family:"Times New Roman",serif'> You agree not to utilise the
+accounts of others without their permission. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level3 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.1.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><u><span lang=EN-IN style='font-family:"Times New Roman",serif'>No
+illegal or unauthorized usage:</span></u><span lang=EN-IN style='font-family:
+"Times New Roman",serif'> You agree not to utilise our Services or Website for
+any unlawful purpose, or in violation of local, state, national or
+international law, including, without limitation, laws governing intellectual
+property and other proprietary rights, and data protection and privacy. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>This
+includes, but is not limited to, attempts to remove, circumvent, disable,
+damage or otherwise interfere with Services, copyright or other proprietary
+notices on the Website or security-related features of the Website or User
+Generated Content, features that prevent or restrict use or copying of any
+content or Services accessible through the Website, or features that enforce
+limitations on the access and/or use of the Website, Services or User Generated
+Content. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Further,
+you also agree to not assert or authorize or assist or encourage any third
+party to commit any unauthorized acts as contained in these Terms herein. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Any
+unauthorised use of this Website by you may give rise to a claim for damages
+and/or be a criminal offence. We bear no responsibility for such claims or
+offences being sought or enforced by third parties upon you, should they arise
+by such unauthorized usage of our Website or Services by you. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>User Conduct Rules: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>By posting information,
+participating in, listening to or otherwise using any communications or
+interactive service, including message boards, chat rooms, comment sections,
+etc. made available to you on or through this Website, you agree that you will
+not upload, post or otherwise distribute or facilitate distribution of any
+content, including text, communications, software, images, sounds, data or
+other information that:<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>A.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif'>infringes
+on any patent, trademark, trade secret, copyright, right of publicity, or other
+property right of any party; constitutes unauthorized or unsolicited offers,
+proposals or advertising, promotional materials, junk or bulk e-mail (&quot;<span
+style='mso-bidi-font-style:normal; font-style: italic;'>spamming</span>&quot;), chain letters, charity
+requests, petitions for signatures or any other form of unauthorized
+solicitation, or any form of lottery or gambling; <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>B.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif'>contains
+software viruses, adware, spyware, worms, malicious code or any other computer
+code, files or programs that are designed or intended to disrupt, damage or
+limit the functioning of other Users’ accounts, Website and Services or any
+related software, hardware or telecommunications equipment or to damage or
+obtain unauthorized access to any data or other information of any third party;
+<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>C.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=GramE><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>is</span></span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'> unlawful, threatening, abusive,
+harassing, vulgar, defamatory, libellous, deceptive, fraudulent, invasive of
+another's privacy, tortious, contains explicit or pornographic descriptions or
+accounts of sexual acts or otherwise violates our Terms or Privacy Policy, or
+any laws in India as applicable. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>D.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=GramE><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>victimizes</span></span><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>, harasses, degrades or
+intimidates an individual or group of individuals on the basis of religion,
+gender, sexual orientation, race, ethnicity, age or disability; or impersonates
+or falsely claims an affiliation with any person or entity.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>E.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>defames,
+harass, abuse, threaten or defraud Users of the Website, or collect, or attempt
+to collect, personal information about Users or third parties without their
+consent;</span><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+do not routinely pre-screen, monitor or edit the content posted by users of
+chat rooms, message boards, newsgroups, webcasts or other interactive services
+that may be available on or through this Web site.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>However,
+we may, in our sole discretion, perform such screening, editing or monitoring
+and to remove any content that, in our judgment, does not comply with the terms
+of use or is otherwise harmful, objectionable or inaccurate. We are not
+responsible for any failure or delay in removing such content. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Furthermore,
+we may also receive abuse complaints from other Users regarding the usage of
+your account. We reserve the right to suspend or terminate access to our
+Services on the receipt of such abuse complaints. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+are not responsible for any claim for damages and/or any criminal offence
+arising out of your conduct or usage of this Website or Services, and the
+responsibility for such events is to be borne solely by you. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Termination Policy<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Termination by Us:</span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'> We reserve the right
+to, on our sole discretion and for any or no reason without penalty, suspend or
+terminate your account, usage and access to our Services. This includes in
+cases involving receipt of an abuse complaint from other Users or third parties,
+or in cases where we feel, in our judgement, you have violated these Terms or
+our Privacy Policy or have engaged in conduct which is otherwise harmful,
+illegal, objectionable or inaccurate. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>You
+agree that such termination and discontinuance of access to the Website or any
+part thereof, may be performed by us with or without prior notice, and that we
+shall not be liable to you or other third parties for any such termination.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Any
+suspected fraudulent, abusive or illegal activity may be referred to
+appropriate law enforcement authorities. These remedies are in addition to any
+other remedies we may have at law or in equity. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>As
+discussed herein, we do not permit copyright, trademarks, or other intellectual
+property infringing activities on the Website, and will terminate access to the
+Website, and remove all User Generated Content or other content submitted, by
+any Users who are found to be repeat infringers.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>4.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Termination by You: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Your only remedy with
+respect to any dissatisfaction with (<span class=SpellE>i</span>) the Website
+or Services, (ii) any term of these Terms of Service, (iii) Privacy Policy
+and/or any other Guidelines, (iv) any policy or practice of Gynecology Academy
+in operating the Website or Services, or (v) any information or material
+transmitted through the Website, is to terminate the Terms and your account.
+You may terminate the Terms at any time by deleting your account with the Website
+and discontinuing use of any and all parts of the Website.<b style='mso-bidi-font-weight:
+normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Indemnification: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Upon a request by us,
+you agree to defend, indemnify and hold harmless Gynecology Academy and its affiliated
+third parties, employees, officers, members, agents and contributing
+professionals from all liabilities, claims, losses, damages and expenses
+including legal fees and expenses that arise from your use or misuse of your
+account, this Website or the contained Services therein, or from any violation
+of the Terms or breach of the representations, warranties and convents made
+herein by you. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+reserve the right, at our expense, to assume the exclusive defence and control
+of any matter otherwise subject to indemnification by you, in which event you
+will cooperate with us in asserting any available defences. We will utilise
+reasonable efforts to notify you of any such matters. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Disclaimer and
+Warranties</span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Information for
+educational usage only: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+may provide information or materials or Services relating to medical
+conditions, treatments, or public or private health issues on our Website. Any
+such information or material does not suggest diagnosis or treatment, and is
+not a substitute for medical attention. Such information or material is
+intended for educational and training purposes only. Your use of any
+information or material on the Website is entirely at your own risk, for which
+we and our affiliated third parties shall not be liable. It shall be solely
+your own responsibility to ensure that any Materials provided to you through
+this Website meet your requirements. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>No Warranties:</span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'> All materials,
+information, software, products and Materials included in or made available
+through this website are provided "as is" and "as available" for your use. The
+content is provided without warranties of any kind, either express or implied,
+including but not limited to implied warranties of merchantability, fitness for
+a particular purpose, or non-infringement.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>Your use of any information or
+material on the Website is entirely at your own risk, for which we shall not be
+liable. It shall be solely your own responsibility to ensure that any Materials
+provided to you through this Website meet your requirements. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>To
+the fullest extent permitted by law, in no event will we be liable for any loss
+or damage including without limitation, direct, indirect, punitive, incidental,
+special, or consequential loss or damage, or any loss or damage whatsoever
+arising from loss of data or profits arising out of, or in connection with, the
+use or inability to use this Website or Services therein. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Accuracy of Content: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>While we endeavour to
+keep all information, content and materials constituting our Materials up to
+date and correct, we make no representations or warranties of any kind, </span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>express or implied, about the
+completeness, accuracy, reliability, suitability or availability with respect
+to the website or the information, products, services, or related graphics
+contained on the website for any purpose.</span><b style='mso-bidi-font-weight:
+normal'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'>From time to time, this website may also include
+links to other websites. These links are provided for your convenience to
+provide further information. They do not signify that we endorse the
+website(s).We have no responsibility for the content of the linked website(s). We
+have no control over the nature, content and availability of those sites. <o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:0in;mso-add-space:auto;text-align:
+justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Use of Website outside
+India: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+make no representation that the Services on this website are</span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'> </span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>appropriate or available for use in
+locations outside India, and accessing them from nations or territories where
+their contents are illegal is prohibited. Persons who access this Web site from
+outside India are solely responsible for compliance with all applicable laws.<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Transmission of
+Information: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>There
+is no guarantee that any transmission of data over the Internet is completely
+secure, and we cannot ensure or warrant the security of any information you
+transmit to us. Any such transmission is done at your own risk. <b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Harm to Your <span
+class=SpellE>Computer<span class=GramE>:<span style='font-weight:normal'>You</span></span></span></span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'> understand and agree
+that your use, access, download or otherwise obtaining of content, Materials,
+software or data through the Website is at your own discretion and risk and
+that you will be solely responsible for any damage to your property (including
+your computer system) or loss of data that results therefrom. <b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>6.7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Technical Issues: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Though every effort is
+made to keep the Website up and running smoothly, we take no responsibility
+for, and will not be liable for the Website being temporarily unavailable due
+to technical issues beyond our control.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Modification of Terms: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>We reserve the right, at
+our discretion, to change, modify, add or remove portions of these Terms or our
+Privacy policy at any time. Please check the Terms and Privacy Policy
+periodically for changes. Your continued usage of the Website after any modification
+of these Terms constitutes your binding acceptance of such modification. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'>For
+any material changes to the Terms, we shall make a reasonable effort to provide
+notice to you of such amended Terms by posting a notice on the Website.
+Disputes arising under these Terms will be resolved in accordance with the
+version of the Terms in place at the time the dispute arose. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level1 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Miscellaneous</span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>8.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Disputes, Choice of law and
+forum: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>These
+Terms shall be governed by and construed in accordance with the laws of India.
+You agree that any action at law or in equity arising out of or relating to the
+Terms or Gynecology Academy will be subject to the exclusive jurisdiction of
+the Courts in Bangalore only and each of You and Gynecology Academy hereby
+consent and submit to the personal and exclusive jurisdiction of such courts
+for the purposes of litigating any such action. Notwithstanding this, Gynecology
+Academy shall still be allowed to apply for injunctive or other equitable
+relief to protect or enforce its intellectual property rights in any court of
+competent jurisdiction.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>YOU AND GYNECOLOGY
+ACADEMY AGREE THAT ANY CAUSE OF ACTION ARISING OUT OF OR RELATED TO THE WEBSITE
+MUST COMMENCE WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES. OTHERWISE,
+SUCH CAUSE OF ACTION IS PERMANENTLY BARRED.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><span
+style='mso-list:Ignore'>8.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Severability and Integration: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>If any provision of the Terms or
+Privacy Policy is held to be unlawful, void or for any reason unenforceable,
+then that provision will be limited or eliminated from the Terms or Privacy
+Policy to the minimum extent necessary and will not affect the validity and
+enforceability of any remaining provisions.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>8.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Waiver: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>The failure of Gynecology Academy
+to exercise or enforce any right or provision of the Terms will not constitute
+a waiver of such right or provision. Any waiver of any provision of the Terms
+will be effective only if in writing and signed by Gynecology Academy.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><span
+style='mso-list:Ignore'>8.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Assignment: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>The Terms and related Privacy
+Policy, and any rights and licenses granted hereunder, may not be transferred
+or assigned by You without Gynecology Academy’s prior written consent, but may
+be assigned by Gynecology <span style='mso-spacerun:yes'> </span>Academy
+without consent or any restriction. Any assignment attempted to be made in
+violation of the Terms shall be null and void.<b style='mso-bidi-font-weight:
+normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><span
+style='mso-list:Ignore'>8.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Entire Agreement: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Unless otherwise specified
+herein, these Terms and the Privacy Policy together constitute the entire
+agreement between You and Us with respect to this Website and supersedes all
+prior or contemporaneous communications and proposals (whether oral, written or
+electronic) between you and Us with respect to this Web site. This will not be
+modified except in writing, signed by both parties, or by a change to the Terms
+and Privacy Policy made by <span class=GramE>Us</span> as set forth in Clause
+above. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;mso-list:l2 level2 lfo1'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><span
+style='mso-list:Ignore'>8.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Disclosure: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>The Website is hosted in India
+and the Materials provided hereunder are offered by Gynecology Academy: </span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;background:white'>91, <span
+class=SpellE>Bhuvaneshwari</span> Nagar, CV Rama Nagar, Bangalore- 560093; </span><span
+lang=EN-IN><a href="mailto:support@gynac.org"><span style='font-family:"Times New Roman",serif;
+color:windowtext;background:white'>support@gynac.org</span></a></span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;background:white'>. </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:0in;mso-add-space:auto;
+text-align:justify'><b style='mso-bidi-font-weight:normal'><span lang=EN-IN
+style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></b></p>
+
+</div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >ok</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        
+         <!-- FAQ the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" id="triggerFAQ" data-toggle="modal" data-target="#PrivacyPolicy" style="display:none">Open Modal</button>
+
+            <!-- Modal -->
+            <div id="PrivacyPolicy" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Privacy Policy</h3>
+                  </div>
+                  <div class="modal-body">
+                    
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+text-align:justify;line-height:normal;vertical-align:baseline'><b
+style='mso-bidi-font-weight:normal'><u><span lang=EN-IN style='font-family:
+"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+EN-IN'>PRIVACY POLICY: GYNECOLOGY ACADEMY<o:p></o:p></span></u></b></p><br><br>
+
+<p class=MsoListParagraphCxSpFirst style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>General: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Gynecology Academy ("<b
+style='mso-bidi-font-weight:normal'>Gynecology Academy" </b>or <b
+style='mso-bidi-font-weight:normal'>"we" </b>or <b style='mso-bidi-font-weight:
+normal'>"us" </b>or <b style='mso-bidi-font-weight:normal'>"our"</b> or "<b
+style='mso-bidi-font-weight:normal'>GYNAC") </b>is committed to the protection
+of personal information provided by the users ("<b style='mso-bidi-font-weight:
+normal'>You", "Your", "User") </b>to us. You agree that your use of the website
+</span><span lang=EN-IN><a href="http://www.gynac.org"><span style='font-family:
+"Times New Roman",serif;color:windowtext'>www.gynac.org</span></a></span><span
+lang=EN-IN style='font-family:"Times New Roman",serif'> implied your consent to
+the collection, retention and use of Your personal information in accordance
+with the terms of this Privacy Policy.</span><b style='mso-bidi-font-weight:
+normal'><span lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>No
+User information is rented or sold to any third party. When You use the
+website, the website may collect information about Your computer such as your </span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Internet addresses</span><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>, browser, IP address,
+etc. </span><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>This
+information is logged to help diagnose technical problems and to administer the
+Gynecology Academy Website and Materials in order to constantly improve
+quality. We may also track and analyze non-identifying and aggregate usage and
+volume statistical information from visitors and customers and provide such
+information to third parties. </span><span lang=EN-IN style='font-family:"Times New Roman",serif'>While
+we do maintain a high standard of security, the transmission of information
+over the Internet is not completely secure. While we do our best to protect
+your information, we cannot ensure the security of Your data transmitted over
+the Internet.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Access
+to the materials available through the website is conditional upon Your
+approval of this Privacy Policy, which should be read together with the Terms
+and Conditions ("<b style='mso-bidi-font-weight:normal'>Terms</b>"). You
+acknowledge that this Privacy Policy, together with our Terms, forms our
+agreement <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>with
+You in relation to Your use of the website. </span><span lang=EN-IN
+style='font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:EN-IN'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Personal Information collected: </span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>In order to provide the Website,
+We may require You to provide Us with certain information that personally
+identifies You (<b style='mso-bidi-font-weight:normal'>"Personal information"</b>).
+Personal Information includes the following categories of information:<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Name<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Address<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Email
+Address<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Phone
+Number<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Education<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Medical
+Qualification<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Professional
+Specialisation<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l0 level1 lfo6;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Institution/Workplace<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+text-align:justify;line-height:normal;vertical-align:baseline'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>If You communicate with Us by
+email or any other mode of correspondence, any information provided in such
+communication may be collected by Us. Such information is collected for our
+internal record keeping, as well as to improve our products and services. We
+may use Your information for promotional or market research purposes, and to
+customise the website according to your interests. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Our
+Website may transmit Your Personal Information to our internal servers. This
+Personal Information is immediately deleted once You delete Your Account,
+except to the extent it is necessary to store the same under applicable laws.
+We have implemented commercially reasonable physical, managerial, operational
+and technical security measures to protect the loss, misuse and alteration and
+to preserve the security of the Personally Information in our care.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Cookies and Technical
+Feedback</span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>:
+</span><span lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>A cookie is a small file which
+asks permission to be placed on Your computer’s hard drive. Once You agree, the
+file is added and the cookie helps analyse web traffic or lets You know when
+You visit a particular site. Cookies allow web applications to respond to You
+as an individual. The web application can tailor its operations to Your needs,
+likes and dislikes by gathering and remembering information about Your
+preferences.</span><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>We use
+traffic log cookies to identify which pages are being used. This helps us
+analyse data about web page traffic and improve our website in order to tailor
+it to customer needs. We only use this information for statistical analysis
+purposes and then the data is removed from the system. We do not use cookies to
+store personal data nor do We link non-personal information stored in cookies
+with personal data about specific individuals.&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Overall,
+cookies help us provide You with a better website, by enabling Us to monitor
+which pages You find useful and which You do not. A cookie in no way gives us
+access to Your computer or any information about You, other than the data You
+choose to share with Us.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>You can
+choose to accept or decline cookies. Most web browsers automatically accept cookies,
+but You can usually modify Your browser setting to decline cookies if You
+prefer. This may prevent You from taking full advantage of the website.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>We may
+request technical information regarding the operation and functioning of our
+Web sites from users through surveys. Survey participation is completely
+voluntary and the user has a choice whether or not to disclose any information.
+Information requested may include contact information (such as name and e-mail
+address) and demographic information (such as area code and age). Technical
+feedback received is used to respond to the user's question or comment and to
+improve our Web sites. Personally identifiable data submitted by the user for
+this purpose is not used for other purposes.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Links to other websites</span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>: Our website may
+contain links to third party websites or applications. You agree and understand
+that privacy policies of these websites are not under Our control. You
+understand that once You leave Our servers, use of any information You provide
+shall be governed by the privacy policy of the operator of the site used by
+you.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Disclosure of Personal
+Information</span></b><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>: We do
+not disclose Your Personal Information to any third parties other than to Our
+affiliates or other trusted entity or person, based on </span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>strict adherence and in compliance
+with our Privacy Policy and any other appropriate confidentiality and security
+measures.</span><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>We
+reserve the right to disclose Personal Information if required to do so by law
+or if we believe that it is necessary to do so to protect and defend the
+rights, property or personal safety of Gynecology Academy, the Website, or Our
+Users.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>You
+have a right to correct any errors in Your Personal Information available with
+Us. You may request Us in writing that We cease to use Your Personal
+Information. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Confidentiality and
+Security: </span></b><span lang=EN-IN style='font-family:"Times New Roman",serif'>Except
+as otherwise provided in this Privacy Policy, We will keep Your Personal
+Information private and will not share it with third parties, unless We believe
+in good faith that disclosure of Your Personal Information or any other
+information We collect about You is necessary for Permitted Use or to:</span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l4 level1 lfo7;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Comply
+with a court order or other legal process;<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l4 level1 lfo7;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Protect
+the rights, property or safety of Gynecology Academy or another party;<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l4 level1 lfo7;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Enforce
+the Terms;<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l4 level1 lfo7;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>Respond
+to claims that any posting or other content violates the rights of
+third-parties.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Security</span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>: </span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'>The security of Your Personal
+Information is important to Us. We follow generally accepted industry standards
+to protect the Personal Information submitted to Us, both during transmission
+and once We receive it.</span><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'>Although
+We make best possible efforts to store Personal Information in a secure
+operating environment that is not open to the public, You should understand
+that there is no such thing as complete security, and We do not guarantee that
+there will be no unintended disclosures of Your Personal Information. If We
+become aware that Your Personal Information has been disclosed in a manner not
+in accordance with this Privacy Policy, We will use reasonable efforts to
+notify You of the nature and extent of such disclosure (to the extent We know
+that information) as soon as reasonably possible and as permitted by law.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;text-indent:0in;
+line-height:normal;mso-list:l3 level1 lfo5;vertical-align:baseline'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>Updates and Changes to
+Privacy Policy</span></b><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>: </span><span
+lang=EN-IN style='font-family:"Times New Roman",serif'>We reserve the right, at
+our discretion, to change, modify, add or remove portions of Our Privacy policy
+at any time. Please check the Privacy Policy periodically for changes. Your
+continued usage of the Website after any modification of this Privacy Policy
+constitutes Your binding acceptance of such modification. </span><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'>For any material changes to the Terms and Privacy
+Policy, we shall make a reasonable effort to provide notice to you of such
+amended Terms by posting a notice on the Website. Disputes arising under these
+Terms or Privacy Policy will be resolved in accordance with the version of the
+Terms in place at the time the dispute arose. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;text-indent:0in;line-height:normal;mso-list:l3 level1 lfo5'><![if !supportLists]><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Restriction of Liability</span></b><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>: We do not store or collect Your
+Financial Information, though such Information may be collected by Our Payment
+Merchant for processing subscription payment in accordance with their Privacy
+Policy. We do not control the manner in or reasons why the Payment Merchant may
+collect such information, and cannot be held liable for any use or misuse
+thereof. Please read the Terms and Privacy Policy of Our Payment Merchant
+governing the collection of Your Financial Information by them.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'>All Materials, information, software, and included in
+or made available through this Website are provided "as is" and "as available"
+for your use. The content is provided without warranties of any kind, either
+express or implied, including but not limited to implied warranties of
+merchantability, fitness for a particular purpose, or non-infringement.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'>Reference in the Website to any any specific
+commercial products, processes, or services, or the use of any trade, firm or
+corporation name is for the information and convenience of the public, and does
+not constitute endorsement, recommendation, or favoring by Us.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in;mso-add-space:auto;
+text-align:justify;line-height:normal'><span lang=EN-IN style='font-family:
+"Times New Roman",serif'>If you have any questions or concerns, feel free to
+email Us or to correspond at </span><span lang=EN-IN><a
+href="mailto:support@gynac.org"><span style='font-family:"Times New Roman",serif;
+color:windowtext'>support@gynac.org</span></a></span><span lang=EN-IN
+style='font-family:"Times New Roman",serif'> and We will attempt to address
+Your concerns.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif;mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:EN-IN'>Last updated on: 22<sup>nd</sup>
+October, 2016.<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpLast style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;margin-left:0in;mso-add-space:auto;text-align:justify;line-height:normal;
+vertical-align:baseline'><span lang=EN-IN style='font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+lang=EN-IN style='font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >ok</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        
+       
+        
+        
+        
+        
+        <!-- FAQ the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" id="triggerFAQ" data-toggle="modal" data-target="#FAQ" style="display:none">Open Modal</button>
+
+            <!-- Modal -->
+            <div id="FAQ" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">FAQ</h3>
+                  </div>
+                  <div class="modal-body">
+                    <p class="text-color">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </p>
+                    <br>
+                    <p class="text-color">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </p>
+                    <br>
+                    <p class="text-color">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >ok</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        
+        <!-- Refund & Cancellation policy the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" id="triggerRefundCancellationpolicy" data-toggle="modal" data-target="#RefundCancellationpolicy" style="display:none">Open Modal</button>
+
+            <!-- Modal -->
+            <div id="RefundCancellationpolicy" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Refund & Cancellation policy</h3>
+                  </div>
+                  <div class="modal-body">
+                    <p class="text-color">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </p>
+                    <br>
+                    <p class="text-color">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </p>
+                    <br>
+                    <p class="text-color">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >ok</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+       
+</body>
+</html>

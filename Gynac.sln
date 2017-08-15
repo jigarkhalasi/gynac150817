@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gynac", "Gynac\Gynac.csproj", "{E85A091A-C19F-4704-BD93-6833F44E93E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gynac.Tests", "Gynac.Tests\Gynac.Tests.csproj", "{1D782A12-0596-49A1-8937-2F6A9AF4FCC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E85A091A-C19F-4704-BD93-6833F44E93E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85A091A-C19F-4704-BD93-6833F44E93E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85A091A-C19F-4704-BD93-6833F44E93E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85A091A-C19F-4704-BD93-6833F44E93E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D782A12-0596-49A1-8937-2F6A9AF4FCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D782A12-0596-49A1-8937-2F6A9AF4FCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D782A12-0596-49A1-8937-2F6A9AF4FCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D782A12-0596-49A1-8937-2F6A9AF4FCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
