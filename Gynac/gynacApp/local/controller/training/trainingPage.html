@@ -70,8 +70,15 @@
     <div class="training" ng-init="slide('next')">
         <h2><strong class="magenta">Training Detail</strong></h2> </div>
     <div class="container-fluid mypage-all">
-        <div class="main-page container">
-            <div class="col-md-6 main-training-left">
+        <div class="main-page container">            
+            <div class="col-md-12">
+                <div class="training-detail-left">
+                    <div class="training-title-left">
+                        <h3>Your course is yet to start</h3>
+                    </div>                   
+                </div>
+            </div>
+            <div class="col-md-6 main-training-left" style="display:none;">
                 <div class="training-detail-left">
                     <div class="training-title-left">
                         <h3>Course Registered</h3> </div>
@@ -95,10 +102,11 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-6 main-training-right">
+            <div class="col-md-6 main-training-right" style="display:none;">
                 <div class="training-detail-right">
                     <div class="training-title-right">
-                        <h3>Course Completed</h3> </div>
+                        <h3>Course Completed</h3>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr>

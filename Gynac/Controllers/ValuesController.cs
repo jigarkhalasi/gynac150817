@@ -188,6 +188,22 @@ namespace Gynac
             return result;
         }
 
+        [HttpPost]
+        [Route("signin")]
+        public int SignIn(int userId)
+        {
+            int result = 1;
+            try
+            {
+                result = _businessLayer.SignIn(userId);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+
         [Route("getuser")]
         public User GetUser(int userId)
         {

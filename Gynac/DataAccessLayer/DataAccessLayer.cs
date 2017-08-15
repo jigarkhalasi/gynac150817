@@ -429,6 +429,34 @@ namespace Gynac
             return cost;
         }
 
+        //sign out user update the Islogin value
+        public int SignIn(int userId)
+        {
+            int cost = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Update_SignIn_User", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+
+                        cost = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return cost;
+        }
         public User GetUser(int userId)
         {
             DataSet dsResult = new DataSet();
