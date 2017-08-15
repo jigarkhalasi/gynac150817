@@ -17,15 +17,6 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
     $scope.slide = function (dir) {
         $('#carousel-example-generic').carousel(dir);
     };
-
-    $scope.isConditional = function (isChecked) {
-        if (isChecked) {
-            $scope.user.isChecked = false;
-        }
-        else {
-            $scope.user.isChecked = true;
-        }
-    }
     
     function isValid(){
         var valid = true;
