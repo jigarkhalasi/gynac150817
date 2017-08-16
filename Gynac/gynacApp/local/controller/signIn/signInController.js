@@ -151,7 +151,21 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                 else {
                     $scope.signIn = 5;
                     $scope.dothisdone = data.Otp;
-                    $scope.logindata = data;                    
+                    $scope.logindata = data;
+
+                    //$scope.name = 'Superhero';
+                    //$scope.counter = 300;
+                    //$scope.onTimeout = function () {
+                    //    if ($scope.counter > 0) {
+                    //        $scope.counter--;
+                    //        mytimeout = $timeout($scope.onTimeout, 1000);
+                    //    }
+                    //    else {
+                    //        //otp blank
+                    //    }
+
+                    //}
+                    //var mytimeout = $timeout($scope.onTimeout, 1000);
                     //$rootScope.authenticatedUser = data;
                     //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
                     //$scope.authenticLecture();

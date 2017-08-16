@@ -670,26 +670,36 @@ namespace Gynac
                     {
                         if (model.TalkId == Convert.ToInt32(ds.Tables[1].Rows[0]["TalkId"].ToString()))
                         {
-                            Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                            bool backupVideo = Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["BackupVideoLink"]);
+                            if (backupVideo)
+                            {
+                                model.VideoLink = row["BackupVideoLink"].ToString();
+                            }
+                            else
+                            {
 
-                            Int32 ExpireTime = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["ExpireTime"]);
-                            string SecurityKey = System.Configuration.ConfigurationManager.AppSettings["SecurityKey"];
-                            string videoUrl = System.Configuration.ConfigurationManager.AppSettings["Jwplayer"];
+                                Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
-                            model.ExpTime = unixTimestamp + ExpireTime;
-                            string vdeiolink = row["VideoLink"].ToString() + ":" + model.ExpTime + ":" + SecurityKey;
+                                Int32 ExpireTime = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["ExpireTime"]);
+                                string SecurityKey = System.Configuration.ConfigurationManager.AppSettings["SecurityKey"];
+                                string videoUrl = System.Configuration.ConfigurationManager.AppSettings["Jwplayer"];
 
-                            model.Signature = Encrypt(vdeiolink, true);
-                            model.VideoLink = row["VideoLink"].ToString();
+                                model.ExpTime = unixTimestamp + ExpireTime;
+                                string vdeiolink = row["VideoLink"].ToString() + ":" + model.ExpTime + ":" + SecurityKey;
 
-                            // model.VideoLink = videoUrl + row["VideoLink"].ToString() + ".html?sig=" + model.Signature + "&exp=" + model.ExpTime;
+                                model.Signature = Encrypt(vdeiolink, true);
+                                model.VideoLink = row["VideoLink"].ToString();
 
-                            //string vdeiolink1 = "players/wHEkqM70-RZnnsc9B" + ":" + model.ExpTime + ":" + SecurityKey;
-                            //model.Signature = Encrypt(vdeiolink1, true);
+                                // model.VideoLink = videoUrl + row["VideoLink"].ToString() + ".html?sig=" + model.Signature + "&exp=" + model.ExpTime;
 
-                            //model.PreViewVideoLink = videoUrl + "players/wHEkqM70-RZnnsc9B" + ".html?sig=" + model.Signature + "&exp=" + model.ExpTime;
+                                //string vdeiolink1 = "players/wHEkqM70-RZnnsc9B" + ":" + model.ExpTime + ":" + SecurityKey;
+                                //model.Signature = Encrypt(vdeiolink1, true);
 
-                            // model.VideoLink = row["VideoLink"].ToString();
+                                //model.PreViewVideoLink = videoUrl + "players/wHEkqM70-RZnnsc9B" + ".html?sig=" + model.Signature + "&exp=" + model.ExpTime;
+
+                                // model.VideoLink = row["VideoLink"].ToString();
+                            }
+
                         }
                     }
                     else
