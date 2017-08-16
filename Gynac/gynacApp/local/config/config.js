@@ -129,3 +129,9 @@ app.constant('jwplayer',
   {
       "url": 'http://content.jwplatform.com/'
   });
+
+app.filter('secondsToDateTime', [function () {
+    return function (seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}])

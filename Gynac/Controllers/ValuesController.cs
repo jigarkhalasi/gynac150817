@@ -82,10 +82,13 @@ namespace Gynac
             try
             {
                 result = _businessLayer.VerifyLogin(login);
-                if (!result.IsLogin)
+                if (result != null)
                 {
-                    var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
-                    result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);
+                    if (!result.IsLogin && result.EmailVerificationPending != true)
+                    {
+                        var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
+                        result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);
+                    }
                 }
             }
             catch (Exception ex)
