@@ -793,5 +793,37 @@ namespace Gynac
 
             return dsResult;
         }
+
+        //get all user ratings
+        public DataSet GetUserRatings(int userId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_User_Ratings", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
+        }
     }
 }

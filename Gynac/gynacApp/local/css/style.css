@@ -982,6 +982,10 @@ a {
 }
 
 .accordion li.default .submenu {display: block;}
+
+.setMyaccordion {
+    display:none;
+}
 /**
  * Submenu
  -----------------------------*/

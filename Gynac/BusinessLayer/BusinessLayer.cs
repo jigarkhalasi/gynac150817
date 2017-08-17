@@ -934,6 +934,47 @@ namespace Gynac
             }
             return result;
         }
+
+        public IEnumerable<UserRatingsModel> GetUserRatings(int userId)
+        {
+            var model = new List<UserRatingsModel>();
+            try
+            {
+                DataSet ds = _dataAccessLayer.GetUserRatings(userId);
+                if (ds != null)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var data = new UserRatingsModel();
+
+                        int ratingId = Convert.ToInt32(row["Id"].ToString());
+                        data.RatingId = ratingId;
+
+                        data.RatingName = row["RatingName"].ToString();
+
+                        if (ds.Tables[1] != null)
+                        {
+                            foreach (DataRow userRate in ds.Tables[1].Rows)
+                            {
+                                if (ratingId == Convert.ToInt32(userRate["RatId"].ToString()))
+                                {
+                                    data.UserRatingId = Convert.ToInt32(userRate["UserRatingId"].ToString());
+                                    data.UserId = Convert.ToInt32(userRate["UserId"].ToString());
+                                    data.RateMark = Convert.ToInt32(userRate["RateMark"].ToString());                                    
+                                }
+                            }
+                        }
+                        model.Add(data);
+                    }
+                }
+            }
+            catch
+            {
+
+                throw;
+            }
+            return model;
+        }
     }
 
     public enum EmailType

@@ -26,7 +26,8 @@
                                 <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
                             </li>-->
                             <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
-                            <li class="dropdown li-1"><a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
                                 <ul class="dropdown-menu">
                                     <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
                                     <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
@@ -51,7 +52,8 @@
                 <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
                 <div class="col-sm-12 col-md-7 sm-center">
                     <h2>ULTRASOUND IN GYNECOLOGY</h2>
-                    <h2>4 - MONTH CERTIFICATION COURSE</h2> </div>
+                    <h2>4 - MONTH CERTIFICATION COURSE</h2>
+                </div>
                 <div class="col-sm-12 col-md-2 sm-center">
                     <div class='btn-toolbar pull-right'>
                         <div class='btn-group'> <a href="#/signUp#signTop" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
@@ -66,1045 +68,95 @@
             <div class="logo-2">
                 <img src="gynacApp/local/img/logo-1.png" class="">
             </div>
-        </div>--></div>
+        </div>-->
+    </div>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <div class="container">
-        <!--<div class="row" ng-repeat="section in lecGroupList">
-            <p>&nbsp;</p>
-            <h1>{{section.sectionName}}</h1>
-            <p>A brief description of {{section.sectionName}}</p>
-            <p>&nbsp;</p>
-            <div class="col-md-12" ng-repeat="module in section.modules">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <h3 class="panel-title">{{module.moduleName}}</h3> </div>
-                            <div class="col-xs-6 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="list in module.talkList">
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">1</td>
-                                    <td>
-                                        <h4>{{list.title}}</h4> </td>
-                                    <td>5 hours</td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-default"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openLecture(list)"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-        <!--<i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i>
-<i class="fa fa-check-circle-o text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i>
-<i class="fa fa-circle-o-notch text-info fa-fw fa-2x" aria-hidden="true"></i>-->
         <div class="row">
-            <p>&nbsp;</p>
-            <h1>Session 1</h1>
-            <p>&nbsp;</p>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 1: General Techniques in Gynecological Ultrasound</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
+            <div ng-repeat="(Session, sessionValue) in userTalkList | groupBy: 'SessionName'" ng-init="outerIndex = $index">
+                <p>&nbsp;</p>
+                <h1>{{ Session }}</h1>
+                <p>A brief description of {{ Session }}</p>
+                <p>&nbsp;</p>
+                <div class="col-md-12" ng-repeat="(module, moduleValue) in sessionValue | groupBy: 'ModuleName'">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">{{module}}</h3>
+                                </div>
+                                <div class="col col-xs-6 text-right">
+                                    <button type="button" class="btn btn-md btn-success btn-create" ng-click="goToImageSubmission(module)"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">1</td>
-                                    <td>
-                                        <h4>Methodology (TAS & TVS) and Tricks to Scan the Pelvis</h4> </td>
-                                    <td>50 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID1"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">2</td>
-                                    <td>
-                                        <h4>Ultrasound Settings and Technique</h4> </td>
-                                    <td>50 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID2"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">3</td>
-                                    <td>
-                                        <h4>Doppler in Gynecology</h4> </td>
-                                    <td>1hr 15 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID3"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">4</td>
-                                    <td>
-                                        <h4>Three Dimensional Ultrasound in Gynecology</h4> </td>
-                                    <td>1hr 36 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID4"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td> <a type="button" class="btn btn-sm btn-primary btn-create btn-custom" data-toggle="modal" data-target="#video-ID4"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">5</td>
-                                    <td>
-                                        <h4>Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)</h4> </td>
-                                    <td>57 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID5"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td> <a type="button" class="btn btn-sm btn-primary btn-create btn-custom" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 2: Ultrasound Evaluation of Myometrium</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th class="hidden-xs">ID</th>
+                                        <th style="width: 500px;">Name</th>
+                                        <th style="width: 100px;">Duration</th>
+                                        <th>Summary of the Talk</th>
+                                        <th>Action</th>
+                                        <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="talk in moduleValue">
+                                        <td align="center" align="center" style="vertical-align: middle;">
+                                            <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
+                                            <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
+                                            <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'"></i>
+                                            <i class="fa fa-check-square text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'"></i>
+                                        </td>
+                                        <!--{{talk.UserTalkId}}-->
+                                        <td class="hidden-xs">{{ outerIndex * userTalkList.length + $index + 1 }}</td>
+                                        <td>
+                                            <h4>{{talk.TalkName}}</h4>
+                                        </td>
+                                        <td>{{talk.Duration}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-default" ng-click="getTalkOverview(talk.TalkId)" data-toggle="modal" data-target="#overview-ID1"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);" data-toggle="modal" data-target="#video-ID4"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">6</td>
-                                    <td>
-                                        <h4>Evaluation of Myometrium & Normal Myometrium</h4> </td>
-                                    <td>23 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID6"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td> <a type="button" class="btn btn-sm btn-primary btn-create btn-custom" data-toggle="modal" data-target="#video-ID6"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">7</td>
-                                    <td>
-                                        <h4>Fibroid (Leiomyoma) & Sarcoma</h4> </td>
-                                    <td>58 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID7"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td> <a type="button" class="btn btn-sm btn-primary btn-create btn-custom" data-toggle="modal" data-target="#video-ID7"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">8</td>
-                                    <td>
-                                        <h4>Adenomyosis and Adenomyoma</h4> </td>
-                                    <td>32 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID8"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <!--<td> <a type="button" class="btn btn-sm btn-primary btn-create btn-custom" data-toggle="modal" data-target="#video-ID8"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</a> </td>-->
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 3: Ultrasound Evaluation of Congenital Uterine Anomalies</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">9</td>
-                                    <td>
-                                        <h4>Congenital Uterine Anomalies</h4> </td>
-                                    <td>26 Mins</td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID9"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <p>&nbsp;</p>
-            <h1>Session 2</h1>
-            <p>&nbsp;</p>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 4: Ultrasound Evaluation of Endometrium</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">10</td>
-                                    <td>
-                                        <h4>Evaluation of Endometrium & Normal Endometrium</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID10"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">11</td>
-                                    <td>
-                                        <h4>Endometrial Polyp & Hyperplasia</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID11"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">12</td>
-                                    <td>
-                                        <h4>Endometrial Carcinoma</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID12"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">13</td>
-                                    <td>
-                                        <h4>Other Endometrial Pathology</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID13"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 5: Ultrasound in Infertility</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">14</td>
-                                    <td>
-                                        <h4>Ultrasound in Polycystic Ovarian Syndrome</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID14"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">15</td>
-                                    <td>
-                                        <h4>Cycle Assessment in Infertility and ART</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID15"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">16</td>
-                                    <td>
-                                        <h4>Tubal Assessment</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID16"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">17</td>
-                                    <td>
-                                        <h4>Oocyte Retrieval and Embryo Transfer</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID17"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 6: Ultrasound Evaluation of Cervix & Vagina</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">18</td>
-                                    <td>
-                                        <h4>Ultrasound Evaluation of Cervix</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID18"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">19</td>
-                                    <td>
-                                        <h4>Ultrasound Evaluation of Vagina</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID19"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <p>&nbsp;</p>
-            <h1>Session 3</h1>
-            <p>&nbsp;</p>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 7: Ultrasound Evaluation of Ovaries</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">20</td>
-                                    <td>
-                                        <h4>Evaluation of Ovarian & Adnexal Pathology (based on IOTA Guidelines)</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID20"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">21</td>
-                                    <td>
-                                        <h4>Ultrasound Evaluation of Normal Ovaries</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID21"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">22</td>
-                                    <td>
-                                        <h4>Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 1</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID22"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">23</td>
-                                    <td>
-                                        <h4>Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 2</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID23"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">24</td>
-                                    <td>
-                                        <h4>Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 3</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID24"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 8: Ultrasound Evaluation of Adnexa</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">25</td>
-                                    <td>
-                                        <h4>Non Ovarian Adnexal Pathology – Part 1</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID25"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">26</td>
-                                    <td>
-                                        <h4>Non Ovarian Adnexal Pathology – Part 2</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID26"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">27</td>
-                                    <td>
-                                        <h4>Practice - Evaluation of Ovarian & Adnexal Pathology (based on IOTA Guidelines)</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID27"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 9: Endometriosis</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">28</td>
-                                    <td>
-                                        <h4>Endometriosis Including Deep Infiltrating & Extra-Pelvic Endometriosis</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID28"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <p>&nbsp;</p>
-            <h1>Session 4</h1>
-            <p>&nbsp;</p>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 10: Pregnancy Related Conditions</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">29</td>
-                                    <td>
-                                        <h4>Normal and Abnormal Early Pregnancy</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID29"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">30</td>
-                                    <td>
-                                        <h4>Spectrum of Ectopic Pregnancies and PUL</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID30"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">31</td>
-                                    <td>
-                                        <h4>Retained Products of Conception</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID31"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">32</td>
-                                    <td>
-                                        <h4>Gestational Trophoblastic Disease</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID32"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 11: Torsion & Acute Pelvic Pain</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">33</td>
-                                    <td>
-                                        <h4>Torsion (Ovarian & Non-Ovarian)</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID33"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">34</td>
-                                    <td>
-                                        <h4>Other Causes of Acute Pelvic Pain</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID34"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9 module-name">
-                                <h3 class="panel-title">Module 12: Ultrasound in Miscellaneous Conditions</h3> </div>
-                            <div class="col-xs-3 text-right">
-                                <button type="button" class="btn btn-md btn-success btn-create"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered table-list">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th class="hidden-xs">ID</th>
-                                    <th style="width: 500px;">Name</th>
-                                    <th style="width: 100px;">Duration</th>
-                                    <th>Summary of the Talk</th>
-                                    <th>Action</th>
-                                    <th><i class="fa fa-arrow-down fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Submit Self Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center" align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">35</td>
-                                    <td>
-                                        <h4>Uterine Vascular Malformations</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID35"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">36</td>
-                                    <td>
-                                        <h4>Uterine Perforation & Uterovesical Fistula</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID36"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">37</td>
-                                    <td>
-                                        <h4>Caesarean Scar Defect & Retroflexed Uterus</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID37"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="vertical-align: middle;"> <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;"></i> </td>
-                                    <td class="hidden-xs">38</td>
-                                    <td>
-                                        <h4>Intrauterine Contraceptive Device</h4> </td>
-                                    <td></td>
-                                    <td> <a type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#overview-ID38"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</a> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create btn-custom"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-create"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--<div class="container training-body" ng-show="lecture" ng-init="slide('next')"> 
-        <div class="row training-header">
-            <h2 class="text-center"><strong class="magenta">Lectures</strong></h2> </div>
-        <div class="body-inner">
-            <div class="col-md-9 open-lec">
-                <div class="inner-block" ng-repeat="list in speakerVideoList">
-                    <div class="thumbnail">
-                        <div class="col-md-3 tra-img" ng-if="list.isActive"> <img ng-src="{{list.iconSrc}}" ng-click="openLecture(list)" alt="..."  style="cursor: pointer;"> </div>
-                        <div class="col-md-3 tra-img" ng-if="!list.isActive"> <img ng-src="{{list.iconSrc}}" alt="..."> </div>
-                        <div class="col-md-6 caption tra-description">
-                            <h4 ng-bind="list.title"></h4>
-                            <p ng-bind="list.des1"></p>
-                            <br ng-show="list.isExpand">
-                            <p ng-bind="list.des2" ng-show="list.isExpand"></p>
-                            <div style="text-align:right"> <i class="fa fa-plus-circle" style="font-size: 25px;" aria-hidden="true" ng-show="!list.isExpand" ng-click="list.isExpand = !list.isExpand"></i> <i class="fa fa-minus-circle" style="font-size: 25px;" aria-hidden="true" ng-show="list.isExpand" ng-click="list.isExpand = !list.isExpand"></i> </div>
-                            <p>-<span ng-bind="list.DrName"></span></p>
-                            <label> INR <i class="fa fa-inr" aria-hidden="true"></i> <span ng-bind="list.amount" style="font-weight: bold;"></span> /- </label>
-                            <div>
-                                <label> <span style="font-weight: bold;">Lecture validity is for 3 months from the date of purchase.</span> </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="col-md-12 detail-btn" ng-if="!list.isActive">
-                                <button class="btn btn-default form-control" ng-click="selectLecture(list)" ng-show="!list.isSelected">Add to Cart</button>
-                                <button class="btn btn-default form-control selecteditem" ng-click="selectLecture(list)" ng-show="list.isSelected">Remove from Cart</button>
-                            </div>
-                            <div class="col-md-12 detail-btn" ng-if="list.isActive">
-                                <button class="btn btn-default form-control selecteditem" ng-click="openLecture(list)" > Play</button>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="col-md-3 right">
-                <div class="thumbnail">
-                    <div class="caption upcome">
-                        <h4>CART</h4>
-                        <div class="row" style="margin-top: 8px;">
-                            <h5 class="col-md-6 text-right">Amount : </h5>
-                            <h5 class="col-md-6">
-                                         INR
-                                        <i class="fa fa-inr" aria-hidden="true"></i>
-                                        <span ng-bind="totalAmount" style="font-weight: bold;"></span> 
-                                        /-
-                                    </h5> </div>
-                    </div>
-                    <div ng-repeat="list in speakerVideoList" ng-show="list.isSelected">
-                        <hr style="margin-bottom: 5px;">
-                        <div class="col-md-10 caption">
-                            <h4 ng-bind="list.title"></h4> </div>
-                        <div class="col-md-2 right" style="text-align:right;     padding: 5px;"> <i class="fa fa-times" aria-hidden="true" ng-click="selectLecture(list)" style="font-size:25px"></i> </div> <img ng-src="{{list.iconSrc}}" style="width: 90%; margin-left: 5%;" alt="..."> </div>
-                    <button class="btn btn-default form-control selecteditem margin-top10" ng-click="saveLecture()" ng-show="showPayBtn(speakerVideoList)">Pay</button>
-                </div>
-            </div>
-        </div>
-    </div>-->
+ 
     <div class="container training-body" ng-show="!lecture">
-        <div ng-show="fullview"> <span>
-						<i class="fa fa-arrow-left back-btn" ng-click="lecture = true;" style="font-size:43px; padding-bottom: 15px;" aria-hidden="true"></i>
-					</span>
+        <div ng-show="fullview">
+            <span>
+                <i class="fa fa-arrow-left back-btn" ng-click="lecture = true;" style="font-size:43px; padding-bottom: 15px;" aria-hidden="true"></i>
+            </span>
             <div class="row">
-                <div class="col-sm-4 col-md-4"> <img ng-src="{{currentLecture.profilePicSrc}}" alt="Dr.image" style="width:60%">
+                <div class="col-sm-4 col-md-4">
+                    <img ng-src="{{currentLecture.profilePicSrc}}" alt="Dr.image" style="width:60%">
                     <audio id="playAudio">
-                        <source type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <source type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
                     <h3 style="margin:10px 0px" ng-bind="currentLecture.DrName"></h3>
                     <p style="margin:10px 0px; font-size: 16px;" ng-bind="currentLecture.emailId"></p>
                     <div class="video-pay-pause"> <i class="fa fa-play-circle-o play play-pause-disable" aria-hidden="true"></i> <i class="fa fa-pause pause" aria-hidden="true"></i> <span class="time"></span> </div>
                 </div>
                 <div class="col-sm-8 col-xs-8 col-md-8 col-lg-8 speaker-biography display-none lecture">
-                    <div class="slide-screen"> <img class="img" alt="" /> <img src="gynacApp/local/img/expand.png" class="expand" ng-click="fullview = false" alt="" />
+                    <div class="slide-screen">
+                        <img class="img" alt="" /> <img src="gynacApp/local/img/expand.png" class="expand" ng-click="fullview = false" alt="" />
                         <div class="video-container normalview">
                             <!--<video id="subVideo">
-                                  
+
                                 </video>-->
                         </div>
                     </div>
@@ -1121,10 +173,11 @@
         <div ng-hide="fullview">
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 speaker-biography display-none lecture">
-                    <div class="slide-screen" style="height: 550px"> <img src="gynacApp/local/img/torsion/Slide1.jpg" style="height: 100%; margin: 0 auto; display: block;" class="img" alt="" /> <img src="gynacApp/local/img/collapse.png" class="expand" ng-click="fullview = true" alt="" />
+                    <div class="slide-screen" style="height: 550px">
+                        <img src="gynacApp/local/img/torsion/Slide1.jpg" style="height: 100%; margin: 0 auto; display: block;" class="img" alt="" /> <img src="gynacApp/local/img/collapse.png" class="expand" ng-click="fullview = true" alt="" />
                         <div class="video-container fullview">
                             <!--<video class="subVideo fullViewVideo">
-                                          
+
                                         </video>-->
                         </div>
                     </div>
@@ -1143,7 +196,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Log In</h3> </div>
+                    <h3 class="modal-title">Log In</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center">Log in required!! </p>
                 </div>
@@ -1162,7 +216,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Payment</h3> </div>
+                    <h3 class="modal-title">Payment</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center">payment successfully done</p>
                 </div>
@@ -1181,7 +236,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title" style="color:red">Payment</h3> </div>
+                    <h3 class="modal-title" style="color:red">Payment</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center" style="color:red">Payment Error!!</p>
                 </div>
@@ -1200,10 +256,12 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Terms & Conditions</h3> </div>
+                    <h3 class="modal-title">Terms & Conditions</h3>
+                </div>
                 <div class="modal-body" ng-init="checkedTermsCondition = false">
                     <div id="contentFromHome"></div>
-                    <br> </div>
+                    <br>
+                </div>
                 <div class="modal-footer">
                     <input type="checkbox" ng-model="checkedTermsCondition"> <span><b>I HAVE READ AND AGREE TO THE ABOVE TERMS AND CONDITIONS</b></span>
                     <button type="button" class="btn btn-default selecteditem " data-dismiss="modal" ng-click="playAfterTerms()" ng-disabled="checkedTermsCondition == false" style="    margin-left: 15px;">I AGREE</button>
@@ -1220,25 +278,34 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal" ng-click="closeCounterModel()">&times;</button>
-                    <h3 class="modal-title">{{currentLecture.title}}</h3> </div>
+                    <h3 class="modal-title">{{currentLecture.title}}</h3>
+                </div>
                 <div class="modal-body" ng-init="checkedTermsCondition = false">
                     <div>
-                        <h4>Your lecture is being prepared. Please wait for 
+                        <h4>
+                            Your lecture is being prepared. Please wait for
                             <span style="font-size: 22px; color:#9F1F63 "><b>{{counter}}</b></span>
                             <span style="font-size: 22px; color:#9F1F63"><b>seconds</b></span>
-                        </h4> </div>
+                        </h4>
+                    </div>
                     <br>
                     <div>
                         <h4>Meanwhile, please go through the following</h4>
                         <br>
                         <ul style="margin-left: 20px; font-weight: 200; line-height: 1.8;" class="coundown-model-ul">
                             <li>For viewing the video you will need a good and stable internet <span ng-dblclick="counter = 1">speed.</span></li>
-                            <li>You will be able to pause and resume the lecture at any time using the below icons
-                                <br> <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 30px; pointer-events: none;"></i> <i class="fa fa-pause" aria-hidden="true" style="font-size: 30px;    margin-left: 10px; pointer-events: none;"></i> </li>
-                            <li>You can switch backword / forward to any slide by using the 2 arrows in the slider control and then clicking on the desired slide thumbnail.
-                                <br> <img src="gynacApp/local/img/rtModel.png" alt="" /> <img src="gynacApp/local/img/ltModel.png" alt="" style="margin-left: 50px;" /> </li>
-                            <li>You can toggle between enlarged and normal slide view by clicking:
-                                <br> <img src="gynacApp/local/img/expand.png" style="    margin-left: 12px;" class="" width="50px"> <img src="gynacApp/local/img/collapse.png" style="margin-left: 25px;" class="" width="50px"> </li>
+                            <li>
+                                You will be able to pause and resume the lecture at any time using the below icons
+                                <br> <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 30px; pointer-events: none;"></i> <i class="fa fa-pause" aria-hidden="true" style="font-size: 30px;    margin-left: 10px; pointer-events: none;"></i>
+                            </li>
+                            <li>
+                                You can switch backword / forward to any slide by using the 2 arrows in the slider control and then clicking on the desired slide thumbnail.
+                                <br> <img src="gynacApp/local/img/rtModel.png" alt="" /> <img src="gynacApp/local/img/ltModel.png" alt="" style="margin-left: 50px;" />
+                            </li>
+                            <li>
+                                You can toggle between enlarged and normal slide view by clicking:
+                                <br> <img src="gynacApp/local/img/expand.png" style="    margin-left: 12px;" class="" width="50px"> <img src="gynacApp/local/img/collapse.png" style="margin-left: 25px;" class="" width="50px">
+                            </li>
                             <li>For any clarifications related to the subject of the lecture, please email the author</li>
                             <li>For any technical assistance, please email <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a></li>
                             <li>Downloading / Printing / Reproducing of any content is strictly prohibited</li>
@@ -1260,10 +327,12 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                    <h3 class="modal-title">Countdown</h3> </div>
+                    <h3 class="modal-title">Countdown</h3>
+                </div>
                 <div class="modal-body" ng-init="checkedTermsCondition = false">
                     <div class="text-center">
-                        <h1>opening in</h1> <span style="font-size: 50px"><b id="subcounter1">5</b></span> </div>
+                        <h1>opening in</h1> <span style="font-size: 50px"><b id="subcounter1">5</b></span>
+                    </div>
                 </div>
                 <div class="modal-footer" style="display:none">
                     <button type="button" class="btn btn-default selecteditem " data-dismiss="modal" id="playSubTriggerBtn"></button>
@@ -1280,11 +349,15 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                    <h3 class="modal-title">Payment</h3> </div>
+                    <h3 class="modal-title">Payment</h3>
+                </div>
                 <div class="modal-body" ng-init="checkedTermsCondition = false">
                     <div class="text-center">
-                        <h5 style="text-align: center;">Your registered country does not have an online payment option. 
-                        Please email us at <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a> for other payment options.</h5> </div>
+                        <h5 style="text-align: center;">
+                            Your registered country does not have an online payment option.
+                            Please email us at <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a> for other payment options.
+                        </h5>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default selecteditem " data-dismiss="modal">Ok</button>
@@ -1301,14 +374,18 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Payment</h3> </div>
+                    <h3 class="modal-title">Payment</h3>
+                </div>
                 <div class="modal-body">
                     <div class="text-center">
                         <h5 style="text-align: center;">This site is going live and will accept payments from 7th Nov 2016. Please buy the talks from 7th Nov.</h5>
                         <br>
-                        <h5 style="text-align: center;">Please email at 
+                        <h5 style="text-align: center;">
+                            Please email at
                             <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a>
-                            for any clarifications.</h5> </div>
+                            for any clarifications.
+                        </h5>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default selecteditem " data-dismiss="modal">Ok</button>
@@ -1325,7 +402,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Under Development</h3> </div>
+                    <h3 class="modal-title">Under Development</h3>
+                </div>
                 <div class="modal-body">
                     <div class="text-center">
                         <p>This Talk in under development</p>
@@ -1344,9 +422,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Methodology (TAS & TVS) and Tricks to Scan the Pelvis</h4> </div>
+                <h4 class="modal-title">{{ overViewDetails[0].TalkName}}</h4>
+            </div>
             <div class="modal-body">
-                <p>Transabdominal and transvaginal scan: Basics, methodology, various signs, manoeuvres, tips and tricks of scanning the pelvis.</p>
+                <p>{{ overViewDetails[0].Talkdesc}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1354,111 +433,36 @@
         </div>
     </div>
 </div>
-<!--Ultrasound Settings and Technique-->
-<div class="modal fade model-center" id="overview-ID2">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ultrasound Settings and Technique</h4> </div>
-            <div class="modal-body">
-                <p>Information about the basic features and adjustments possible on the scanner and also how to modify them for the investigator’s best advantage for individual cases. Talk includes the discussion about the settings required for a good quality B mode (2D ultrasound) image and also for the colour, power and spectral Doppler with the minimum required physics, for the clinician.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Doppler in Gynecology-->
-<div class="modal fade model-center" id="overview-ID3">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Doppler in Gynecology</h4> </div>
-            <div class="modal-body">
-                <p>Types, Settings, Colour Scoring, 3D Doppler, advantages and utility in various case scenarios including malignancies, torsion etc.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Three Dimensional Ultrasound in Gynecology-->
-<div class="modal fade model-center" id="overview-ID4">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Three Dimensional Ultrasound in Gynecology</h4> </div>
-            <div class="modal-body">
-                <p>Basics concepts, advantages, steps involved in 3D imaging, utility in various gynecological conditions using various display modes.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="modal fade video" id="video-ID4">
     <div class="modal-dialog modal-xxl">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Three Dimensional Ultrasound in Gynecology</h4> </div>
+                <h4 class="modal-title">Three Dimensional Ultrasound in Gynecology</h4>
+            </div>
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-3">
                             <ul id="accordion" class="accordion">
                                 <li>
-                                    <div class="col_4 pic"> <img class="img-responsive profilepic" alt="Mala Sibal" src="gynacApp/local/img/profile01.png">
-                                        <div class="edit-pic">
-                                            <a href="" target="_blank" class="fa fa-facebook"></a>
-                                            <a href="" target="_blank" class="fa fa-linkedin"></a>
-                                            <a href="" target="_blank" class="fa fa-twitter"></a>
-                                        </div>
+                                    <div class="col_4 pic">
+                                        <img class="img-responsive profilepic" alt="Mala Sibal" src="gynacApp/local/img/profile01.png">                                        
                                         <div class="username">
-                                            <h3>Mala Sibal</h3>
-                                            <p style="font-size: 11px;"><i class="fa fa-briefcase"></i> Consultant Physician </p>
+                                            <h3>Mala Sibal</h3>                                        
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="link"><i class="fa fa-globe"></i>About<i class="fa fa-chevron-down"></i></div>
-                                    <ul class="submenu">
-                                        <li>
-                                            <div class="inner"><i class="fa fa-calendar fa-fw left-none inner"></i> Date of Birth : 00/00/0000</div>
-                                        </li>
-                                        <li>
-                                            <div class="inner"><i class="fa fa-map-marker fa-fw left-none inner"></i> Address : pune, Maharashtra</div>
-                                        </li>
-                                        <li>
-                                            <div><i class="fa fa-envelope fa-fw left-none inner"></i> Email : mala.sibal@gmail.com</div>
-                                        </li>
-                                        <li>
-                                            <div><i class="fa fa-phone fa-fw left-none inner"></i> Phone : +91 00000-00000</div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="link"><i class="fa fa-briefcase"></i>Professional Skills<i class="fa fa-chevron-down"></i></div>
-                                    <ul class="submenu">
-                                        <li>
-                                            <div><span class="tags">AAAAAAA</span> <span class="tags">BBBBBB</span> <span class="tags">CCCCCC</span> <span class="tags">DDDDDD</span> <span class="tags">EEEEEE</span> <span class="tags">FFFFFF</span> <span class="tags">IIIIIII</span> <span class="tags">JJJJJJ</span> <span class="tags">KKKKKK</span> <span class="tags">MMMMM</span> <span class="tags">NNNNN</span> <span class="tags">OOOOO</span></div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="link"><i class="fa fa-envelope"></i>Assistance<i class="fa fa-chevron-down"></i></div>
-                                    <ul class="submenu">
+                                </li>                                
+                                <li ng-class="assistance? 'open' : ''">
+                                    <div class="link" ng-click="setAccording('assistance', assistance)"><i class="fa fa-envelope"></i>Assistance<i class="fa fa-chevron-down"></i></div>
+                                    <ul class="submenu" ng-style="{display:assistance? 'block' : 'none'}">
                                         <div>
                                             <p class="text">Drop me a mail, if you need any help. / time / assistance / support</p>
                                             <form action="" method="">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="mail" placeholder="mala.sibal@gmail.com" disabled> </div>
+                                                    <input class="form-control" type="text" name="mail" placeholder="mala.sibal@gmail.com" disabled>
+                                                </div>
                                                 <div class="form-group">
                                                     <textarea rows="5" class="form-control" ng-model="inputMessage" maxlength="200"></textarea>
                                                     <p>{{ 200 - inputMessage.length + ' Char' }}</p>
@@ -1468,24 +472,26 @@
                                         </div>
                                     </ul>
                                 </li>
-                                <li>
-                                    <div class="link"><i class="fa fa-bookmark"></i>Bookmark Your Time<i class="fa fa-chevron-down"></i></div>
-                                    <ul class="submenu">
+                                <li ng-class="bookmark? 'open' : ''">
+                                    <div class="link" ng-click="setAccording('bookmark', bookmark)"><i class="fa fa-bookmark"></i>Bookmark Your Time<i class="fa fa-chevron-down"></i></div>
+                                    <ul class="submenu" ng-style="{display:bookmark? 'block' : 'none'}">
                                         <div>
                                             <p class="bookmark-text">You want to take a break?, just save the interval time.</p>
                                             <form action="" method="">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name"> </div>
+                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name">
+                                                </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" value="4.25"> </div>
+                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" value="4.25">
+                                                </div>
                                                 <button type="submit" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
                                             </form>
                                         </div>
                                     </ul>
                                 </li>
-                                <li>
-                                    <div class="link"><i class="fa fa-clock-o"></i>Bookmark List<i class="fa fa-chevron-down"></i></div>
-                                    <ul class="submenu">
+                                <li ng-class="bookmarkList? 'open' : ''">
+                                    <div class="link" ng-click="setAccording('bookmarkList', bookmarkList)"><i class="fa fa-clock-o"></i>Bookmark List<i class="fa fa-chevron-down"></i></div>
+                                    <ul class="submenu" ng-style="{display:bookmarkList? 'block' : 'none'}">
                                         <li>
                                             <div>
                                                 <button class="tags">August05 2017 11.15AM</button>
@@ -1496,9 +502,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <div class="link"><i class="fa fa-star-o"></i>Rating List<i class="fa fa-chevron-down"></i></div>
-                                    <ul class="submenu">
+                                <li ng-class="rating? 'open' : ''">
+                                    <div class="link" ng-click="setAccording('rating', rating)"><i class="fa fa-star-o"></i>Rating List<i class="fa fa-chevron-down"></i></div>
+                                    <ul class="submenu" ng-style="{display:rating? 'block' : 'none'}">
                                         <li>
                                             <div class="star">
                                                 <div class="review-block-title">AAAAAAAA</div>
@@ -1540,595 +546,21 @@
         </div>
     </div>
 </div>
-<!--Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)-->
-<div class="modal fade model-center" id="overview-ID5">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)</h4> </div>
-            <div class="modal-body">
-                <p>Gel Sonovaginography & Sonohysterography: Utility, methodology, advantages, limitations and application in various conditions.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+
 <div class="modal fade video" id="video-ID5">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)</h4> </div>
+                <h4 class="modal-title">Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)</h4>
+            </div>
             <div class="modal-body">
                 <iframe src="https://player.vimeo.com/video/229377293" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </div>
-<!--Evaluation of Myometrium & Normal Myometrium-->
-<div class="modal fade model-center" id="overview-ID6">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Evaluation of Myometrium & Normal Myometrium</h4> </div>
-            <div class="modal-body">
-                <p>Evaluation of the uterine myometrium (primarily based on MUSA consensus statement): methodology, measurements, and qualitative assessment of normal and pathological lesions, junctional zone and normal variations.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade video" id="video-ID6">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Evaluation of Myometrium & Normal Myometrium</h4> </div>
-            <div class="modal-body">
-                <iframe src="https://player.vimeo.com/video/229378039" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Fibroid (Leiomyoma) & Sarcoma-->
-<div class="modal fade model-center" id="overview-ID7">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Fibroid (Leiomyoma) & Sarcoma</h4> </div>
-            <div class="modal-body">
-                <p>Ultrasound appearance & Doppler, fibroid mapping, 3D rendering, various cases of fibroid; large subserous, submucous and atypical cases. Red degeneration, fibroid embolization, diffuse uterine leiomyomatosis and disseminated peritoneal leiomyomatosis and the rare sarcoma.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade video" id="video-ID7">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Fibroid (Leiomyoma) & Sarcoma</h4> </div>
-            <div class="modal-body">
-                <iframe src="https://player.vimeo.com/video/229376687" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Adenomyosis and Adenomyoma-->
-<div class="modal fade model-center" id="overview-ID8">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Adenomyosis and Adenomyoma</h4> </div>
-            <div class="modal-body">
-                <p>Basic pathology and junctional zone involvement, variety of ultrasound appearance on 2D and 3D, subtle adenomyosis, posterior wall adenomyosis, adenomyosis secondary to obstruction, adenomyomas and differentiation from fibroids.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--<div class="modal fade video" id="video-ID8">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Adenomyosis and Adenomyoma</h4> </div>
-            <div class="modal-body">
-                <iframe src="https://player.vimeo.com/video/229376178" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!--Congenital Uterine Anomalies-->
-<div class="modal fade model-center" id="overview-ID9">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Congenital Uterine Anomalies</h4> </div>
-            <div class="modal-body">
-                <p>Embryopathogenesis and classification, approach to diagnosis, types of uterine anomalies, cervical & vaginal anomalies, hematocolpos and reporting of anomalies.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Evaluation of Endometrium & Normal Endometrium-->
-<div class="modal fade model-center" id="overview-ID10">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Evaluation of Endometrium & Normal Endometrium</h4> </div>
-            <div class="modal-body">
-                <p>Evaluation of the endometrium (primarily based on IETA consensus statement): methodology, measurements, qualitative assessment of normal and pathological lesions, Doppler evaluation, sonohysterogram and normal variations.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Endometrial Polyp & Hyperplasia-->
-<div class="modal fade model-center" id="overview-ID11">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Endometrial Polyp & Hyperplasia</h4> </div>
-            <div class="modal-body">
-                <p>Endometrial polyps: Appearance and diagnosis with 2D, 3D, Doppler & SHG, atypical polyps, artefacts and malignant polyps. Endometrial Hyperplasia: Ultrasound appearance, Doppler & SHG, atypical hyperplasia and tamoxifen endometrium.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Endometrial Carcinoma-->
-<div class="modal fade model-center" id="overview-ID12">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Endometrial Carcinoma</h4> </div>
-            <div class="modal-body">
-                <p>Ultrasound appearance on 2D, Doppler, 3D & 3D Doppler, ultrasound limitations, myometrial invasion, metastasis, atypical cases, malignant polyps and differential diagnosis of thickened endometrium.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Other Endometrial Pathology -->
-<div class="modal fade model-center" id="overview-ID13">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title"></h4> </div>
-            <div class="modal-body">
-                <p>Asherman’s Syndrome and sub-endometrial fibrosis: appearance and diagnosis on 2D & 3D Endometritis, intrauterine infection (including post-partum) and intra cavitatory fluid in uterus.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ultrasound in Polycystic Ovarian Syndrome-->
-<div class="modal fade model-center" id="overview-ID14">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ultrasound in Polycystic Ovarian Syndrome</h4> </div>
-            <div class="modal-body">
-                <p>Ultrasound criteria for diagnosis of polycystic ovaries. Stromal abundance and stromal vascularity for diagnosis & methods to establish stromal abundance. Correlation of hormonal & ultrasound features. Understanding and diagnosis of PCOS is logically explained in a simple, interesting and informative manner.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Cycle Assessment in Infertility and ART-->
-<div class="modal fade model-center" id="overview-ID15">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Cycle Assessment in Infertility and ART</h4> </div>
-            <div class="modal-body">
-                <p>Monitoring fertility treatment cycles, use of 3D & Doppler to diagnose low reserve, poor responders and polycystic ovarian syndrome & to decide the stimulation protocols, luteal phase assessment and correlation of Doppler findings of the ovary, follicle, uterus and endometrium with the hormonal status during natural and treatment cycles.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Tubal Assessment-->
-<div class="modal fade model-center" id="overview-ID16">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Tubal Assessment</h4> </div>
-            <div class="modal-body">
-                <p>Assessment of tubal patency with saline infusion salpingography using colour and pulse Doppler positive contrast (Hystero-contrast salpingography) HyCosy with volume ultrasound that has been proved to be one of the best modalities for tubal assessment after laparoscopy.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Oocyte Retrieval and Embryo Transfer-->
-<div class="modal fade model-center" id="overview-ID17">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Oocyte Retrieval and Embryo Transfer</h4> </div>
-            <div class="modal-body">
-                <p>Description of both procedures that are done under ultrasound guidance is discussed in detail. This includes the pre-procedure preparation, anesthetic technique, minute details and practical tips of for both oocyte retrieval and embryo transfer techniques. Variations in the techniques and controversies are also discussed. The clips of the procedure on ultrasound screen illustrates the entire technique clear enough to practice. </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ultrasound Evaluation of Cervix-->
-<div class="modal fade model-center" id="overview-ID18">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ultrasound Evaluation of Cervix</h4> </div>
-            <div class="modal-body">
-                <p>Normal cervix, evaluation of cervix on TVS along with tips to optimize imaging, evaluation of benign and malignant cervical pathology on 2D Doppler, 3D, 3D Doppler and gel sonovaginography.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ultrasound Evaluation of Vagina-->
-<div class="modal fade model-center" id="overview-ID19">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ultrasound Evaluation of Vagina</h4> </div>
-            <div class="modal-body">
-                <p>Evaluation of benign and malignant vaginal pathology on 2D Doppler, 3D, and gel sonovaginography. Brief note on vulval carcinoma.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Evaluation of Ovarian & Adnexal Pathology (based on IOTA Guidelines)-->
-<div class="modal fade model-center" id="overview-ID20">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Evaluation of Ovarian & Adnexal Pathology (based on IOTA Guidelines)</h4> </div>
-            <div class="modal-body">
-                <p>Evaluation of the ovarian & adnexal lesions (primarily based on IOTA recommendations): Measurements, terminology, Doppler assessment, morphological classification, description, determining origin of masses, simple rules, simple descriptors, and 3 stage approach to evaluating adnexal masses.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ultrasound Evaluation of Normal Ovaries-->
-<div class="modal fade model-center" id="overview-ID21">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ultrasound Evaluation of Normal Ovaries</h4> </div>
-            <div class="modal-body">
-                <p>Short talk on how to look and assess normal ovaries in various age groups.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 1-->
-<div class="modal fade model-center" id="overview-ID22">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 1</h4> </div>
-            <div class="modal-body">
-                <p>Determining ovarian origin, physiological masses, endometriomas (including associated malignancy & decidualized cysts) and other non-neoplastic ovarian masses.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 2-->
-<div class="modal fade model-center" id="overview-ID23">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 2</h4> </div>
-            <div class="modal-body">
-                <p>Spectrum of epithelial ovarian neoplasia (benign, borderline & malignant) – multiple cases with confirmed pathologies.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 3-->
-<div class="modal fade model-center" id="overview-ID24">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Ovarian Masses & Spectrum of Ovarian Neoplasia - Part 3</h4> </div>
-            <div class="modal-body">
-                <p>Spectrum of non-epithelial ovarian neoplasia (germ cell, stromal & metastatic tumors) – multiple cases of these rare tumors with confirmed pathologies.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Non Ovarian Adnexal Pathology – Part 1-->
-<div class="modal fade model-center" id="overview-ID25">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Non Ovarian Adnexal Pathology – Part 1</h4> </div>
-            <div class="modal-body">
-                <p>Tubal pathology & PID: acute PID, pyosalpinx, tubo-ovarian masses, hydrosalpinx, tuberculosis and cases of fallopian tube carcinoma.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Non Ovarian Adnexal Pathology – Part 2-->
-<div class="modal fade model-center" id="overview-ID26">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Non Ovarian Adnexal Pathology – Part 2</h4> </div>
-            <div class="modal-body">
-                <p>Non-tubal & non-ovarian adnexal pathology: Paraovarian cysts (including atypical ones), peritoneal inclusion cysts (along with tips for diagnosis) and other rare cases.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Practice - Evaluation of Ovarian & Adnexal Pathology (based on IOTA Guidelines)-->
-<div class="modal fade model-center" id="overview-ID27">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Practice - Evaluation of Ovarian & Adnexal Pathology (based on IOTA Guidelines)</h4> </div>
-            <div class="modal-body">
-                <p>This is an interesting practice session of evaluation of adnexal masses into benign or malignant after a quick revision of morphological classification, simple descriptors, simple rules and the 3 stage approach. There are multiple cases with sufficient intervening gap during the talk for the candidates to individually, logical evaluate and decide whether a mass is malignant or not.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Endometriosis Including Deep Infiltrating & Extra-Pelvic Endometriosis-->
-<div class="modal fade model-center" id="overview-ID28">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Endometriosis Including Deep Infiltrating & Extra-Pelvic Endometriosis</h4> </div>
-            <div class="modal-body">
-                <p>Endometriomas revised, spectrum of deep infiltrating endometriosis – of bowel, bladder, uterosacral, ureters, vagina, & cervix, scar endometriosis and extra-pelvic thoracic & abdominal endometriosis.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Normal and Abnormal Early Pregnancy-->
-<div class="modal fade model-center" id="overview-ID29">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Normal and Abnormal Early Pregnancy</h4> </div>
-            <div class="modal-body">
-                <p>Development and abnormalities of first 10-11 weeks of pregnancy. Embryonic development studied on ultrasound in B-mode & 3D, abnormalities that can be picked up so early in pregnancy and prognostic markers of pregnancy outcome in the first trimester.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Spectrum of Ectopic Pregnancies and PUL-->
-<div class="modal fade model-center" id="overview-ID30">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Spectrum of Ectopic Pregnancies and PUL</h4> </div>
-            <div class="modal-body">
-                <p>Brief description of possibilities with intra uterine pregnancies, spectrum of ectopics – tubal, ovarian, interstitial, cornual, cervical, heterotropic, intramyometrial & scar ectopic and pregnancy of unknown location and their evaluation.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Retained Products of Conception-->
-<div class="modal fade model-center" id="overview-ID31">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Retained Products of Conception</h4> </div>
-            <div class="modal-body">
-                <p>Variable ultrasound appearance on 2D and Doppler and retained placenta.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Gestational Trophoblastic Disease-->
-<div class="modal fade model-center" id="overview-ID32">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Gestational Trophoblastic Disease</h4> </div>
-            <div class="modal-body">
-                <p>Spectrum of GTD: molar pregnancy including partial mole and gestational trophoblastic neoplasia (Invasive mole, choriocarcinoma etc)</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Torsion (Ovarian & Non-Ovarian)-->
-<div class="modal fade model-center" id="overview-ID33">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Torsion (Ovarian & Non-Ovarian)</h4> </div>
-            <div class="modal-body">
-                <p>Non-specific and the three specific classic features for diagnosis of torsion (including the whirlpool & the follicular ring sign) Non-ovarian torsion: of hydrosalpinx and paraovarian cyst.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Other Causes of Acute Pelvic Pain-->
-<div class="modal fade model-center" id="overview-ID34">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Other Causes of Acute Pelvic Pain</h4> </div>
-            <div class="modal-body">
-                <p>Differential diagnosis of acute pelvic pain: An overview of causes (infection, ectopic, dysmenorrhea etc).</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Uterine Vascular Malformations-->
-<div class="modal fade model-center" id="overview-ID35">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Uterine Vascular Malformations</h4> </div>
-            <div class="modal-body">
-                <p>Diagnosis of AV malformation, true A V malformations and differential diagnosis of vascular uterine lesions</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Uterine Perforation & Uterovesical Fistula-->
-<div class="modal fade model-center" id="overview-ID36">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Uterine Perforation & Uterovesical Fistula</h4> </div>
-            <div class="modal-body">
-                <p>Various cases of uterine perforation – At surgery, by IUCD and trophoblastic invasion. Also a case of utero-vesical fistula</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Caesarean Scar Defect & Retroflexed Uterus-->
-<div class="modal fade model-center" id="overview-ID37">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Caesarean Scar Defect & Retroflexed Uterus</h4> </div>
-            <div class="modal-body">
-                <p>Caesarean scar defect: ultrasound appearance diagnosis, measurements and symptoms Retroflexed uterus: causes and effects.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Intrauterine Contraceptive Device-->
-<div class="modal fade model-center" id="overview-ID38">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Intrauterine Contraceptive Device</h4> </div>
-            <div class="modal-body">
-                <p>Types of IUCD and their appearance on 2D & 3D, displaced IUCD, IUCD perforation and associated infection.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+

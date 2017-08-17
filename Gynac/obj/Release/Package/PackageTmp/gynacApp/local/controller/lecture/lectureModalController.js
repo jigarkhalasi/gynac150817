@@ -1,1 +1,0 @@
-app.controller("lectureModalController",["$scope", "$timeout", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$modal", "obj", "$modalInstance", ]);
