@@ -3,6 +3,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
+    $scope.userId = "45";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -21,6 +22,18 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     }
     $scope.getUserTalks();
 
+    $scope.getUserRatings = function () {        
+        var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
+        dataService.getData(webURL).then(function (data) {
+            $scope.userRatingsList = data;
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+        //}
+    }
+
+    $scope.getUserRatings();
+
     //open the talk description
     $scope.getTalkOverview = function (talkId) {
         $scope.overViewDetails = _.filter($scope.userTalkList, function (d) { return d.TalkId === talkId; });
@@ -29,27 +42,50 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
-        var modalInstance = $uibModal.open({
-            templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
-            controller: 'VideoModalController as vmc',
-            size:'lg',
-            resolve: {
-                modalData: function () {
-                    return angular.copy(talk);
-                }
-            }
-        });
+        //var modalInstance = $uibModal.open({
+        //    templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
+        //    controller: 'VideoModalController as vmc',
+        //    size:'lg',
+        //    resolve: {
+        //        modalData: function () {
+        //            return angular.copy(talk);
+        //        }
+        //    }
+        //});
 
-        modalInstance.result.then(function (data) {
-            $scope.getUserTalks();
-            if (data == "success") {
-                alert("submitted");
-                //$scope.getUserTalks();
-            }
-        }, function () {
-            // $log.info('Modal dismissed at: ' + new Date());
-        });
+        //modalInstance.result.then(function (data) {
+        //    $scope.getUserTalks();
+        //    if (data == "success") {
+        //        alert("submitted");
+        //        //$scope.getUserTalks();
+        //    }
+        //}, function () {
+        //    // $log.info('Modal dismissed at: ' + new Date());
+        //});
     }
+
+    $scope.setAccording = function (selectAccordian, currentActive) {
+        $scope.assistance = false;
+        $scope.bookmark = false;
+        $scope.bookmarkList = false;
+        $scope.rating = false;
+        switch (selectAccordian) {
+            case 'assistance':
+                $scope.assistance = currentActive ? false : true;
+                break;
+            case 'bookmark':
+                $scope.bookmark = currentActive ? false : true;
+                break;
+            case 'bookmarkList':
+                $scope.bookmarkList = currentActive ? false : true;
+                break;
+            case 'rating':
+                $scope.rating = currentActive ? false : true;
+                break;
+
+        }
+    }
+
 
     //open question model
     $scope.openQuestionModal = function (que) {

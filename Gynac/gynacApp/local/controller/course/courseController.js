@@ -1,4 +1,4 @@
-app.controller("courseController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$modal", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $modal) {
+app.controller("courseController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams) {
 
 
     $scope.getAllNotification = function () {
