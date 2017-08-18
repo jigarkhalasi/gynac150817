@@ -439,7 +439,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Three Dimensional Ultrasound in Gynecology</h4>
+                <h4 class="modal-title">{{ currentLecture.Name }}</h4>
+                <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll</small>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
@@ -448,9 +449,9 @@
                             <ul id="accordion" class="accordion">
                                 <li>
                                     <div class="col_4 pic">
-                                        <img class="img-responsive profilepic" alt="Mala Sibal" src="gynacApp/local/img/profile01.png">                                        
+                                        <img class="img-responsive profilepic" alt="currentLecture.FacultyName" src="gynacApp/local/img/profile01.png">                                        
                                         <div class="username">
-                                            <h3>Mala Sibal</h3>                                        
+                                            <h3>{{currentLecture.FacultyName}}</h3>                                        
                                         </div>
                                     </div>
                                 </li>                                
@@ -461,13 +462,13 @@
                                             <p class="text">Drop me a mail, if you need any help. / time / assistance / support</p>
                                             <form action="" method="">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="mail" placeholder="mala.sibal@gmail.com" disabled>
+                                                    <input class="form-control" type="text" name="mail" ng-model="currentLecture.Email" disabled>
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea rows="5" class="form-control" ng-model="inputMessage" maxlength="200"></textarea>
+                                                    <textarea rows="5" class="form-control" ng-model="currentLecture.Comment" maxlength="200"></textarea>
                                                     <p>{{ 200 - inputMessage.length + ' Char' }}</p>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary cust-btn"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
+                                                <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
                                             </form>
                                         </div>
                                     </ul>
@@ -506,30 +507,14 @@
                                     <div class="link" ng-click="setAccording('rating', rating)"><i class="fa fa-star-o"></i>Rating List<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:rating? 'block' : 'none'}">
                                         <li>
-                                            <div class="star">
-                                                <div class="review-block-title">AAAAAAAA</div>
+                                            <div class="star" ng-repeat="ratings in userRatingsList">
+                                                <div class="review-block-title">{{ratings.RatingName}}</div>
                                                 <div class="review-block-rate">
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                </div>
-                                                <div class="review-block-title">BBBBBBBBBB</div>
-                                                <div class="review-block-rate">
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                </div>
-                                                <div class="review-block-title">CCCCCCCCC</div>
-                                                <div class="review-block-rate">
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
-                                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
+                                                    <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 0 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'1')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
+                                                    <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 1 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'2')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
+                                                    <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 2 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'3')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
+                                                    <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 3 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'4')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
+                                                    <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 4 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'5')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
                                                 </div>
                                             </div>
                                         </li>
