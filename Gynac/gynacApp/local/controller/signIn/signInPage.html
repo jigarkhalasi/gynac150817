@@ -308,6 +308,7 @@
                 <h4>One Time Password</h4>
                 <div class="col-md-12 center-describe">
                     <div class="col-md-12 all-form">
+                        <span>{{ counter | secondsToDateTime | date : "mm:ss"}}</span>
                         <div class="col-md-5 input-name">OTP:</div>
                         <div class="col-md-7 input-form">
                             <input type="text" ng-model="signin.otp" class="form-control">

@@ -10,5 +10,6 @@ namespace Gynac.Models
         public int UserTalkId { get; set; }
         public string Comment { get; set; }
         public string Email { get; set; }
+        public string UserEmail { get; set; }
     }
 }

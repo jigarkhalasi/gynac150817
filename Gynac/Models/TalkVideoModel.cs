@@ -17,5 +17,6 @@ namespace Gynac.Models
         public string Email { get; set; }
         public int ExpTime { get; set; }
         public string Signature { get; set; }
+        public bool IsBackup { get; set; }
     }
 }

@@ -121,10 +121,10 @@
                                             <button type="button" class="btn btn-sm btn-default" ng-click="getTalkOverview(talk.TalkId)" data-toggle="modal" data-target="#overview-ID1"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);" data-toggle="modal" data-target="#video-ID4"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);" data-toggle="modal" data-target="#video-ID1"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -434,7 +434,7 @@
     </div>
 </div>
 
-<div class="modal fade video" id="video-ID4">
+<div class="modal fade video" id="video-ID1">
     <div class="modal-dialog modal-xxl">
         <div class="modal-content">
             <div class="modal-header">
@@ -444,17 +444,17 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row" ng-show="display">
                         <div class="col-md-3">
                             <ul id="accordion" class="accordion">
                                 <li>
                                     <div class="col_4 pic">
-                                        <img class="img-responsive profilepic" alt="currentLecture.FacultyName" src="gynacApp/local/img/profile01.png">                                        
+                                        <img class="img-responsive profilepic" alt="currentLecture.FacultyName" ng-src="{{currentLecture.ProfilePic}}">
                                         <div class="username">
-                                            <h3>{{currentLecture.FacultyName}}</h3>                                        
+                                            <h3>{{currentLecture.FacultyName}}</h3>
                                         </div>
                                     </div>
-                                </li>                                
+                                </li>
                                 <li ng-class="assistance? 'open' : ''">
                                     <div class="link" ng-click="setAccording('assistance', assistance)"><i class="fa fa-envelope"></i>Assistance<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:assistance? 'block' : 'none'}">
@@ -523,27 +523,11 @@
                             </ul>
                         </div>
                         <div class="col-md-9">
-                            <iframe src="https://player.vimeo.com/video/229375122" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <iframe id="myIframe" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="row" ng-show="!display"><iframe id="myIframe1" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="modal fade video" id="video-ID5">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
-                <h4 class="modal-title">Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)</h4>
-            </div>
-            <div class="modal-body">
-                <iframe src="https://player.vimeo.com/video/229377293" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
         </div>
     </div>

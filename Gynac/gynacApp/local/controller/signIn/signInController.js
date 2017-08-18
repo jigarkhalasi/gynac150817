@@ -1,4 +1,4 @@
-app.controller("signInController", ["$scope", "dataService", "$rootScope", "$state", "$stateParams", function ($scope, dataService, $rootScope, $state, $stateParams) {
+app.controller("signInController", ["$scope", "dataService", "$rootScope", "$state", "$stateParams", "$timeout", function ($scope, dataService, $rootScope, $state, $stateParams, $timeout) {
 /*$rootScope.authenticatedUser = {
   "UserInfo": {
     "User_Id": 2,
@@ -143,29 +143,30 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                 } else if (data.EmailVerificationPending == true) {
                     $("#triggerEmailPendding").trigger('click');
                 }
-                else if (data.IsLogin == true) {
+                else if (data.IsLogin == true && data.EmailVerificationPending == false) {
                     $("#triggerEmailPendding").trigger('click');                    
                     $rootScope.authenticatedUser.UserInfo.User_Id = data.UserInfo.User_Id;
                     $scope.isDisplay = true;
-                }
+                }                
                 else {
                     $scope.signIn = 5;
                     $scope.dothisdone = data.Otp;
                     $scope.logindata = data;
 
-                    //$scope.name = 'Superhero';
-                    //$scope.counter = 300;
-                    //$scope.onTimeout = function () {
-                    //    if ($scope.counter > 0) {
-                    //        $scope.counter--;
-                    //        mytimeout = $timeout($scope.onTimeout, 1000);
-                    //    }
-                    //    else {
-                    //        //otp blank
-                    //    }
+                    $scope.counter = 300;
+                    $scope.onTimeout = function () {
+                        if ($scope.counter > 0) {
+                            $scope.counter--;
+                            mytimeout = $timeout($scope.onTimeout, 1000);
+                        }
+                        else {
+                            //otp blank
+                            $scope.dothisdone = "";
+                            
+                        }
 
-                    //}
-                    //var mytimeout = $timeout($scope.onTimeout, 1000);
+                    }
+                    var mytimeout = $timeout($scope.onTimeout, 1000);
                     //$rootScope.authenticatedUser = data;
                     //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
                     //$scope.authenticLecture();

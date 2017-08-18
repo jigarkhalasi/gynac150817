@@ -1,4 +1,4 @@
-app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal) {
+app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
 
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
@@ -8,21 +8,21 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.getUserTalks = function () {
         $scope.index = 0;
         $rootScope.authenticatedUser.UserInfo.User_Id = "45";
-        $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0"; 
+        $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         //if ($rootScope.authenticatedUser.UserInfo.User_Id) {
-          //  $scope.userId = $rootScope.authenticatedUser.UserInfo.User_Id;
-            var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
-            dataService.getData(webURL).then(function (data) {
-                $scope.userTalkList = data;
-                $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
-            }, function (errorMessage) {
-                console.log(errorMessage + ' Error......');
-            });
+        //  $scope.userId = $rootScope.authenticatedUser.UserInfo.User_Id;
+        var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
+        dataService.getData(webURL).then(function (data) {
+            $scope.userTalkList = data;
+            $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
         //}
     }
     $scope.getUserTalks();
 
-    $scope.getUserRatings = function () {        
+    $scope.getUserRatings = function () {
         var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
         dataService.getData(webURL).then(function (data) {
             $scope.userRatingsList = data;
@@ -31,12 +31,13 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         });
         //}
     }
-    
+
     $scope.updateRatings = function (userRateingData, currentRate) {
         var webURL = 'api/gynac/updateuserratings';
         userRateingData.RateMark = currentRate;
         userRateingData.UserId = $scope.userId;
-        dataService.postData(webURL, userRateingData).then(function (data) {            
+        dataService.postData(webURL, userRateingData).then(function (data) {
+            $scope.setAccording('rating', true);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -51,20 +52,17 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
         $scope.modalData = talk;
-        $scope.modalData.UserTalkId = 46;
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
-            console.log(data);
             $scope.currentLecture = data;
             if ($scope.modalData.UserTalkId) {
                 $scope.display = true;
                 $scope.currentLecture.Comment = $scope.modalData.Comment;
-                //document.getElementById('myIframe').src = jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
+                document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
             }
             else {
                 $scope.display = false;
-                $scope.currentLecture.Comment = $scope.modalData.Comment;
-               // document.getElementById('myIframe').src = $scope.currentLecture.VideoLink;
+                document.getElementById('myIframe1').src = $scope.currentLecture.PreViewVideoLink;
             }
 
         }, function (errorMessage) {
@@ -92,6 +90,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         //}, function () {
         //    // $log.info('Modal dismissed at: ' + new Date());
         //});
+    }
+
+    $scope.getIframeSrc = function () {
+        return 'http://content.jwplatform.com/players/wHEkqM70-RZnnsc9B.html?sig=' + $scope.currentLecture + '&exp=' + $scope.ExpTime;
     }
 
     $scope.setAccording = function (selectAccordian, currentActive) {
@@ -122,16 +124,16 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         $scope.data = {};
         $scope.data.userTalkId = $scope.modalData.UserTalkId;//;self.userTalkId;
         $scope.data.comment = $scope.currentLecture.Comment; //self.comment;
-        $scope.data.Email = $scope.currentLecture.Email;
-
+        $scope.data.email = $scope.currentLecture.Email;
+        $scope.data.userEmail = $rootScope.authenticatedUser.UserInfo.Email;
         dataService.postData(webURL, $scope.data).then(function (data) {
-            $scope.currentLecture = {};            
+            $scope.setAccording('assistance', true);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
     }
 
-   
+
 
 
     //open question model
