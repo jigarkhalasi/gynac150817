@@ -139,6 +139,11 @@ namespace Gynac
                         mailUrl = "";
                         body = bodyData;
                         break;
+                    case EmailType.Comment:
+                        subject = "User Comment";
+                        mailUrl = "";
+                        body = bodyData;
+                        break;
                     default:
                         break;
                 }
@@ -730,6 +735,8 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UpdateUserTalkComment(model);
+                string bodyData = @"<b> Comment :- " + model.Comment +"</b>";
+                SendMail(model.Email, EmailType.Comment, "",bodyData);
                 result = 1;
             }
             catch
@@ -960,7 +967,7 @@ namespace Gynac
                                 {
                                     data.UserRatingId = Convert.ToInt32(userRate["UserRatingId"].ToString());
                                     data.UserId = Convert.ToInt32(userRate["UserId"].ToString());
-                                    data.RateMark = Convert.ToInt32(userRate["RateMark"].ToString());                                    
+                                    data.RateMark = Convert.ToInt32(userRate["RateMark"].ToString());
                                 }
                             }
                         }
@@ -975,6 +982,21 @@ namespace Gynac
             }
             return model;
         }
+
+        public int UpdateUserRating(UserRatingsModel model)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.UpdateUserRating(model);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
     }
 
     public enum EmailType
@@ -984,6 +1006,7 @@ namespace Gynac
         ResetPassword = 2,
         ContactUs = 3,
         Otp = 4,
-        Registration = 5
+        Registration = 5,
+        Comment = 6
     }
 }
