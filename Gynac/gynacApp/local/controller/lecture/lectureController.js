@@ -3,10 +3,11 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
+    $scope.userId = "45";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
-        //$rootScope.authenticatedUser.UserInfo.User_Id = "45";
+        $rootScope.authenticatedUser.UserInfo.User_Id = "45";
         $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0"; 
         //if ($rootScope.authenticatedUser.UserInfo.User_Id) {
           //  $scope.userId = $rootScope.authenticatedUser.UserInfo.User_Id;
@@ -21,6 +22,26 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     }
     $scope.getUserTalks();
 
+    $scope.getUserRatings = function () {        
+        var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
+        dataService.getData(webURL).then(function (data) {
+            $scope.userRatingsList = data;
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+        //}
+    }
+    
+    $scope.updateRatings = function (userRateingData, currentRate) {
+        var webURL = 'api/gynac/updateuserratings';
+        userRateingData.RateMark = currentRate;
+        userRateingData.UserId = $scope.userId;
+        dataService.postData(webURL, userRateingData).then(function (data) {            
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+    }
+
     //open the talk description
     $scope.getTalkOverview = function (talkId) {
         $scope.overViewDetails = _.filter($scope.userTalkList, function (d) { return d.TalkId === talkId; });
@@ -29,27 +50,89 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
-        var modalInstance = $uibModal.open({
-            templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
-            controller: 'VideoModalController as vmc',
-            size:'lg',
-            resolve: {
-                modalData: function () {
-                    return angular.copy(talk);
-                }
+        $scope.modalData = talk;
+        $scope.modalData.UserTalkId = 46;
+        var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
+        dataService.getData(webURL, {}).then(function (data) {
+            console.log(data);
+            $scope.currentLecture = data;
+            if ($scope.modalData.UserTalkId) {
+                $scope.display = true;
+                $scope.currentLecture.Comment = $scope.modalData.Comment;
+                //document.getElementById('myIframe').src = jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
             }
+            else {
+                $scope.display = false;
+                $scope.currentLecture.Comment = $scope.modalData.Comment;
+               // document.getElementById('myIframe').src = $scope.currentLecture.VideoLink;
+            }
+
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
         });
 
-        modalInstance.result.then(function (data) {
-            $scope.getUserTalks();
-            if (data == "success") {
-                alert("submitted");
-                //$scope.getUserTalks();
-            }
-        }, function () {
-            // $log.info('Modal dismissed at: ' + new Date());
+        $scope.getUserRatings();
+        //var modalInstance = $uibModal.open({
+        //    templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
+        //    controller: 'VideoModalController as vmc',
+        //    size:'lg',
+        //    resolve: {
+        //        modalData: function () {
+        //            return angular.copy(talk);
+        //        }
+        //    }
+        //});
+
+        //modalInstance.result.then(function (data) {
+        //    $scope.getUserTalks();
+        //    if (data == "success") {
+        //        alert("submitted");
+        //        //$scope.getUserTalks();
+        //    }
+        //}, function () {
+        //    // $log.info('Modal dismissed at: ' + new Date());
+        //});
+    }
+
+    $scope.setAccording = function (selectAccordian, currentActive) {
+        $scope.assistance = false;
+        $scope.bookmark = false;
+        $scope.bookmarkList = false;
+        $scope.rating = false;
+        switch (selectAccordian) {
+            case 'assistance':
+                $scope.assistance = currentActive ? false : true;
+                break;
+            case 'bookmark':
+                $scope.bookmark = currentActive ? false : true;
+                break;
+            case 'bookmarkList':
+                $scope.bookmarkList = currentActive ? false : true;
+                break;
+            case 'rating':
+                $scope.rating = currentActive ? false : true;
+                break;
+
+        }
+    }
+
+    $scope.updateVideoComment = function () {
+        //update the comment and the post the user log
+        var webURL = 'api/gynac/updateusertalkcomment';
+        $scope.data = {};
+        $scope.data.userTalkId = $scope.modalData.UserTalkId;//;self.userTalkId;
+        $scope.data.comment = $scope.currentLecture.Comment; //self.comment;
+        $scope.data.Email = $scope.currentLecture.Email;
+
+        dataService.postData(webURL, $scope.data).then(function (data) {
+            $scope.currentLecture = {};            
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
         });
     }
+
+   
+
 
     //open question model
     $scope.openQuestionModal = function (que) {

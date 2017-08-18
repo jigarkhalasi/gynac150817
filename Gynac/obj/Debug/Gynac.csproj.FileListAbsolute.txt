@@ -1,566 +1,62 @@
-C:\Users\Rudresh\Desktop\Gynac\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Gynac.dll.config
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Gynac.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Gynac.pdb
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Antlr3.Runtime.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\EntityFramework.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\EntityFramework.SqlServer.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Newtonsoft.Json.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Owin.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Net.Http.Formatting.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Helpers.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Http.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Http.Owin.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Http.WebHost.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Mvc.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Optimization.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Razor.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.WebPages.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.WebPages.Razor.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\WebGrease.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Newtonsoft.Json.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Net.Http.Formatting.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Helpers.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Http.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Http.WebHost.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Mvc.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Optimization.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Razor.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.WebPages.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.WebPages.Razor.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Antlr3.Runtime.pdb
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\EntityFramework.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\EntityFramework.SqlServer.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\bin\System.Web.Http.Owin.xml
-C:\Users\Rudresh\Desktop\Gynac\Gynac\obj\Debug\Gynac.dll
-C:\Users\Rudresh\Desktop\Gynac\Gynac\obj\Debug\Gynac.pdb
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Gynac.dll.config
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Gynac.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Gynac.pdb
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Antlr3.Runtime.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\EntityFramework.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\EntityFramework.SqlServer.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Newtonsoft.Json.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Owin.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Net.Http.Formatting.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Helpers.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Http.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Http.Owin.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Http.WebHost.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Mvc.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Optimization.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Razor.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.WebPages.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.WebPages.Razor.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\WebGrease.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Newtonsoft.Json.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Net.Http.Formatting.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Helpers.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Http.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Http.WebHost.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Mvc.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Optimization.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Razor.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.WebPages.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.WebPages.Razor.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Antlr3.Runtime.pdb
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\EntityFramework.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\EntityFramework.SqlServer.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\bin\System.Web.Http.Owin.xml
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\obj\Debug\Gynac.dll
-C:\Users\Rudresh\Desktop\Rudresh Project Work\Gynac website\Gynac\Gynac\obj\Debug\Gynac.pdb
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Gynac.dll.config
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Gynac.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Gynac.pdb
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Antlr3.Runtime.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\EntityFramework.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\EntityFramework.SqlServer.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Newtonsoft.Json.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Owin.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Net.Http.Formatting.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Helpers.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Http.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Http.Owin.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Http.WebHost.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Mvc.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Optimization.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Razor.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.WebPages.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\WebGrease.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Newtonsoft.Json.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Net.Http.Formatting.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Helpers.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Http.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Http.WebHost.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Mvc.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Optimization.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Razor.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.WebPages.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Antlr3.Runtime.pdb
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\EntityFramework.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\EntityFramework.SqlServer.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\bin\System.Web.Http.Owin.xml
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\obj\Debug\Gynac.dll
-E:\Vishal\Gynac\front-end\src\Gynac\Gynac\Gynac\obj\Debug\Gynac.pdb
-E:\Gynac_31072017\Gynac\Gynac\bin\Gynac.dll.config
-E:\Gynac_31072017\Gynac\Gynac\bin\Gynac.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Gynac.pdb
-E:\Gynac_31072017\Gynac\Gynac\bin\Antlr3.Runtime.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\EntityFramework.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\EntityFramework.SqlServer.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Newtonsoft.Json.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Owin.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Net.Http.Formatting.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Helpers.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Http.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Http.Owin.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Http.WebHost.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Mvc.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Optimization.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Razor.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.WebPages.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\WebGrease.dll
-E:\Gynac_31072017\Gynac\Gynac\bin\Newtonsoft.Json.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Net.Http.Formatting.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Helpers.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Http.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Http.WebHost.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Mvc.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Optimization.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Razor.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.WebPages.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Antlr3.Runtime.pdb
-E:\Gynac_31072017\Gynac\Gynac\bin\EntityFramework.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\EntityFramework.SqlServer.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Gynac_31072017\Gynac\Gynac\bin\System.Web.Http.Owin.xml
-E:\Gynac_31072017\Gynac\Gynac\obj\Debug\Gynac.dll
-E:\Gynac_31072017\Gynac\Gynac\obj\Debug\Gynac.pdb
-E:\gitrepogynac\gaync_tes\Gynac\bin\Gynac.dll.config
-E:\gitrepogynac\gaync_tes\Gynac\bin\Gynac.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Gynac.pdb
-E:\gitrepogynac\gaync_tes\Gynac\bin\Antlr3.Runtime.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\EntityFramework.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\EntityFramework.SqlServer.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Newtonsoft.Json.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Owin.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Net.Http.Formatting.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Helpers.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Http.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Http.Owin.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Http.WebHost.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Mvc.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Optimization.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Razor.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.WebPages.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\WebGrease.dll
-E:\gitrepogynac\gaync_tes\Gynac\bin\Newtonsoft.Json.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Net.Http.Formatting.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Helpers.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Http.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Http.WebHost.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Mvc.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Optimization.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Razor.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.WebPages.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Antlr3.Runtime.pdb
-E:\gitrepogynac\gaync_tes\Gynac\bin\EntityFramework.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\EntityFramework.SqlServer.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\gitrepogynac\gaync_tes\Gynac\bin\System.Web.Http.Owin.xml
-E:\gitrepogynac\gaync_tes\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-E:\gitrepogynac\gaync_tes\Gynac\obj\Debug\Gynac.dll
-E:\gitrepogynac\gaync_tes\Gynac\obj\Debug\Gynac.pdb
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Gynac.dll.config
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Gynac.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Gynac.pdb
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Antlr3.Runtime.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\EntityFramework.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\EntityFramework.SqlServer.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Newtonsoft.Json.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Owin.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Net.Http.Formatting.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Helpers.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Http.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Http.Owin.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Http.WebHost.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Mvc.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Optimization.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Razor.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.WebPages.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\WebGrease.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Newtonsoft.Json.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Net.Http.Formatting.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Helpers.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Http.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Http.WebHost.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Mvc.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Optimization.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Razor.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.WebPages.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Antlr3.Runtime.pdb
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\EntityFramework.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\EntityFramework.SqlServer.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\bin\System.Web.Http.Owin.xml
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\obj\Debug\Gynac.dll
-E:\Vishal\Gynac\front-end\gaync_tes\Gynac\obj\Debug\Gynac.pdb
-E:\gynac\gaync_tes\Gynac\bin\Gynac.dll.config
-E:\gynac\gaync_tes\Gynac\bin\Gynac.dll
-E:\gynac\gaync_tes\Gynac\bin\Gynac.pdb
-E:\gynac\gaync_tes\Gynac\bin\Antlr3.Runtime.dll
-E:\gynac\gaync_tes\Gynac\bin\EntityFramework.dll
-E:\gynac\gaync_tes\Gynac\bin\EntityFramework.SqlServer.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\gynac\gaync_tes\Gynac\bin\Newtonsoft.Json.dll
-E:\gynac\gaync_tes\Gynac\bin\Owin.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Net.Http.Formatting.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Helpers.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Http.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Http.Owin.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Http.WebHost.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Mvc.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Optimization.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Razor.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.dll
-E:\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\gynac\gaync_tes\Gynac\bin\WebGrease.dll
-E:\gynac\gaync_tes\Gynac\bin\Newtonsoft.Json.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Net.Http.Formatting.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Helpers.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Http.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Http.WebHost.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Mvc.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Optimization.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Razor.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\gynac\gaync_tes\Gynac\bin\Antlr3.Runtime.pdb
-E:\gynac\gaync_tes\Gynac\bin\EntityFramework.xml
-E:\gynac\gaync_tes\Gynac\bin\EntityFramework.SqlServer.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\gynac\gaync_tes\Gynac\bin\System.Web.Http.Owin.xml
-E:\gynac\gaync_tes\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-E:\gynac\gaync_tes\Gynac\obj\Debug\Gynac.dll
-E:\gynac\gaync_tes\Gynac\obj\Debug\Gynac.pdb
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Gynac.dll.config
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Gynac.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Gynac.pdb
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Antlr3.Runtime.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\EntityFramework.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\EntityFramework.SqlServer.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Newtonsoft.Json.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Owin.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Net.Http.Formatting.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Helpers.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Http.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Http.Owin.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Http.WebHost.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Mvc.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Optimization.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Razor.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\WebGrease.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Newtonsoft.Json.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Net.Http.Formatting.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Helpers.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Http.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Http.WebHost.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Mvc.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Optimization.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Razor.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Antlr3.Runtime.pdb
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\EntityFramework.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\EntityFramework.SqlServer.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\bin\System.Web.Http.Owin.xml
-E:\Project_vishal\gynac\gaync_tes\Gynac\obj\Debug\Gynac.dll
-E:\Project_vishal\gynac\gaync_tes\Gynac\obj\Debug\Gynac.pdb
-E:\Project_vishal\gynac\gaync_tes\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Gynac.dll.config
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Gynac.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Gynac.pdb
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Antlr3.Runtime.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\EntityFramework.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\EntityFramework.SqlServer.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Google.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Web.Infrastructure.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Newtonsoft.Json.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Owin.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Net.Http.Formatting.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Helpers.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Http.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Http.Owin.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Http.WebHost.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Mvc.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Optimization.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Razor.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.WebPages.Deployment.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.WebPages.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.WebPages.Razor.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\WebGrease.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Newtonsoft.Json.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Net.Http.Formatting.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Helpers.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Http.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Http.WebHost.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Mvc.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Optimization.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Razor.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.WebPages.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.WebPages.Deployment.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.WebPages.Razor.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Antlr3.Runtime.pdb
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\EntityFramework.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\EntityFramework.SqlServer.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Google.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\bin\System.Web.Http.Owin.xml
-E:\Project_vishal\gynac\gynac150817\Gynac\obj\Debug\Gynac.dll
-E:\Project_vishal\gynac\gynac150817\Gynac\obj\Debug\Gynac.pdb
-E:\Project_vishal\gynac\gynac150817\Gynac\obj\Debug\Gynac.csprojResolveAssemblyReference.cache
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Gynac.dll.config
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Gynac.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Gynac.pdb
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Antlr3.Runtime.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\EntityFramework.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\EntityFramework.SqlServer.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Google.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Web.Infrastructure.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Newtonsoft.Json.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Owin.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Net.Http.Formatting.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Helpers.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Http.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Http.Owin.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Http.WebHost.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Mvc.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Optimization.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Razor.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.WebPages.Deployment.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.WebPages.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.WebPages.Razor.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\WebGrease.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Newtonsoft.Json.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Net.Http.Formatting.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Helpers.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Http.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Http.WebHost.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Mvc.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Optimization.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Razor.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.WebPages.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.WebPages.Deployment.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.WebPages.Razor.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Antlr3.Runtime.pdb
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\EntityFramework.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\EntityFramework.SqlServer.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Google.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\bin\System.Web.Http.Owin.xml
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\obj\Debug\Gynac.dll
+D:\Project_Vishal_finitech\Gyanc\FrontEnd\gynac150817\Gynac\obj\Debug\Gynac.pdb

@@ -408,6 +408,40 @@ namespace Gynac
             return result;
         }
 
+        //get all user talks
+        [HttpGet]
+        [Route("getuserratings")]
+        public IEnumerable<UserRatingsModel> GetUserRatings(int userId)
+        {
+            var result = new List<UserRatingsModel>();
+            try
+            {
+                userId = (userId != 0) ? userId : 0;
+                result = _businessLayer.GetUserRatings(userId).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+
+        [HttpPost]
+        [Route("updateuserratings")]
+        public int UpdateUserRating(UserRatingsModel model)
+        {
+            int result = 0;
+            try
+            {
+                result = _businessLayer.UpdateUserRating(model);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+
         //generate the otp 
         //https://www.aspsnippets.com/Articles/Generate-Unique-Random-OTP-One-Time-Password-in-ASPNet-using-C-and-VBNet.aspx
         //http://www.aspdotnet-suresh.com/2015/08/generate-one-time-password-otp-in-aspnet-using-csharp-vbnet.html

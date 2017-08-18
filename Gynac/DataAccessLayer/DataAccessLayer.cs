@@ -793,5 +793,69 @@ namespace Gynac
 
             return dsResult;
         }
+
+        //get all user ratings
+        public DataSet GetUserRatings(int userId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_User_Ratings", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
+        }
+
+        public int UpdateUserRating(UserRatingsModel model)
+        {
+            int res = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Update_User_Ratings", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        
+                        command.Parameters.AddWithValue("@UserRatingId", model.UserRatingId);
+                        command.Parameters.AddWithValue("@User_Id", model.UserId);
+                        command.Parameters.AddWithValue("@RatingId", model.RatingId);
+                        command.Parameters.AddWithValue("@RateMark", model.RateMark);
+
+                        res = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return res;
+        }
     }
 }
