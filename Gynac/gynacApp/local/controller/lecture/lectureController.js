@@ -70,6 +70,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         });
 
         $scope.getUserRatings();
+        $scope.getUserBookMark();
         //var modalInstance = $uibModal.open({
         //    templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
         //    controller: 'VideoModalController as vmc',
@@ -133,7 +134,36 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         });
     }
 
+    $scope.getUserBookMark = function () {
+        var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
+        dataService.getData(webURL, {}).then(function (data) {
+            $scope.userBookmark = data;
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+    }
 
+    $scope.addUserBookmark = function () {
+        var webURL = 'api/gynac/adduserbookmark';
+        $scope.data = {};
+        $scope.data.UserId = $scope.userBookmark.UserId; 
+        $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
+        $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
+        dataService.postData(webURL, $scope.data).then(function (data) {
+            $scope.setAccording('bookmark', true);
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+    }
+
+    $scope.deleteUserBookmark = function () {
+        var webURL = 'api/gynac/deleteuserbookmark?userBookmarkId=' + $scope.userBookmark.Id;
+        dataService.postData(webURL, {}).then(function (data) {
+            $scope.setAccording('bookmarkList', true);
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+    }
 
 
     //open question model

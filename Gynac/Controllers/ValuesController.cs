@@ -479,5 +479,55 @@ namespace Gynac
             //  return strrandom;
             //}
         }
+
+        //get all user bookmark
+        [HttpGet]
+        [Route("getuserbookmark")]
+        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId)
+        {
+            var result = new List<UserBookmarkModel>();
+            try
+            {
+                userId = (userId != 0) ? userId : 0;
+                result = _businessLayer.GetUserBookmark(userId).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+
+        [HttpPost]
+        [Route("adduserbookmark")]
+        public int AddUserBookmark(UserBookmarkModel model)
+        {
+            int result = 0;
+            try
+            {
+                result = _businessLayer.AddUserBookmark(model);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+
+        [HttpPost]
+        [Route("deleteuserbookmark")]
+        public int DeleteUserBookmark(int userBookmarkId)
+        {
+            int result = 0;
+            try
+            {
+                result = _businessLayer.DeleteUserBookmark(userBookmarkId);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
     }
 }
