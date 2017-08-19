@@ -480,12 +480,12 @@
                                             <p class="bookmark-text">You want to take a break?, just save the interval time.</p>
                                             <form action="" method="">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name">
+                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name" ng-model="userBookmark.BookMarkName">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" value="4.25">
+                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime">
                                                 </div>
-                                                <button type="submit" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
+                                                <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
                                             </form>
                                         </div>
                                     </ul>
@@ -494,11 +494,8 @@
                                     <div class="link" ng-click="setAccording('bookmarkList', bookmarkList)"><i class="fa fa-clock-o"></i>Bookmark List<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:bookmarkList? 'block' : 'none'}">
                                         <li>
-                                            <div>
-                                                <button class="tags">August05 2017 11.15AM</button>
-                                                <button class="tags">August11 2017 8.05PM</button>
-                                                <button class="tags">Today's Morning</button>
-                                                <button class="tags">Last Night</button>
+                                            <div ng-repeat="mark in userBookmark">
+                                                <button class="tags">{{ mark.BookMarkName}}</button>
                                             </div>
                                         </li>
                                     </ul>

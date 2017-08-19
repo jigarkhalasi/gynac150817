@@ -998,6 +998,69 @@ namespace Gynac
             }
             return result;
         }
+
+        //add user bookmark
+        public int AddUserBookmark(UserBookmarkModel model)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.AddUserBookmark(model);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
+
+        //get all userbook mark
+        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId)
+        {
+            var model = new List<UserBookmarkModel>();
+            try
+            {
+                DataSet ds = _dataAccessLayer.GetUserBookmark(userId);
+                if (ds != null)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var data = new UserBookmarkModel();
+
+
+                        data.Id = Convert.ToInt32(row["Id"].ToString());
+                        data.UserId = Convert.ToInt32(row["UserId"].ToString());
+                        data.BookMarkName = row["BookMarkName"].ToString();
+                        data.BookMarkTime = Convert.ToDateTime(row["BookMarkTime"].ToString());
+                       
+                        model.Add(data);
+                    }
+                }
+            }
+            catch
+            {
+
+                throw;
+            }
+            return model;
+        }
+
+        //delet user bookmark
+        public int DeleteUserBookmark(int userBookmarkId)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.DeleteUserBookmark(userBookmarkId);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
     }
 
     public enum EmailType
