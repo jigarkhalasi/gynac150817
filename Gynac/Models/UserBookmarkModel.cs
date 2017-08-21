@@ -10,6 +10,6 @@ namespace Gynac.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public string BookMarkName { get; set; }
-        public DateTimeOffset BookMarkTime { get; set; }        
+        public string BookMarkTime { get; set; }        
     }
 }

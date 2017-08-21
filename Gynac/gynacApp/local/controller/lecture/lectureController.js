@@ -1,4 +1,50 @@
 app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
+    angular.element(document).ready(function () {
+
+    });
+
+    $scope.pauseVideo = function () {
+        var iframe = document.getElementById("myIframe");
+        var player = new Vimeo.Player(iframe);
+
+        player.pause().then(function () {           
+        }).catch(function (error) {
+            switch (error.name) {
+                case 'PasswordError':
+                    break;
+                case 'PrivacyError':
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+
+    $scope.getTime = function () {
+        var iframe = document.getElementById("myIframe");
+        var player = new Vimeo.Player(iframe);
+
+        player.getCurrentTime().then(function (seconds) {
+            $scope.userBookmark.BookMarkTime = seconds;
+            $scope.userBookmark.BookMarkName = seconds;
+        }).catch(function (error) {
+            alert(error);
+        });
+    }
+
+    $scope.setTime = function (seconds) {
+        var iframe = document.getElementById("myIframe");
+        var player = new Vimeo.Player(iframe);
+        player.setCurrentTime(seconds).then(function (secondss) {
+        }).catch(function (error) {
+            switch (error.name) {
+                case 'RangeError':
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
@@ -106,7 +152,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             case 'assistance':
                 $scope.assistance = currentActive ? false : true;
                 break;
-            case 'bookmark':
+            case 'bookmark':                
+                $scope.getTime();
+                $scope.pauseVideo();
+
                 $scope.bookmark = currentActive ? false : true;
                 break;
             case 'bookmarkList':
@@ -146,7 +195,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.addUserBookmark = function () {
         var webURL = 'api/gynac/adduserbookmark';
         $scope.data = {};
-        $scope.data.UserId = $scope.userBookmark.UserId; 
+        $scope.data.UserId = $scope.userBookmark.UserId;
         $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
         $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
         dataService.postData(webURL, $scope.data).then(function (data) {
