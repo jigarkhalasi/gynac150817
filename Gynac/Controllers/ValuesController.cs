@@ -428,12 +428,16 @@ namespace Gynac
 
         [HttpPost]
         [Route("updateuserratings")]
-        public int UpdateUserRating(UserRatingsModel model)
+        public int UpdateUserRating(UserRatingsModel[] model)
         {
             int result = 0;
             try
             {
-                result = _businessLayer.UpdateUserRating(model);
+                for (int i = 0; i < model.Count(); i++)
+                {
+                    result = _businessLayer.UpdateUserRating(model[i]);    
+                }
+                
             }
             catch (Exception ex)
             {

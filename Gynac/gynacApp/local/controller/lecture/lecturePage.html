@@ -135,7 +135,7 @@
             </div>
         </div>
     </div>
- 
+
     <div class="container training-body" ng-show="!lecture">
         <div ng-show="fullview">
             <span>
@@ -438,7 +438,7 @@
     <div class="modal-dialog modal-xxl">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
+                <button type="button" class="close" ng-click="pauseVideo()" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
                 <h4 class="modal-title">{{ currentLecture.Name }}</h4>
                 <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll</small>
             </div>
@@ -480,10 +480,10 @@
                                             <p class="bookmark-text">You want to take a break?, just save the interval time.</p>
                                             <form action="" method="">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name" ng-model="userBookmark.BookMarkName">
+                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text"starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime">
+                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime" value="0" />
                                                 </div>
                                                 <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
                                             </form>
@@ -494,9 +494,9 @@
                                     <div class="link" ng-click="setAccording('bookmarkList', bookmarkList)"><i class="fa fa-clock-o"></i>Bookmark List<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:bookmarkList? 'block' : 'none'}">
                                         <li>
-                                            <div ng-repeat="mark in userBookmark">
-                                                <button class="tags">{{ mark.BookMarkName}}</button>
-                                            </div>
+                                            <select ng-model="selectuserBookmark" class="form-control" ng-options="i.BookMarkName for i in userBookmark" ng-change="setTime(selectuserBookmark.BookMarkTime)">
+                                                <option value="">--- Select an Bookmark ---</option>
+                                            </select>                                            
                                         </li>
                                     </ul>
                                 </li>
@@ -514,8 +514,9 @@
                                                     <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 4 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'5')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
+                                            <button type="button" ng-click="savRatings()" class="btn btn-primary cust-btn">Save</button>
+                                        </li>                                        
+                                    </ul>                                  
                                 </li>
                             </ul>
                         </div>
@@ -529,4 +530,3 @@
         </div>
     </div>
 </div>
-
