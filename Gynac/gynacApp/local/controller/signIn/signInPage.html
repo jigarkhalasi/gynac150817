@@ -299,10 +299,13 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h3 class="modal-title">Log In</h3> </div>
                 <div class="modal-body">
-                    <p class="text-center" style="color:red">Email id validation pending, please check your email and validate</p>
+                    <p class="text-center" style="color:red" ng-show="!isDisplay">Email id validation pending, please check your email and validate</p>
+                    <p class="text-center" style="color:red" ng-show="isDisplay">Already Login!! </p>
+                    <br />
+                    <span ng-show="isDisplay">Log Out from all another devices? <a ng-click="signOut()" href=""> CLICK HERE</a></span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToLogin()">ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToLogin()" ng-show="!isDisplay">ok</button>
                 </div>
             </div>
         </div>
