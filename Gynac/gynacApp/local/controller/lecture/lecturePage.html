@@ -34,6 +34,11 @@
                                     <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Sign-out</a></li>
                                 </ul>
                             </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
                             <li class="li-3">
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>

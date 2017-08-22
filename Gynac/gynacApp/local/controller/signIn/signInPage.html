@@ -34,6 +34,11 @@
                                     <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Log-out</a></li>
                                 </ul>
                             </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
                             <li class="li-3">
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
@@ -307,10 +312,10 @@
         <div class="col-md-6 main-body-center">
             <div class="col-md-12 well center-inner">
                 <h4>One Time Password</h4>
-                <span>{{ counter | secondsToDateTime | date : "mm:ss"}}</span>
+                <span style="float:right;">{{ counter | secondsToDateTime | date : "mm:ss"}}</span>
                 <div class="col-md-12 center-describe">
                     <div class="col-md-12 all-form">                        
-                        <div class="col-md-5 input-name">OTP:</div>
+                        <div class="col-md-5 input-name">OTP: </div>
                         <div class="col-md-7 input-form">
                             <input type="text" ng-model="signin.otp" class="form-control">
                         </div>
