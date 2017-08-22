@@ -2,6 +2,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
+    
 
     $scope.userId = "45";
     //get user talks
@@ -51,6 +52,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
+        $scope.userBookmark = {};
+        $scope.userBookmark.BookMarkTime = new Date();
         $scope.modalData = talk;
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
@@ -146,7 +149,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.addUserBookmark = function () {
         var webURL = 'api/gynac/adduserbookmark';
         $scope.data = {};
-        $scope.data.UserId = $scope.userBookmark.UserId; 
+        $scope.data.UserId = $scope.userId;
         $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
         $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
         dataService.postData(webURL, $scope.data).then(function (data) {

@@ -1032,7 +1032,7 @@ namespace Gynac
                         data.Id = Convert.ToInt32(row["Id"].ToString());
                         data.UserId = Convert.ToInt32(row["UserId"].ToString());
                         data.BookMarkName = row["BookMarkName"].ToString();
-                        data.BookMarkTime = Convert.ToDateTime(row["BookMarkTime"].ToString());
+                        data.BookMarkTime = row["BookMarkTime"].ToString();
                        
                         model.Add(data);
                     }
