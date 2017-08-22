@@ -826,6 +826,7 @@ namespace Gynac
             return dsResult;
         }
 
+        //update user ratings
         public int UpdateUserRating(UserRatingsModel model)
         {
             int res = 0;
@@ -856,6 +857,98 @@ namespace Gynac
             }
 
             return res;
+        }
+
+        //insert in to bookmark
+        public int AddUserBookmark(UserBookmarkModel model)
+        {
+            int cost = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Insert_User_BookMark", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", model.UserId);
+                        command.Parameters.AddWithValue("@BookMarkName", model.BookMarkName);
+                        command.Parameters.AddWithValue("@BookMarkTime", model.BookMarkTime);
+
+                        cost = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return cost;
+        }
+
+        //get all user bookmarks
+        public DataSet GetUserBookmark(int userId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_User_BookMark", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
+        }
+
+        //delete get user bookmark
+        public int DeleteUserBookmark(int userBookmarkId)
+        {
+            int cost = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Delete_User_BookMark", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userBookmarkId);
+
+                        cost = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return cost;
         }
     }
 }

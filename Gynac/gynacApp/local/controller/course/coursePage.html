@@ -9,35 +9,42 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
                     <div class="col-sm-12 col-md-12">
-                        <ul class="nav navbar-nav nav-list-left">
+                        <ul class="nav navbar-nav navbar-center">
                             <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
                             <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
                             <li class="li-1 state-active"><a class="a-1" href="#/course">Course</a></li>
                             <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
                             <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
                             <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
-                                <ul class="dropdown-menu">
-                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
-                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="li-1"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <ul class="dropdown-menu">
+                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                            </ul>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
                             <!--<li class="li-1">
-                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
-                            </li>-->
-                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
-                            <li class="dropdown li-1"><a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
+                            <!--<li class="li-1 state-active"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Register</a></li>-->
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
                                 <ul class="dropdown-menu">
                                     <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
                                     <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
                                     <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Log-out</a></li>
                                 </ul>
                             </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
                             <li class="li-3">
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
-                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -48,13 +55,14 @@
         </nav>
         <div class="container">
             <div class="row page-header banner-page">
-                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
-                <div class="col-sm-12 col-md-7 sm-center">
+                <div class="col-sm-12 col-md-2 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-8 sm-center">
                     <h2>ULTRASOUND IN GYNECOLOGY</h2>
-                    <h2>4 - MONTH CERTIFICATION COURSE</h2> </div>
+                    <h2>Four Month Certification Course</h2>
+                </div>
                 <div class="col-sm-12 col-md-2 sm-center">
                     <div class='btn-toolbar pull-right'>
-                        <div class='btn-group'> <a href="#/signUp#signTop" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                        <div class='btn-group button-effect'> <a href="#/signUp#signTop" class="btn effect custom-effect">APPLY NOW</a> </div>
                     </div>
                 </div>
             </div>
@@ -66,6 +74,7 @@
             <div class="col-md-12">
                 <p style="margin: 50px 0 20px;">Gynecology Academy is pleased to announce a 4-month certification course:<i>Ultrasound in Gynecology.</i></p>
                 <p style="margin: 20px 0 0;">The course is open to candidates from all countries.</p>
+                <p style="margin: 20px 0 0;">The online course can be initiated from any date according to your convenience and will last for a duration of 4 months from the date of your commencement.</p>
                 <p style="margin:5px 0;">Details of the course are as follows:</p>
                 <p style="margin: 20px 0;"><b>COURSE FACULTY:</b> <i>Dr Mala Sibal & Dr Sonal Panchal  </i></p>
                 <p style="margin: 20px 0;">The faculty are experts in the field of gynecological ultrasound. They have authored research articles and books on the subject and are passionate teachers and have trained several doctors in Gynecological Ultrasound for well over a decade. Click <a href="#/faculty#facultyTop">here</a> for more details. </p>
@@ -73,7 +82,7 @@
                 <p>The 1<sup>st</sup> course is scheduled from September 2<sup>nd</sup> to December 31<sup>st</sup>, 2017.</p>
                 <p style="margin: 0 0 20px;">The subject matter has been sub-divided into modules which will be covered in 4 sessions. </p>
                 <p style="margin: 20px 0 0;">The course may be taken either online or onsite.</p>
-                <p style="margin: 20px 0 0;"><b>Online Course:</b> Every month 3 new modules will be made available. Online learning is a convenient and self-paced way of acquiring specific knowledge and expertise in gynecological ultrasound, at the convenience of your own time and place. </p>
+                <p style="margin: 20px 0 0;"><b>Online Course:</b> Every month a new modules will be made available. Online learning is a convenient and self-paced way of acquiring specific knowledge and expertise in gynecological ultrasound, at the convenience of your own time and place. </p>
                 <p style="margin: 20px 0 0;"><b>Onsite Course:</b>: The course will be conducted in Bangalore, on one predefined weekend (Saturday & Sunday) each month, for the 4 months (i.e., 8 days of training). This will most likely be the 1<sup>st</sup> weekend of every month. Based on availability, live demonstration of a few cases will be conducted. In addition to this, those attending the onsite course will have access to the online lectures. </p>
                 <p style="margin: 20px 0 0;"><b style="display: block">COURSE CONTENT:</b> The subject matter has been divided into 12 modules and each module consists of multiple lectures. Click <a href="#/lecture#latureTop">here</a> to see the lectures and topics that will be covered. </p>
                 <p style="margin: 50px 0 20px;font-weight: bold">SPECIAL FEATURES:</p>
@@ -92,7 +101,7 @@
                 <p style="margin: 20px 0 0 0;"><b>COURSE FEE:</b> Rs 80,000 + tax (GST)</p>
                 <p style="margin: 5px 0 20px 0 ;"><b>We have a 10 % inaugural discount for the first 50 candidates.</b></p>
                 <p style="margin: 20px 0 0;">The online candidates who desire to do the optional test at the end of the course so as to obtain the certificate of competence, will be charged an additional fee of Rs 5000.</p>
-                <p style="margin: 20px 0;"><b>CONTACT INFO:</b> If you are interested in applying please contact us on <b>+91 70198 49711 </b> or <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a></p>
+                <p style="margin: 20px 0;"><b>CONTACT INFO:</b> If you are interested in applying please contact us on <b>+91 7019849711 </b> or <a href="mailto:support@gynac.org?Subject=Hi%20Heloo%20Hi%20subject" target="_top">support@gynac.org</a></p>
                 <br>
                 <p style="margin: 10px 0 50px;" class="text-center">Click <a href="#/signUp#signTop">here</a> to register for the certification course.</p>
             </div>

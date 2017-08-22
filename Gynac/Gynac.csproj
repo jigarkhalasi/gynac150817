@@ -221,6 +221,7 @@
     <Compile Include="Models\UpdateUserTalkModel.cs" />
     <Compile Include="Models\UploadModuleImagesModel.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserBookmarkModel.cs" />
     <Compile Include="Models\UserImageModel.cs" />
     <Compile Include="Models\UserRatingsModel.cs" />
     <Compile Include="Models\UserTalksModel.cs" />

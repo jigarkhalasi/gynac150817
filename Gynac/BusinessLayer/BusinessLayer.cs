@@ -93,7 +93,7 @@ namespace Gynac
                     message.From = new MailAddress(toAddress);
                     message.To.Add(ConfigurationManager.AppSettings["ContactUsEmailAddress"].ToString());
                 }
-                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp))
+                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp) || emailType.Equals(EmailType.Comment))
                 {
                     message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString()); ;
                     message.To.Add(toAddress);
@@ -141,7 +141,7 @@ namespace Gynac
                         break;
                     case EmailType.Comment:
                         subject = "User Comment";
-                        mailUrl = "";
+                        mailUrl = "comment";
                         body = bodyData;
                         break;
                     default:
@@ -679,10 +679,11 @@ namespace Gynac
                             if (backupVideo)
                             {
                                 model.VideoLink = row["BackupVideoLink"].ToString();
+                                model.IsBackup = true;
                             }
                             else
                             {
-
+                                model.IsBackup = false;
                                 Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
                                 Int32 ExpireTime = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["ExpireTime"]);
@@ -706,17 +707,17 @@ namespace Gynac
                             }
 
                         }
+                        model.FacultyId = Convert.ToInt32(row["FacultyId"].ToString());
+                        model.FacultyName = row["FacultyName"].ToString();
+                        model.ProfilePic = row["ProfilePic"].ToString();
+                        model.Email = row["Email"].ToString();
                     }
                     else
                     {
-                        model.VideoLink = row["PreViewVideoLink"].ToString();
+                        model.PreViewVideoLink = row["PreViewVideoLink"].ToString();
                     }
                     model.Name = row["Name"].ToString();
-                    //model.PreViewVideoLink = row["PreViewVideoLink"].ToString();
-                    model.FacultyId = Convert.ToInt32(row["FacultyId"].ToString());
-                    model.FacultyName = row["FacultyName"].ToString();
-                    model.ProfilePic = row["ProfilePic"].ToString();
-                    model.Email = row["Email"].ToString();
+                    
                 }
             }
             catch
@@ -735,13 +736,13 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UpdateUserTalkComment(model);
-                string bodyData = @"<b> Comment :- " + model.Comment +"</b>";
+                string bodyData = @"<b> Comment :- " + model.Comment +"Send By</b> <br><br> "+ model.UserEmail;
                 SendMail(model.Email, EmailType.Comment, "",bodyData);
                 result = 1;
             }
             catch
             {
-                throw;
+                //remove thow not error handle
             }
             return result;
         }
@@ -989,6 +990,69 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UpdateUserRating(model);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
+
+        //add user bookmark
+        public int AddUserBookmark(UserBookmarkModel model)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.AddUserBookmark(model);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
+
+        //get all userbook mark
+        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId)
+        {
+            var model = new List<UserBookmarkModel>();
+            try
+            {
+                DataSet ds = _dataAccessLayer.GetUserBookmark(userId);
+                if (ds != null)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var data = new UserBookmarkModel();
+
+
+                        data.Id = Convert.ToInt32(row["Id"].ToString());
+                        data.UserId = Convert.ToInt32(row["UserId"].ToString());
+                        data.BookMarkName = row["BookMarkName"].ToString();
+                        data.BookMarkTime = row["BookMarkTime"].ToString();
+                       
+                        model.Add(data);
+                    }
+                }
+            }
+            catch
+            {
+
+                throw;
+            }
+            return model;
+        }
+
+        //delet user bookmark
+        public int DeleteUserBookmark(int userBookmarkId)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.DeleteUserBookmark(userBookmarkId);
                 result = 1;
             }
             catch

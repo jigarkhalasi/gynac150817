@@ -1,4 +1,50 @@
-app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal) {
+app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
+    angular.element(document).ready(function () {
+
+    });
+
+    $scope.pauseVideo = function () {
+        var iframe = document.getElementById("myIframe");
+        var player = new Vimeo.Player(iframe);
+
+        player.pause().then(function () {
+        }).catch(function (error) {
+            switch (error.name) {
+                case 'PasswordError':
+                    break;
+                case 'PrivacyError':
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+
+    $scope.getTime = function () {
+        var iframe = document.getElementById("myIframe");
+        var player = new Vimeo.Player(iframe);
+
+        player.getCurrentTime().then(function (seconds) {
+            $scope.userBookmark.BookMarkTime = seconds;
+            $scope.userBookmark.BookMarkName = seconds;
+        }).catch(function (error) {
+            alert(error);
+        });
+    }
+
+    $scope.setTime = function (seconds) {
+        var iframe = document.getElementById("myIframe");
+        var player = new Vimeo.Player(iframe);
+        player.setCurrentTime(seconds).then(function (secondss) {
+        }).catch(function (error) {
+            switch (error.name) {
+                case 'RangeError':
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
@@ -8,21 +54,21 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.getUserTalks = function () {
         $scope.index = 0;
         $rootScope.authenticatedUser.UserInfo.User_Id = "45";
-        $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0"; 
+        $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         //if ($rootScope.authenticatedUser.UserInfo.User_Id) {
-          //  $scope.userId = $rootScope.authenticatedUser.UserInfo.User_Id;
-            var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
-            dataService.getData(webURL).then(function (data) {
-                $scope.userTalkList = data;
-                $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
-            }, function (errorMessage) {
-                console.log(errorMessage + ' Error......');
-            });
+        //  $scope.userId = $rootScope.authenticatedUser.UserInfo.User_Id;
+        var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
+        dataService.getData(webURL).then(function (data) {
+            $scope.userTalkList = data;
+            $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
         //}
     }
     $scope.getUserTalks();
 
-    $scope.getUserRatings = function () {        
+    $scope.getUserRatings = function () {
         var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
         dataService.getData(webURL).then(function (data) {
             $scope.userRatingsList = data;
@@ -31,12 +77,22 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         });
         //}
     }
+
     
-    $scope.updateRatings = function (userRateingData, currentRate) {
-        var webURL = 'api/gynac/updateuserratings';
-        userRateingData.RateMark = currentRate;
-        userRateingData.UserId = $scope.userId;
-        dataService.postData(webURL, userRateingData).then(function (data) {            
+    $scope.updateRatings = function (userRateingData, currentRate) {        
+        for (var i = 0; i < $scope.userRatingsList.length; i++) {
+            if ($scope.userRatingsList[i].RatingId === userRateingData.RatingId) {
+                $scope.userRatingsList[i].RateMark = currentRate;
+                $scope.userRatingsList[i].UserId = $scope.userId;
+            }
+        }
+    }
+
+    
+    $scope.savRatings = function () {
+        var webURL = 'api/gynac/updateuserratings';        
+        dataService.postData(webURL, $scope.userRatingsList).then(function (data) {
+            $scope.setAccording('rating', true);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -51,20 +107,17 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
         $scope.modalData = talk;
-        $scope.modalData.UserTalkId = 46;
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
-            console.log(data);
             $scope.currentLecture = data;
             if ($scope.modalData.UserTalkId) {
                 $scope.display = true;
                 $scope.currentLecture.Comment = $scope.modalData.Comment;
-                //document.getElementById('myIframe').src = jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
+                document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
             }
             else {
                 $scope.display = false;
-                $scope.currentLecture.Comment = $scope.modalData.Comment;
-               // document.getElementById('myIframe').src = $scope.currentLecture.VideoLink;
+                document.getElementById('myIframe1').src = $scope.currentLecture.PreViewVideoLink;
             }
 
         }, function (errorMessage) {
@@ -72,6 +125,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         });
 
         $scope.getUserRatings();
+        $scope.getUserBookMark();
         //var modalInstance = $uibModal.open({
         //    templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
         //    controller: 'VideoModalController as vmc',
@@ -94,6 +148,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         //});
     }
 
+    $scope.getIframeSrc = function () {
+        return 'http://content.jwplatform.com/players/wHEkqM70-RZnnsc9B.html?sig=' + $scope.currentLecture + '&exp=' + $scope.ExpTime;
+    }
+
     $scope.setAccording = function (selectAccordian, currentActive) {
         $scope.assistance = false;
         $scope.bookmark = false;
@@ -104,6 +162,9 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 $scope.assistance = currentActive ? false : true;
                 break;
             case 'bookmark':
+                $scope.getTime();
+                $scope.pauseVideo();
+
                 $scope.bookmark = currentActive ? false : true;
                 break;
             case 'bookmarkList':
@@ -122,16 +183,52 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         $scope.data = {};
         $scope.data.userTalkId = $scope.modalData.UserTalkId;//;self.userTalkId;
         $scope.data.comment = $scope.currentLecture.Comment; //self.comment;
-        $scope.data.Email = $scope.currentLecture.Email;
-
+        $scope.data.email = $scope.currentLecture.Email;
+        $scope.data.userEmail = $rootScope.authenticatedUser.UserInfo.Email;
         dataService.postData(webURL, $scope.data).then(function (data) {
-            $scope.currentLecture = {};            
+            $scope.setAccording('assistance', true);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
     }
 
-   
+    $scope.getUserBookMark = function () {
+        var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
+        dataService.getData(webURL, {}).then(function (data) {
+            $scope.userBookmark = data;
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+    }
+
+    $scope.addUserBookmark = function () {
+        if ($scope.userBookmark.length >= 5) {
+            alert("You only assign 5 Book mark only!!");
+            return;
+        }
+            var webURL = 'api/gynac/adduserbookmark';
+            $scope.data = {};
+            $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
+            $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
+            $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
+            dataService.postData(webURL, $scope.data).then(function (data) {
+                $scope.setAccording('bookmark', true);
+                $scope.getUserBookMark();
+            }, function (errorMessage) {
+                console.log(errorMessage + ' Error......');
+            });
+        
+        
+    }
+
+    $scope.deleteUserBookmark = function () {
+        var webURL = 'api/gynac/deleteuserbookmark?userBookmarkId=' + $scope.userBookmark.Id;
+        dataService.postData(webURL, {}).then(function (data) {
+            $scope.setAccording('bookmarkList', true);
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+    }
 
 
     //open question model

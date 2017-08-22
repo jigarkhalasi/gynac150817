@@ -7,76 +7,83 @@ app.config(function ($stateProvider, $urlRouterProvider, $sceProvider) {
     $sceProvider.enabled(true);
 
     $stateProvider
-      .state('home', {
-          url: "/home",
-          templateUrl: "gynacApp/local/controller/home/home.html",
-          controller: "homeController"
-      })
-      .state('emailVerification', {
-          url: "/emailVerification/:id/:email",
-          templateUrl: "gynacApp/local/controller/home/home.html",
-          controller: "homeController"
-      })
-      .state('about', {
-          url: "/about",
-          templateUrl: "gynacApp/local/controller/about/aboutPage.html",
-          controller: "aboutController"
-      })
-         .state('course', {
-             url: "/course",
-             templateUrl: "gynacApp/local/controller/course/coursePage.html",
-             controller: "courseController"
-         })
-      .state('lecture', {
-          url: "/lecture",
-          templateUrl: "gynacApp/local/controller/lecture/lecturepage.html",
-          controller: "lectureController"
-      })
-      .state('lecturePayment', {
-          url: "/lecturePayment/:status/:id",
-          templateUrl: "gynacApp/local/controller/lecture/lecturepage.html",
-          controller: "lectureController"
-      })
-      .state('contact', {
-          url: "/contact",
-          templateUrl: "gynacApp/local/controller/contact/contactPage.html",
-          controller: "contactController"
-      })
-      .state('myProfile', {
-          url: "/myProfile",
-          templateUrl: "gynacApp/local/controller/myProfile/myProfilePage.html",
-          controller: "myProfileController"
-      })
-      .state('signIn', {
-          url: "/signIn",
-          templateUrl: "gynacApp/local/controller/signIn/signInPage.html",
-          controller: "signInController"
-      })
-      .state('forgotPassword', {
-          url: "/forgotPassword/:id/:email",
-          templateUrl: "gynacApp/local/controller/signIn/signInPage.html",
-          controller: "signInController"
-      })
-      .state('signUp', {
-          url: "/signUp",
-          templateUrl: "gynacApp/local/controller/signUp/signUpPage.html",
-          controller: "signUpController"
-      })
-      .state('training', {
-          url: "/training",
-          templateUrl: "gynacApp/local/controller/training/trainingPage.html",
-          controller: "trainingController"
-      })
-      .state('faculty', {
-          url: "/faculty",
-          templateUrl: "gynacApp/local/controller/faculty/facultyPage.html",
-          controller: "facultyController"
-      })
+        .state('home', {
+            url: "/home",
+            templateUrl: "gynacApp/local/controller/home/home.html",
+            controller: "homeController"
+        })
+        .state('emailVerification', {
+            url: "/emailVerification/:id/:email",
+            templateUrl: "gynacApp/local/controller/home/home.html",
+            controller: "homeController"
+        })
+        .state('about', {
+            url: "/about",
+            templateUrl: "gynacApp/local/controller/about/aboutPage.html",
+            controller: "aboutController"
+        })
+        .state('course', {
+            url: "/course",
+            templateUrl: "gynacApp/local/controller/course/coursePage.html",
+            controller: "courseController"
+        })
+        .state('lecture', {
+            url: "/lecture",
+            templateUrl: "gynacApp/local/controller/lecture/lecturePage.html",
+            controller: "lectureController"
+        })
+        .state('lecturePayment', {
+            url: "/lecturePayment/:status/:id",
+            templateUrl: "gynacApp/local/controller/lecture/lecturepage.html",
+            controller: "lectureController"
+        })
+        .state('contact', {
+            url: "/contact",
+            templateUrl: "gynacApp/local/controller/contact/contactPage.html",
+            controller: "contactController"
+        })
+        .state('myProfile', {
+            url: "/myProfile",
+            templateUrl: "gynacApp/local/controller/myProfile/myProfilePage.html",
+            controller: "myProfileController"
+        })
+        .state('signIn', {
+            url: "/signIn",
+            templateUrl: "gynacApp/local/controller/signIn/signInPage.html",
+            controller: "signInController"
+        })
+        .state('forgotPassword', {
+            url: "/forgotPassword/:id/:email",
+            templateUrl: "gynacApp/local/controller/signIn/signInPage.html",
+            controller: "signInController"
+        })
+        .state('signUp', {
+            url: "/signUp",
+            templateUrl: "gynacApp/local/controller/signUp/signUpPage.html",
+            controller: "signUpController"
+        })
+        .state('training', {
+            url: "/training",
+            templateUrl: "gynacApp/local/controller/training/trainingPage.html",
+            controller: "trainingController"
+        })
+        .state('faculty', {
+            url: "/faculty",
+            templateUrl: "gynacApp/local/controller/faculty/facultyPage.html",
+            controller: "facultyController"
+        })
+        .state('testimonial', {
+            url: "/testimonial",
+            templateUrl: "gynacApp/local/controller/testimonial/testimonial.html",
+            controller: "testimonialController"
+        })
+
      .state('imagesubmission', {
          url: "/imagesubmission/:moduleId/:userTalkId",
          templateUrl: "gynacApp/local/controller/lecture/ImageSubmissionPage.html",
          controller: "imageSubmissionController"
      })
+
 });
 
 app.run(function ($rootScope, dataService, $state) {
