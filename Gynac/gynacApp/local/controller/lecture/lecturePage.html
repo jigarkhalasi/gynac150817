@@ -9,23 +9,23 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
                     <div class="col-sm-12 col-md-12">
-                        <ul class="nav navbar-nav nav-list-left">
+                        <ul class="nav navbar-nav navbar-center">
                             <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
                             <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
                             <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
                             <li class="li-1 state-active"><a class="a-1" href="#/lecture">Lectures</a></li>
                             <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
                             <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
-                                <ul class="dropdown-menu">
-                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
-                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="li-1"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <ul class="dropdown-menu">
+                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                            </ul>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
                             <!--<li class="li-1">
-                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
-                            </li>-->
-                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
+                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
                             <li class="dropdown li-1">
                                 <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
                                 <ul class="dropdown-menu">
@@ -37,8 +37,8 @@
                             <li class="li-3">
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
-                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -49,14 +49,14 @@
         </nav>
         <div class="container">
             <div class="row page-header banner-page">
-                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
-                <div class="col-sm-12 col-md-7 sm-center">
+                <div class="col-sm-12 col-md-2 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-8 sm-center">
                     <h2>ULTRASOUND IN GYNECOLOGY</h2>
-                    <h2>4 - MONTH CERTIFICATION COURSE</h2>
+                    <h2>Four Month Certification Course</h2>
                 </div>
                 <div class="col-sm-12 col-md-2 sm-center">
                     <div class='btn-toolbar pull-right'>
-                        <div class='btn-group'> <a href="#/signUp#signTop" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                        <div class='btn-group button-effect'> <a href="#/signUp#signTop" class="btn effect custom-effect">APPLY NOW</a> </div>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
         </div>
     </div>
 
-    <div class="container training-body" ng-show="!lecture">
+    <!--<div class="container training-body" ng-show="!lecture">
         <div ng-show="fullview">
             <span>
                 <i class="fa fa-arrow-left back-btn" ng-click="lecture = true;" style="font-size:43px; padding-bottom: 15px;" aria-hidden="true"></i>
@@ -158,34 +158,34 @@
                             <!--<video id="subVideo">
 
                                 </video>-->
-                        </div>
+    <!--</div>
+                </div>
+                <div class="carrousal">
+                    <div class="arrow left left-arrow"> <img src="gynacApp/local/img/lt.png" alt="" /> </div>
+                    <div class="strip left">
+                        <div class="strip-container"> </div>
                     </div>
-                    <div class="carrousal">
-                        <div class="arrow left left-arrow"> <img src="gynacApp/local/img/lt.png" alt="" /> </div>
-                        <div class="strip left">
-                            <div class="strip-container"> </div>
-                        </div>
-                        <div class="arrow right right-arrow"> <img src="gynacApp/local/img/rt.png" alt="" /> </div>
-                    </div>
+                    <div class="arrow right right-arrow"> <img src="gynacApp/local/img/rt.png" alt="" /> </div>
                 </div>
             </div>
         </div>
-        <div ng-hide="fullview">
-            <div class="row">
-                <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 speaker-biography display-none lecture">
-                    <div class="slide-screen" style="height: 550px">
-                        <img src="gynacApp/local/img/torsion/Slide1.jpg" style="height: 100%; margin: 0 auto; display: block;" class="img" alt="" /> <img src="gynacApp/local/img/collapse.png" class="expand" ng-click="fullview = true" alt="" />
-                        <div class="video-container fullview">
-                            <!--<video class="subVideo fullViewVideo">
+    </div>-->
+    <!--<div ng-hide="fullview">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 speaker-biography display-none lecture">
+                <div class="slide-screen" style="height: 550px">
+                    <img src="gynacApp/local/img/torsion/Slide1.jpg" style="height: 100%; margin: 0 auto; display: block;" class="img" alt="" /> <img src="gynacApp/local/img/collapse.png" class="expand" ng-click="fullview = true" alt="" />
+                    <div class="video-container fullview">
+                        <!--<video class="subVideo fullViewVideo">
 
-                                        </video>-->
-                        </div>
+                                    </video>-->
+    <!--  </div>
                     </div>
                 </div>
                 <div class="video-pay-pause" style=" text-align: center; margin-bottom: 50px;"> <i class="fa fa-play-circle-o play play-pause-disable" aria-hidden="true"></i> <i class="fa fa-pause pause" aria-hidden="true"></i> <span class="time"></span> </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--Sign in  first modal-->
     <!-- Trigger the modal with a button -->
     <button type="button" class="btn btn-info btn-lg" id="triggerRequiredSigninModal" data-toggle="modal" data-target="#RequiredSigninSignInModal" style="display:none">Open Modal</button>
@@ -272,10 +272,10 @@
     <!-- Countdown  the modal with a button -->
     <button type="button" class="btn btn-info btn-lg" id="triggerCountdown" data-toggle="modal" data-target="#Countdown" style="display:none">Open Modal</button>
     <!-- Modal -->
-    <div id="Countdown" class="modal fade" role="dialog" data-backdrop="static">
+    <!--<div id="Countdown" class="modal fade" role="dialog" data-backdrop="static">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <div class="modal-content">
+    <!--<div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal" ng-click="closeCounterModel()">&times;</button>
                     <h3 class="modal-title">{{currentLecture.title}}</h3>
@@ -317,7 +317,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Sub Countdown  the modal with a button -->
     <button type="button" class="btn btn-info btn-lg" id="triggerSubCountdown" data-toggle="modal" data-target="#SubCountdown" style="display:none">Open Modal</button>
     <!-- Modal -->
@@ -496,7 +496,7 @@
                                         <li>
                                             <select ng-model="selectuserBookmark" class="form-control" ng-options="i.BookMarkName for i in userBookmark" ng-change="setTime(selectuserBookmark.BookMarkTime)">
                                                 <option value="">--- Select an Bookmark ---</option>
-                                            </select>                                            
+                                            </select>
                                         </li>
                                     </ul>
                                 </li>
@@ -515,8 +515,8 @@
                                                 </div>
                                             </div>
                                             <button type="button" ng-click="savRatings()" class="btn btn-primary cust-btn">Save</button>
-                                        </li>                                        
-                                    </ul>                                  
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>

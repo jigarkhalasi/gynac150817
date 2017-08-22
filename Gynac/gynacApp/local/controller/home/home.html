@@ -9,18 +9,25 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
                     <div class="col-sm-12 col-md-12">
-                        <ul class="nav navbar-nav nav-list-left">
+                        <ul class="nav navbar-nav navbar-center">
                             <li class="li-1 state-active"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
                             <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
                             <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
                             <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
                             <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
-                            <li class="li-1"><a class="a-1" href="#/contact">Contact Us</a></li>
+                            <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
+                            <ul class="dropdown-menu">
+                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                            </ul>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
                             <!--<li class="li-1">
-                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
-                            </li>-->
-                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Log-in</a></li>
-                            <li class="dropdown li-1"><a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
                                 <ul class="dropdown-menu">
                                     <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
                                     <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
@@ -30,9 +37,8 @@
                             <li class="li-3">
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
-                            <li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <!--<li class="li-1"><a class="a-1" href="#/signUp">Sign Up</a></li>-->
+                            <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -43,18 +49,18 @@
         </nav>
         <div class="container">
             <div class="row page-header banner-page">
-                <div class="col-sm-12 col-md-3 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
-                <div class="col-sm-12 col-md-7 sm-center">
+                <div class="col-sm-12 col-md-2 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-8 sm-center">
                     <h2>ULTRASOUND IN GYNECOLOGY</h2>
-                    <h2>4 - MONTH CERTIFICATION COURSE</h2> </div>
+                    <h2>Four Month Certification Course</h2> </div>
                 <div class="col-sm-12 col-md-2 sm-center">
                     <div class='btn-toolbar pull-right'>
-                        <div class='btn-group'> <a href="#/signUp#signTop" class="btn btn-primary btn-custom"><span class="glyphicon glyphicon-check"></span> APPLY NOW</a> </div>
+                        <div class='btn-group button-effect'> <a href="#/signUp#signTop" class="btn effect custom-effect">APPLY NOW</a> </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container main-body" id="mainBody" ng-init="slide('next')" ng-show="currentPage == 'home'">
+        <div class="container main-body" id="mainBody" ng-init="slide('next')">
             <div class="col-md-3 main-body-left">
                 <div class="col-md-12 well left-inner top" id="b2" style="padding-bottom: 10px;">
                     <h4>Testimonials</h4>
@@ -63,10 +69,10 @@
                             <!--{{previewTestimonial.text}}-->“It improved my standard of doing scans. This workshop was excellent. I personally appreciate your efforts to explain each and everything in an understandable way. The workshop was very interactive and interesting.”
                             <br>
                             <br>
-                            <!--<span ng-bind-html="renderHtml(previewTestimonial.uaseName)"></span>-->DR V.Suneetha,
+                            <!--<span ng-bind-html="renderHtml(previewTestimonial.uaseName)"></span>--><b>Dr. V. Suneetha,</b>
                             <br>Suneetha Hospital
                             <br>
-                            <br> <a type="button" class="pointer" ng-click="viewAllTestimonials('testimonial')">View All</a> </p>
+                            <br> <a type="button" class="pointer" href="#/testimonial">View All</a> </p>
                     </div>
                 </div>
                 <div class="col-md-12 well left-inner" id="b3" style="min-height: 382px;">
@@ -101,7 +107,7 @@
             </div>
             <div class="col-md-6 main-body-center">
                 <div class="col-md-12 well center-inner">
-                    <h4>Welcome to GynAc</h4>
+                    <h4>WELCOME TO GYNECOLOGY ACADEMY</h4>
                     <div class="col-md-12">
                         <br>
                         <p>We are excited to bring you, a unique, user-friendly and comprehensive online learning portal for skill enhancement and training in the field of ultrasound imaging in Gynecology.</p>
@@ -129,15 +135,15 @@
                     <div class="col-md-12 describe padding-top10">
                         <ul style="padding-right: 15px;">
                             <li>
-                                <p>Comprehensive and in-depth coverage of gynecological ultrasound</p>
+                                <p>Comprehensive and in-depth coverage of gynecological ultrasound.</p>
                             </li>
                             <li>
-                                <p>Online learning at the comfort of your own time from anywhere in the world</p>
+                                <p>Online learning at the comfort of your own time from anywhere in the world.</p>
                             </li>
                             <li>
-                                <p>Lectures by expert faculty with numerous images and videos</p>
+                                <p>Lectures by expert faculty with numerous images and videos.</p>
                             </li>
-                            <br> <a type="button" class="pointer" href="#/course#courceTop">Detail</a> </ul>
+                            <br> <a type="button" class="pointer" href="#/course#courceTop">Details</a> </ul>
                     </div>
                 </div>
                 <div class="col-md-12 well right-inner" id="b4" style="min-height: 382px;">
@@ -149,19 +155,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container main-body" ng-show="currentPage == 'testimonial'">
-            <div class="col-md-12 text-center"> <img class="center-block" src="gynacApp/local/img/testimonial.png">
-                <h3 style="font-size: 20px;">2-day training in Gynecological Ultrasound at Visakhapatnam (June 2017)</h3>
-                <h3 style="font-size: 20px;">Conducted by Dr Mala Sibal & Dr K.V.Sridevi</h3>
-                <h2 style="margin: 50px 0">PARTICIPANT FEEDBACK</h2> </div>
-            <div class="col-md-12" ng-repeat="list in testimonial">
-                <div>{{list.text}}</div>
-                <br>
-                <div ng-bind-html="renderHtml(list.uaseName)"></div>
-                <br>
-                <br>
-                <br> </div>
         </div>
     </div>
     <!--<div class="modal fade" id="previewModal" role="dialog" data-backdrop="static">
@@ -189,7 +182,7 @@
                     <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
                     <h4 class="modal-title">Enhanced Ultrasound Techniques (Gel Sonovaginography & Sonohysterography)</h4> </div>
                 <div class="modal-body">
-                    <iframe src="https://player.vimeo.com/video/229377293" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/229804378" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -201,19 +194,19 @@
                     <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
                     <h4 class="modal-title">Evaluation of Myometrium & Normal Myometrium</h4> </div>
                 <div class="modal-body">
-                    <iframe src="https://player.vimeo.com/video/229378039" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/229804413" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade video" id="video-ID7">
-        <div class="modal-dialog modal-xxl">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
                     <h4 class="modal-title">Fibroid (Leiomyoma) & Sarcoma</h4> </div>
                 <div class="modal-body">
-                    <iframe src="https://player.vimeo.com/video/229376687" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/229804354" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
         </div>
