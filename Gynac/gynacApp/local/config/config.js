@@ -77,7 +77,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $sceProvider) {
             templateUrl: "gynacApp/local/controller/testimonial/testimonial.html",
             controller: "testimonialController"
         })
-
      .state('imagesubmission', {
          url: "/imagesubmission/:moduleId/:userTalkId",
          templateUrl: "gynacApp/local/controller/lecture/ImageSubmissionPage.html",
