@@ -3,12 +3,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     });
 
-    $(function () {
-        $('.modal').on('hidden.bs.modal', function (e) {
-            $iframe = $(this).find("iframe");
-            $iframe.attr("src", $iframe.attr("src"));
-        });
-    });
+    
 
     $scope.pauseVideo = function () {
 
@@ -38,11 +33,30 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var player = new Vimeo.Player(iframe);
 
         player.getCurrentTime().then(function (seconds) {
-            $scope.userBookmark.BookMarkTime = seconds;
-            $scope.userBookmark.BookMarkName = seconds;
+            var setTime = $scope.SecondsTohhmmss(seconds);
+            $scope.userBookmark.BookMarkTime = setTime;
+            $scope.userBookmark.Sethhmmss = seconds;
+            $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
             alert(error);
         });
+    }
+
+    $scope.SecondsTohhmmss = function (totalSeconds) {
+        var result = "";
+        if (totalSeconds) {
+            var hours = Math.floor(totalSeconds / 3600);
+            var minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
+            var seconds = totalSeconds - (hours * 3600) - (minutes * 60);
+
+            // round seconds
+            seconds = Math.floor(Math.round(seconds * 100) / 100);
+
+            result = (hours < 10 ? "0" + hours : hours);
+            result += "-" + (minutes < 10 ? "0" + minutes : minutes);
+            result += "-" + (seconds < 10 ? "0" + seconds : seconds);
+        }
+        return result;
     }
 
     $scope.setTime = function (seconds) {
@@ -62,7 +76,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
-    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -206,21 +220,23 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
         dataService.getData(webURL, {}).then(function (data) {
             $scope.userBookmark = data;
+            var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);
+            $scope.userBookmark.BookMarkTime = setTime;
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
     }
 
     $scope.addUserBookmark = function () {
-        if ($scope.userBookmark.length >= 5) {
-            alert("You only assign 5 Book mark only!!");
+        if ($scope.userBookmark.length >= 10) {
+            alert("You only assign 10 Book mark only!!");
             return;
         }
         var webURL = 'api/gynac/adduserbookmark';
         $scope.data = {};
         $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
-        $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
-        $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
+        $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;        
+        $scope.data.BookMarkTime = $scope.userBookmark.Sethhmmss;
         dataService.postData(webURL, $scope.data).then(function (data) {
             $scope.setAccording('bookmark', true);
             $scope.getUserBookMark();
@@ -1397,4 +1413,16 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.getAllNotification = function () {
         $rootScope.$emit('updateNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
     }
+
+    //model close and then also close the accordian
+    $(function () {
+        $('.modal').on('hidden.bs.modal', function (e) {
+            $iframe = $(this).find("iframe");
+            $iframe.attr("src", $iframe.attr("src"));           
+            $scope.assistance = false;
+            $scope.bookmark = false;
+            $scope.bookmarkList = false;
+            $scope.rating = false;
+        });
+    });
 }]);
