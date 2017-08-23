@@ -53,8 +53,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             seconds = Math.floor(Math.round(seconds * 100) / 100);
 
             result = (hours < 10 ? "0" + hours : hours);
-            result += "-" + (minutes < 10 ? "0" + minutes : minutes);
-            result += "-" + (seconds < 10 ? "0" + seconds : seconds);
+            result += ":" + (minutes < 10 ? "0" + minutes : minutes);
+            result += ":" + (seconds < 10 ? "0" + seconds : seconds);
         }
         return result;
     }
@@ -76,7 +76,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
-    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -130,6 +130,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
         $scope.modalData = talk;
+        $scope.userBookmark = {};
+        $scope.userBookmark.BookMarkTime = "00:00:00";
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
             $scope.currentLecture = data;
@@ -187,8 +189,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 break;
             case 'bookmark':
                 $scope.getTime();
-                $scope.pauseVideo();
-
+                //$scope.pauseVideo();
                 $scope.bookmark = currentActive ? false : true;
                 break;
             case 'bookmarkList':
@@ -218,7 +219,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getUserBookMark = function () {
         var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
-        dataService.getData(webURL, {}).then(function (data) {
+        dataService.getData(webURL, {}).then(function (data) {            
             $scope.userBookmark = data;
             var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);
             $scope.userBookmark.BookMarkTime = setTime;

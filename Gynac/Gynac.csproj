@@ -290,6 +290,8 @@
     <Content Include="gynacApp\local\controller\signIn\signInPage.html" />
     <Content Include="gynacApp\local\controller\signUp\signUpController.js" />
     <Content Include="gynacApp\local\controller\signUp\signUpPage.html" />
+    <Content Include="gynacApp\local\controller\testimonial\testimonial.html" />
+    <Content Include="gynacApp\local\controller\testimonial\testimonialController.js" />
     <Content Include="gynacApp\local\controller\training\trainingController.js" />
     <Content Include="gynacApp\local\controller\training\trainingPage.html" />
     <Content Include="gynacApp\local\css\bootstrap.min.css" />

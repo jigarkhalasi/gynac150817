@@ -281,8 +281,8 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $rootScope.$emit('signOut', $rootScope.authenticatedUser.UserInfo.User_Id);
         $rootScope.authenticatedUser = {};
         $rootScope.authenticatedUser.UserInfo = {};
-        window.location.href = '/home';
-        //location.reload();
+        //window.location.href = '/home';
+        location.href = '/';
         //$state.go('home');
     }
 
