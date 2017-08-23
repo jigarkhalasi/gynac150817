@@ -34,7 +34,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
         player.getCurrentTime().then(function (seconds) {
             var setTime = $scope.SecondsTohhmmss(seconds);
-            $scope.userBookmark.BookMarkTime = setTime;
+            $scope.userBookmark.BookMarkTime = setTime== 0 ? "00:00:00":setTime ;
             $scope.userBookmark.Sethhmmss = seconds;
             $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
@@ -129,9 +129,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
-        $scope.modalData = talk;
-        $scope.userBookmark = {};
-        $scope.userBookmark.BookMarkTime = "00:00:00";
+        $scope.modalData = talk;       
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
             $scope.currentLecture = data;
@@ -222,7 +220,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         dataService.getData(webURL, {}).then(function (data) {            
             $scope.userBookmark = data;
             var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);
-            $scope.userBookmark.BookMarkTime = setTime;
+            $scope.userBookmark.BookMarkTime = setTime==0? "00:00:00": setTime;
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
