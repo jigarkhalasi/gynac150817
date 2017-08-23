@@ -49,14 +49,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
-    $scope.userId = "45";
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
-        $rootScope.authenticatedUser.UserInfo.User_Id = "45";
-        $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
-        //if ($rootScope.authenticatedUser.UserInfo.User_Id) {
-        //  $scope.userId = $rootScope.authenticatedUser.UserInfo.User_Id;
         var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
         dataService.getData(webURL).then(function (data) {
             $scope.userTalkList = data;
@@ -78,8 +74,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         //}
     }
 
-    
-    $scope.updateRatings = function (userRateingData, currentRate) {        
+
+    $scope.updateRatings = function (userRateingData, currentRate) {
         for (var i = 0; i < $scope.userRatingsList.length; i++) {
             if ($scope.userRatingsList[i].RatingId === userRateingData.RatingId) {
                 $scope.userRatingsList[i].RateMark = currentRate;
@@ -88,9 +84,9 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         }
     }
 
-    
+
     $scope.savRatings = function () {
-        var webURL = 'api/gynac/updateuserratings';        
+        var webURL = 'api/gynac/updateuserratings';
         dataService.postData(webURL, $scope.userRatingsList).then(function (data) {
             $scope.setAccording('rating', true);
         }, function (errorMessage) {
@@ -206,19 +202,17 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             alert("You only assign 5 Book mark only!!");
             return;
         }
-            var webURL = 'api/gynac/adduserbookmark';
-            $scope.data = {};
-            $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
-            $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
-            $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
-            dataService.postData(webURL, $scope.data).then(function (data) {
-                $scope.setAccording('bookmark', true);
-                $scope.getUserBookMark();
-            }, function (errorMessage) {
-                console.log(errorMessage + ' Error......');
-            });
-        
-        
+        var webURL = 'api/gynac/adduserbookmark';
+        $scope.data = {};
+        $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
+        $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
+        $scope.data.BookMarkTime = $scope.userBookmark.BookMarkTime;
+        dataService.postData(webURL, $scope.data).then(function (data) {
+            $scope.setAccording('bookmark', true);
+            $scope.getUserBookMark();
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
     }
 
     $scope.deleteUserBookmark = function () {
