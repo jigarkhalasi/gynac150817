@@ -3,6 +3,13 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     });
 
+    $(function () {
+        $('.modal').on('hidden.bs.modal', function (e) {
+            $iframe = $(this).find("iframe");
+            $iframe.attr("src", $iframe.attr("src"));
+        });
+    });
+
     $scope.pauseVideo = function () {
 
         $scope.assistance = false;
