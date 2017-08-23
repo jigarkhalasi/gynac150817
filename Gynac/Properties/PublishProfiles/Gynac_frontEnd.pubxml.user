@@ -265,7 +265,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureController.js">
-      <publishTime>08/23/2017 23:36:14</publishTime>
+      <publishTime>08/24/2017 00:07:39</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureModalController.js">
       <publishTime>08/16/2017 21:53:28</publishTime>
@@ -274,7 +274,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lecturePage.html">
-      <publishTime>08/23/2017 23:31:03</publishTime>
+      <publishTime>08/24/2017 00:16:19</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelController.js">
       <publishTime>08/16/2017 21:53:28</publishTime>
@@ -3475,7 +3475,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/23/2017 23:37:24</publishTime>
+      <publishTime>08/24/2017 00:20:22</publishTime>
     </File>
   </ItemGroup>
 </Project>
