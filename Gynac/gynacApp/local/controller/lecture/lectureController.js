@@ -4,6 +4,12 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     });
 
     $scope.pauseVideo = function () {
+
+        $scope.assistance = false;
+        $scope.bookmark = false;
+        $scope.bookmarkList = false;
+        $scope.rating = false;
+
         var iframe = document.getElementById("myIframe");
         var player = new Vimeo.Player(iframe);
 
@@ -49,7 +55,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
-    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -149,6 +155,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     }
 
     $scope.setAccording = function (selectAccordian, currentActive) {
+        $scope.pauseVideo();
         $scope.assistance = false;
         $scope.bookmark = false;
         $scope.bookmarkList = false;

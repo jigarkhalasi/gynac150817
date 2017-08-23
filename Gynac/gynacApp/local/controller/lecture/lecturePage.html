@@ -454,24 +454,20 @@
                             <ul id="accordion" class="accordion">
                                 <li>
                                     <div class="col_4 pic">
-                                        <img class="img-responsive profilepic" alt="currentLecture.FacultyName" ng-src="{{currentLecture.ProfilePic}}">
+                                        <img class="img-responsive profilepic" alt="currentLecture.FacultyName" ng-src="{{currentLecture.ProfilePic}}" height="42" width="42">
                                         <div class="username">
                                             <h3>{{currentLecture.FacultyName}}</h3>
                                         </div>
                                     </div>
                                 </li>
                                 <li ng-class="assistance? 'open' : ''">
-                                    <div class="link" ng-click="setAccording('assistance', assistance)"><i class="fa fa-envelope"></i>Assistance<i class="fa fa-chevron-down"></i></div>
+                                    <div class="link" ng-click="setAccording('assistance', assistance)"><i class="fa fa-envelope"></i>Queries<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:assistance? 'block' : 'none'}">
                                         <div>
-                                            <p class="text">Drop me a mail, if you need any help. / time / assistance / support</p>
-                                            <form action="" method="">
+                                            <p class="text">Email the speaker for questions related to the talk</p>
+                                            <form action="" method="">                                                
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="mail" ng-model="currentLecture.Email" disabled>
-                                                </div>
-                                                <div class="form-group">
-                                                    <textarea rows="5" class="form-control" ng-model="currentLecture.Comment" maxlength="200"></textarea>
-                                                    <p>{{ 200 - inputMessage.length + ' Char' }}</p>
+                                                    <textarea rows="5" class="form-control" ng-model="currentLecture.Comment"></textarea>                                                    
                                                 </div>
                                                 <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
                                             </form>
@@ -479,24 +475,24 @@
                                     </ul>
                                 </li>
                                 <li ng-class="bookmark? 'open' : ''">
-                                    <div class="link" ng-click="setAccording('bookmark', bookmark)"><i class="fa fa-bookmark"></i>Bookmark Your Time<i class="fa fa-chevron-down"></i></div>
+                                    <div class="link" ng-click="setAccording('bookmark', bookmark)"><i class="fa fa-bookmark"></i>Bookmark at current Time<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:bookmark? 'block' : 'none'}">
-                                        <div>
-                                            <p class="bookmark-text">You want to take a break?, just save the interval time.</p>
+                                        <div>                                            
                                             <form action="" method="">
                                                 <div class="form-group">
                                                     <input class="form-control" type="text" name="starttime" placeholder="interval name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime" value="0" />
-                                                </div>
-                                                <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
+                                                    <span>{{ userBookmark.BookMarkTime }}</span>
+                                                    <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
+                                                    <!--<input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime" value="0" />-->
+                                                </div>                                                
                                             </form>
                                         </div>
                                     </ul>
                                 </li>
                                 <li ng-class="bookmarkList? 'open' : ''">
-                                    <div class="link" ng-click="setAccording('bookmarkList', bookmarkList)"><i class="fa fa-clock-o"></i>Bookmark List<i class="fa fa-chevron-down"></i></div>
+                                    <div class="link" ng-click="setAccording('bookmarkList', bookmarkList)"><i class="fa fa-clock-o"></i>List of Bookmarks<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:bookmarkList? 'block' : 'none'}">
                                         <li>
                                             <select ng-model="selectuserBookmark" class="form-control" ng-options="i.BookMarkName for i in userBookmark" ng-change="setTime(selectuserBookmark.BookMarkTime)">
@@ -506,7 +502,8 @@
                                     </ul>
                                 </li>
                                 <li ng-class="rating? 'open' : ''">
-                                    <div class="link" ng-click="setAccording('rating', rating)"><i class="fa fa-star-o"></i>Rating List<i class="fa fa-chevron-down"></i></div>
+                                    <div class="link" ng-click="setAccording('rating', rating)"><i class="fa fa-star-o"></i>Rate the Talk
+<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:rating? 'block' : 'none'}">
                                         <li>
                                             <div class="star" ng-repeat="ratings in userRatingsList">
@@ -519,7 +516,7 @@
                                                     <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 4 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'5')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
                                                 </div>
                                             </div>
-                                            <button type="button" ng-click="savRatings()" class="btn btn-primary cust-btn">Save</button>
+                                            <button type="button" ng-click="savRatings()" class="btn btn-primary cust-btn">Submit</button>
                                         </li>
                                     </ul>
                                 </li>
