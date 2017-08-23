@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:36</publishTime>
     </File>
     <File Include="bin/Gynac.dll">
-      <publishTime>08/22/2017 11:52:46</publishTime>
+      <publishTime>08/23/2017 19:33:17</publishTime>
     </File>
     <File Include="bin/MCPG.CCA.Util.dll">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -211,7 +211,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:29</publishTime>
     </File>
     <File Include="gynacApp/local/config/config.js">
-      <publishTime>08/22/2017 11:41:14</publishTime>
+      <publishTime>08/23/2017 13:26:05</publishTime>
     </File>
     <File Include="gynacApp/local/controller.zip">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -256,7 +256,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/22/2017 11:41:14</publishTime>
     </File>
     <File Include="gynacApp/local/controller/home/homeController.js">
-      <publishTime>08/17/2017 12:24:29</publishTime>
+      <publishTime>08/23/2017 14:12:53</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/ImageSubmissionController.js">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -265,7 +265,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:29</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureController.js">
-      <publishTime>08/22/2017 11:50:18</publishTime>
+      <publishTime>08/23/2017 19:29:35</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureModalController.js">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -274,7 +274,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:29</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lecturePage.html">
-      <publishTime>08/22/2017 11:41:14</publishTime>
+      <publishTime>08/23/2017 19:29:09</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelController.js">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -301,10 +301,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/22/2017 11:41:14</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signIn/signInController.js">
-      <publishTime>08/22/2017 11:41:14</publishTime>
+      <publishTime>08/23/2017 17:25:07</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signIn/signInPage.html">
-      <publishTime>08/22/2017 17:41:23</publishTime>
+      <publishTime>08/23/2017 13:22:45</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signUp/signUpController.js">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -325,7 +325,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:29</publishTime>
     </File>
     <File Include="gynacApp/local/css/style.css">
-      <publishTime>08/22/2017 11:41:14</publishTime>
+      <publishTime>08/23/2017 17:18:58</publishTime>
     </File>
     <File Include="gynacApp/local/fonts/AvantGardeLT-Book.eot">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -3469,7 +3469,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/22/2017 11:50:34</publishTime>
+      <publishTime>08/23/2017 19:33:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

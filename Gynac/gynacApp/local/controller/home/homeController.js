@@ -1,5 +1,14 @@
 app.controller("homeController",["$scope", "$rootScope", "dataService", "$state", "$stateParams", "$sce", function($scope, $rootScope, dataService, $state, $stateParams, $sce){
 	
+
+    $(function () {
+        $('.modal').on('hidden.bs.modal', function (e) {
+            $iframe = $(this).find("iframe");
+            $iframe.attr("src", $iframe.attr("src"));
+        });
+    });
+
+
     // Random preview
     
     $scope.currentPage = 'home';

@@ -440,7 +440,7 @@
 </div>
 
 <div class="modal fade video" id="video-ID1">
-    <div class="modal-dialog modal-xxl">
+    <div class="modal-dialog modal-xxl" style="width:95%">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" ng-click="pauseVideo()" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
@@ -450,27 +450,27 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row" ng-show="display">
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <ul id="accordion" class="accordion">
                                 <li>
                                     <div class="col_4 pic">
-                                        <img class="img-responsive profilepic" alt="currentLecture.FacultyName" ng-src="{{currentLecture.ProfilePic}}" height="42" width="42">
-                                        <div class="username">
-                                            <h3>{{currentLecture.FacultyName}}</h3>
-                                        </div>
-                                    </div>
+                                        <!--<img class="img-responsive profilepic" alt="currentLecture.FacultyName" ng-src="{{currentLecture.ProfilePic}}">-->                                        
+                                        <img alt="currentLecture.FacultyName" ng-src="gynacApp/local/img/profile01.png" width="100%">
+                                        <div>
+                                            <h5>{{currentLecture.FacultyName}}</h5>
+                                        </div>                                        
+                                    </div>                                    
                                 </li>
                                 <li ng-class="assistance? 'open' : ''">
                                     <div class="link" ng-click="setAccording('assistance', assistance)"><i class="fa fa-envelope"></i>Queries<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:assistance? 'block' : 'none'}">
                                         <div>
-                                            <p class="text">Email the speaker for questions related to the talk</p>
-                                            <form action="" method="">                                                
+                                            <p class="text">Email the speaker for questions related to the talk</p>                                            
                                                 <div class="form-group">
                                                     <textarea rows="5" class="form-control" ng-model="currentLecture.Comment"></textarea>                                                    
+                                                    <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn" style="float:right"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
+                                                    <div class="clearfix"></div>
                                                 </div>
-                                                <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
-                                            </form>
                                         </div>
                                     </ul>
                                 </li>
@@ -480,13 +480,17 @@
                                         <div>                                            
                                             <form action="" method="">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="interval name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
+                                                    <input class="form-control" type="text" name="starttime" placeholder="Book mark name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
+                                                    <div>
+                                                        <span>{{ userBookmark.BookMarkTime }}</span>
+                                                        <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn" style="float:right"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
+                                                        <div class="clearfix"></div>
+                                                    </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <span>{{ userBookmark.BookMarkTime }}</span>
-                                                    <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
-                                                    <!--<input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime" value="0" />-->
-                                                </div>                                                
+                                                <!--<div class="form-group">
+                                                    
+                                                    <input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime" value="0" />
+                                                </div>-->                                                
                                             </form>
                                         </div>
                                     </ul>
@@ -516,14 +520,15 @@
                                                     <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 4 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'5')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
                                                 </div>
                                             </div>
-                                            <button type="button" ng-click="savRatings()" class="btn btn-primary cust-btn">Submit</button>
+                                            <button type="button" ng-click="savRatings()" class="btn btn-primary cust-btn" style="float:right">Submit</button>
+                                            <div class="clearfix"></div>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-9">
-                            <iframe id="myIframe" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="col-md-10">
+                            <iframe id="myIframe" width="100%" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="row" ng-show="!display"><iframe id="myIframe1" width="750" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

@@ -281,8 +281,9 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $rootScope.$emit('signOut', $rootScope.authenticatedUser.UserInfo.User_Id);
         $rootScope.authenticatedUser = {};
         $rootScope.authenticatedUser.UserInfo = {};
-        location.reload();
-        $state.go('home');
+        window.location.href = '/home';
+        //location.reload();
+        //$state.go('home');
     }
 
     $scope.goToHome = function () {
@@ -292,6 +293,5 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
     $scope.goToLogin = function () {
         $state.go('signIn');
     }
-
     
 }]);
