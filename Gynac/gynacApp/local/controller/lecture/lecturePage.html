@@ -450,13 +450,13 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row" ng-show="display">
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <ul id="accordion" class="accordion">
                                 <li>
                                     <div class="col_4 pic">
                                         <!--<img class="img-responsive profilepic" alt="currentLecture.FacultyName" ng-src="{{currentLecture.ProfilePic}}">-->                                        
                                         <img alt="currentLecture.FacultyName" ng-src="gynacApp/local/img/profile01.png" width="100%">
-                                        <div>
+                                        <div style="margin-top:5px;">
                                             <h5>{{currentLecture.FacultyName}}</h5>
                                         </div>                                        
                                     </div>                                    
@@ -468,7 +468,7 @@
                                             <p class="text">Email the speaker for questions related to the talk</p>                                            
                                                 <div class="form-group">
                                                     <textarea rows="5" class="form-control" ng-model="currentLecture.Comment"></textarea>                                                    
-                                                    <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn" style="float:right"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
+                                                    <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn" style="float:right;margin:5px;"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
                                                     <div class="clearfix"></div>
                                                 </div>
                                         </div>
@@ -478,21 +478,16 @@
                                     <div class="link" ng-click="setAccording('bookmark', bookmark)"><i class="fa fa-bookmark"></i>Bookmark at current Time<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:bookmark? 'block' : 'none'}">
                                         <div>                                            
-                                            <form action="" method="">
-                                                <div class="form-group">
-                                                    <input class="form-control" type="text" name="starttime" placeholder="Book mark name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
-                                                    <div>
-                                                        <span>{{ userBookmark.BookMarkTime }}</span>
-                                                        <button type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn" style="float:right"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
+                                                    <input class="form-control" type="text" name="starttime" placeholder="Book mark name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />                                                    
+                                            <label class="tags" style="width:60px;text-align:center;margin-top:15px;">{{ userBookmark.BookMarkTime}}</label>                                                    
+                                                    <button style="margin-top:5px; float:right;" type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn" style="float:right"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
+                                                    <div class="clearfix"></div>         
                                                 <!--<div class="form-group">
                                                     
                                                     <input class="form-control" type="text" name="starttime" placeholder="Time" ng-model="userBookmark.BookMarkTime" value="0" />
-                                                </div>-->                                                
-                                            </form>
+                                                </div>-->                                
                                         </div>
+                                        <div class="clearfix"></div>                                                   
                                     </ul>
                                 </li>
                                 <li ng-class="bookmarkList? 'open' : ''">
@@ -527,7 +522,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <iframe id="myIframe" width="100%" height="613" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     </div>

@@ -2,7 +2,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     angular.element(document).ready(function () {
 
     });
-
+    $scope.userBookmark = {};
     
 
     $scope.pauseVideo = function () {
@@ -16,6 +16,16 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var player = new Vimeo.Player(iframe);
 
         player.pause().then(function () {
+            if ($scope.bookmark) {
+                player.getCurrentTime().then(function (seconds) {
+                    var setTime = $scope.SecondsTohhmmss(seconds);
+                    $scope.userBookmark.BookMarkTime = setTime == 0 ? "00:00:00" : setTime;
+                    $scope.userBookmark.Sethhmmss = seconds;
+                    $scope.userBookmark.BookMarkName = "";
+                }).catch(function (error) {
+                    alert(error);
+                });
+            }
         }).catch(function (error) {
             switch (error.name) {
                 case 'PasswordError':
@@ -30,11 +40,11 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getTime = function () {
         var iframe = document.getElementById("myIframe");
-        var player = new Vimeo.Player(iframe);
+        var player = new Vimeo.Player(iframe);       
 
         player.getCurrentTime().then(function (seconds) {
             var setTime = $scope.SecondsTohhmmss(seconds);
-            $scope.userBookmark.BookMarkTime = setTime;
+            $scope.userBookmark.BookMarkTime = setTime== 0 ? "00:00:00":setTime ;
             $scope.userBookmark.Sethhmmss = seconds;
             $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
@@ -53,8 +63,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             seconds = Math.floor(Math.round(seconds * 100) / 100);
 
             result = (hours < 10 ? "0" + hours : hours);
-            result += "-" + (minutes < 10 ? "0" + minutes : minutes);
-            result += "-" + (seconds < 10 ? "0" + seconds : seconds);
+            result += ":" + (minutes < 10 ? "0" + minutes : minutes);
+            result += ":" + (seconds < 10 ? "0" + seconds : seconds);
         }
         return result;
     }
@@ -84,6 +94,17 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         dataService.getData(webURL).then(function (data) {
             $scope.userTalkList = data;
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
+            console.log($scope.getUserTalks);
+            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
+            //{
+            //    $scope.timeIcon = true;
+            //}
+            //if (data.IsActive === "IsActive" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
+            //{
+            //    $scope.timeIcon = true;
+            //}
+            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending") {
+            //}
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -129,7 +150,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
-        $scope.modalData = talk;
+        $scope.modalData = talk;       
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
             $scope.currentLecture = data;
@@ -186,10 +207,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 $scope.assistance = currentActive ? false : true;
                 break;
             case 'bookmark':
-                $scope.getTime();
-                $scope.pauseVideo();
-
-                $scope.bookmark = currentActive ? false : true;
+                $scope.bookmark = currentActive ? false : true;                                
+                //$scope.pauseVideo();               
                 break;
             case 'bookmarkList':
                 $scope.bookmarkList = currentActive ? false : true;
@@ -218,10 +237,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getUserBookMark = function () {
         var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
-        dataService.getData(webURL, {}).then(function (data) {
+        dataService.getData(webURL, {}).then(function (data) {            
             $scope.userBookmark = data;
             var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);
-            $scope.userBookmark.BookMarkTime = setTime;
+            $scope.userBookmark.BookMarkTime = setTime==0? "00:00:00": setTime;
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -1423,6 +1442,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             $scope.bookmark = false;
             $scope.bookmarkList = false;
             $scope.rating = false;
+            $scope.getUserTalks();
         });
     });
 }]);
