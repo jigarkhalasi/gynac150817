@@ -2,7 +2,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     angular.element(document).ready(function () {
 
     });
-
+    $scope.userBookmark = {};
     
 
     $scope.pauseVideo = function () {
@@ -16,6 +16,16 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var player = new Vimeo.Player(iframe);
 
         player.pause().then(function () {
+            if ($scope.bookmark) {
+                player.getCurrentTime().then(function (seconds) {
+                    var setTime = $scope.SecondsTohhmmss(seconds);
+                    $scope.userBookmark.BookMarkTime = setTime == 0 ? "00:00:00" : setTime;
+                    $scope.userBookmark.Sethhmmss = seconds;
+                    $scope.userBookmark.BookMarkName = "";
+                }).catch(function (error) {
+                    alert(error);
+                });
+            }
         }).catch(function (error) {
             switch (error.name) {
                 case 'PasswordError':
@@ -30,7 +40,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getTime = function () {
         var iframe = document.getElementById("myIframe");
-        var player = new Vimeo.Player(iframe);
+        var player = new Vimeo.Player(iframe);       
 
         player.getCurrentTime().then(function (seconds) {
             var setTime = $scope.SecondsTohhmmss(seconds);
@@ -76,7 +86,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;
 
-    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -84,6 +94,17 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         dataService.getData(webURL).then(function (data) {
             $scope.userTalkList = data;
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
+            console.log($scope.getUserTalks);
+            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
+            //{
+            //    $scope.timeIcon = true;
+            //}
+            //if (data.IsActive === "IsActive" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
+            //{
+            //    $scope.timeIcon = true;
+            //}
+            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending") {
+            //}
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -186,9 +207,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 $scope.assistance = currentActive ? false : true;
                 break;
             case 'bookmark':
-                $scope.getTime();
-                //$scope.pauseVideo();
-                $scope.bookmark = currentActive ? false : true;
+                $scope.bookmark = currentActive ? false : true;                                
+                //$scope.pauseVideo();               
                 break;
             case 'bookmarkList':
                 $scope.bookmarkList = currentActive ? false : true;
@@ -1422,6 +1442,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             $scope.bookmark = false;
             $scope.bookmarkList = false;
             $scope.rating = false;
+            $scope.getUserTalks();
         });
     });
 }]);

@@ -3031,4 +3031,22 @@ mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'><o:p>&nbsp
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            switch (event.keyCode) {
+                case 116: //F5 button
+                    event.returnValue = false;
+                    event.keyCode = 0;
+                    return false;
+                case 82: //R button
+                    if (event.ctrlKey) {
+                        event.returnValue = false;
+                        event.keyCode = 0;
+                        return false;
+                    }
+            }
+        };
+    }
+</script>
 </html>
