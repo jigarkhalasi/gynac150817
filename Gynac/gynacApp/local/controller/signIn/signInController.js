@@ -167,10 +167,6 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
 
                     }
                     var mytimeout = $timeout($scope.onTimeout, 1000);
-                    //$rootScope.authenticatedUser = data;
-                    //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
-                    //$scope.authenticLecture();
-                    //$('#triggerSucsessfullySigninModal').trigger('click');               
                 }
                 
             }, function (errorMessage) {
@@ -281,8 +277,9 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $rootScope.$emit('signOut', $rootScope.authenticatedUser.UserInfo.User_Id);
         $rootScope.authenticatedUser = {};
         $rootScope.authenticatedUser.UserInfo = {};
-        location.reload();
-        $state.go('home');
+        //window.location.href = '/home';
+        location.href = '/';
+        //$state.go('home');
     }
 
     $scope.goToHome = function () {
@@ -292,6 +289,5 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
     $scope.goToLogin = function () {
         $state.go('signIn');
     }
-
     
 }]);

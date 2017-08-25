@@ -908,14 +908,14 @@ namespace Gynac
             {
                 var apiKey = System.Configuration.ConfigurationManager.AppSettings["SmsApiKey"];
                 var senderText = System.Configuration.ConfigurationManager.AppSettings["SmsSenderText"];
-
+                String message1 = HttpUtility.UrlEncode(message);
                 //String message = "Dear User, Your OTP for varification is " + otp + ", Please do not share with other. - GynAc";//HttpUtility.UrlEncode(otp);
                 using (var wb = new WebClient())
                 {
                     byte[] response = wb.UploadValues("https://api.textlocal.in/send/", new NameValueCollection(){
                         {"apikey" , apiKey},
                         {"numbers" , Mobile},
-                        {"message" , message},
+                        {"message" , message1},
                         {"sender" , senderText}
                     });
 

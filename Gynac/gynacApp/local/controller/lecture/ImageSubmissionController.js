@@ -7,8 +7,6 @@
     }
 
     $scope.getModuleImages = function () {
-        //$rootScope.authenticatedUser.UserInfo.User_Id = "45";
-        //var userId = $rootScope.authenticatedUser.UserInfo.User_Id;
         var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";        
         var moduleId = $stateParams.moduleId;
         var webURL = 'api/gynac/getmoduleimages?moduleId=' + moduleId + '&&userId=' + userId;
