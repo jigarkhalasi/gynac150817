@@ -468,10 +468,12 @@ namespace Gynac
                     i--;
             }
             //lblResult.Text = strrandom;
+
             String message = "Dear User, Your OTP for varification is " + strrandom + ", Please do not share with other. - GynAc";//HttpUtility.UrlEncode(otp);
+            String smsMessage = "Welcome to Gynecology Academy. Your OTP for login is:" + strrandom;
             if (IsSendSms)
             {
-                var res = _businessLayer.sendSMS(strrandom, Mobile, message);
+                var res = _businessLayer.sendSMS(strrandom, Mobile, smsMessage);
             }
             var resu = _businessLayer.SendOtpEmail(Email, message);
             //if (res)

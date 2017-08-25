@@ -161,8 +161,7 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                         }
                         else {
                             //otp blank
-                            $scope.dothisdone = "";
-                            
+                            $scope.dothisdone = "";                            
                         }
 
                     }
