@@ -130,7 +130,7 @@ namespace Gynac
                         body = bodyData;
                         break;
                     case EmailType.Otp:
-                        subject = "Otp for Login - GynAc";
+                        subject = "OTP for Login - GynAc";
                         mailUrl = "otp";
                         body = bodyData;
                         break;

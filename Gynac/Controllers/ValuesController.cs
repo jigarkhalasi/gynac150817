@@ -469,8 +469,8 @@ namespace Gynac
             }
             //lblResult.Text = strrandom;
 
-            String message = "Dear User, Your OTP for varification is " + strrandom + ", Please do not share with other. - GynAc";//HttpUtility.UrlEncode(otp);
-            String smsMessage = "Welcome to Gynecology Academy. Your OTP for login is:" + strrandom;
+            String message = "Welcome to Gynecology Academy. Your OTP for login is: " + strrandom ;//HttpUtility.UrlEncode(otp);
+            String smsMessage = "Welcome to Gynecology Academy. Your OTP for login is: " + strrandom;
             if (IsSendSms)
             {
                 var res = _businessLayer.sendSMS(strrandom, Mobile, smsMessage);
