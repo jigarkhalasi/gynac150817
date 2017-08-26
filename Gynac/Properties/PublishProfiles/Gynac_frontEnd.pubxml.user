@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:49</publishTime>
     </File>
     <File Include="bin/Gynac.dll">
-      <publishTime>08/25/2017 22:08:29</publishTime>
+      <publishTime>08/26/2017 01:20:27</publishTime>
     </File>
     <File Include="bin/MCPG.CCA.Util.dll">
       <publishTime>08/16/2017 21:53:25</publishTime>
@@ -253,7 +253,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/home/home.html">
-      <publishTime>08/22/2017 10:06:46</publishTime>
+      <publishTime>08/26/2017 00:13:16</publishTime>
     </File>
     <File Include="gynacApp/local/controller/home/homeController.js">
       <publishTime>08/23/2017 22:46:43</publishTime>
@@ -265,7 +265,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureController.js">
-      <publishTime>08/25/2017 09:34:05</publishTime>
+      <publishTime>08/26/2017 00:21:46</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureModalController.js">
       <publishTime>08/16/2017 21:53:28</publishTime>
@@ -274,7 +274,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lecturePage.html">
-      <publishTime>08/25/2017 22:01:46</publishTime>
+      <publishTime>08/26/2017 01:18:20</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelController.js">
       <publishTime>08/16/2017 21:53:28</publishTime>
@@ -301,7 +301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/22/2017 10:17:06</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signIn/signInController.js">
-      <publishTime>08/25/2017 00:34:32</publishTime>
+      <publishTime>08/25/2017 23:38:03</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signIn/signInPage.html">
       <publishTime>08/23/2017 09:56:31</publishTime>
@@ -331,7 +331,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/css/style.css">
-      <publishTime>08/25/2017 00:05:23</publishTime>
+      <publishTime>08/26/2017 01:20:09</publishTime>
     </File>
     <File Include="gynacApp/local/fonts/AvantGardeLT-Book.eot">
       <publishTime>08/16/2017 21:53:28</publishTime>
@@ -3442,16 +3442,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:24</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/24/2017 23:10:52</publishTime>
+      <publishTime>08/25/2017 23:38:03</publishTime>
     </File>
     <File Include="Views/Views/Home/Index.cshtml">
-      <publishTime>08/24/2017 23:11:07</publishTime>
+      <publishTime>08/25/2017 23:38:03</publishTime>
     </File>
     <File Include="Views/Views/Shared/Error.cshtml">
       <publishTime>08/16/2017 21:53:24</publishTime>
     </File>
     <File Include="Views/Views/Shared/_Layout.cshtml">
-      <publishTime>08/24/2017 23:11:23</publishTime>
+      <publishTime>08/25/2017 23:38:03</publishTime>
     </File>
     <File Include="Views/Views/Shared/_Layout_15_march.cshtml">
       <publishTime>08/16/2017 21:53:24</publishTime>
@@ -3475,7 +3475,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 21:53:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/25/2017 22:08:31</publishTime>
+      <publishTime>08/26/2017 00:00:11</publishTime>
     </File>
   </ItemGroup>
 </Project>
