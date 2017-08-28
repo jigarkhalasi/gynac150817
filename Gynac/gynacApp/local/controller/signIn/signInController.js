@@ -161,16 +161,11 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                         }
                         else {
                             //otp blank
-                            $scope.dothisdone = "";
-                            
+                            $scope.dothisdone = "";                            
                         }
 
                     }
                     var mytimeout = $timeout($scope.onTimeout, 1000);
-                    //$rootScope.authenticatedUser = data;
-                    //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
-                    //$scope.authenticLecture();
-                    //$('#triggerSucsessfullySigninModal').trigger('click');               
                 }
                 
             }, function (errorMessage) {
@@ -281,8 +276,8 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $rootScope.$emit('signOut', $rootScope.authenticatedUser.UserInfo.User_Id);
         $rootScope.authenticatedUser = {};
         $rootScope.authenticatedUser.UserInfo = {};
-        window.location.href = '/home';
-        //location.reload();
+        //window.location.href = '/home';
+        location.href = '/';
         //$state.go('home');
     }
 

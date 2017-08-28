@@ -1,21 +1,31 @@
 app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
-    angular.element(document).ready(function () {
 
-    });
+    $scope.userBookmark = {};
 
-    
+   
 
     $scope.pauseVideo = function () {
 
-        $scope.assistance = false;
-        $scope.bookmark = false;
-        $scope.bookmarkList = false;
-        $scope.rating = false;
+        $scope.closeAllAccordin();
 
         var iframe = document.getElementById("myIframe");
         var player = new Vimeo.Player(iframe);
 
         player.pause().then(function () {
+            if ($scope.bookmark) {
+                player.getCurrentTime().then(function (seconds) {
+                    var setTime = $scope.SecondsTohhmmss(seconds);
+                    $scope.$apply(function () {
+                        $scope.userBookmark.BookMarkTime = setTime == 0 ? "00:00:00" : setTime;
+                        // document.getElementById('bookmarktime').value = setTime == 0 ? "00:00:00" : setTime;
+                        $scope.userBookmark.Sethhmmss = seconds;
+                        $scope.userBookmark.BookMarkName = "";
+                    });
+                   
+                }).catch(function (error) {
+                    alert(error);
+                });
+            }
         }).catch(function (error) {
             switch (error.name) {
                 case 'PasswordError':
@@ -30,11 +40,11 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getTime = function () {
         var iframe = document.getElementById("myIframe");
-        var player = new Vimeo.Player(iframe);
+        var player = new Vimeo.Player(iframe);       
 
         player.getCurrentTime().then(function (seconds) {
             var setTime = $scope.SecondsTohhmmss(seconds);
-            $scope.userBookmark.BookMarkTime = setTime;
+            $scope.userBookmark.BookMarkTime = setTime== 0 ? "00:00:00":setTime ;
             $scope.userBookmark.Sethhmmss = seconds;
             $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
@@ -53,13 +63,14 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             seconds = Math.floor(Math.round(seconds * 100) / 100);
 
             result = (hours < 10 ? "0" + hours : hours);
-            result += "-" + (minutes < 10 ? "0" + minutes : minutes);
-            result += "-" + (seconds < 10 ? "0" + seconds : seconds);
+            result += ":" + (minutes < 10 ? "0" + minutes : minutes);
+            result += ":" + (seconds < 10 ? "0" + seconds : seconds);
         }
         return result;
     }
 
     $scope.setTime = function (seconds) {
+        $scope.closeAllAccordin();
         var iframe = document.getElementById("myIframe");
         var player = new Vimeo.Player(iframe);
         player.setCurrentTime(seconds).then(function (secondss) {
@@ -74,9 +85,9 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     }
 
     $scope.userTalkList = {};
-    $scope.overviewDisplay = false;
+    $scope.overviewDisplay = false;    
 
-    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -84,12 +95,23 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         dataService.getData(webURL).then(function (data) {
             $scope.userTalkList = data;
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
+            console.log($scope.getUserTalks);
+            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
+            //{
+            //    $scope.timeIcon = true;
+            //}
+            //if (data.IsActive === "IsActive" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
+            //{
+            //    $scope.timeIcon = true;
+            //}
+            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending") {
+            //}
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
         //}
     }
-    $scope.getUserTalks();
+    
 
     $scope.getUserRatings = function () {
         var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
@@ -129,14 +151,14 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
-        $scope.modalData = talk;
+        $scope.modalData = talk;       
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
             $scope.currentLecture = data;
             if ($scope.modalData.UserTalkId) {
                 $scope.display = true;
                 $scope.currentLecture.Comment = $scope.modalData.Comment;
-                document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
+                document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink + "?quality=720p" : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
             }
             else {
                 $scope.display = false;
@@ -149,26 +171,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
         $scope.getUserRatings();
         $scope.getUserBookMark();
-        //var modalInstance = $uibModal.open({
-        //    templateUrl: 'gynacApp/local/controller/lecture/videoModalPage.html',
-        //    controller: 'VideoModalController as vmc',
-        //    size:'lg',
-        //    resolve: {
-        //        modalData: function () {
-        //            return angular.copy(talk);
-        //        }
-        //    }
-        //});
-
-        //modalInstance.result.then(function (data) {
-        //    $scope.getUserTalks();
-        //    if (data == "success") {
-        //        alert("submitted");
-        //        //$scope.getUserTalks();
-        //    }
-        //}, function () {
-        //    // $log.info('Modal dismissed at: ' + new Date());
-        //});
+       
     }
 
     $scope.getIframeSrc = function () {
@@ -177,19 +180,14 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.setAccording = function (selectAccordian, currentActive) {
         $scope.pauseVideo();
-        $scope.assistance = false;
-        $scope.bookmark = false;
-        $scope.bookmarkList = false;
-        $scope.rating = false;
+        $scope.closeAllAccordin();
         switch (selectAccordian) {
             case 'assistance':
                 $scope.assistance = currentActive ? false : true;
                 break;
             case 'bookmark':
-                $scope.getTime();
-                $scope.pauseVideo();
-
-                $scope.bookmark = currentActive ? false : true;
+                $scope.bookmark = currentActive ? false : true;                                
+                //$scope.pauseVideo();               
                 break;
             case 'bookmarkList':
                 $scope.bookmarkList = currentActive ? false : true;
@@ -199,6 +197,13 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 break;
 
         }
+    }
+
+    $scope.closeAllAccordin = function () {
+        $scope.assistance = false;
+        $scope.bookmark = false;
+        $scope.bookmarkList = false;
+        $scope.rating = false;
     }
 
     $scope.updateVideoComment = function () {
@@ -218,10 +223,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getUserBookMark = function () {
         var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
-        dataService.getData(webURL, {}).then(function (data) {
+        dataService.getData(webURL, {}).then(function (data) {            
             $scope.userBookmark = data;
-            var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);
-            $scope.userBookmark.BookMarkTime = setTime;
+            var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);            
+            $scope.userBookmark.BookMarkTime = setTime==0? "00:00:00": setTime;
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -298,7 +303,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.slide = function (dir) {
         $('#carousel-example-generic').carousel(dir);
     };
-    $scope.authenticLecture = function () {
+    $scope.authenticLecture = function () {        
+        $scope.getUserTalks();
         //for (var j = 0; j < $rootScope.speakerVideoList.length; j++) {
         //    $rootScope.speakerVideoList[j].isActive = false;
         //}
@@ -1419,10 +1425,18 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         $('.modal').on('hidden.bs.modal', function (e) {
             $iframe = $(this).find("iframe");
             $iframe.attr("src", $iframe.attr("src"));           
-            $scope.assistance = false;
-            $scope.bookmark = false;
-            $scope.bookmarkList = false;
-            $scope.rating = false;
+            $scope.closeAllAccordin();
+            $scope.getUserTalks();
         });
+
+        //$('#video-ID1').on('shown.bs.modal', function () {
+        //    $(this).find('.modal-dialog').css({
+        //        width: 'auto',
+        //        height: 'auto',
+        //        'max-height': '100%'
+        //    });
+        //});
+
+        //$("#video-ID1").css('max-height', $(window).height() * 10);        
     });
 }]);
