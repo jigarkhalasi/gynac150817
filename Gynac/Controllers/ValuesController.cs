@@ -454,7 +454,7 @@ namespace Gynac
         public string GenerateOTP(bool IsSendSms, string Email, string Mobile)
         {
             //declare array string to generate random string with combination of small,capital letters and numbers
-            char[] charArr = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            char[] charArr = "0123456789".ToCharArray();
             string strrandom = string.Empty;
             Random objran = new Random();
             int noofcharacters = 5;//Convert.ToInt32(txtCharacters.Text);

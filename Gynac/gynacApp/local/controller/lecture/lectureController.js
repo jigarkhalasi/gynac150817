@@ -204,6 +204,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         $scope.bookmark = false;
         $scope.bookmarkList = false;
         $scope.rating = false;
+        $scope.selectuserBookmark = "";
     }
 
     $scope.updateVideoComment = function () {
