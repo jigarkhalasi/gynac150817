@@ -444,7 +444,7 @@
             <div class="modal-header">
                 <button type="button" class="close" ng-click="pauseVideo()" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
                 <h4 class="modal-title">{{ currentLecture.Name }}</h4>
-                <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll</small>
+                <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll -> You are currently watching a preview. To access the entire talk, please contact at support@gynac.org or call us at +91 7019849711.</small>
             </div>
             <div class="videoWrappermain">
                 <div class="container-fluid">
@@ -473,10 +473,10 @@
                                     </ul>
                                 </li>
                                 <li ng-class="bookmark? 'open' : ''">
-                                    <div class="link" ng-click="setAccording('bookmark', bookmark)"><i class="fa fa-bookmark"></i>Bookmark at current Time<i class="fa fa-chevron-down"></i></div>
+                                    <div class="link" ng-click="setAccording('bookmark', bookmark)"><i class="fa fa-bookmark"></i>Bookmark Current Time<i class="fa fa-chevron-down"></i></div>
                                     <ul class="submenu" ng-style="{display:bookmark? 'block' : 'none'}">
                                         <div>
-                                            <input class="form-control" type="text" name="starttime" placeholder="Book mark name" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
+                                            <input class="form-control" type="text" name="starttime" placeholder="Name the bookmark" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
                                             <label class="tags" style="width:60px;margin-top:3px;" id="bookmarktime">{{userBookmark.BookMarkTime}}</label>
                                             <button style="margin-top:1px; float:right;" type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
                                         </div>                                        
@@ -487,7 +487,7 @@
                                     <ul class="submenu" ng-style="{display:bookmarkList? 'block' : 'none'}">
                                         <li>
                                             <select ng-model="selectuserBookmark" class="form-control" ng-options="i.BookMarkName for i in userBookmark" ng-change="setTime(selectuserBookmark.BookMarkTime)">
-                                                <option value="">--- Select an Bookmark ---</option>
+                                                <option value="">--- Select a Bookmark ---</option>
                                             </select>
                                         </li>
                                     </ul>

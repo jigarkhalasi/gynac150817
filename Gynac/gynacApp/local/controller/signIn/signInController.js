@@ -189,7 +189,7 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
             });
         }
         else {
-            alert("Wrong OTP, Please check and verify.");
+            alert("Invalid OTP. Either the OTP is incorrect or has expired");
         }
     }
 
