@@ -16,15 +16,15 @@
                             <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
                             <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
                             <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
-                            <ul class="dropdown-menu">
-                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
-                                <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
-                            </ul>
-                        </li>-->
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                </ul>
+                            </li>-->
                             <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
                             <!--<li class="li-1">
-                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
-                        </li>-->
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
                             <li class="li-1 state-active"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
                             <li class="dropdown li-1">
                                 <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
@@ -43,7 +43,7 @@
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
                             <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -73,7 +73,8 @@
             <div class="logo-2">
                 <img src="gynacApp/local/img/logo-1.png" class="">
             </div>
-        </div>--></div>
+        </div>-->
+    </div>
     <div class="container main-body" ng-show="signIn == 1" style="min-height: 330px;" ng-init="slide('next')">
         <div class="col-md-3"></div>
         <div class="col-md-6 main-body-center">
@@ -110,7 +111,8 @@
                         <div class="col-md-4 padding0" style="cursor: pointer; padding-top: 6px; color: #23527c;"> <span ng-click="signIn = 2">Forgot Password?</span> </div>
                     </div>
                     <div>
-                        <p style="padding:15px;margin: 0 0 15px;"><a class="a-1" href="#/signUp" style="font-size: 15px; color: #23527c;">Register here to enroll for the certification course</a></p> </div>
+                        <p style="padding:15px;margin: 0 0 15px;"><a class="a-1" href="#/signUp" style="font-size: 15px; color: #23527c;">Register here to enroll for the certification course</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,7 +147,8 @@
                     </div>
                     <!--<div>
                                 <h2 class="magenta text-center" style="padding:15px">New to GynAc? <a class="a-1" href="#/signUp">Register</a></h2>
-                            </div>--></div>
+                            </div>-->
+                </div>
             </div>
         </div>
     </div>
@@ -184,7 +187,8 @@
                     </div>
                     <!--<div>
                                 <h2 class="magenta text-center" style="padding:15px">New to GynAc? <a class="a-1" href="#/signUp">Register</a></h2>
-                            </div>--></div>
+                            </div>-->
+                </div>
             </div>
         </div>
     </div>
@@ -198,7 +202,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Log In</h3> </div>
+                    <h3 class="modal-title">Log In</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center" style="color:red">Invalid Email Id or Password!! </p>
                 </div>
@@ -218,7 +223,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Log In</h3> </div>
+                    <h3 class="modal-title">Log In</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center">Sucsessfully Log-in</p>
                 </div>
@@ -238,7 +244,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Forgot Password</h3> </div>
+                    <h3 class="modal-title">Forgot Password</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center" style="color:red">No account avilable with this Email id, Please enter a valid Email id</p>
                 </div>
@@ -258,7 +265,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Forgot Password</h3> </div>
+                    <h3 class="modal-title">Forgot Password</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center">Mail sent to your registered email ID</p>
                 </div>
@@ -278,7 +286,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Reset Password</h3> </div>
+                    <h3 class="modal-title">Reset Password</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center">Password successfully changed</p>
                 </div>
@@ -297,7 +306,8 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Log In</h3> </div>
+                    <h3 class="modal-title">Log In</h3>
+                </div>
                 <div class="modal-body">
                     <p class="text-center" style="color:red" ng-show="!isDisplay">Email id validation pending, please check your email and validate</p>
                     <p class="text-center" style="color:red" ng-show="isDisplay">Already Login!! </p>
@@ -311,24 +321,38 @@
         </div>
     </div>
     <div class="container main-body" ng-show="signIn == 5" style="min-height: 330px;">
-        <div class="col-md-3">
-            <p>An OTP has been sent to your registered mobile phone and your email. Please enter the OTP within 5 minutes.</p>
+
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-8">
+                <p>An OTP has been sent to your registered mobile phone and your email. Please enter the OTP within 5 minutes.</p>
+            </div>
+            <div class="col-md-2">
+
+            </div>
         </div>
-        <div class="col-md-6 main-body-center">
-            <div class="col-md-12 well center-inner">
-                <h4>One Time Password</h4>
-                <span style="float:right;">{{ counter | secondsToDateTime | date : "mm:ss"}}</span>
-                <div class="col-md-12 center-describe">
-                    <div class="col-md-12 all-form">                        
-                        <div class="col-md-5 input-name">OTP: </div>
-                        <div class="col-md-7 input-form">
-                            <input type="text" ng-model="signin.otp" class="form-control">
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 main-body-center">
+                <div class="col-md-12 well center-inner">
+                    <h4>One Time Password</h4>
+                    <span style="float:right;">{{ counter | secondsToDateTime | date : "mm:ss"}}</span>
+                    <div class="col-md-12 center-describe">
+                        <div class="col-md-12 all-form">
+                            <div class="col-md-5 input-name">OTP: </div>
+                            <div class="col-md-7 input-form">
+                                <input type="text" ng-model="signin.otp" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 submit-button">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4 button-area">
-                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="checkotp()" ng-disabled="!signin.otp">Verify</button>
+                        <div class="col-md-12 submit-button">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 button-area">
+                                <button type="button" class="btn btn-primary button magenta-backgound" ng-click="checkotp()" ng-disabled="!signin.otp">Verify</button>
+                            </div>
                         </div>
                     </div>
                 </div>
