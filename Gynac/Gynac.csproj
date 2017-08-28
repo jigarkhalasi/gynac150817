@@ -353,6 +353,7 @@
     <Content Include="gynacApp\local\img\profile1.png" />
     <Content Include="gynacApp\local\img\profile2.jpg" />
     <Content Include="gynacApp\local\img\profile3.png" />
+    <Content Include="gynacApp\local\img\question\image7.jpg" />
     <Content Include="gynacApp\local\img\rt.png" />
     <Content Include="gynacApp\local\img\s1.png" />
     <Content Include="gynacApp\local\img\s1_old.png" />
@@ -505,6 +506,8 @@
     <Content Include="gynacApp\local\img\training-1.jpg" />
     <Content Include="gynacApp\local\img\training-2.jpg" />
     <Content Include="gynacApp\local\img\training-3.jpg" />
+    <Content Include="gynacApp\local\media\media1.wmv" />
+    <Content Include="gynacApp\local\media\media2.wmv" />
     <Content Include="gynacApp\local\media\Session 02.mp3" />
     <Content Include="gynacApp\local\media\Slide 12.mp4" />
     <Content Include="gynacApp\vendor\lib\angular-filter.js" />
