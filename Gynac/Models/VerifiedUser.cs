@@ -15,5 +15,6 @@ namespace Gynac
         public string PaymentGuid { get; set; }
         public bool IsLogin { get; set; }
         public string Otp { get; set; }
+        public bool IsTalkExist { get; set; }
     }
 }

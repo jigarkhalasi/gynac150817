@@ -147,8 +147,8 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                     $("#triggerEmailPendding").trigger('click');                    
                     $rootScope.authenticatedUser.UserInfo.User_Id = data.UserInfo.User_Id;
                     $scope.isDisplay = true;
-                }                
-                else {
+                }
+                else if (data.IsTalkExist == true) {
                     $scope.signIn = 5;
                     $scope.dothisdone = data.Otp;
                     $scope.logindata = data;
@@ -161,11 +161,17 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                         }
                         else {
                             //otp blank
-                            $scope.dothisdone = "";                            
+                            $scope.dothisdone = "";
                         }
 
                     }
                     var mytimeout = $timeout($scope.onTimeout, 1000);
+                }
+                else {
+                    $rootScope.authenticatedUser = data;
+                    localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
+                    $scope.authenticLecture();
+                    $('#triggerSucsessfullySigninModal').trigger('click');  
                 }
                 
             }, function (errorMessage) {

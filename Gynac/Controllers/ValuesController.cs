@@ -84,7 +84,7 @@ namespace Gynac
                 result = _businessLayer.VerifyLogin(login);
                 if (result != null)
                 {
-                    if (!result.IsLogin && result.EmailVerificationPending != true)
+                    if (!result.IsLogin && result.EmailVerificationPending != true && result.IsTalkExist)
                     {
                         var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
                         result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);

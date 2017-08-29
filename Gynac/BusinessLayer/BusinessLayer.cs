@@ -319,8 +319,15 @@ namespace Gynac
                         }
                     }
 
-                    // Payment work Guid
+                    //usertalk exist or not
                     if (ds.Tables.Count > 3 && ds.Tables[3] != null && ds.Tables[3].Rows != null && ds.Tables[3].Rows.Count > 0)
+                    {
+                        verifiedUser.IsTalkExist = Convert.ToInt32(ds.Tables[3].Rows[0][0].ToString()) > 0 ? true : false;                            
+                    }
+
+                    // Payment work Guid
+                    //if (ds.Tables.Count > 3 && ds.Tables[3] != null && ds.Tables[3].Rows != null && ds.Tables[3].Rows.Count > 0)
+                    if (ds.Tables.Count > 4 && ds.Tables[4] != null && ds.Tables[4].Rows != null && ds.Tables[4].Rows.Count > 0)
                     {
                         int index = ds.Tables[3].Rows.Count - 1;
 
