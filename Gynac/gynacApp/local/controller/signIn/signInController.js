@@ -295,4 +295,20 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $state.go('signIn');
     }
     
+    $scope.checkIfEnterKeyWasPressed = function ($event, callfuncation) {
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode === 13) {
+            // Do that thing you finally wanted to do            
+            switch(callfuncation)
+            {
+                case 'login':
+                    $scope.submitData();
+                    break;
+                case 'forgotPassword':
+                    $scope.forgotPassword();
+                    break;
+            }
+        }
+        $event.preventDefault();
+    };
 }]);
