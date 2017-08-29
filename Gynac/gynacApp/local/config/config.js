@@ -125,6 +125,10 @@ app.run(function ($rootScope, dataService, $state) {
         $rootScope.authenticatedUser = {};
         $rootScope.authenticatedUser.UserInfo = {};
     }
+
+    window.onhashchange = function () {
+        $('.modal-backdrop').remove();
+    };
 });
 
 app.constant('_',

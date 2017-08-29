@@ -191,6 +191,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 break;
             case 'bookmarkList':
                 $scope.bookmarkList = currentActive ? false : true;
+                $scope.selectuserBookmark = "";
                 break;
             case 'rating':
                 $scope.rating = currentActive ? false : true;
@@ -1425,7 +1426,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $(function () {
         $('.modal').on('hidden.bs.modal', function (e) {
             $iframe = $(this).find("iframe");
-            $iframe.attr("src", $iframe.attr("src"));           
+            $iframe.attr("src", '');        
             $scope.closeAllAccordin();
             $scope.getUserTalks();
         });

@@ -1272,3 +1272,7 @@ margin: auto !important;
     height: 175px;
     width: 150px;
 }
+
+.lectalkname {
+    vertical-align:middle !important;
+}
