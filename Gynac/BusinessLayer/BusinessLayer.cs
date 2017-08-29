@@ -62,7 +62,7 @@ namespace Gynac
                                     + "   <td>" + user.Where_Hear + "</td>"
                                     + " </tr>"
                                     + "</table>");
-                    SendMail(support, EmailType.Registration, "", body, "");
+                    //SendMail(support, EmailType.Registration, "", body, "");
                     result = 1;
 
                 }
@@ -86,6 +86,8 @@ namespace Gynac
             string subject = string.Empty;
             string body = string.Empty;
             string mailUrl = string.Empty;
+
+            //message.Headers = 
             try
             {
                 if (emailType.Equals(EmailType.ContactUs))
@@ -107,11 +109,16 @@ namespace Gynac
                 //message.Bcc.Add(ConfigurationManager.AppSettings["EmailBccAddress"].ToString());
 
                 message.IsBodyHtml = true;
+                message.Headers.Add("Content-Type", "content=text/html; charset=\"UTF-8\"");
                 switch (emailType)
                 {
                     case EmailType.VerifyEmail:
                         subject = "Email Verification";
                         mailUrl = ConfigurationManager.AppSettings["VerifyEmailUrl"].ToString();
+                        var body1 = new StringBuilder();
+                        //body1.AppendLine(@"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/>");
+                        //body1.AppendLine("<a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>");
+                        //body = body1.ToString();
                         body = @"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
                         break;
                     case EmailType.ForgotPassword:
@@ -323,7 +330,7 @@ namespace Gynac
                     //usertalk exist or not
                     if (ds.Tables.Count > 3 && ds.Tables[3] != null && ds.Tables[3].Rows != null && ds.Tables[3].Rows.Count > 0)
                     {
-                        verifiedUser.IsTalkExist = Convert.ToInt32(ds.Tables[3].Rows[0][0].ToString()) > 0 ? true : false;                            
+                        verifiedUser.IsTalkExist = Convert.ToInt32(ds.Tables[3].Rows[0][0].ToString()) > 0 ? true : false;
                     }
 
                     // Payment work Guid
@@ -725,7 +732,7 @@ namespace Gynac
                         model.PreViewVideoLink = row["PreViewVideoLink"].ToString();
                     }
                     model.Name = row["Name"].ToString();
-                    
+
                 }
             }
             catch
@@ -742,8 +749,8 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UpdateUserTalkComment(model);
-                string bodyData = @"<b> Comment :- " + model.Comment +"Send By</b> <br><br> "+ model.UserEmail;
-                SendMail(model.Email, EmailType.Comment, "",bodyData);
+                string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
+                SendMail(model.Email, EmailType.Comment, "", bodyData);
                 result = 1;
             }
             catch
@@ -914,7 +921,7 @@ namespace Gynac
             {
                 var apiKey = System.Configuration.ConfigurationManager.AppSettings["SmsApiKey"];
                 var senderText = System.Configuration.ConfigurationManager.AppSettings["SmsSenderText"];
-               // String message1 = HttpUtility.UrlEncode(message);
+                // String message1 = HttpUtility.UrlEncode(message);
                 //String message = "Dear User, Your OTP for varification is " + otp + ", Please do not share with other. - GynAc";//HttpUtility.UrlEncode(otp);
                 using (var wb = new WebClient())
                 {
@@ -1039,7 +1046,7 @@ namespace Gynac
                         data.UserId = Convert.ToInt32(row["UserId"].ToString());
                         data.BookMarkName = row["BookMarkName"].ToString();
                         data.BookMarkTime = row["BookMarkTime"].ToString();
-                       
+
                         model.Add(data);
                     }
                 }
