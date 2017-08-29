@@ -253,7 +253,8 @@ namespace Gynac
                     verifiedUser.UserInfo.City_Town = drUser["City_Town"].ToString();
                     verifiedUser.UserInfo.Country = drUser["Country"].ToString();
                     verifiedUser.UserInfo.Institution_Work_Place = drUser["Institution_Work_Place"].ToString();
-                    verifiedUser.UserInfo.Where_Hear = drUser["Where_Hear"].ToString();
+                    verifiedUser.IpAddress = drUser["IpAddress"].ToString();
+                    verifiedUser.UserAgent = drUser["UserAgent"].ToString();
 
                     verifiedUser.PendingUserCourse = new List<User_Course>();
                     verifiedUser.ActiveUserCourse = new List<User_Course>();
@@ -735,8 +736,6 @@ namespace Gynac
             return model;
         }
 
-
-
         public int UpdateUserTalkComment(UpdateUserTalkCommentModel model)
         {
             int result = 0;
@@ -1060,6 +1059,22 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.DeleteUserBookmark(userBookmarkId);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
+
+        //update ip address
+        public int UpdateIpAddress(UserLogModel ipModel)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.UpdateIpAddress(ipModel);
                 result = 1;
             }
             catch

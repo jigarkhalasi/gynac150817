@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
+using System.Net.Http;
+
+using System.Web;
+using System.Web.Http;
+
 namespace Gynac
 {
     [RoutePrefix("api/gynac")]
@@ -81,13 +86,26 @@ namespace Gynac
             VerifiedUser result;
             try
             {
+                var ipModel = GetUserLogIp();
                 result = _businessLayer.VerifyLogin(login);
                 if (result != null)
                 {
                     if (!result.IsLogin && result.EmailVerificationPending != true && result.IsTalkExist)
                     {
-                        var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
-                        result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);
+                        if (result.UserAgent != ipModel.UserAgent && result.IpAddress != ipModel.UserIpAddress)
+                        {
+                            var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
+                            result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);
+                            
+                            //set the userip address and user agent
+                            ipModel.UserId = result.UserInfo.User_Id;
+                            var res = _businessLayer.UpdateIpAddress(ipModel);
+
+                            result.IsAlreadyLoginSameIp = false;
+                        }
+                        else {
+                            result.IsAlreadyLoginSameIp = true;
+                        }
                     }
                 }
             }
@@ -535,5 +553,14 @@ namespace Gynac
             }
             return result;
         }
+
+        public UserLogModel GetUserLogIp()
+        {
+            var model = new UserLogModel();
+            model.UserIpAddress = HttpContext.Current.Request.UserHostAddress;
+            model.UserAgent = HttpContext.Current.Request.UserAgent;
+            //var CalledUrl = HttpContext.Current.Request.Url.OriginalString;
+            return model;
+        }    
     }
 }

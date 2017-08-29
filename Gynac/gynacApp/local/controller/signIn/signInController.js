@@ -140,7 +140,14 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                 $scope.isDisplay = false;
                 if(data == null){
                     $('#triggerNotFoundSigninModal').trigger('click');
-                } else if (data.EmailVerificationPending == true) {
+                }
+                else if (data.IsAlreadyLoginSameIp == true) {
+                    $rootScope.authenticatedUser = data;
+                    localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
+                    $scope.authenticLecture();
+                    $('#triggerSucsessfullySigninModal').trigger('click');  
+                }
+                else if (data.EmailVerificationPending == true) {
                     $("#triggerEmailPendding").trigger('click');
                 }
                 else if (data.IsLogin == true && data.EmailVerificationPending == false) {
@@ -168,10 +175,10 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                     var mytimeout = $timeout($scope.onTimeout, 1000);
                 }
                 else {
-                    $rootScope.authenticatedUser = data;
-                    localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
-                    $scope.authenticLecture();
-                    $('#triggerSucsessfullySigninModal').trigger('click');  
+                    //$rootScope.authenticatedUser = data;
+                    //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
+                    //$scope.authenticLecture();
+                    //$('#triggerSucsessfullySigninModal').trigger('click');  
                 }
                 
             }, function (errorMessage) {
