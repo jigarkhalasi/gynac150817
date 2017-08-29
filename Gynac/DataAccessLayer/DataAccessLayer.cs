@@ -950,5 +950,36 @@ namespace Gynac
 
             return cost;
         }
+
+        //update ip address
+        public int UpdateIpAddress(UserLogModel ipModel)
+        {
+            int res = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Update_UserIp", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", ipModel.UserId);
+                        command.Parameters.AddWithValue("@UserAgent", ipModel.UserAgent);
+                        command.Parameters.AddWithValue("@IpAddress", ipModel.UserIpAddress);
+
+                        res = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return res;
+        }
     }
 }

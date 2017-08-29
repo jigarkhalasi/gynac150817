@@ -223,6 +223,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserBookmarkModel.cs" />
     <Compile Include="Models\UserImageModel.cs" />
+    <Compile Include="Models\UserLogModel.cs" />
     <Compile Include="Models\UserRatingsModel.cs" />
     <Compile Include="Models\UserTalksModel.cs" />
     <Compile Include="Models\User_Course.cs" />
@@ -345,6 +346,10 @@
     <Content Include="gynacApp\local\img\doc-4.jpg" />
     <Content Include="gynacApp\local\img\expand.png" />
     <Content Include="gynacApp\local\img\GynAc-logo.jpg" />
+    <Content Include="gynacApp\local\img\lecture_icon\1.svg" />
+    <Content Include="gynacApp\local\img\lecture_icon\2.svg" />
+    <Content Include="gynacApp\local\img\lecture_icon\3.svg" />
+    <Content Include="gynacApp\local\img\lecture_icon\4.svg" />
     <Content Include="gynacApp\local\img\loader.gif" />
     <Content Include="gynacApp\local\img\logo-1.png" />
     <Content Include="gynacApp\local\img\logo-4.png" />
@@ -1385,6 +1390,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="gynacApp\local\ModuleImage\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

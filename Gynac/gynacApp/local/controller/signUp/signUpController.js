@@ -83,7 +83,7 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
         return valid;
     }
 
-	$scope.submitData = function(){
+    $scope.submitData = function () {        
         if(isValid()){
             var webURL = 'api/gynac/saveuser';
             console.log($scope.user);
@@ -122,5 +122,14 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
     $scope.goToHome = function(){
         $state.go('home');
     }
+
+    $scope.checkIfEnterKeyWasPressed = function ($event) {
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode === 13) {
+            // Do that thing you finally wanted to do
+            $scope.submitData();            
+        }
+        $event.preventDefault();
+    };
 	
 }]);

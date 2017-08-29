@@ -106,7 +106,7 @@
                     <div class="col-md-12 submit-button">
                         <div class="col-md-4"></div>
                         <div class="col-md-4 button-area">
-                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()">Log In</button>
+                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()" ng-keypress="checkIfEnterKeyWasPressed($event,'login')">Log In</button>
                         </div>
                         <div class="col-md-4 padding0" style="cursor: pointer; padding-top: 6px; color: #23527c;"> <span ng-click="signIn = 2">Forgot Password?</span> </div>
                     </div>
@@ -141,7 +141,7 @@
                     <div class="col-md-12 submit-button">
                         <div class="col-md-4"></div>
                         <div class="col-md-4 button-area">
-                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="forgotPassword()">Verify</button>
+                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="forgotPassword()" ng-keypress="checkIfEnterKeyWasPressed($event,'forgotPassword')">Verify</button>
                         </div>
                         <div class="col-md-4 padding0" style="cursor: pointer; padding-top: 6px; color: #23527c;"> <span ng-click="signIn = 1">Log In</span> </div>
                     </div>
