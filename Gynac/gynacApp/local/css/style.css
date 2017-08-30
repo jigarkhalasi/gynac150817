@@ -203,6 +203,7 @@ display: none;}
     width: 100%;
     height: 100%;
 }
+
 /*ABOUT*/
 
 .about .about-body {margin-top: 1%;}
@@ -308,6 +309,9 @@ display: none;}
 .home .mypage-all .training-detail-right .training-title-right h3{text-align:center;padding:2% 0% 1% 0%;}
 .home .mypage-all .main-training-left {padding-right:7px;}
 .home .mypage-all .main-training-right {padding-left:7px;}
+
+/*Jigar Khalas*/
+.home .coursehome {margin-bottom:7px;}
 
 .font-italic {
 	font-style: italic;
@@ -1019,6 +1023,7 @@ a {
 	-webkit-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
+    text-align: left;
 }
 
 .accordion li:last-child .link {
@@ -1267,4 +1272,8 @@ margin: auto !important;
 .image_size {
     height: 175px;
     width: 150px;
+}
+
+.lectalkname {
+    vertical-align:middle !important;
 }

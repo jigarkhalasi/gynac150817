@@ -212,7 +212,7 @@
                     <div class="col-md-12 submit-button">
                         <div class="col-md-4"></div>
                         <div class="col-md-4 button-area">
-                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()" ng-disabled="!user.isChecked">SUBMIT</button>
+                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()" ng-keypress="checkIfEnterKeyWasPressed($event)" ng-disabled="!user.isChecked">SUBMIT</button>
                         </div>
                         <div class="col-md-4"></div>
                     </div>

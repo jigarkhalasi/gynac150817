@@ -82,7 +82,7 @@
                 <p>&nbsp;</p>
                 <h1>{{ Session }}</h1>
                 <p>&nbsp;</p>
-                <div class="col-md-12" ng-repeat="(module, moduleValue) in sessionValue | groupBy: 'ModuleName'">
+                <div class="col-md-12" ng-repeat="(module, moduleValue) in sessionValue | groupBy: 'ModuleName'" ng-init="moduleIndex = $index">
                     <div class="panel panel-default panel-table">
                         <div class="panel-heading">
                             <div class="row">
@@ -108,16 +108,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="talk in moduleValue">
-                                        <td align="center" align="center" style="vertical-align: middle;">
+                                    <tr ng-repeat="talk in moduleValue" ng-init="talkIndex = $index">
+                                        <td align="center" style="vertical-align: middle;">                                            
+                                            <img src="/gynacApp/local/img/lecture_icon/1.svg" ng-if="talk.UserTalkId === 0" style="width:30%;height:30%;"/>
+                                            <img src="/gynacApp/local/img/lecture_icon/2.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
+                                            <img src="/gynacApp/local/img/lecture_icon/3.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
+                                            <img src="/gynacApp/local/img/lecture_icon/4.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'" style="width:30%;height:30%;" />
+                                            <!--<i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
                                             <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
                                             <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
                                             <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'"></i>
-                                            <i class="fa fa-check-square text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'"></i>
+                                            <i class="fa fa-check-square text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'"></i>-->
                                         </td>
                                         <!--{{talk.UserTalkId}}-->
-                                        <td class="hidden-xs">{{ outerIndex * userTalkList.length + $index + 1 }}</td>
-                                        <td>
+                                        <!--<td class="hidden-xs">{{ outerIndex * userTalkList.length + $index + 1 }}</td>-->
+                                        <td class="hidden-xs">{{ talkIndex + 1 }}</td>
+                                        <td class="lectalkname">
                                             <h4>{{talk.TalkName}}</h4>
                                         </td>
                                         <td>{{talk.Duration}}</td>
@@ -444,7 +450,7 @@
             <div class="modal-header">
                 <button type="button" class="close" ng-click="pauseVideo()" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
                 <h4 class="modal-title">{{ currentLecture.Name }}</h4>
-                <small ng-if="!display" style="color:red;">You do not have access to view this talk, Please contact at support@gynac.org or click here to enroll -> You are currently watching a preview. To access the entire talk, please contact at support@gynac.org or call us at +91 7019849711.</small>
+                <small ng-if="!display" style="color:red;">You are currently watching a preview. To access the entire talk, please contact at support@gynac.org or call us at +91 7019849711.</small>
             </div>
             <div class="videoWrappermain">
                 <div class="container-fluid">
