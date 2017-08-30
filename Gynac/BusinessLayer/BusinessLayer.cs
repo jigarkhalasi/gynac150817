@@ -119,7 +119,14 @@ namespace Gynac
                         //body1.AppendLine(@"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/>");
                         //body1.AppendLine("<a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>");
                         //body = body1.ToString();
-                        body = @"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
+                        if (toAddress.Contains("gmail.com"))
+                        {
+                            body = @"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
+                        }
+                        else {
+                            body = @"<b>Copy Paste the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> " + mailUrl + "/" + guid + "/" + toAddress + "";
+                        }
+                        
                         break;
                     case EmailType.ForgotPassword:
                         subject = "Reset Password";
