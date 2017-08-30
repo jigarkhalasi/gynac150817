@@ -15,6 +15,7 @@
     self.storeans = storeans;
     self.finishExam = finishExam;
     self.setAnsMulti = setAnsMulti;
+    self.returnCall = returnCall;
     init();
 
     function init() {
@@ -52,7 +53,7 @@
             var webURL = 'api/gynac/updateusertalkexam?userTalkId=' + modalData.UserTalkId;
             dataService.postData(webURL, {}).then(function (data) {
                 $scope.currentLecture = {};
-                alert("successfully!!");
+                alert("Self Assessment submitted successfully!!");
                 $uibModalInstance.close('success');
             }, function (errorMessage) {
                 console.log(errorMessage + ' Error......');
@@ -81,7 +82,7 @@
 
     function setAns(question, userans, rightans, queId, mutiple) {
 
-        if (self.ansUser.length > 0) {
+        if (self.ansUser.length > 0 && userans != 'undefined' && userans != null) {
             _.each(self.ansUser, function (userAns) {
                 if (mutiple == true) {
                     var mulList = [];
@@ -206,7 +207,18 @@
         chkselected = chkselected.slice(0, -1);
         var str = chkselected.split(",").sort().join(",")
    
+        console.log(str);
         $("#multians").val(str);
+        
+    }
+
+    function returnCall() {
+        //$scope.completedQuestion = false;
+        //$scope.reject = false;
+        //$scope.currentStep = 1;
+        //$scope.ansUser = [];
+        $("#multians").val('');
+        //loadquestion();
     }
 
     function cancel() {
