@@ -125,6 +125,10 @@ app.run(function ($rootScope, dataService, $state) {
         $rootScope.authenticatedUser = {};
         $rootScope.authenticatedUser.UserInfo = {};
     }
+
+    window.onhashchange = function () {
+        $('.modal-backdrop').remove();
+    };
 });
 
 app.constant('_',
@@ -140,4 +144,4 @@ app.filter('secondsToDateTime', [function () {
     return function (seconds) {
         return new Date(1970, 0, 1).setSeconds(seconds);
     };
-}])
+}]);

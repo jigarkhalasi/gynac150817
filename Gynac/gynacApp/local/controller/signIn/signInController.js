@@ -140,15 +140,22 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                 $scope.isDisplay = false;
                 if(data == null){
                     $('#triggerNotFoundSigninModal').trigger('click');
-                } else if (data.EmailVerificationPending == true) {
+                }
+                else if (data.IsAlreadyLoginSameIp == true) {
+                    $rootScope.authenticatedUser = data;
+                    localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
+                    $scope.authenticLecture();
+                    $('#triggerSucsessfullySigninModal').trigger('click');  
+                }
+                else if (data.EmailVerificationPending == true) {
                     $("#triggerEmailPendding").trigger('click');
                 }
                 else if (data.IsLogin == true && data.EmailVerificationPending == false) {
                     $("#triggerEmailPendding").trigger('click');                    
                     $rootScope.authenticatedUser.UserInfo.User_Id = data.UserInfo.User_Id;
                     $scope.isDisplay = true;
-                }                
-                else {
+                }
+                else if (data.IsTalkExist == true) {
                     $scope.signIn = 5;
                     $scope.dothisdone = data.Otp;
                     $scope.logindata = data;
@@ -161,11 +168,17 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
                         }
                         else {
                             //otp blank
-                            $scope.dothisdone = "";                            
+                            $scope.dothisdone = "";
                         }
 
                     }
                     var mytimeout = $timeout($scope.onTimeout, 1000);
+                }
+                else {
+                    //$rootScope.authenticatedUser = data;
+                    //localStorage.setItem("User", $rootScope.authenticatedUser.UserInfo.User_Id);
+                    //$scope.authenticLecture();
+                    //$('#triggerSucsessfullySigninModal').trigger('click');  
                 }
                 
             }, function (errorMessage) {
@@ -289,4 +302,20 @@ app.controller("signInController", ["$scope", "dataService", "$rootScope", "$sta
         $state.go('signIn');
     }
     
+    $scope.checkIfEnterKeyWasPressed = function ($event, callfuncation) {
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode === 13) {
+            // Do that thing you finally wanted to do            
+            switch(callfuncation)
+            {
+                case 'login':
+                    $scope.submitData();
+                    break;
+                case 'forgotPassword':
+                    $scope.forgotPassword();
+                    break;
+            }
+        }
+        $event.preventDefault();
+    };
 }]);

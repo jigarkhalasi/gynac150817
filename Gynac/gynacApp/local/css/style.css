@@ -1023,6 +1023,7 @@ a {
 	-webkit-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
+    text-align: left;
 }
 
 .accordion li:last-child .link {
@@ -1271,4 +1272,8 @@ margin: auto !important;
 .image_size {
     height: 175px;
     width: 150px;
+}
+
+.lectalkname {
+    vertical-align:middle !important;
 }
