@@ -57,13 +57,18 @@
                     <div class="row" ng-if="!q.istext && q.isimage && !q.isvideo">
                         <div class="col-md-6">
                             <div ng-repeat="o in q.option" ng-disabled="displayquestion">
-                                <label class="radio-inline" ng-click="qmc.setAns(q.question, o.id, q.ans, q.id, q.ismultyplenas)" ng-model="qmc.selectedOption">
-                                    <input type="radio" name="optradio{{q.id}}">{{ o.value }}
+                                <label class="radio-inline" ng-click="qmc.storeans(o.id)" ng-model="qmc.selectedOption">
+                                    <input type="checkbox" value="q.id" name="optradio{{q.id}}">{{ o.value }}
                                 </label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <img ng-src="{{q.ImagePath}}" alt="{{q.id}}" style="width:150px;height:150px">
+                        </div>
+                        <div class="col-md-6">
+                            <!--qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])-->
+                            <input type="hidden" id="multians" />
+                            <button class="btn btn-primary" name="next" type="button" ng-click="qmc.setAns(q.question, multians, q.ans, q.id, q.ismultyplenas) "><i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>

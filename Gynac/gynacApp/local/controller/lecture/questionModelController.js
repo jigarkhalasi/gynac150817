@@ -12,6 +12,7 @@
     self.cancel = cancel;
 
     self.setAns = setAns;
+    self.storeans = storeans;
     self.finishExam = finishExam;
 
     init();
@@ -81,18 +82,20 @@
             _.each(self.ansUser, function (userAns) {
                 if (mutiple == true) {
                     var mulList = [];
+                    console.log(userans);
                     var isExitsuserans = _.find(self.ansUser, function (userans) { return userans.question === question; });
                     if (isExitsuserans == undefined && isExitsuserans == null) {                        
-                        self.ansUser.push({
-                            "questionno": queId,
-                            "question": question,
-                            "userans": userans,
-                            "rightans": rightans
-                        });
+                        //self.ansUser.push({
+                        //    "questionno": queId,
+                        //    "question": question,
+                        //    "userans": userans,
+                        //    "rightans": rightans
+                        //});
                     }
                     else {
                         
                     }
+                    console.log(userans);
                 }
                 else {
                     self.ansUser = _.reject(self.ansUser, function (userans) { return userans.question === question; });
@@ -120,6 +123,10 @@
             $scope.getSummaryQuestion();
         }
         console.log(self.ansUser);
+    }
+    
+    function storeans(userans) {
+        $("#multians").val(userans);
     }
 
     function cancel() {
