@@ -280,7 +280,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2017 14:17:50</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelPage.html">
-      <publishTime>08/31/2017 13:46:12</publishTime>
+      <publishTime>08/31/2017 15:15:35</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/Questions.html">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -331,7 +331,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 12:24:29</publishTime>
     </File>
     <File Include="gynacApp/local/css/style.css">
-      <publishTime>08/31/2017 12:13:00</publishTime>
+      <publishTime>08/31/2017 14:39:35</publishTime>
     </File>
     <File Include="gynacApp/local/fonts/AvantGardeLT-Book.eot">
       <publishTime>08/17/2017 12:24:29</publishTime>

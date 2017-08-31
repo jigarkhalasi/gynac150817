@@ -304,19 +304,19 @@
                             "option": [
                                  {
                                      "id": "a",
-                                     "value": "/gynacApp/local/img/question/Talk1/q1opt1.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk1/T1Q1_1.PNG"
                                  },
                                  {
                                      "id": "b",
-                                     "value": "/gynacApp/local/img/question/Talk1/q1opt2.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk1/T1Q1_2.PNG"
                                  },
                                  {
                                      "id": "c",
-                                     "value": "/gynacApp/local/img/question/Talk1/q1opt3.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk1/T1Q1_3.PNG"
                                  },
                                  {
                                      "id": "d",
-                                     "value": "/gynacApp/local/img/question/Talk1/q1opt4.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk1/T1Q1_4.PNG"
                                  }
                             ]
                         },
@@ -324,7 +324,7 @@
                             "id": 2,
                             "question": "Q 2: Advantages of a transabdominal scan include all of the following except:",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "c",
+                            "ans": "c, f",
                             "istext": false,
                             "isimage": true,
                             "ismultiimage": false,
@@ -332,7 +332,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk1/q2image1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk1/T1Q2.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -372,7 +372,7 @@
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk1/q3image1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk1/T1Q3_1.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -456,7 +456,7 @@
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk1/q5image1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk1/T1Q5.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -500,7 +500,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk1/q6image1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk1/T1Q6.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -611,7 +611,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk2/q3img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk2/T2Q3.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -683,7 +683,7 @@
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk2/q5img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk2/T2Q5.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -768,13 +768,13 @@
                             "videosrc": "",
                             "ImagePath": [
                                 {
-                                    "value": "/gynacApp/local/img/question/Talk3/q2img1.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_1.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk3/q2img2.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_2.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk3/q2img3.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_3.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk3/q2img4.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_4.PNG"
                                 }
                             ],
                             "option": [
@@ -820,7 +820,7 @@
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk3/q3img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk3/T3Q3.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -864,7 +864,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk3/q4img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk3/T3Q4.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -906,19 +906,19 @@
                             "option": [
                                  {
                                      "id": "a",
-                                     "value": "/gynacApp/local/img/question/Talk3/q5opt1.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk3/T3Q5_1.PNG"
                                  },
                                  {
                                      "id": "b",
-                                     "value": "/gynacApp/local/img/question/Talk3/q5opt2.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk3/T3Q5_2.PNG"
                                  },
                                  {
                                      "id": "c",
-                                     "value": "/gynacApp/local/img/question/Talk3/q5opt3.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk3/T3Q5_3.PNG"
                                  },
                                  {
                                      "id": "d",
-                                     "value": "/gynacApp/local/img/question/Talk3/q5opt4.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk3/T3Q5_4.PNG"
                                  }
                             ]
                         }
@@ -995,19 +995,19 @@
                             "option": [
                                  {
                                      "id": "a",
-                                     "value": "/gynacApp/local/img/question/Talk4/q3opt1.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk4/T4Q3_1.PNG"
                                  },
                                  {
                                      "id": "b",
-                                     "value": "/gynacApp/local/img/question/Talk4/q3opt2.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk4/T4Q3_2.PNG"
                                  },
                                  {
                                      "id": "c",
-                                     "value": "/gynacApp/local/img/question/Talk4/q3opt3.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk4/T4Q3_3.PNG"
                                  },
                                  {
                                      "id": "d",
-                                     "value": "/gynacApp/local/img/question/Talk4/q3opt4.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk4/T4Q3_4.PNG"
                                  }
                             ]
                         },
@@ -1055,7 +1055,7 @@
                             "id": 5,
                             "question": "Q 5: In 3D, VCI with sectional planes is very useful in studying the following:",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "b,c",
+                            "ans": "a,c",
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
@@ -1142,7 +1142,7 @@
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk5/q2img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk5/T5Q2.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1274,7 +1274,7 @@
                             "id": 1,
                             "question": "Q 1: The image of the uterus that best shows the shape of the uterine cavity & endo-myometrial junction on ultrasound is:",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "a,b,c,e",
+                            "ans": "e",
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
@@ -1319,27 +1319,27 @@
                             "option": [
                                  {
                                      "id": "a",
-                                     "value": "/gynacApp/local/img/question/Talk6/q2opt1.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_1.PNG"
                                  },
                                  {
                                      "id": "b",
-                                     "value": "/gynacApp/local/img/question/Talk6/q2opt2.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_2.PNG"
                                  },
                                  {
                                      "id": "c",
-                                     "value": "/gynacApp/local/img/question/Talk6/q2opt3.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_3.PNG"
                                  },
                                  {
                                      "id": "d",
-                                     "value": "/gynacApp/local/img/question/Talk6/q2opt4.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_4.PNG"
                                  },
                                  {
                                      "id": "e",
-                                     "value": "/gynacApp/local/img/question/Talk6/q2opt5.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_5.PNG"
                                  },
                                  {
                                      "id": "f",
-                                     "value": "/gynacApp/local/img/question/Talk6/q2opt6.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_6.PNG"
                                  }
                             ]
                         }, {
@@ -1355,13 +1355,13 @@
                             "ismultyimgopt": false,
                             "ImagePath": [
                                 {
-                                    "value": "/gynacApp/local/img/question/Talk6/q3img1.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_1.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk6/q3img2.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_2.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk6/q3img3.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_3.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk6/q3img4.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_4.PNG"
                                 }
                             ],
                             "option": [
@@ -1414,7 +1414,7 @@
                             "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk7/q1img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk7/T7Q1.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1444,7 +1444,7 @@
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk7/q2img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk7/T7Q2.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1494,7 +1494,7 @@
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk7/q3img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk7/T7Q3.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1534,10 +1534,10 @@
                             "ismultyimgopt": false,
                             "ImagePath":[
                                 {
-                                    "value": "/gynacApp/local/img/question/Talk7/q4img1.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk7/T7Q4_1.PNG"
                                 },
                                 {
-                                    "value": "/gynacApp/local/img/question/Talk7/q4img2.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk7/T7Q4_2.PNG"
                                 }
 
                             ],
@@ -1570,7 +1570,7 @@
                             "isvideo": true,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
-                            "videosrc": "/gynacApp/local/media/t7media1.mp4",
+                            "videosrc": "/gynacApp/local/img/question/Talk7/T7Q5.mp4",
                             "option": [
                                  {
                                      "id": "a",
@@ -1661,7 +1661,7 @@
                             "isvideo": true,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
-                            "videosrc": "/gynacApp/local/media/media1.mp4",
+                            "videosrc": "/gynacApp/local/img/question/Talk8/T8Q2.mp4",
                             "option": [
                                  {
                                      "id": "a",
@@ -1685,7 +1685,7 @@
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/image7.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk8/T8Q3.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1733,23 +1733,23 @@
                             "option": [
                                  {
                                      "id": "a",
-                                     "value": "/gynacApp/local/img/question/q4opt1.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk8/T8Q4_1.PNG"
                                  },
                                  {
                                      "id": "b",
-                                     "value": "/gynacApp/local/img/question/q4opt2.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk8/T8Q4_2.PNG"
                                  },
                                  {
                                      "id": "c",
-                                     "value": "/gynacApp/local/img/question/q4opt3.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk8/T8Q4_3.PNG"
                                  },
                                  {
                                      "id": "d",
-                                     "value": "/gynacApp/local/img/question/q4opt4.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk8/T8Q4_4.PNG"
                                  },
                                  {
                                      "id": "e",
-                                     "value": "/gynacApp/local/img/question/q4opt5.jpg"
+                                     "value": "/gynacApp/local/img/question/Talk8/T8Q4_5.PNG"
                                  }
                             ]
                         },
@@ -1764,7 +1764,7 @@
                             "isvideo": true,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "videosrc": "/gynacApp/local/media/media2.mp4",
+                            "videosrc": "/gynacApp/local/img/question/Talk8/T8Q5.mp4",
                             "ImagePath": "",
                             "option": [
                                  {
@@ -1873,7 +1873,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk9/q3img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk9/T9Q3.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1925,7 +1925,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk9/q4img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk9/T9Q4.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1965,7 +1965,7 @@
                             "id": 5,
                             "question": "Q 5: Name the uterine anomaly?",
                             "quedsc": "",
-                            "ans": "a",
+                            "ans": "b",
                             "istext": false,
                             "isimage": true,
                             "ismultiimage": false,
@@ -1973,7 +1973,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk9/q5img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk9/T9Q5.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -2023,9 +2023,9 @@
                             "videosrc": "",
                             "ImagePath": [
                                 {
-                                    "value": "/gynacApp/local/img/question/Talk9/q6img1.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk9/T9Q6_1.PNG"
                                 }, {
-                                    "value": "/gynacApp/local/img/question/Talk9/q6img2.jpg"
+                                    "value": "/gynacApp/local/img/question/Talk9/T9Q6_2.PNG"
                                 }
                             ],
                             "option": [
@@ -2074,7 +2074,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk9/q7img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk9/T9Q7.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -2121,7 +2121,7 @@
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk9/q8img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk9/T9Q8.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -2163,19 +2163,13 @@
                             "quedsc": "",
                             "ans": "b",
                             "istext": false,
-                            "isimage": false,
-                            "ismultiimage": true,
+                            "isimage": true,
+                            "ismultiimage": false,
                             "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             "videosrc": "",
-                            "ImagePath": [
-                                {
-                                    "value": "/gynacApp/local/img/question/Talk9/q9img1.jpg"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk9/q9img2.jpg"
-                                }
-                            ],
+                            "ImagePath": "/gynacApp/local/img/question/Talk9/T9Q9.PNG",
                             "option": [
                                  {
                                      "id": "a",
