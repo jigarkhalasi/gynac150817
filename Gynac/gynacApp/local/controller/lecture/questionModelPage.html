@@ -67,7 +67,7 @@
                                     <div class="row" style="padding-top:2px;">
                                         <div class="col-md-12">
                                             <div style="float:right;">
-                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.setAns(q.question, o.id, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
+                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
                                                 <button ng-show="!completedQuestion" class="btn btn-primary" name="next" type="button" ng-click="qmc.storeans(o.id,q.id);qmc.setAns(q.question, o.id, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-right"></i></button>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                     <div class="row" style="padding-top:2px;">
                                         <div class="col-md-12">
                                             <div style="float:right;">
-                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
+                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
                                                 <button ng-show="!completedQuestion" class="btn btn-primary" name="next" type="button" ng-click="qmc.storeans(o.id,q.id);qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-right"></i></button>
                                             </div>
                                             </div>
@@ -124,7 +124,7 @@
                                     <div class="row" style="padding-top:2px;">
                                         <div class="col-md-12">
                                             <div style="float:right;">
-                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
+                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
                                                 <button ng-show="!completedQuestion" class="btn btn-primary" name="next" type="button" ng-model="qmc.selectedOption" ng-click="qmc.storeans(o.id,q.id); qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-right"></i></button>
                                             </div>
                                         </div>
@@ -157,7 +157,7 @@
                                     <div class="row" style="padding-top:2px;">
                                         <div class="col-md-12">
                                             <div style="float:right;">
-                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
+                                                <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.gotoStep(qmc.currentStep - 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
                                                 <button ng-show="!completedQuestion" class="btn btn-primary" name="next" type="button" ng-model="qmc.selectedOption" ng-click="qmc.storeans(o.id,q.id);qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-right"></i></button>
                                             </div>
                                         </div>
@@ -188,7 +188,7 @@
                                     </div>
                                     <div class="row" style="padding-top:2px;">
                                         <div class="col-md-12">
-                                            <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep - 1,qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
+                                            <button ng-show="!completedQuestion" ng-disabled="qmc.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="qmc.gotoStep(qmc.currentStep - 1,qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-left"></i></button>
                                             <button ng-show="!completedQuestion" class="btn btn-primary" name="next" type="button" ng-model="qmc.selectedOption" ng-click="qmc.storeans(o.id,q.id);qmc.setAns(q.question, multians.value, q.ans, q.id, q.ismultyplenas); qmc.gotoStep(qmc.currentStep + 1, qmc.questionList.questions[qmc.currentStep - 1])"><i class="fa fa-arrow-right"></i></button>
                                         </div>
                                     </div>

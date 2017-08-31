@@ -82,13 +82,32 @@
 
     function setAns(question, userans, rightans, queId, mutiple) {
 
-        if (self.ansUser.length > 0 && userans != 'undefined' && userans != null) {
-            _.each(self.ansUser, function (userAns) {
-                if (mutiple == true) {
-                    var mulList = [];
-                    userans = $("#multians").val();
-                    var isExitsuserans = _.find(self.ansUser, function (userans) { return userans.question === question; });
-                    if (isExitsuserans == undefined && isExitsuserans == null) {
+        if (isValidAns == true) {
+
+            if (self.ansUser.length > 0 && userans != 'undefined' && userans != null) {
+                _.each(self.ansUser, function (userAns) {
+                    if (mutiple == true) {
+                        var mulList = [];
+                        userans = $("#multians").val();
+                        var isExitsuserans = _.find(self.ansUser, function (userans) { return userans.question === question; });
+                        if (isExitsuserans == undefined && isExitsuserans == null) {
+                            self.ansUser.push({
+                                "questionno": queId,
+                                "question": question,
+                                "userans": userans,
+                                "rightans": rightans
+                            });
+                        }
+                        else {
+
+                        }
+
+                    }
+                    else {
+                        if (userans == null || userans == undefined) {
+                            userans = $("#multians").val();
+                        }
+                        self.ansUser = _.reject(self.ansUser, function (userans) { return userans.question === question; });
                         self.ansUser.push({
                             "questionno": queId,
                             "question": question,
@@ -96,43 +115,32 @@
                             "rightans": rightans
                         });
                     }
-                    else {
-
-                    }
+                })
+            }
+            else {
+                if (userans == null || userans == undefined) {
+                    userans = $("#multians").val();
 
                 }
-                else {
-                    if (userans == null || userans == undefined) {
-                        userans = $("#multians").val();
-                    }
-                    self.ansUser = _.reject(self.ansUser, function (userans) { return userans.question === question; });
-                    self.ansUser.push({
-                        "questionno": queId,
-                        "question": question,
-                        "userans": userans,
-                        "rightans": rightans
-                    });
-                }
-            })
+                self.ansUser.push({
+                    "questionno": queId,
+                    "question": question,
+                    "userans": userans,
+                    "rightans": rightans
+                });
+            }
+
+            $scope.completedQuestion = (self.ansUser.length === self.questionList.questions.length) ? true : false;
+
+            if ($scope.completedQuestion) {
+                $scope.getSummaryQuestion();
+            }
+            console.log(self.ansUser);
         }
         else {
-            if (userans == null || userans == undefined) {
-                userans = $("#multians").val();
-            }
-            self.ansUser.push({
-                "questionno": queId,
-                "question": question,
-                "userans": userans,
-                "rightans": rightans
-            });
+            
         }
-
-        $scope.completedQuestion = (self.ansUser.length === self.questionList.questions.length) ? true : false;
-
-        if ($scope.completedQuestion) {
-            $scope.getSummaryQuestion();
-        }
-        console.log(self.ansUser);
+        
     }
 
     function setAnsMulti(question, userans, rightans, queId, mutiple) {
@@ -192,24 +200,33 @@
             }
             else {
                 alert("select ans!!");
+                consol.log(check);
             }
         }
         console.log(self.ansUser);
     }
 
+    var isValidAns = false;
     function storeans(userans, quesid) {
         
-        $("#multians").val('');
-        var chkselected = "";
-        $.each($("input[name='optradio" + quesid + "']:checked"), function () {
-            chkselected += $(this).val() + ",";
-        });
-        chkselected = chkselected.slice(0, -1);
-        var str = chkselected.split(",").sort().join(",")
-   
-        console.log(str);
-        $("#multians").val(str);
-        
+            $("#multians").val('');
+            var chkselected = "";
+            $.each($("input[name='optradio" + quesid + "']:checked"), function () {
+                chkselected += $(this).val() + ",";
+            });
+            chkselected = chkselected.slice(0, -1);
+            var str = chkselected.split(",").sort().join(",")
+
+            console.log(str);
+            if (str != "") {
+                $("#multians").val(str);
+                isValidAns = true;
+            }
+            else {
+                isValidAns = false;
+                alert("Select Option");
+
+            }
     }
 
     function returnCall() {
@@ -227,17 +244,18 @@
 
     //Functions
     self.gotoStep = function (newStep, currentQue) {
-        var check = _.find(self.ansUser, function (userans) {
-            return userans.question === currentQue.question;
-        });
-        if (check != null && check.userans != "") {
-            self.currentStep = newStep;
+        if (isValidAns == true) {
+            var check = _.find(self.ansUser, function (userans) {
+                return userans.question === currentQue.question;
+            });
+
+            if (check != null && check.userans != "") {
+                self.currentStep = newStep;
+            }
         }
         else {
-            alert("select ans!!");
+            
         }
-
-
     }
 
     self.getStepTemplate = function () {
