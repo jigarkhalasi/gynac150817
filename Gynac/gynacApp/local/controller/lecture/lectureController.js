@@ -151,18 +151,29 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open video and previewvideo script
     $scope.openSpeakerVideo = function (talk) {
-        $scope.modalData = talk;       
+        $scope.modalData = talk;
         var webURL = 'api/gynac/gettalkvideo?talkId=' + $scope.modalData.TalkId + '&&userTalkId=' + $scope.modalData.UserTalkId;
         dataService.getData(webURL, {}).then(function (data) {
             $scope.currentLecture = data;
             if ($scope.modalData.UserTalkId) {
                 $scope.display = true;
                 $scope.currentLecture.Comment = $scope.modalData.Comment;
-                document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink + "?quality=720p" : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
+                if (data.VideoLink != "") {                    
+                    document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink + "?quality=720p" : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
+                }
+                else {                    
+                    document.getElementById('myIframe').src = "";
+                }
+
             }
             else {
                 $scope.display = false;
-                document.getElementById('myIframe1').src = $scope.currentLecture.PreViewVideoLink;
+                if (data.VideoLink != "") {                    
+                    document.getElementById('myIframe1').src = $scope.currentLecture.PreViewVideoLink;
+                }
+                else {                    
+                    document.getElementById('myIframe1').src = "";
+                }
             }
 
         }, function (errorMessage) {
@@ -267,6 +278,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var modalInstance = $uibModal.open({
             templateUrl: 'gynacApp/local/controller/lecture/questionModelPage.html',
             controller: 'questionModalController as qmc',
+            backdrop  : 'static',
+            keyboard  : false,
             resolve: {
                 modalData: function () {
                     return que;
@@ -1426,7 +1439,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $(function () {
         $('.modal').on('hidden.bs.modal', function (e) {
             $iframe = $(this).find("iframe");
-            $iframe.attr("src", '');        
+            $iframe.attr("src", $iframe.attr("src"));
             $scope.closeAllAccordin();
             $scope.getUserTalks();
         });

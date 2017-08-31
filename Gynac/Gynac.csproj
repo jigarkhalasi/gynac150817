@@ -511,8 +511,6 @@
     <Content Include="gynacApp\local\img\training-1.jpg" />
     <Content Include="gynacApp\local\img\training-2.jpg" />
     <Content Include="gynacApp\local\img\training-3.jpg" />
-    <Content Include="gynacApp\local\media\media1.wmv" />
-    <Content Include="gynacApp\local\media\media2.wmv" />
     <Content Include="gynacApp\local\media\Session 02.mp3" />
     <Content Include="gynacApp\local\media\Slide 12.mp4" />
     <Content Include="gynacApp\vendor\lib\angular-filter.js" />
