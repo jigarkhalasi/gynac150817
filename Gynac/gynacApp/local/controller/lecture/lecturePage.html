@@ -111,8 +111,8 @@
                                     <tr ng-repeat="talk in moduleValue" ng-init="talkIndex = $index">
                                         <td align="center" style="vertical-align: middle;">                                            
                                             <img src="/gynacApp/local/img/lecture_icon/1.svg" ng-if="talk.UserTalkId === 0" style="width:30%;height:30%;"/>
-                                            <img src="/gynacApp/local/img/lecture_icon/2.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
-                                            <img src="/gynacApp/local/img/lecture_icon/3.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
+                                            <img src="/gynacApp/local/img/lecture_icon/3.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
+                                            <img src="/gynacApp/local/img/lecture_icon/2.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
                                             <img src="/gynacApp/local/img/lecture_icon/4.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'" style="width:30%;height:30%;" />
                                             <!--<i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
                                             <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
@@ -521,11 +521,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-9 videoWrappermain" ng-mouseover="closeAllAccordin()">
+                        <div class="col-md-9 videoWrappermain" ng-mouseover="closeAllAccordin()">                            
                             <iframe id="myIframe" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div class="row" ng-show="!display"><iframe id="myIframe1" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+                    <div class="row" ng-show="!display">                    
+                    <iframe id="myIframe1" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
                 </div>
             </div>
         </div>

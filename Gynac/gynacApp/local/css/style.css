@@ -1277,3 +1277,8 @@ margin: auto !important;
 .lectalkname {
     vertical-align:middle !important;
 }
+
+.questionimages {
+    width:65%;
+    /*height:65%;*/
+}
