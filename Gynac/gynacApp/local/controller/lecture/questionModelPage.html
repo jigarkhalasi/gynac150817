@@ -112,7 +112,7 @@
                                 <div class="row" style="padding-top:2px;" ng-if="!q.istext && !q.isimage && !q.isvideo && q.ismultyimgopt && !q.ismultiimage">
                                     <div class="row">
                                         <div class="col-md-6" style="padding-bottom:2px;" ng-repeat="o in q.option" ng-disabled="displayquestion">
-                                            <img src="{{o.value}}" class="questionimages" />
+                                            <img src="{{o.value}}" />
                                             <label class="radio-inline" ng-model="qmc.selectedOption">
                                                 <input type="checkbox" value="{{o.id}}" name="optradio{{q.id}}">{{ o.id }}
                                             </label>
@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <img ng-src="{{q.ImagePath}}" alt="{{q.id}}" style="width:100%">
+                                            <img ng-src="{{q.ImagePath}}" alt="{{q.id}}">
                                         </div>
                                     </div>
                                     <br />
@@ -181,7 +181,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div ng-repeat="i in q.ImagePath" ng-disabled="displayquestion" class="col-md-6">
-                                                <img ng-src="{{i.value}}" alt="{{q.id}}" style="width:150px;height:150px;padding:2px;">
+                                                <img ng-src="{{i.value}}" alt="{{q.id}}" style="padding:2px;">
                                             </div>
 
                                         </div>
