@@ -82,15 +82,33 @@
 
     function setAns(question, userans, rightans, queId, mutiple) {
 
-        if (isValidAns == true) {
+        if (!isAlreadyExits) {
+            if (isValidAns == true) {
 
-            if (self.ansUser.length > 0 && userans != 'undefined' && userans != null) {
-                _.each(self.ansUser, function (userAns) {
-                    if (mutiple == true) {
-                        var mulList = [];
-                        userans = $("#multians").val();
-                        var isExitsuserans = _.find(self.ansUser, function (userans) { return userans.question === question; });
-                        if (isExitsuserans == undefined && isExitsuserans == null) {
+                if (self.ansUser.length > 0 && userans != 'undefined' && userans != null) {
+                    _.each(self.ansUser, function (userAns) {
+                        if (mutiple == true) {
+                            var mulList = [];
+                            userans = $("#multians").val();
+                            var isExitsuserans = _.find(self.ansUser, function (userans) { return userans.question === question; });
+                            if (isExitsuserans == undefined && isExitsuserans == null) {
+                                self.ansUser.push({
+                                    "questionno": queId,
+                                    "question": question,
+                                    "userans": userans,
+                                    "rightans": rightans
+                                });
+                            }
+                            else {
+
+                            }
+
+                        }
+                        else {
+                            if (userans == null || userans == undefined) {
+                                userans = $("#multians").val();
+                            }
+                            self.ansUser = _.reject(self.ansUser, function (userans) { return userans.question === question; });
                             self.ansUser.push({
                                 "questionno": queId,
                                 "question": question,
@@ -98,47 +116,31 @@
                                 "rightans": rightans
                             });
                         }
-                        else {
-
-                        }
+                    })
+                }
+                else {
+                    if (userans == null || userans == undefined) {
+                        userans = $("#multians").val();
 
                     }
-                    else {
-                        if (userans == null || userans == undefined) {
-                            userans = $("#multians").val();
-                        }
-                        self.ansUser = _.reject(self.ansUser, function (userans) { return userans.question === question; });
-                        self.ansUser.push({
-                            "questionno": queId,
-                            "question": question,
-                            "userans": userans,
-                            "rightans": rightans
-                        });
-                    }
-                })
+                    self.ansUser.push({
+                        "questionno": queId,
+                        "question": question,
+                        "userans": userans,
+                        "rightans": rightans
+                    });
+                }
+
+                $scope.completedQuestion = (self.ansUser.length === self.questionList.questions.length) ? true : false;
+
+                if ($scope.completedQuestion) {
+                    $scope.getSummaryQuestion();
+                }
+                console.log(self.ansUser);
             }
             else {
-                if (userans == null || userans == undefined) {
-                    userans = $("#multians").val();
 
-                }
-                self.ansUser.push({
-                    "questionno": queId,
-                    "question": question,
-                    "userans": userans,
-                    "rightans": rightans
-                });
             }
-
-            $scope.completedQuestion = (self.ansUser.length === self.questionList.questions.length) ? true : false;
-
-            if ($scope.completedQuestion) {
-                $scope.getSummaryQuestion();
-            }
-            console.log(self.ansUser);
-        }
-        else {
-            
         }
         
     }
@@ -207,35 +209,40 @@
     }
 
     var isValidAns = false;
+    var isAlreadyExits = false;
     function storeans(userans, quesid) {
         
-            $("#multians").val('');
-            var chkselected = "";
-            $.each($("input[name='optradio" + quesid + "']:checked"), function () {
-                chkselected += $(this).val() + ",";
-            });
-            chkselected = chkselected.slice(0, -1);
-            var str = chkselected.split(",").sort().join(",")
+        isAlreadyExits = _.find(self.ansUser, function (question) {
+            return (question.questionno === quesid) ? true: false; 
+         });
 
-            console.log(str);
-            if (str != "") {
-                $("#multians").val(str);
-                isValidAns = true;
-            }
-            else {
-                isValidAns = false;
-                alert("Select Option");
+         if (!isAlreadyExits) {
+             $("#multians").val('');
+             var chkselected = "";
+             $.each($("input[name='optradio" + quesid + "']:checked"), function () {
+                 chkselected += $(this).val() + ",";
+             });
+             chkselected = chkselected.slice(0, -1);
+             var str = chkselected.split(",").sort().join(",")
 
-            }
+             console.log(str);
+             if (str != "") {
+                 $("#multians").val(str);
+                 isValidAns = true;
+             }
+             else {
+                 isValidAns = false;
+                 alert("Select Option");
+
+             }
+         }
+         else {
+
+         }
     }
 
-    function returnCall() {
-        //$scope.completedQuestion = false;
-        //$scope.reject = false;
-        //$scope.currentStep = 1;
-        //$scope.ansUser = [];
-        $("#multians").val('');
-        //loadquestion();
+    function returnCall() {        
+        $("#multians").val('');        
     }
 
     function cancel() {
@@ -244,18 +251,28 @@
 
     //Functions
     self.gotoStep = function (newStep, currentQue) {
-        if (isValidAns == true) {
-            var check = _.find(self.ansUser, function (userans) {
-                return userans.question === currentQue.question;
-            });
+        if (!isAlreadyExits) {
+            if (isValidAns == true) {
+                var check = _.find(self.ansUser, function (userans) {
+                    return userans.question === currentQue.question;
+                });
 
-            if (check != null && check.userans != "") {
-                self.currentStep = newStep;
+                if (check != null && check.userans != "") {
+                    self.currentStep = newStep;
+                }
+            }
+            else {
+
             }
         }
         else {
-            
+            self.currentStep = newStep;
         }
+    }
+
+    self.gotoPrvStep = function (newStep, currentQue) {        
+        var prevCurrentStep = self.currentStep;
+        self.currentStep = parseInt(prevCurrentStep) - 1;
     }
 
     self.getStepTemplate = function () {
