@@ -134,7 +134,7 @@
                                             <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);" data-toggle="modal" data-target="#video-ID1" data-backdrop="static" data-keyboard="false"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5" data-backdrop="static" data-keyboard="false"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                            <button type="button" ng-disabled="talk.IsExam == 'IsActive'" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
                                         </td>
                                     </tr>
                                 </tbody>
