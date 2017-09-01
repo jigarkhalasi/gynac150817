@@ -216,7 +216,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Q No.</th>
+                                            <th class="text-center">Question No.</th>
                                             <th class="text-center">Answer</th>
                                         </tr>
                                     </thead>
@@ -224,15 +224,15 @@
                                         <tr ng-repeat="useans in qmc.ansUser">
                                             <td>{{useans.questionno}}</td>
                                             <td>
-                                                <span ng-if="useans.status === true "><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+                                                <span ng-if="useans.status === true" ng-init="qmc.countScore = qmc.countScore + 1"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
                                                 <span ng-if="useans.status === false"><i class="fa fa-times" aria-hidden="true"></i></span>
                                             </td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td>Total Question</td>
-                                            <td><b>{{ qmc.totalQuestion}}</b></td>
+                                            <td>Total Score</td>
+                                            <td><b> {{ qmc.countScore }}/{{ qmc.totalQuestion}}</b></td>
                                         </tr>
                                     </tfoot>
                                 </table>
