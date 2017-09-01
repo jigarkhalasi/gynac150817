@@ -1,0 +1,263 @@
+<section class="home">
+    <div class="slider-relative">
+        <nav class="navbar navbar-default nav-header">
+            <div class="container" id="courceTop">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav navbar-center">
+                            <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
+                            <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
+                            <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
+                            <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
+                            <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
+                            <ul class="dropdown-menu">
+                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                <li class="li-2"><a class="a-2" href="#/training">Training Details</a></li>
+                            </ul>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
+                            <!--<li class="li-1">
+                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                        </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
+                            <!--<li class="li-1 state-active"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Register</a></li>-->
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Details</a></li>
+                                    <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Logout</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
+                            <li class="li-3">
+                                <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
+                            </li>
+                            <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row page-header banner-page">
+                <div class="col-sm-12 col-md-2 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-8 sm-center">
+                    <h2>ULTRASOUND IN GYNECOLOGY</h2>
+                    <h2>Four Month Certification Course</h2>
+                </div>
+                <div class="col-sm-12 col-md-2 sm-center">
+                    <div class='btn-toolbar pull-right'>
+                        <div class='btn-group button-effect'> <a href="#/signUp#signTop" class="btn effect custom-effect">APPLY NOW</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="logo-sec">
+            <div class="logo-1">
+                <img src="gynacApp/local/img/GynAc-logo.jpg">
+            </div>
+            <div class="logo-2">
+                <img src="gynacApp/local/img/logo-1.png" class="">
+            </div>
+        </div>--></div>
+    <div class="container main-body" ng-init="slide('next')">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 main-body-center">
+            <div class="col-md-12 well center-inner">
+                <h4>Registration to Enroll for the Certification Course</h4>
+                <div class="col-md-12 center-describe">
+                    <div class="col-md-12 all-form error-msg">
+                        <div class="col-md-5 input-name"></div>
+                        <div class="col-md-7 input-form">
+                            <ul>
+                                <li ng-show="errorSignUp.Title">Title required!</li>
+                                <li ng-show="errorSignUp.First_Name">First Name required!</li>
+                                <li ng-show="errorSignUp.Last_Name">Last Name required!</li>
+                                <li ng-show="errorSignUp.Professional_Specialty">Professional Specialty required!</li>
+                                <li ng-show="errorSignUp.Educational_Qualification">Educational Qualification required!</li>
+                                <li ng-show="errorSignUp.Street_Address">Address required!</li>
+                                <li ng-show="errorSignUp.Country">Country required!</li>
+                                <li ng-show="errorSignUp.City_Town">City required!</li>
+                                <li ng-show="errorSignUp.Mobile">Telephone Number required!</li>
+                                <li ng-show="errorSignUp.Institution_Work_Place">Institution / Work Place required!</li>
+                                <li ng-show="errorSignUp.emailRequired">Email required!</li>
+                                <li ng-show="errorSignUp.emailInvalid">Invalid Email Id</li>
+                                <li ng-show="errorSignUp.Password">Password required!</li>
+                                <li ng-show="errorSignUp.rePassword">Password and repeat password do not match</li>
+                                <li ng-show="errorSignUp.Where_Hear">How did you hear about Us? required!</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Title:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.Title"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* First Name:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.First_Name"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Last Name:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.Last_Name"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Professional Speciality:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.Professional_Specialty"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">Education Qualification:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.Educational_Qualification"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Address:</div>
+                        <div class="col-md-6 input-form">
+                            <textarea class="form-control" rows="3" ng-model="user.Street_Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* City:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.City_Town">
+                            <!--<select ng-model="user.City_Town" class="registration-dropdown">
+                                        <option value="">Select</option>
+                                        <option value="Pune">Pune</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                        <option value="Nasik">Nasik</option>
+                                    </select>-->
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Country:</div>
+                        <div class="col-md-6 input-form">
+                            <select ng-model="user.Country" class="registration-dropdown">
+                                <option value="">Select</option>
+                                <option value="{{list}}" ng-repeat="list in CountryList" ng-bind="list"></option>
+                                <!--<option value="India">India</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                        <option value="United Kingdom">United Kingdom</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Telephone Number:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" numbers-only ng-model="user.Mobile"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Work Place:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.Institution_Work_Place"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Email:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="text" class="form-control" ng-model="user.Email"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Password:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="password" class="form-control" ng-model="user.Password"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">* Repeat Password:</div>
+                        <div class="col-md-6 input-form">
+                            <input type="password" class="form-control" ng-model="user.rePassword"> </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">How did you hear about Us? :</div>
+                        <div class="col-md-6 input-form">
+                            <select ng-model="user.Where_Hear" class="registration-dropdown">
+                                <option value="">Select</option>
+                                <option value="Google search">Google search</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Newspaper/magazine article">Newspaper/magazine article</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-12 input-name text-center">
+                            <div class="checkbox checkbox-primary" >
+                                <input id="checkbox2" type="checkbox" ng-model="user.isChecked">
+                                <span> I have read and agree to <a href="javascript:;" data-toggle="modal" data-target="#TermsAndConditions">Terms &amp; Conditions</a> and <a href="javascript:;" data-toggle="modal" data-target="#PrivacyPolicy">Privacy Policy</a> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 submit-button">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 button-area">
+                            <button type="button" class="btn btn-primary button magenta-backgound" ng-click="submitData()" ng-keypress="checkIfEnterKeyWasPressed($event)" ng-disabled="!user.isChecked">SUBMIT</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Sign up found modal-->
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerFoundSignupModal" data-toggle="modal" data-target="#foundSignupModal" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="foundSignupModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Please Login</h3> </div>
+                <div class="modal-body">
+                    <p class="text-center">Account already exists with this email ID</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Sign up found modal-->
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" id="triggerSucsessfullySignupModal" data-toggle="modal" data-target="#sucsessfullySignupModal" style="display:none">Open Modal</button>
+    <!-- Modal -->
+    <div id="sucsessfullySignupModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Sign Up</h3> </div>
+                <div class="modal-body">
+                    <p class="text-center">Sign up successfully done. Mail sent to your registered email ID . Please verify to proceed. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToHome()">ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
