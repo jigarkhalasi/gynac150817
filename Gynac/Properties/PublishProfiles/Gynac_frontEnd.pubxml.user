@@ -304,7 +304,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2017 09:11:27</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signIn/signInPage.html">
-      <publishTime>09/01/2017 08:56:59</publishTime>
+      <publishTime>09/01/2017 22:02:42</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signUp/signUpController.js">
       <publishTime>08/29/2017 22:20:11</publishTime>
