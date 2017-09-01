@@ -30,8 +30,6 @@
             $scope.displayQuestion = true;
         }
 
-
-
         //$http.get('gynacApp/local/controller/lecture/Questions.html').success(function (data) {
         //    self.questionList = _.find(data.questionList, function (question) {
         //        return question.talkId === modalData.TalkId;
@@ -242,7 +240,8 @@
          }
     }
 
-    function returnCall() {        
+    function returnCall() {
+        self.countScore = 0;
         $("#multians").val('');        
     }
 
@@ -267,8 +266,13 @@
             }
         }
         else {
-            self.currentStep = newStep;
+            self.currentStep = newStep;            
         }
+        _.each(self.ansUser, function (userans) {
+            if (userans == true) {
+                self.countScore++;
+            }
+        })
     }
 
     self.gotoPrvStep = function (newStep, currentQue) {        
