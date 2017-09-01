@@ -4,6 +4,7 @@
 
     self.ansUser = [];
     self.currentStep = 1;
+    self.countScore = 0;
     $scope.display = false;
     $scope.displayQuestion = false;
     $scope.completedQuestion = false;
@@ -201,7 +202,7 @@
                 self.currentStep = newStep;
             }
             else {
-                alert("select ans!!");
+                alert("Please select the answer");
                 consol.log(check);
             }
         }
@@ -756,7 +757,7 @@
                         },
                         {
                             "id": 2,
-                            "question": "Q 2: What is the correct order of colour score of these masses?",
+                            "question": "What is the correct order of color score of these images from A to D?",
                             "quedsc": "(Note: there may be more than one option)",
                             "ans": "f",
                             "istext": true,
@@ -1346,7 +1347,7 @@
                             "id": 3,
                             "question": "Q 3: Place the below images in likely chronological (age based) order from youngest to oldest. (Neonatal, pediatric, reproductive age & post menopausal)",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "g",
+                            "ans": "e",
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": true,
@@ -2014,7 +2015,7 @@
                             "question": "Q 6: Name the uterine anomaly?",
                             "quedsc": "",
                             "ans": "g",
-                            "istext": false,
+                            "istext": true,
                             "isimage": false,
                             "ismultiimage": true,
                             "isvideo": false,

@@ -507,13 +507,13 @@ namespace Gynac
         //get all user bookmark
         [HttpGet]
         [Route("getuserbookmark")]
-        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId)
+        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId, int talkId)
         {
             var result = new List<UserBookmarkModel>();
             try
             {
                 userId = (userId != 0) ? userId : 0;
-                result = _businessLayer.GetUserBookmark(userId).ToList();
+                result = _businessLayer.GetUserBookmark(userId, talkId).ToList();
             }
             catch (Exception ex)
             {
