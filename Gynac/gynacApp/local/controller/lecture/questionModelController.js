@@ -770,24 +770,13 @@
                             "question": "What is the correct order of color score of these images from A to D?",
                             "quedsc": "(Note: there may be more than one option)",
                             "ans": "f",
-                            "istext": true,
-                            "isimage": false,
-                            "ismultiimage": true,
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "videosrc": "",
-                            "ImagePath": [
-                                {
-                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_1.PNG"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_2.PNG"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_3.PNG"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk3/T3Q2_4.PNG"
-                                }
-                            ],
+                            "ImagePath": "/gynacApp/local/img/question/Talk3/T3Q2.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1321,36 +1310,36 @@
                             "quedsc": "(Note: there may be more than one option)",
                             "ans": "d,e",
                             "istext": false,
-                            "isimage": false,
+                            "isimage": true,
                             "ismultiimage": false,
                             "isvideo": false,
                             "ismultyplenas": true,
-                            "ismultyimgopt": true,
-                            "ImagePath": "",
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk6/T6Q2.PNG",
                             "option": [
                                  {
                                      "id": "a",
-                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_1.PNG"
+                                     "value": "a"
                                  },
                                  {
                                      "id": "b",
-                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_2.PNG"
+                                     "value": "b"
                                  },
                                  {
                                      "id": "c",
-                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_3.PNG"
+                                     "value": "c"
                                  },
                                  {
                                      "id": "d",
-                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_4.PNG"
+                                     "value": "d"
                                  },
                                  {
                                      "id": "e",
-                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_5.PNG"
+                                     "value": "e"
                                  },
                                  {
                                      "id": "f",
-                                     "value": "/gynacApp/local/img/question/Talk6/T6Q2_6.PNG"
+                                     "value": "f"
                                  }
                             ]
                         }, {
