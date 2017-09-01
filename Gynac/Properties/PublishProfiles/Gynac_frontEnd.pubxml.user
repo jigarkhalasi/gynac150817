@@ -268,25 +268,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2017 09:50:45</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureModalController.js">
-      <publishTime>08/17/2017 12:24:29</publishTime>
+      <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureModalPage.html">
-      <publishTime>08/17/2017 12:24:29</publishTime>
+      <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lecturePage.html">
       <publishTime>09/01/2017 22:30:51</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelController.js">
-      <publishTime>09/01/2017 09:44:24</publishTime>
+      <publishTime>09/01/2017 23:18:20</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelPage.html">
-      <publishTime>09/01/2017 10:33:30</publishTime>
+      <publishTime>09/01/2017 23:17:56</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/Questions.html">
       <publishTime>08/19/2017 17:50:41</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/videoModalController.js">
-      <publishTime>08/17/2017 12:24:29</publishTime>
+      <publishTime>08/16/2017 21:53:28</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/videoModalPage.html">
       <publishTime>08/28/2017 23:54:01</publishTime>

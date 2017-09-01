@@ -62,7 +62,7 @@ namespace Gynac
                                     + "   <td>" + user.Where_Hear + "</td>"
                                     + " </tr>"
                                     + "</table>");
-                    //SendMail(support, EmailType.Registration, "", body, "");
+                    SendMail(support, EmailType.Registration, "", body, "");
                     result = 1;
 
                 }

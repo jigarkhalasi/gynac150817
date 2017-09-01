@@ -370,14 +370,20 @@
                             "question": "Q 3: Typical ultrasound features that are likely to help differentiate between this solid & the cystic mass below include:",
                             "quedsc": "(Note: there may be more than one option)",
                             "ans": "a,d",
-                            "istext": false,
-                            "isimage": true,
-                            "ismultiimage": false,
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": true,
                             "isvideo": false,
                             "ismultyplenas": true,
-                            "ismultyimgopt": false,
-                            "videosrc": "",
-                            "ImagePath": "/gynacApp/local/img/question/Talk1/T1Q3_1.PNG",
+                            "ismultyimgopt": false,                            
+                            "ImagePath": [
+                                {
+                                    "value": "/gynacApp/local/img/question/Talk1/T1Q3_1.PNG",
+                                },
+                                {
+                                    "value": "/gynacApp/local/img/question/Talk1/T1Q3_2.PNG",
+                                }
+                            ],                            
                             "option": [
                                  {
                                      "id": "a",
@@ -1392,7 +1398,7 @@
                                  },
                                  {
                                      "id": "f",
-                                     "value": "f) 3, 1, 2, 4"
+                                     "value": "f) 3, 2, 1, 4"
                                  },
                                  {
                                      "id": "g",
@@ -1970,7 +1976,7 @@
                             "id": 5,
                             "question": "Q 5: Name the uterine anomaly?",
                             "quedsc": "",
-                            "ans": "b",
+                            "ans": "e",
                             "istext": false,
                             "isimage": true,
                             "ismultiimage": false,
