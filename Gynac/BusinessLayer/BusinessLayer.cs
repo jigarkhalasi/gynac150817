@@ -114,11 +114,7 @@ namespace Gynac
                 {
                     case EmailType.VerifyEmail:
                         subject = "Email Verification";
-                        mailUrl = ConfigurationManager.AppSettings["VerifyEmailUrl"].ToString();
-                        var body1 = new StringBuilder();
-                        //body1.AppendLine(@"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/>");
-                        //body1.AppendLine("<a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>");
-                        //body = body1.ToString();
+                        mailUrl = ConfigurationManager.AppSettings["VerifyEmailUrl"].ToString();                        
                         if (toAddress.Contains("gmail.com"))
                         {
                             body = @"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
@@ -131,7 +127,14 @@ namespace Gynac
                     case EmailType.ForgotPassword:
                         subject = "Reset Password";
                         mailUrl = ConfigurationManager.AppSettings["ForgotPasswordUrl"].ToString();
-                        body = @"<b>Click the link below to reset your password</b> <br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Reset Password</a>";
+                        if (toAddress.Contains("gmail.com"))
+                        {
+                            body = @"<b>Click the link below to reset your password</b> <br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Reset Password</a>";
+                        }
+                        else
+                        {
+                            body = @"<b>Copy Paste the link below to reset your password.</b> <br/><br/>" + mailUrl + "/" + guid + "/" + toAddress + "";
+                        }   
                         break;
                     case EmailType.ResetPassword:
                         subject = "Password Changed";
