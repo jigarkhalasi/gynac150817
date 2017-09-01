@@ -102,9 +102,9 @@
                                         <th class="hidden-xs">ID</th>
                                         <th style="width: 500px;">Name</th>
                                         <th style="width: 100px;">Duration</th>
-                                        <th>Summary of the Talk</th>
+                                        <th>Talk Overview</th>
                                         <th>Action</th>
-                                        <th>Submit Self Assessment</th>
+                                        <th>Self Assessment</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -122,7 +122,7 @@
                                         </td>
                                         <!--{{talk.UserTalkId}}-->
                                         <!--<td class="hidden-xs">{{ outerIndex * userTalkList.length + $index + 1 }}</td>-->
-                                        <td class="hidden-xs">{{ talkIndex + 1 }}</td>
+                                        <td class="hidden-xs">{{ talk.TalkId }}</td>
                                         <td class="lectalkname">
                                             <h4>{{talk.TalkName}}</h4>
                                         </td>
@@ -134,7 +134,7 @@
                                             <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);" data-toggle="modal" data-target="#video-ID1" data-backdrop="static" data-keyboard="false"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
                                         </td>
                                         <td>
-                                            <button type="button" ng-disabled="talk.IsExam == 'IsActive'" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                            <button type="button" ng-disabled="talk.UserTalkId === 0" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -1036,12 +1036,12 @@ namespace Gynac
         }
 
         //get all userbook mark
-        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId)
+        public IEnumerable<UserBookmarkModel> GetUserBookmark(int userId, int talkId)
         {
             var model = new List<UserBookmarkModel>();
             try
             {
-                DataSet ds = _dataAccessLayer.GetUserBookmark(userId);
+                DataSet ds = _dataAccessLayer.GetUserBookmark(userId, talkId);
                 if (ds != null)
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
@@ -1051,8 +1051,9 @@ namespace Gynac
 
                         data.Id = Convert.ToInt32(row["Id"].ToString());
                         data.UserId = Convert.ToInt32(row["UserId"].ToString());
-                        data.BookMarkName = row["BookMarkName"].ToString();
+                        data.BookMarkName = row["BookMarkName"].ToString();                        
                         data.BookMarkTime = row["BookMarkTime"].ToString();
+                        data.TalkId = Convert.ToInt32(row["TalkId"].ToString());
 
                         model.Add(data);
                     }

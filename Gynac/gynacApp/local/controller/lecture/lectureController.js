@@ -235,7 +235,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     }
 
     $scope.getUserBookMark = function () {
-        var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId;
+        var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId + '&&talkId=' + $scope.modalData.TalkId;
         dataService.getData(webURL, {}).then(function (data) {            
             $scope.userBookmark = data;
             var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);            
@@ -255,6 +255,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
         $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;        
         $scope.data.BookMarkTime = $scope.userBookmark.Sethhmmss;
+        $scope.data.TalkId = $scope.modalData.TalkId;
         dataService.postData(webURL, $scope.data).then(function (data) {
             $scope.setAccording('bookmark', true);
             $scope.getUserBookMark();

@@ -876,6 +876,7 @@ namespace Gynac
                         command.Parameters.AddWithValue("@User_Id", model.UserId);
                         command.Parameters.AddWithValue("@BookMarkName", model.BookMarkName);
                         command.Parameters.AddWithValue("@BookMarkTime", model.BookMarkTime);
+                        command.Parameters.AddWithValue("@TalkId", model.TalkId);
 
                         cost = Convert.ToInt32(command.ExecuteScalar());
                     }
@@ -891,7 +892,7 @@ namespace Gynac
         }
 
         //get all user bookmarks
-        public DataSet GetUserBookmark(int userId)
+        public DataSet GetUserBookmark(int userId, int talkId)
         {
             DataSet dsResult = new DataSet();
             try
@@ -905,6 +906,7 @@ namespace Gynac
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@User_Id", userId);
+                        command.Parameters.AddWithValue("@TalkId", talkId);
 
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = command;
