@@ -1,4 +1,4 @@
-﻿app.controller("questionModalController", ["$stateParams", "$scope", "$uibModalInstance", "$rootScope", "modalData", "$http", "dataService", function ($stateParams, $scope, $uibModalInstance, $rootScope, modalData, $http, dataService) {
+﻿app.controller("questionModalController", ["$stateParams", "$scope", "$uibModalInstance", "$rootScope", "modalData", "$http", "dataService", "$sce", function ($stateParams, $scope, $uibModalInstance, $rootScope, modalData, $http, dataService, $sce) {
 
     var self = this;
 
@@ -251,7 +251,7 @@
     }
 
     //Functions
-    self.gotoStep = function (newStep, currentQue) {
+    self.gotoStep = function (newStep, currentQue) {             
         if (!isAlreadyExits) {
             if (isValidAns == true) {
                 var check = _.find(self.ansUser, function (userans) {
@@ -269,6 +269,12 @@
         else {
             self.currentStep = newStep;
         }
+         
+        console.log(self.questionList.questions[newStep].isvideo);
+        if (self.questionList.questions[newStep].isvideo === true) {
+            document.getElementById('quevideoId').src = self.questionList.questions[newStep].videosrc;
+            return;
+        }        
     }
 
     self.gotoPrvStep = function (newStep, currentQue) {        
@@ -1571,7 +1577,7 @@
                             "isvideo": true,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
-                            "videosrc": "/gynacApp/local/img/question/Talk7/T7Q5.mp4",
+                            "videosrc": "https://player.vimeo.com/video/231906219",
                             "option": [
                                  {
                                      "id": "a",
@@ -2213,8 +2219,16 @@
         }
 
         self.questionList = _.find(self.qusList.questionList, function (question) {
+            console.log(modalData.TalkId);
+            console.log(question.talkId);
+            
             var que = question;
+            //if(question)
             return question.talkId === modalData.TalkId;
         });
+
+        console.log(self.questionList);
+        
     }
+
 }]);
