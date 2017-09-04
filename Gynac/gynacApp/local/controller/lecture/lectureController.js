@@ -86,8 +86,9 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;    
-
-    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    
+    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
@@ -95,17 +96,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         dataService.getData(webURL).then(function (data) {
             $scope.userTalkList = data;
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
-            console.log($scope.getUserTalks);
-            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
-            //{
-            //    $scope.timeIcon = true;
-            //}
-            //if (data.IsActive === "IsActive" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
-            //{
-            //    $scope.timeIcon = true;
-            //}
-            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending") {
-            //}
+            console.log($scope.getUserTalks);            
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });

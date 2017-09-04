@@ -92,7 +92,7 @@ namespace Gynac
                 {
                     if (!result.IsLogin && result.EmailVerificationPending != true && result.IsTalkExist)
                     {
-                        if (result.UserAgent != ipModel.UserAgent && result.IpAddress != ipModel.UserIpAddress)
+                        if (result.UserAgent != ipModel.UserAgent && result.IpAddress != ipModel.UserIpAddress && result.UserInfo.User_Id != 45)
                         {
                             var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
                             result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);
@@ -561,6 +561,23 @@ namespace Gynac
             model.UserAgent = HttpContext.Current.Request.UserAgent;
             //var CalledUrl = HttpContext.Current.Request.Url.OriginalString;
             return model;
-        }    
+        }
+
+        //get tutorial summary
+        [HttpGet]
+        [Route("gettutorialsummary")]
+        public IEnumerable<TutorialSummaryModel> GetTutorialSummary(int userId)
+        {
+            var result = new List<TutorialSummaryModel>();
+            try
+            {
+                result = _businessLayer.GetTutorialSummary(userId).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
     }
 }

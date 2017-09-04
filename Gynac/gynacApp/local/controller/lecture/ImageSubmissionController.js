@@ -7,7 +7,7 @@
     }
 
     $scope.getModuleImages = function () {
-        var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";        
+        var userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var moduleId = $stateParams.moduleId;
         var webURL = 'api/gynac/getmoduleimages?moduleId=' + moduleId + '&&userId=' + userId;
         dataService.getData(webURL, {}).then(function (data) {
@@ -20,7 +20,7 @@
     $scope.getModuleImages();
 
     $scope.uploadFile = function (input) {
-        var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+        var userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var fd = new FormData();
         //Take the first selected file
         var files = input.files;
@@ -42,6 +42,7 @@
             headers: { 'Content-Type': undefined }
         }).success(function () {
             alert("upload!!");
+            $scope.getModuleImages();
         }).error(function () {
             alert("Error");
         });

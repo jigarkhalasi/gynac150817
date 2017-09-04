@@ -938,7 +938,7 @@ namespace Gynac
                         SqlCommand command = new SqlCommand("Delete_User_BookMark", con);
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@User_Id", userBookmarkId);
+                        command.Parameters.AddWithValue("@BookMarkId", userBookmarkId);
 
                         cost = Convert.ToInt32(command.ExecuteScalar());
                     }
@@ -982,6 +982,38 @@ namespace Gynac
             }
 
             return res;
+        }
+
+        //get tutorial summary
+        public DataSet GetTutorialSummary(int userId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_Tutorial_Summary", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
         }
     }
 }

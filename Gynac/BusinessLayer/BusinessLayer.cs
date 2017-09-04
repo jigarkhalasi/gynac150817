@@ -1098,6 +1098,35 @@ namespace Gynac
             }
             return result;
         }
+
+        //get tutorial summary
+        public IEnumerable<TutorialSummaryModel> GetTutorialSummary(int userId)
+        {
+            var model = new List<TutorialSummaryModel>();
+            try
+            {
+                DataSet ds = _dataAccessLayer.GetTutorialSummary(userId);
+
+                if (ds != null)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var data = new TutorialSummaryModel();
+                        data.SessionName = row["SessionName"].ToString();
+                        data.TotalTalks = Convert.ToInt32(row["TotalTalks"].ToString());
+                        data.TotalPendingTalks = (row["TotalCompletedTalks"].ToString() != "" && row["TotalCompletedTalks"].ToString() != null) ? Convert.ToInt32(row["TotalCompletedTalks"].ToString()) : 0;
+                        data.TotalCompletedTalks = data.TotalTalks - data.TotalPendingTalks;
+                        model.Add(data);
+                    }
+                }
+            }
+            catch
+            {
+
+                throw;
+            }
+            return model;
+        }
     }
 
     public enum EmailType

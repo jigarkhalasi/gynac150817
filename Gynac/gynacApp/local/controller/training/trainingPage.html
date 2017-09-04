@@ -16,15 +16,15 @@
                             <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
                             <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
                             <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
-                            <ul class="dropdown-menu">
-                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
-                                <li class="li-2"><a class="a-2" href="#/training">Training Details</a></li>
-                            </ul>
-                        </li>-->
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Details</a></li>
+                                </ul>
+                            </li>-->
                             <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
                             <!--<li class="li-1">
-                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
-                        </li>-->
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
                             <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
                             <!--<li class="li-1 state-active"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Register</a></li>-->
                             <li class="dropdown li-1 state-active">
@@ -44,7 +44,7 @@
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
                             <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -74,68 +74,95 @@
             <div class="logo-2">
                 <img src="gynacApp/local/img/logo-1.png" class="">
             </div>
-        </div>--></div>
+        </div>-->
+    </div>
     <div class="training" ng-init="slide('next')">
-        <h2><strong class="magenta">Training Details</strong></h2> </div>
+        <h2><strong class="magenta">Training Details</strong></h2>
+    </div>
     <div class="container-fluid mypage-all">
-        <div class="main-page container">            
-            <div class="col-md-12">
-                <div class="training-detail-left">
-                    <div class="training-title-left">
-                        <h3>Welcome to the online Gynecological Ultrasound Training Course!</h3>
-                    </div>                   
-                </div>
-            </div>
-            <div class="col-md-6 main-training-left" style="display:none;">
-                <div class="training-detail-left">
-                    <div class="training-title-left">
-                        <h3>Course Registered</h3> </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Index</th>
-                                <th>Name</th>
-                                <th>Date Of Registration</th>
-                                <th>Valid Till</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="list in authenticatedUser.ActiveUserCourse track by $index">
-                                <th scope="row">{{$index + 1}}</th>
-                                <td ng-bind="list.DrName"></td>
-                                <td ng-bind="list.Registered_Date | date:'MMM, dd yyyy'"></td>
-                                <td ng-bind="list.Registered_Till | date:'MMM, dd yyyy'"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-6 main-training-right" style="display:none;">
-                <div class="training-detail-right">
-                    <div class="training-title-right">
-                        <h3>Course Completed</h3>
+        <div class="main-page container">
+            <div class="row">
+                <div class="col-md-12 main-training-left">
+                    <div class="training-detail-left">
+                        Course Duration: September 2nd, 2017 to December 31st, 2017
+                        (For those opting for the final course completion test, it will be extended up to January 7th, 2018)
                     </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 main-training-left">
+                    <div class="training-detail-left">
+                        <div class="training-title-left">
+                            <h3>TRAINING SUMMARY</h3>
+                        </div>                        
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">Session No.</th>
+                                            <th colspan="2">No. of Lectures</th>
+                                            <th colspan="2">No. of Modules - Image Submission</th>
+                                            <th colspan="2">Access</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Completed</th>
+                                            <th>Pending</th>
+                                            <th>Completed</th>
+                                            <th>Pending</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="t in tutorialSummary">
+                                            <td>{{ t.SessionName}}</td>
+                                            <td>{{ t.TotalCompletedTalks }}</td>
+                                            <td>{{ t.TotalPendingTalks }}</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
+                                
+                       
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 main-training-left">
+                    <div class="training-detail-left">
+                        <div class="training-title-left">
+                            <h3>Bookmark</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <select ng-model="selectuserTalk" class="form-control" ng-options="i.TalkName for i in userTalks" ng-change="getBookmark()">
+                        <option value="">--- Select a TalkName ---</option>
+                    </select>
+
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Index</th>
-                                <th>Name</th>
-                                <th>Registration From To</th>
-                                <th>Completed</th>
+                                <th>Sr no.</th>
+                                <th>Bookmark Name</th>
+                                <th>Bookmark Time</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="list in authenticatedUser.ExpiredUserCourse track by $index">
-                                <th scope="row">{{$index + 1}}</th>
-                                <td ng-bind="list.DrName"></td>
-                                <td ng-bind="list.Registered_Date | date:'MMM, dd yyyy'"></td>
-                                <td ng-bind="list.Registered_Till | date:'MMM, dd yyyy'"></td>
+                            <tr ng-repeat="i in userBookmark">
+                                <td scope="row">{{$index + 1}}</td>
+                                <td>{{i.BookMarkName}}</td>
+                                <td>{{ i.BookMarkTime }}</td>
+                                <td><button ng-click="removeBookmark(i.Id)">del</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="clearfix"></div>
         </div>
+                  
+        
+        
     </div>
 </section>

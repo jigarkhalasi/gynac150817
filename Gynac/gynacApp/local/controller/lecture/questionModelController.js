@@ -268,11 +268,17 @@
         else {
             self.currentStep = newStep;            
         }
+
+        self.countScore = 0;
         _.each(self.ansUser, function (userans) {
-            if (userans == true) {
+            if (userans.userans === userans.rightans) {
                 self.countScore++;
             }
-        })
+            else {
+                //self.countScore--;
+            }
+            console.log(self.countScore);
+        });
     }
 
     self.gotoPrvStep = function (newStep, currentQue) {        

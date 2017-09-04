@@ -217,6 +217,7 @@
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\NotificationModel.cs" />
     <Compile Include="Models\TalkVideoModel.cs" />
+    <Compile Include="Models\TutorialSummaryModel.cs" />
     <Compile Include="Models\UpdateUserTalkCommentModel.cs" />
     <Compile Include="Models\UpdateUserTalkModel.cs" />
     <Compile Include="Models\UploadModuleImagesModel.cs" />
