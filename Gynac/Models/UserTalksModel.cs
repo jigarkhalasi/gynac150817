@@ -18,8 +18,9 @@ namespace Gynac.Models
         public string Talkdesc { get; set; }
         public string Duration { get; set; }
         public string Comment { get; set; }
-        public EnumUserTalk IsActive { get; set; }
-        public EnumUserTalk IsExam { get; set; }
-        public EnumUserTalk IsVideo { get; set; }
+        public string IsActive { get; set; }
+        public string IsExam { get; set; }
+        public string IsVideo { get; set; }
+        public string IsModuleClear { get; set; }        
     }
 }

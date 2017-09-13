@@ -11,5 +11,9 @@ namespace Gynac.Models
         public int TotalTalks { get; set; }
         public int TotalPendingTalks { get; set; }
         public int TotalCompletedTalks { get; set; }
+
+        public int TotalPendingModules { get; set; }
+        public int TotalCompletedModules { get; set; }
+        public int TotalModules { get; set; }
     }
 }

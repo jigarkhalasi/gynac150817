@@ -385,12 +385,14 @@
     <Content Include="gynacApp\local\img\question\Talk4\T4Q3_3.PNG" />
     <Content Include="gynacApp\local\img\question\Talk4\T4Q3_4.PNG" />
     <Content Include="gynacApp\local\img\question\Talk5\T5Q2.PNG" />
+    <Content Include="gynacApp\local\img\question\Talk6\T6Q2.png" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_1.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_2.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_3.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_4.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_5.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_6.PNG" />
+    <Content Include="gynacApp\local\img\question\Talk6\T6Q3.png" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q3_1.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q3_2.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q3_3.PNG" />

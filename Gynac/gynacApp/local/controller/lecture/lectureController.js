@@ -1,8 +1,7 @@
 app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
 
     $scope.userBookmark = {};
-
-   
+      
 
     $scope.pauseVideo = function () {
 
@@ -87,14 +86,14 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;    
     
-    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
         var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
-        dataService.getData(webURL).then(function (data) {
-            $scope.userTalkList = data;
+        dataService.getData(webURL).then(function (data) {            
+            $scope.userTalkList = data;            
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
             console.log($scope.getUserTalks);            
         }, function (errorMessage) {
@@ -241,6 +240,16 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             alert("You only assign 10 Book mark only!!");
             return;
         }
+
+        if ($scope.userBookmark.BookMarkName == undefined) {
+            alert("Please enter the bookmark!!");
+            return;
+        }
+
+        if ($scope.userBookmark.BookMarkName == "") {
+            alert("Please enter the bookmark!!");
+            return;
+        }
         var webURL = 'api/gynac/adduserbookmark';
         $scope.data = {};
         $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
@@ -267,6 +276,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open question model
     $scope.openQuestionModal = function (que) {
+        console.log(que);
         var modalInstance = $uibModal.open({
             templateUrl: 'gynacApp/local/controller/lecture/questionModelPage.html',
             controller: 'questionModalController as qmc',

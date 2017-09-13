@@ -81,88 +81,138 @@
     </div>
     <div class="container-fluid mypage-all">
         <div class="main-page container">
-            <div class="row">
-                <div class="col-md-12 main-training-left">
-                    <div class="training-detail-left">
-                        Course Duration: September 2nd, 2017 to December 31st, 2017
-                        (For those opting for the final course completion test, it will be extended up to January 7th, 2018)
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="row">
+            <div class="row" style="margin-top:5px;">
                 <div class="col-md-12 main-training-left">
                     <div class="training-detail-left">
                         <div class="training-title-left">
                             <h3>TRAINING SUMMARY</h3>
-                        </div>                        
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th rowspan="2">Session No.</th>
-                                            <th colspan="2">No. of Lectures</th>
-                                            <th colspan="2">No. of Modules - Image Submission</th>
-                                            <th colspan="2">Access</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Completed</th>
-                                            <th>Pending</th>
-                                            <th>Completed</th>
-                                            <th>Pending</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="t in tutorialSummary">
-                                            <td>{{ t.SessionName}}</td>
-                                            <td>{{ t.TotalCompletedTalks }}</td>
-                                            <td>{{ t.TotalPendingTalks }}</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>                                        
-                                    </tbody>
-                                </table>
-                                
-                       
+                            <span style="padding-left:20px;">
+                                Course Duration: September 2nd, 2017 to December 31st, 2017
+                                (For those opting for the final course completion test, it will be extended up to January 7th, 2018)
+                            </span>
+                        </div>
+                        <table class="table" ng-show="tutorialSummary.length > 0">
+                            <thead>
+                                <tr>
+                                    
+                                    <th rowspan="2">Session No.</th>
+                                    <th colspan="2">No. of Lectures</th>
+                                    <th colspan="2">No. of Modules - Image Submission</th>
+
+                                </tr>
+                                <tr>
+                                    <th>Completed</th>
+                                    <th>Pending</th>
+                                    <th>Completed</th>
+                                    <th>Pending</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="t in tutorialSummary">
+                                    
+                                    <td>{{ t.SessionName}}</td>
+                                    
+                                    <td>{{ t.TotalCompletedTalks }}</td>
+                                    <td>{{ t.TotalPendingTalks }}</td>
+                                    
+                                    <td>{{ t.TotalCompletedModules}}</td>
+                                    <td>{{ t.TotalPendingModules }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div ng-show="tutorialSummary.length == 0" style="text-align:center;">
+                            NO Talk Access
+                        </div>
+
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
+
             <div class="row">
                 <div class="col-md-12 main-training-left">
                     <div class="training-detail-left">
                         <div class="training-title-left">
-                            <h3>Bookmark</h3>
+                            <h3>Final Test</h3>
+                        </div>
+                        <p style="padding-left:20px;">Date of course completion final test  (for certification of competency to be held in Bangalore): January 7th, 2018</p>
+                        <br />
+                        <span style="padding-left:20px;">Do you wish to participate?</span>
+                        <label class="radio-inline">
+                            <input type="radio" name="participate" value="true" ng-model="part" ng-checked="part == true"> Yes<br>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="participate" value="false" ng-model="part" ng-checked="part == false"> No<br>
+                        </label>
+                        <button ng-click="submitParticipate()" class="btn btn-primary cust-btn" style="margin-left:30px;">Submit</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 main-training-left">
+                    <div class="training-detail-left">
+                        <div class="training-title-left">
+                            <h3>Book Mark List</h3>
+                        </div>
+                        <div>
+                            <div class="col-md-4"></div>
+                            <select ng-model="selectuserTalk" class="col-md-4" ng-options="i.TalkName for i in userTalks" ng-change="getBookmark()">
+                                <option value="">Select a TalkName</option>
+                            </select>
+                            <div class="col-md-4"></div>
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr no.</th>
+                                            <th>Bookmark Name</th>
+                                            <!--<th>Bookmark Time</th>-->
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="i in userBookmark">
+                                            <td scope="row">{{$index + 1}}</td>
+                                            <td>{{i.BookMarkName}}</td>
+                                            <!--<td>{{ i.BookMarkTime }}</td>-->
+                                            <td>                                                
+                                                <a ng-click="setBookmarkId(i.Id)" class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteBookmark" data-backdrop="static" data-keyboard="false"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div ng-show="userBookmark.length == 0" style="text-align:center;">
+                                    No any bookmark ! Please select Talk.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <select ng-model="selectuserTalk" class="form-control" ng-options="i.TalkName for i in userTalks" ng-change="getBookmark()">
-                        <option value="">--- Select a TalkName ---</option>
-                    </select>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Sr no.</th>
-                                <th>Bookmark Name</th>
-                                <th>Bookmark Time</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="i in userBookmark">
-                                <td scope="row">{{$index + 1}}</td>
-                                <td>{{i.BookMarkName}}</td>
-                                <td>{{ i.BookMarkTime }}</td>
-                                <td><button ng-click="removeBookmark(i.Id)">del</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+
+    </div>
+
+    <div class="modal fade model-center" id="deleteBookmark">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
+                    <h4 class="modal-title">Remove Bookmark</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to remove this bookmark?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="removeBookmark()">Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                 </div>
             </div>
         </div>
-                  
-        
-        
     </div>
 </section>

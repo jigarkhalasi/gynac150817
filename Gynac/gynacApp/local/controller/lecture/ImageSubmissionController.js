@@ -1,13 +1,7 @@
 ﻿app.controller("imageSubmissionController", ["$scope", "dataService", "$rootScope", "$state", "$stateParams", "$http", function ($scope, dataService, $rootScope, $state, $stateParams, $http) {
 
-    $scope.display = true;
-
-    if ($stateParams.userTalkId != "0") {
-        $scope.display = false;
-    }
-
     $scope.getModuleImages = function () {
-        var userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+        var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var moduleId = $stateParams.moduleId;
         var webURL = 'api/gynac/getmoduleimages?moduleId=' + moduleId + '&&userId=' + userId;
         dataService.getData(webURL, {}).then(function (data) {
@@ -20,7 +14,8 @@
     $scope.getModuleImages();
 
     $scope.uploadFile = function (input) {
-        var userId = 45;//($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+        $('#loading').show();
+        var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var fd = new FormData();
         //Take the first selected file
         var files = input.files;
@@ -41,10 +36,12 @@
             transformRequest: angular.identity,
             headers: { 'Content-Type': undefined }
         }).success(function () {
-            alert("upload!!");
+            alert("upload!!");            
             $scope.getModuleImages();
+            $('#loading').hide();
         }).error(function () {
-            alert("Error");
+            $('#loading').hide();
+            alert("Error");            
         });
 
     };
@@ -69,6 +66,10 @@
 
     $scope.getAllNotification = function () {
         $rootScope.$emit('updateNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
+    }
+
+    $scope.openBigImageModal = function (src) {
+        $('.imagepreview').attr('src', src);        
     }
 
 }]);

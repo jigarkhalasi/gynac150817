@@ -19,6 +19,8 @@
     self.returnCall = returnCall;
     init();
 
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+
     function init() {
         
         loadquestion();
@@ -48,8 +50,8 @@
             }
         });
 
-        if (res) {
-            var webURL = 'api/gynac/updateusertalkexam?userTalkId=' + modalData.UserTalkId;
+        if (res) {            
+            var webURL = 'api/gynac/updateusertalkexam?userTalkId=' + modalData.UserTalkId + "&&moduleId=" + modalData.ModuleId + "&&userId=" + $scope.userId;
             dataService.postData(webURL, {}).then(function (data) {
                 $scope.currentLecture = {};
                 alert("Self Assessment submitted successfully!!");
@@ -1353,23 +1355,13 @@
                             "question": "Q 3: Place the below images in likely chronological (age based) order from youngest to oldest. (Neonatal, pediatric, reproductive age & post menopausal)",
                             "quedsc": "(Note: there may be more than one option)",
                             "ans": "e",
-                            "istext": true,
-                            "isimage": false,
-                            "ismultiimage": true,
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
                             "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
-                            "ImagePath": [
-                                {
-                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_1.PNG"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_2.PNG"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_3.PNG"
-                                }, {
-                                    "value": "/gynacApp/local/img/question/Talk6/T6Q3_4.PNG"
-                                }
-                            ],
+                            "ImagePath": "/gynacApp/local/img/question/Talk6/T6Q3.png",                            
                             "option": [
                                  {
                                      "id": "a",

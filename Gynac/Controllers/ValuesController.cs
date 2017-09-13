@@ -395,12 +395,12 @@ namespace Gynac
         //update the usertalks comment
         [HttpPost]
         [Route("updateusertalkexam")]
-        public int UpdateUserTalkExam(int userTalkId)
+        public int UpdateUserTalkExam(int userTalkId, int moduleId, int userId)
         {
             int result = 0;
             try
             {
-                result = _businessLayer.UpdateUserTalkExam(userTalkId);
+                result = _businessLayer.UpdateUserTalkExam(userTalkId, moduleId, userId);
             }
             catch (Exception ex)
             {
@@ -572,6 +572,22 @@ namespace Gynac
             try
             {
                 result = _businessLayer.GetTutorialSummary(userId).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+        //is participate the or not
+        [HttpPost]
+        [Route("isparticipate")]
+        public int iSparticipate(int userId, string userEmail, bool part)
+        {
+            int result = 0;
+            try
+            {
+                result = _businessLayer.isParticipate(userId, userEmail, part);
             }
             catch (Exception ex)
             {

@@ -67,3 +67,21 @@
 
 //image path settings
 //video link set up
+
+//user table also set isparticipate
+//ALTER TABLE ModuleMaster
+//ADD ModuleDesc nvarchar(max) NULL
+
+//ALTER TABLE UserModuleImage
+//ADD IsModuleClear int NULL
+//CONSTRAINT isModule_clear DEFAULT 0
+
+//--update UserModuleImage set IsModuleClear=0 where userid=45
+
+//ALTER TABLE Usertalks
+//ADD ModuleId int NULL
+//CONSTRAINT isModule_Id DEFAULT 0
+
+//ALTER TABLE Usertalks
+//ADD IsModuleClear int NULL
+//CONSTRAINT isModuleuser_clear DEFAULT 0

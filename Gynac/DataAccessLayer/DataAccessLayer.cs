@@ -733,7 +733,7 @@ namespace Gynac
         }
 
         //update exam clear
-        public int UpdateUserTalkExam(int userTalkId)
+        public int UpdateUserTalkExam(int userTalkId, int moduleId, int userId)
         {
             int res = 0;
             try
@@ -746,7 +746,9 @@ namespace Gynac
                         SqlCommand command = new SqlCommand("Update_UserTalk_Exam", con);
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@UserTalkId", userTalkId);                        
+                        command.Parameters.AddWithValue("@UserTalkId", userTalkId);
+                        command.Parameters.AddWithValue("@ModuleId", moduleId);
+                        command.Parameters.AddWithValue("@User_Id", userId);
 
                         res = Convert.ToInt32(command.ExecuteScalar());
                     }
@@ -1014,6 +1016,36 @@ namespace Gynac
             }
 
             return dsResult;
+        }
+
+        //get UpdateisParticipate 
+        public int UpdateisParticipate(int userId, bool part)
+        {
+            int res = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Update_IsParticipate", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+                        command.Parameters.AddWithValue("@IsParticipate", part);
+
+                        res = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return res;
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Gynac.Models
         public string ModuleName { get; set; }
         public int ModuleImageId { get; set; }
         public string ModuleDesc { get; set; }
+        public string ModuleImageDesc { get; set; }
         public string SampleImage { get; set; }
         public int UserImageId { get; set; }
         public string UserImage { get; set; }

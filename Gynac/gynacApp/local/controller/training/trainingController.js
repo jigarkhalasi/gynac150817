@@ -1,8 +1,16 @@
 app.controller("trainingController",["$scope", "dataService", "$rootScope", "$state", "$filter", function($scope, dataService, $rootScope, $state, $filter){
 	
-    //if(!$rootScope.authenticatedUser.UserInfo.User_Id){
-    //    $state.go('home');
-    //}
+    //$rootScope.authenticatedUser.UserInfo.User_Id = 45;
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    if ($rootScope.authenticatedUser.UserInfo.User_Id) {
+        //$scope.$apply(function () {
+            $scope.useremail = $rootScope.authenticatedUser.UserInfo.Email;
+            $scope.part = $rootScope.authenticatedUser.UserInfo.Isparticipate;
+        //});
+    }
+    else {
+        $state.go('home');
+    }
     
 	$scope.clickMe = function(){
 		var webURL = 'appData/zoneData.json'
@@ -40,8 +48,24 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
         }
     }
 
-    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
-    $scope.selectuserTalk = "";   
+    //$scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.selectuserTalk = "";
+
+    //get user talks
+    $scope.getUserTalks = function () {
+        $scope.index = 0;
+        var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
+        dataService.getData(webURL).then(function (data) {
+            $scope.userTalkList = data;
+            $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
+            $scope.userTalks = _.reject($scope.userTalkList, function (talk) { return talk.UserTalkId === 0; });
+            console.log($scope.userTalks);
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
+        //}
+    }
+    $scope.getUserTalks();
 
     $scope.getBookmark = function () {
         var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId + '&&talkId=' + $scope.selectuserTalk.TalkId;
@@ -55,12 +79,12 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
         });
     }
 
+    //$scope.getBookmark();
 
     $scope.gettutorialSummary = function () {
         var webURL = 'api/gynac/gettutorialsummary?userId=' + $scope.userId;
         dataService.getData(webURL, {}).then(function (data) {            
-            $scope.tutorialSummary = data;
-            console.log(data);
+            $scope.tutorialSummary = data;            
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -68,14 +92,29 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
 
     $scope.gettutorialSummary();
 
-    $scope.removeBookmark = function (userbookmarkId) {
-        var webURL = 'api/gynac/deleteuserbookmark?userId=' + $scope.userId + '&&userBookmarkId=' + userbookmarkId;
+    $scope.setBookmarkId = function (bookmarkId) {
+        $scope.currentBookmarkId = bookmarkId;
+    }
+
+    $scope.removeBookmark = function () {              
+        var webURL = 'api/gynac/deleteuserbookmark?userId=' + $scope.userId + '&&userBookmarkId=' + $scope.currentBookmarkId;
         dataService.postData(webURL, {}).then(function (data) {
-            $scope.userBookmark = _.reject($scope.userBookmark, function (bookmark) { return bookmark.Id === userbookmarkId; });
+            $scope.userBookmark = _.reject($scope.userBookmark, function (bookmark) { return bookmark.Id === $scope.currentBookmarkId; });
+            alert("Successfully Remove Bookmark");
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
+    }
 
+    $scope.submitParticipate = function () {
+        //alert($scope.part);
+        $scope.useremail = 'jigs.prince79@gmail.com';//$rootScope.authenticatedUser.UserInfo.Email;
+        var webURL = 'api/gynac/isparticipate?userId=' + $scope.userId + '&&userEmail=' + $scope.useremail + '&&part=' + $scope.part;
+        dataService.postData(webURL, {}).then(function (data) {
+            alert("proposal send");
+        }, function (errorMessage) {
+            console.log(errorMessage + ' Error......');
+        });
     }
 
     $scope.getAllNotification = function () {
