@@ -100,7 +100,7 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
         var webURL = 'api/gynac/deleteuserbookmark?userId=' + $scope.userId + '&&userBookmarkId=' + $scope.currentBookmarkId;
         dataService.postData(webURL, {}).then(function (data) {
             $scope.userBookmark = _.reject($scope.userBookmark, function (bookmark) { return bookmark.Id === $scope.currentBookmarkId; });
-            alert("Successfully Remove Bookmark");
+            alert("Bookmark Remove Successfully");
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -108,10 +108,11 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
 
     $scope.submitParticipate = function () {
         //alert($scope.part);
-        $scope.useremail = 'jigs.prince79@gmail.com';//$rootScope.authenticatedUser.UserInfo.Email;
+        //$scope.useremail = 'jigs.prince79@gmail.com';//$rootScope.authenticatedUser.UserInfo.Email;
+        $scope.useremail = $rootScope.authenticatedUser.UserInfo.Email;
         var webURL = 'api/gynac/isparticipate?userId=' + $scope.userId + '&&userEmail=' + $scope.useremail + '&&part=' + $scope.part;
         dataService.postData(webURL, {}).then(function (data) {
-            alert("proposal send");
+            alert("Your request submitted successfully!");
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });

@@ -36,12 +36,12 @@
             transformRequest: angular.identity,
             headers: { 'Content-Type': undefined }
         }).success(function () {
-            alert("upload!!");            
+            alert("Upload Image Successfully!!");            
             $scope.getModuleImages();
             $('#loading').hide();
         }).error(function () {
             $('#loading').hide();
-            alert("Error");            
+            //alert("Error");            
         });
 
     };
@@ -67,9 +67,9 @@
     $scope.getAllNotification = function () {
         $rootScope.$emit('updateNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
     }
-
-    $scope.openBigImageModal = function (src) {
-        $('.imagepreview').attr('src', src);        
-    }
+    
+    $scope.openBigImageModal = function (src, index) {
+        $('#imagepreview').attr('src', src);        
+    }   
 
 }]);

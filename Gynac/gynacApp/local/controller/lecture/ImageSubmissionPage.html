@@ -7,35 +7,7 @@
         margin-top:5px;
         margin-bottom:5px;
     }
-
-        * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.item {
-  position: relative;
-  
-  border: 1px solid #333;
-  margin: 2%;
-  overflow: hidden;
-  width: 226px;
-}
-.item img {
-  max-width: 100%;
-  
-  -moz-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.item:hover img {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
+ 
 </style>
 
 <section class="home about" style="margin-bottom:100px;">
@@ -142,7 +114,8 @@
 
                     <div class="row legroom">
                         <div class="col-md-6">
-                            <a ng-click="openBigImageModal(imgdata.SampleImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img src="{{imgdata.SampleImage}}" style="width:226px;height:174px"></a>
+                            <!--<img ng-click="openBigImageModal(imgdata.SampleImage, $index)" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" class="imagepointer" src="{{imgdata.SampleImage}}" style="width:226px;height:174px">-->
+                            <a ng-click="openBigImageModal(imgdata.UserImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.SampleImage }}" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId !== 0"></a>                                        
                             <!--<a href="#" class="pop" ng-click="openBigImageModal(imgdata.SampleImage)">
                                 <img src="{{imgdata.SampleImage}}" style="width:226px;height:174px">
                             </a>-->
@@ -156,8 +129,8 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">                                    
-                                        <img ng-src="../../../../Images/images.jpg" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId === 0">                                        
-                                        <a ng-click="openBigImageModal(imgdata.UserImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img ng-src="{{imgdata.UserImage }}" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId !== 0"></a>                                        
+                                    <img ng-src="../../../../Images/images.jpg" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId === 0">                                        
+                                        <a ng-click="openBigImageModal(imgdata.UserImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.UserImage }}" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId !== 0"></a>                                        
                                 </div>
                             </div>
                             <br />
@@ -191,15 +164,17 @@
     </div>    
 
     <div class="modal fade model-center" id="imagemodal">
-        <div class="modal-dialog">
+        <div class="modal-dialog">            
             <div class="modal-content">
-                <div class="modal-body">
-                    <img src="" class="imagepreview" style="width: 100%;">
+                <div class="modal-header">
+                    <span>&nbsp;</span>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+                <div class="">
+                    <img src="" id="imagepreview" style="width: 100%; height:100%;">
+                </div>                
             </div>
         </div>
-    </div>
+    </div>    
 </section>
+

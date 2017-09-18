@@ -22,7 +22,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                     });
                    
                 }).catch(function (error) {
-                    alert(error);
+                    //alert(error);
                 });
             }
         }).catch(function (error) {
@@ -47,7 +47,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             $scope.userBookmark.Sethhmmss = seconds;
             $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
-            alert(error);
+            //alert(error);
         });
     }
 
