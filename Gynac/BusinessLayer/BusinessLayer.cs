@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
@@ -95,9 +96,16 @@ namespace Gynac
                     message.From = new MailAddress(toAddress);
                     message.To.Add(ConfigurationManager.AppSettings["ContactUsEmailAddress"].ToString());
                 }
-                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp) || emailType.Equals(EmailType.Comment) || emailType.Equals(EmailType.isParticipate))
+                else if (emailType.Equals(EmailType.Comment))
                 {
-                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString()); ;
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
+                    message.To.Add(toAddress);
+                    string copy = ConfigurationManager.AppSettings["EmailFromAddress"].ToString();
+                    message.CC.Add(copy);
+                }
+                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp) || emailType.Equals(EmailType.isParticipate))
+                {
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
                     message.To.Add(toAddress);
                 }
                 else
@@ -155,7 +163,7 @@ namespace Gynac
                         body = bodyData;
                         break;
                     case EmailType.Comment:
-                        subject = "User Comment";
+                        subject = "New Query";
                         mailUrl = "comment";
                         body = bodyData;
                         break;
@@ -275,6 +283,8 @@ namespace Gynac
                     verifiedUser.UserInfo.Institution_Work_Place = drUser["Institution_Work_Place"].ToString();
                     verifiedUser.IpAddress = drUser["IpAddress"].ToString();
                     verifiedUser.UserAgent = drUser["UserAgent"].ToString();
+                    verifiedUser.UserInfo.StartDate = (drUser["StartDate"].ToString() != "" &&  drUser["StartDate"].ToString() != null) ? drUser["StartDate"].ToString() : "" ;
+                    verifiedUser.UserInfo.EndDate = (drUser["EndDate"].ToString() != "" && drUser["EndDate"].ToString() != null) ? drUser["EndDate"].ToString() : "";
                     if (drUser["Isparticipate"].ToString() != "")
                     {
                         verifiedUser.UserInfo.Isparticipate = (Convert.ToBoolean(drUser["Isparticipate"].ToString()) == true) ? true : false;
@@ -693,12 +703,25 @@ namespace Gynac
         }
 
         //upload image 
-        public int UploadModuleImages(UploadModuleImagesModel model)
+        public int UploadModuleImages(UploadModuleImagesModel model, string fileName)
         {
             int result = 0;
             try
             {
                 result = _dataAccessLayer.UploadModuleImages(model);
+                string body = string.Empty;
+                string path = HttpContext.Current.Server.MapPath("~/gynacApp/local/emailTemplates/ImageSubmittion.html");
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    body = reader.ReadToEnd();
+                }
+                body = body.Replace("{modulename}", model.ModuleName);
+                body = body.Replace("{moduleimage}", fileName);                
+
+                //string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
+               // SendMail(model.Email, EmailType.Comment, "", body);
+                result = 1;
+
             }
             catch
             {
@@ -780,8 +803,17 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UpdateUserTalkComment(model);
-                string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
-                SendMail(model.Email, EmailType.Comment, "", bodyData);
+                string body = string.Empty;
+                string path = HttpContext.Current.Server.MapPath("~/gynacApp/local/emailTemplates/QueryEmail.html");
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    body = reader.ReadToEnd();
+                }
+                body = body.Replace("{userEmailId}", model.UserEmail);
+                body = body.Replace("{query}", model.Comment);
+
+                //string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
+                SendMail(model.Email, EmailType.Comment, "", body);
                 result = 1;
             }
             catch
@@ -1260,6 +1292,7 @@ namespace Gynac
         Otp = 4,
         Registration = 5,
         Comment = 6,
-        isParticipate = 7
+        isParticipate = 7,
+        ImageSubmission = 8;
     }
 }

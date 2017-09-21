@@ -27,6 +27,9 @@
         fd.append("ModuleId", $stateParams.moduleId);
         fd.append("ModuleImageId", ModuleImageId);
         fd.append("userModuleImageId", UserImageId);
+        fd.append("ModuleName", $scope.moduleImages[0].ModuleName);
+        fd.append("UserEmail", $rootScope.authenticatedUser.UserInfo.Email);
+        fd.append("SpeakerEmail", $scope.moduleImages[0].ModuleName);
 
         var webURL = 'api/gynac/uploadmoduleimage';
 

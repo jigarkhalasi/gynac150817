@@ -6,6 +6,13 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
         //$scope.$apply(function () {
             $scope.useremail = $rootScope.authenticatedUser.UserInfo.Email;
             $scope.part = $rootScope.authenticatedUser.UserInfo.Isparticipate;
+            $scope.StartDate = $rootScope.authenticatedUser.UserInfo.StartDate;
+            $scope.EndDate = $rootScope.authenticatedUser.UserInfo.EndDate;
+            if ($scope.StartDate != "" && $scope.EndDate != "")
+            {
+                $scope.StartDate = new Date($scope.StartDate);
+                $scope.EndDate = new Date($scope.EndDate);
+            }
         //});
     }
     else {

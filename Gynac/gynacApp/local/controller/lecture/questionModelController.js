@@ -19,10 +19,10 @@
     self.returnCall = returnCall;
     init();
 
-    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
 
     function init() {
-        
+
         loadquestion();
 
         if (modalData.UserTalkId) {
@@ -50,7 +50,7 @@
             }
         });
 
-        if (res) {            
+        if (res) {
             var webURL = 'api/gynac/updateusertalkexam?userTalkId=' + modalData.UserTalkId + "&&moduleId=" + modalData.ModuleId + "&&userId=" + $scope.userId;
             dataService.postData(webURL, {}).then(function (data) {
                 $scope.currentLecture = {};
@@ -143,7 +143,7 @@
 
             }
         }
-        
+
     }
 
     function setAnsMulti(question, userans, rightans, queId, mutiple) {
@@ -212,39 +212,39 @@
     var isValidAns = false;
     var isAlreadyExits = false;
     function storeans(userans, quesid) {
-        
+
         isAlreadyExits = _.find(self.ansUser, function (question) {
-            return (question.questionno === quesid) ? true: false; 
-         });
+            return (question.questionno === quesid) ? true : false;
+        });
 
-         if (!isAlreadyExits) {
-             $("#multians").val('');
-             var chkselected = "";
-             $.each($("input[name='optradio" + quesid + "']:checked"), function () {
-                 chkselected += $(this).val() + ",";
-             });
-             chkselected = chkselected.slice(0, -1);
-             var str = chkselected.split(",").sort().join(",")
+        if (!isAlreadyExits) {
+            $("#multians").val('');
+            var chkselected = "";
+            $.each($("input[name='optradio" + quesid + "']:checked"), function () {
+                chkselected += $(this).val() + ",";
+            });
+            chkselected = chkselected.slice(0, -1);
+            var str = chkselected.split(",").sort().join(",")
 
-             console.log(str);
-             if (str != "") {
-                 $("#multians").val(str);
-                 isValidAns = true;
-             }
-             else {
-                 isValidAns = false;
-                 alert("Select Option");
+            console.log(str);
+            if (str != "") {
+                $("#multians").val(str);
+                isValidAns = true;
+            }
+            else {
+                isValidAns = false;
+                alert("Select Option");
 
-             }
-         }
-         else {
+            }
+        }
+        else {
 
-         }
+        }
     }
 
     function returnCall() {
         self.countScore = 0;
-        $("#multians").val('');        
+        $("#multians").val('');
     }
 
     function cancel() {
@@ -268,7 +268,7 @@
             }
         }
         else {
-            self.currentStep = newStep;            
+            self.currentStep = newStep;
         }
 
         self.countScore = 0;
@@ -283,7 +283,7 @@
         });
     }
 
-    self.gotoPrvStep = function (newStep, currentQue) {        
+    self.gotoPrvStep = function (newStep, currentQue) {
         var prevCurrentStep = self.currentStep;
         self.currentStep = parseInt(prevCurrentStep) - 1;
     }
@@ -383,7 +383,7 @@
                             "ismultiimage": true,
                             "isvideo": false,
                             "ismultyplenas": true,
-                            "ismultyimgopt": false,                            
+                            "ismultyimgopt": false,
                             "ImagePath": [
                                 {
                                     "value": "/gynacApp/local/img/question/Talk1/T1Q3_1.PNG",
@@ -391,7 +391,7 @@
                                 {
                                     "value": "/gynacApp/local/img/question/Talk1/T1Q3_2.PNG",
                                 }
-                            ],                            
+                            ],
                             "option": [
                                  {
                                      "id": "a",
@@ -1361,7 +1361,7 @@
                             "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk6/T6Q3.png",                            
+                            "ImagePath": "/gynacApp/local/img/question/Talk6/T6Q3.png",
                             "option": [
                                  {
                                      "id": "a",
@@ -1530,7 +1530,7 @@
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath":[
+                            "ImagePath": [
                                 {
                                     "value": "/gynacApp/local/img/question/Talk7/T7Q4_1.PNG"
                                 },
@@ -2205,7 +2205,967 @@
                         }
 
                     ]
-                }
+                },
+                {
+                    "talkId": 10,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q1. Which of the following is true ?",
+                            "quedsc": "(Note: There may be more than one option)",
+                            "ans": "a,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. On grey scale – structures perpendicular to the beam are well seen"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. On Doppler – flows perpendicular to the beam are well seen"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. On grey scale – structures parallel to the beam are well seen"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. On Doppler – flows parallel to the beam are well seen"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q2. Follicular maturity cannot be confirmed without…",
+                            "quedsc": "",
+                            "ans": "e,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk10/T10Q2.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Measured in the sagittal plane (the endometrium should be seen continuous with the cervical canal below)"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Where the endometrium is at its thickest"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Image should be sufficiently  zoomed"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Measurement should be done perpendicular to the endometrial stripe"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Should include the hypoechoic adjoining myometrium (Junctional zone) "
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. 2 layer thickness – reported in ‘mm’ (rounded to 1 decimal point)"
+                                },
+                                {
+                                    "id": "g",
+                                    "value": "g. If there is a polyp it should not be included in the measurement"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. Put these different endometrial images in the order of how they appear in a patient with a normal menstrual cycle (starting from D1) ",
+                            "quedsc": "",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk10/T10Q3.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. A, B, C"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. C, A, B"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. A, C, B"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. B, C, A"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. C, A, B"
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. B, A, C"
+                                }
+                            ]
+                        }
+
+                    ]
+                },
+                {
+                    "talkId": 11,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q1. The best time to evaluate the endometrium for a polyp in a patient with regular menstrual cycles is:",
+                            "quedsc": "",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk11/T11Q1.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Menstrual phase - D 2 to D 3"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Proliferative phase - D 10 to D 12"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Secretory phase - D 20 to D 23"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. At the time when the patient has spotting"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q2. Which features in this video clip of a patient with a thickened appearing endometrium  suggest that this is an endometrial polyp? ",
+                            "quedsc": "",
+                            "ans": "a,b",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Hyperechoic line (or bright edge)"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Feeder vessel – on Doppler"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Cystic spaces in the endometrium"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Blunt lower end of polyp"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Sliding sign (polyp sliding in the cavity on pressure from the probe)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. The feeder vessel of a polyp may not be seen because of:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk11/T11Q3.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Improper Doppler settings"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Feeder vessel running perpendicular to the ultrasound probe"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Excessive pressure by the probe"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Increased distance of the vessel from the probe"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Polyp with increased fibrous tissue"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q3. All the following about endometrial polyps are true except",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk11/T11Q4.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. All endometrial polyps are benign"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Polyps typically have a single dominant vessel crossing the endomyometrial junction"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Irregular outline of an endometrial polyp raises a high possibility of malignancy"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Branching of the feeder vessel inside the polyp raises a high possibility of malignancy"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. They often have a hyperechoic line/ bright edge surrounding them"
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. Polyps are well seen in the presence of fluid within the endometrial cavity"
+                                }
+                            ]
+                        }
+
+                    ]
+                },
+                {
+                    "talkId": 14,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q1. Which of the following ultrasound parameters is most reliable for diagnosis of polycystic ovaries? ",
+                            "quedsc": "",
+                            "ans": "c",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Ovarian size"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Number of antral follicles"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Stromal hyperechogenicity"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Low ovarian artery resistance"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q2. What is the follicle number that can be considered a frank manifestation of PCOS according to recent studies?",
+                            "quedsc": "",
+                            "ans": "d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. 10"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. 12"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. 19"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. 26"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. Ovarian stromal resistance can be correlated to…",
+                            "quedsc": "",
+                            "ans": "b,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Androgen"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. LH"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. FSH"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Insulin resistance"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Oestrogen"
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. Progesterone"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q4. Stromal abundance can be assessed by…",
+                            "quedsc": "",
+                            "ans": "d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Stromal volume"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Stromal echogenicity"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Stromal area"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. All"
+                                }
+                            ]
+                        },
+                            {
+                                "id": 5,
+                                "question": "Q5. High androgen in PCO presents as:",
+                                "quedsc": "",
+                                "ans": "a,c,e",
+                                "istext": true,
+                                "isimage": false,
+                                "ismultiimage": false,                                
+                                "isvideo": false,
+                                "ismultyplenas": true,
+                                "ismultyimgopt": false,
+                                //"ImagePath": "\/img\/GynAc-logo.jpg",
+                                "option": [
+                                    {
+                                        "id": "a",
+                                        "value": "a. Increased stromal echogenicity"
+                                    },
+                                    {
+                                        "id": "b",
+                                        "value": "b. Decreased stromal vascularity"
+                                    },
+                                    {
+                                        "id": "c",
+                                        "value": "c. More antral follicles "
+                                    },
+                                    {
+                                        "id": "d",
+                                        "value": "d. High endometrial flow"
+                                    },
+                                    {
+                                        "id": "e",
+                                        "value": "e. High uterine artery resistance"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 6,
+                                "question": "Q6. Obese PCOS patients have:",
+                                "quedsc": "",
+                                "ans": "d",
+                                "istext": true,
+                                "isimage": false,
+                                "ismultiimage": false,
+                                "isvideo": false,                                
+                                "ismultyplenas": false,
+                                "ismultyimgopt": false,
+                                //"ImagePath": "\/img\/GynAc-logo.jpg",
+                                "option": [
+                                    {
+                                        "id": "a",
+                                        "value": "a. Less small antral follicles (2-6mm)"
+                                    },
+                                    {
+                                        "id": "b",
+                                        "value": "b. Less stromal flows"
+                                    },
+                                    {
+                                        "id": "c",
+                                        "value": "c. More small antral follicles (2-6mm)"
+                                    },
+                                    {
+                                        "id": "d",
+                                        "value": "d. More stromal RI"
+                                    },
+                                    {
+                                        "id": "e",
+                                        "value": "e. Less stromal PSV"
+                                    },
+                                    {
+                                        "id": "f",
+                                        "value": "f. More stromal echogenicity"
+                                    }
+                                ]
+                            }
+                        ]
+                },
+                {
+                    "talkId": 15,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q1. What are the two most important parameters to decide stimulation protocol?",
+                            "quedsc": "",
+                            "ans": "b",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Ovarian volume and AFC"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. AFC and ovarian flow"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Ovarian volume and ovarian flow"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q2. Follicular maturity cannot be confirmed without…",
+                            "quedsc": "",
+                            "ans": "e",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Follicle size"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Follicular vascularity"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Cumulus oophorus"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Follicle size and cumulus oophorus"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Follicle size and vascularity"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. Signs of impending rupture are:",
+                            "quedsc": "",
+                            "ans": "a,c",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Rising PSV"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Rising RI"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Falling RI"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Falling PSV"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Increasing follicle size"
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. Thickened echogenic follicular wall"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q4. High endometrial receptivity is indicated by…",
+                            "quedsc": "",
+                            "ans": "b,c,e",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Grade C endometrium"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Grade B endometrium"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Grade A endometrium"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Spiral vessel RI < 0.6"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Uterine artery PI < 3.2"
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. Zone 2 vascularity"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q5. Normal luteal phase scan shows:",
+                            "quedsc": "",
+                            "ans": "b,c",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Uterine artery PI < 3.2"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Uterine artery PI < 2.5"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Spiral artery RI < 0.5"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Corpus luteal RI < 0.6"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Spiral artery RI < 0.6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talkId": 16,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q1. What is the gold standard to evaluate tubal status?",
+                            "quedsc": "",
+                            "ans": "d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Saline infusion salpingography"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. HSG"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. HyCoSy"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Laparoscopy"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q2. Major drawback of HSG …",
+                            "quedsc": "",
+                            "ans": "c,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,                            
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Can see the shape of the uterus"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Can see the entire tubal lumen"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Cannot see the tubo-ovarian relation"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Static picture"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. Tubal lumen can be outlined by..",
+                            "quedsc": "",
+                            "ans": "b,e",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Colour"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Air"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Water"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Saline"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Echovist"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q4. What is the major drawback of HyCoSy?",
+                            "quedsc": "",
+                            "ans": "d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Inability to see the tubo-ovarian relation"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Static picture"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Painful"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Inability to see the entire tubal lumen in some cases"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Inability to see the fimbria"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q5. Intermittent injection of contrast is specific for:",
+                            "quedsc": "",
+                            "ans": "a",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Colour Doppler for SIS"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. HyCoSy"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Air-Saline salpingography"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Saline infusion salpingography"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talkId": 17,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q1. For ovum pick up and embryo transfers the patients should be painted with:",
+                            "quedsc": "",
+                            "ans": "b",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Betadine"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Normal saline"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Savlon"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Distilled water"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q2. What should you use to visualize the external os - cervix for embryo transfer? ",
+                            "quedsc": "",
+                            "ans": "c",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Sims’ Speculum"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Cusco’s speculum"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Any"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. Which of these consistently affect the results of ART ?",
+                            "quedsc": "",
+                            "ans": "a,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Time taken for embryo transfer"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Selection of speculum"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Selection of embryo-transfer catheter"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Ease of transfer procedure"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Rest period after transfer"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q4. These points need to be remembered when doing an ovum pick up…",
+                            "quedsc": "",
+                            "ans": "a,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Switch on biopsy guide"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Can do any number of punctures on the ovary"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Should access the larger follicles first"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Should access the follicles in the same plane first"
+                                }
+                            ]
+                        }
+                    ]
+                },
             ]
         }
 

@@ -85,3 +85,15 @@
 //ALTER TABLE Usertalks
 //ADD IsModuleClear int NULL
 //CONSTRAINT isModuleuser_clear DEFAULT 0
+
+//====================19/09/2017
+//ALTER TABLE [gynac].[dbo].[User]
+//ADD StartDate datetime null 
+
+//ALTER TABLE [gynac].[dbo].[User]
+//ADD EndDate datetime null 
+
+//select * from [user]
+//2017-09-19 22:40:10.107
+
+//update [user] set StartDate = '2017-09-19 22:40:10.107' , EndDate = '2017-12-19 22:40:10.107' where user_id=45

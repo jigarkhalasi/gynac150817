@@ -280,11 +280,8 @@
     <Content Include="gynacApp\local\controller\lecture\lectureModalController.js" />
     <Content Include="gynacApp\local\controller\lecture\lectureModalPage.html" />
     <Content Include="gynacApp\local\controller\lecture\lecturePage.html" />
-    <Content Include="gynacApp\local\controller\lecture\Questions.html" />
     <Content Include="gynacApp\local\controller\lecture\questionModelController.js" />
     <Content Include="gynacApp\local\controller\lecture\questionModelPage.html" />
-    <Content Include="gynacApp\local\controller\lecture\videoModalController.js" />
-    <Content Include="gynacApp\local\controller\lecture\videoModalPage.html" />
     <Content Include="gynacApp\local\controller\main\mainController.js" />
     <Content Include="gynacApp\local\controller\myProfile\myProfileController.js" />
     <Content Include="gynacApp\local\controller\myProfile\myProfilePage.html" />
@@ -299,6 +296,8 @@
     <Content Include="gynacApp\local\css\bootstrap.min.css" />
     <Content Include="gynacApp\local\css\font-awesome.min.css" />
     <Content Include="gynacApp\local\css\style.css" />
+    <Content Include="gynacApp\local\emailTemplates\ImageSubmittion.html" />
+    <Content Include="gynacApp\local\emailTemplates\QueryEmail.html" />
     <Content Include="gynacApp\local\fonts\AvantGardeLT-Book.eot" />
     <Content Include="gynacApp\local\fonts\AvantGardeLT-Book.svg" />
     <Content Include="gynacApp\local\fonts\AvantGardeLT-Book.ttf" />
@@ -1448,7 +1447,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="gynacApp\local\ModuleImage\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

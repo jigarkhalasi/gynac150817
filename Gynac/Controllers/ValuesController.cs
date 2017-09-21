@@ -347,7 +347,7 @@ namespace Gynac
                         postedFile.SaveAs(filePath);
 
                         model.ImagePath = "/Images/" + fileName;
-                        result = _businessLayer.UploadModuleImages(model);
+                        result = _businessLayer.UploadModuleImages(model, fileName);
 
                         return Ok(result);
                     }

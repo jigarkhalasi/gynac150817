@@ -87,7 +87,7 @@
                         <div class="training-title-left">
                             <h3>TRAINING SUMMARY</h3>
                             <span style="padding-left:20px;">
-                                Course Duration: September 2nd, 2017 to December 31st, 2017
+                                Course Duration: {{ StartDate | date : 'longDate' }} to {{ EndDate | date : 'longDate' }}
                                 (For those opting for the final course completion test, it will be extended up to January 7th, 2018)
                             </span>
                         </div>
