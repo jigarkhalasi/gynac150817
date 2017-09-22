@@ -103,6 +103,13 @@ namespace Gynac
                     string copy = ConfigurationManager.AppSettings["EmailFromAddress"].ToString();
                     message.CC.Add(copy);
                 }
+                else if (emailType.Equals(EmailType.ImageSubmission))
+                {
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
+                    message.To.Add(toAddress);
+                    string copy = ConfigurationManager.AppSettings["EmailFromAddress"].ToString();
+                    message.CC.Add(copy);
+                }
                 else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp) || emailType.Equals(EmailType.isParticipate))
                 {
                     message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
@@ -170,6 +177,11 @@ namespace Gynac
                     case EmailType.isParticipate:
                         subject = "Participate For Exam";
                         mailUrl = "Exam";
+                        body = bodyData;
+                        break;
+                    case EmailType.ImageSubmission:
+                        subject = "New Image Submission";
+                        mailUrl = "New Image Submission";
                         body = bodyData;
                         break;
                     default:
@@ -623,6 +635,7 @@ namespace Gynac
         public IEnumerable<UserTalksModel> GetUserTalk(int userId)
         {
             var model = new List<UserTalksModel>();
+            var moduleList = new List<UserModuleModel>();
             try
             {
                 DataSet ds = _dataAccessLayer.GetUserTalk(userId);
@@ -630,7 +643,7 @@ namespace Gynac
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
                     {
-                        var data = new UserTalksModel();
+                        var data = new UserTalksModel();                        
 
                         int sId = Convert.ToInt32(row["SessionId"].ToString());
                         int mId = Convert.ToInt32(row["ModuleId"].ToString());
@@ -671,11 +684,8 @@ namespace Gynac
                                     }                                     
                                 }                                
                             }
-                        }
-                        else {
-                            data.IsModuleClear = "IsNotAccess";
-                        }
-                        model.Add(data);
+                        }                                                
+                        model.Add(data);                        
                     }
                 }
             }
@@ -709,18 +719,30 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UploadModuleImages(model);
+
+                DataSet facultyRes = _dataAccessLayer.GetFacultyId(model.FacultyId);
+
+                string facultyEmail = string.Empty;
+                string toAddress = string.Empty;
+
+                if(facultyRes != null){
+                     facultyEmail = facultyRes.Tables[0].Rows[0]["Email"].ToString();
+                     toAddress = model.UserEmail + "," + facultyEmail;
+                }
+
                 string body = string.Empty;
                 string path = HttpContext.Current.Server.MapPath("~/gynacApp/local/emailTemplates/ImageSubmittion.html");
+
                 using (StreamReader reader = new StreamReader(path))
                 {
                     body = reader.ReadToEnd();
                 }
-                body = body.Replace("{modulename}", model.ModuleName);
-                body = body.Replace("{moduleimage}", fileName);                
 
-                //string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
-               // SendMail(model.Email, EmailType.Comment, "", body);
-                result = 1;
+                body = body.Replace("{modulename}", model.ModuleName);
+                //body = body.Replace("{moduleimage}", fileName);                
+
+               SendMail(toAddress, EmailType.ImageSubmission, "", body);
+               result = 1;
 
             }
             catch
@@ -841,9 +863,7 @@ namespace Gynac
 
         public IEnumerable<UserModuleImageModel> GetModuleImages(int moduleId, int userId)
         {
-            var model = new List<UserModuleImageModel>();
-            // var moduleMasterModel = new List<ModuleMasterModel>();
-            //var userImageModel = new List<UserImageModel>();
+            var model = new List<UserModuleImageModel>();            
             try
             {
                 DataSet ds = _dataAccessLayer.GetModuleImages(moduleId, userId);
@@ -864,6 +884,7 @@ namespace Gynac
                         data.ModuleImageDesc = row["ModuleImageDesc"].ToString();
                         var backEndUrl = System.Configuration.ConfigurationManager.AppSettings["BackendUrl"];
                         data.SampleImage = backEndUrl + row["SampleImage"].ToString();
+                        data.FacultyId = Convert.ToInt32(row["FacultyId"].ToString());
 
                         foreach (DataRow row1 in ds.Tables[1].Rows)
                         {
@@ -1293,6 +1314,6 @@ namespace Gynac
         Registration = 5,
         Comment = 6,
         isParticipate = 7,
-        ImageSubmission = 8;
+        ImageSubmission = 8
     }
 }

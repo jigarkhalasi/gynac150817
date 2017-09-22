@@ -320,6 +320,9 @@ namespace Gynac
             model.ModuleId = Convert.ToInt32(httpRequest.Form[1]);
             model.ModuleImageId = Convert.ToInt32(httpRequest.Form[2]);
             model.UserModuleImageId = Convert.ToInt32(httpRequest.Form[3]);
+            model.ModuleName = httpRequest.Form[4];
+            model.UserEmail = httpRequest.Form[5];
+            model.FacultyId = Convert.ToInt32(httpRequest.Form[6]);
 
             foreach (string file in httpRequest.Files)
             {

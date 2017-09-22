@@ -1047,5 +1047,37 @@ namespace Gynac
 
             return res;
         }
+
+
+        public DataSet GetFacultyId(int facultyId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_Faculty_Info", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@FacultyId", facultyId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
+        }
     }
 }

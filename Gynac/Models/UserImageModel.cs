@@ -18,6 +18,8 @@ namespace Gynac.Models
         public string UserImage { get; set; }
         public string Comment { get; set; }
         public EnumImage IsStatus { get; set; }
+
+        public int FacultyId { get; set; }
     }
 
     //public class ModuleMasterModel

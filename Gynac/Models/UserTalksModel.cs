@@ -23,4 +23,9 @@ namespace Gynac.Models
         public string IsVideo { get; set; }
         public string IsModuleClear { get; set; }        
     }
+
+    public class UserModuleModel {
+        public int ModuleId { get; set; }
+        public string ModuleName { get; set; }
+    }
 }

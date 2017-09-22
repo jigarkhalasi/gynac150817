@@ -86,7 +86,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;    
     
-    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
     
     //get user talks
     $scope.getUserTalks = function () {
