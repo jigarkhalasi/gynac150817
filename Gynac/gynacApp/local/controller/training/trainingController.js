@@ -6,8 +6,7 @@ app.controller("trainingController",["$scope", "dataService", "$rootScope", "$st
         //$scope.$apply(function () {
             $scope.useremail = $rootScope.authenticatedUser.UserInfo.Email;
             $scope.part = $rootScope.authenticatedUser.UserInfo.Isparticipate;
-            $scope.StartDate = $rootScope.authenticatedUser.UserInfo.StartDate;
-            $scope.EndDate = $rootScope.authenticatedUser.UserInfo.EndDate;
+            $scope.TutorialSummaryTitle = $rootScope.authenticatedUser.UserInfo.TutorialSummaryTitle;
             if ($scope.StartDate != "" && $scope.EndDate != "")
             {
                 $scope.StartDate = new Date($scope.StartDate);

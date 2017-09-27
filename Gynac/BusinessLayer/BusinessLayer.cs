@@ -295,8 +295,8 @@ namespace Gynac
                     verifiedUser.UserInfo.Institution_Work_Place = drUser["Institution_Work_Place"].ToString();
                     verifiedUser.IpAddress = drUser["IpAddress"].ToString();
                     verifiedUser.UserAgent = drUser["UserAgent"].ToString();
-                    verifiedUser.UserInfo.StartDate = (drUser["StartDate"].ToString() != "" &&  drUser["StartDate"].ToString() != null) ? drUser["StartDate"].ToString() : "" ;
-                    verifiedUser.UserInfo.EndDate = (drUser["EndDate"].ToString() != "" && drUser["EndDate"].ToString() != null) ? drUser["EndDate"].ToString() : "";
+                    verifiedUser.UserInfo.TutorialSummaryTitle = drUser["TutorialSummaryTitle"].ToString();
+                    
                     if (drUser["Isparticipate"].ToString() != "")
                     {
                         verifiedUser.UserInfo.Isparticipate = (Convert.ToBoolean(drUser["Isparticipate"].ToString()) == true) ? true : false;

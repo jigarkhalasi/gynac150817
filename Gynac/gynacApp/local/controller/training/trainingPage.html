@@ -87,8 +87,9 @@
                         <div class="training-title-left">
                             <h3>TRAINING SUMMARY</h3>
                             <span style="padding-left:20px;">
-                                Course Duration: {{ StartDate | date : 'longDate' }} to {{ EndDate | date : 'longDate' }}
-                                (For those opting for the final course completion test, it will be extended up to January 7th, 2018)
+                                {{ TutorialSummaryTitle }}
+                                <!--Course Duration: {{ StartDate | date : 'longDate' }} to {{ EndDate | date : 'longDate' }}
+                                (For those opting for the final course completion test, it will be extended up to January 7th, 2018)-->
                             </span>
                         </div>
                         <table class="table" ng-show="tutorialSummary.length > 0">
