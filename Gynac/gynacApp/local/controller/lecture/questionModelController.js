@@ -2471,6 +2471,459 @@
 
                     ]
                 },
+                 {
+                     "talkId": 12,
+                     "questions": [
+                         {
+                             "id": 1,
+                             "question": "Q 1: The vascular flow pattern seen here in this image may be seen in:",
+                             "quedsc": "(Note: there may be more than one option)",
+                             "ans": "b,d",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": true,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q1.PNG",
+                             "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) An endometrial polyp"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Secretory endometrium"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Endometrial Carcinoma"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Endometrial hyperplasia"
+                                 }
+                             ]
+                         },
+                         {
+                             "id": 2,
+                             "question": "Q 2: The cut-off for ‘thickened’ endometrium in a post menopausal woman is:",
+                             "quedsc": "",
+                             "ans": "c",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": false,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q2.PNG",
+                             "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a. 3 mm"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b. 4 mm"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c. 5 mm"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d. 6 mm"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e. 15 mm"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e. 20 mm"
+                                 }
+                             ]
+                         },
+                         {
+                             "id": 3,
+                             "question": "Q 3: Which of these endometrial images raise the possibility of malignancy?",
+                             "quedsc": "(Note - there may be more than one option)",
+                             "ans": "b,c",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": true,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q3.PNG",
+                             "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a."
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b."
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c."
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d."
+                                 }
+                             ]
+                         },
+                         {
+                             "id": 4,
+                             "question": "Q 4: Whenever we encounter a thick endometrium we need to also assess the following:",
+                             "quedsc": "(Note - there may be more than one option)",
+                             "ans": "b,c,e,f",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": true,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q4.PNG",
+                             "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a.  Presence of fibroids"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b. Cervix to look for vascular tissue"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c.  Endomyometrial junction for irregularity"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d. Presence of adenomyosis"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e. Doppler – to assess the vascular flow pattern "
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f. Ovaries to look for PCOS or any tumor that may produce hormones"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g. Presence of IUCD"
+                                 }
+                             ]
+                         },
+                         {
+                             "id": 5,
+                             "question": "Q 5: Which of these 3D Doppler with glass body display images of the endometrium suggest likely malignancy?",
+                             "quedsc": "(Note - there may be more than one option)",
+                             "ans": "b,c",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": true,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q5.PNG",
+                             "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a."
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b."
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c."
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d."
+                                 }
+                             ]
+                         },
+                         {
+                             "id": 6,
+                             "question": "Q 6: All of the following statements are true except:",
+                             "quedsc": "(Note - there may be more than one option)",
+                             "ans": "d,e",
+                             "istext": true,
+                             "isimage": false,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": true,
+                             "ismultyimgopt": false,
+                             "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a. One of the best ways to evaluate the endometrium for myometrial invasion is to examine the endomyometrial junction with 3D sectional planes, using VCI"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b. Endometrial hyperplasia is a histological diagnosis because on ultrasound findings can overlap with both endometrial malignancy and normal endometrium"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c. The 3 most likely differential diagnosis for a thickened endometrium are an endometrial polyp, endometrial hyperplasia and endometrial carcinoma"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d. Sonohysterography is not recommended if there is a suspicion of endometrial malignancy"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e. Following progesterone therapy for endometrial hyperplasia with atypia,  vascularity of the endometrium decreases in a few weeks"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f. Patients on Tamoxifen are known to show cystic changes in the endometrium"
+                                 }
+                             ]
+                         },
+                        {
+                            "id": 7,
+                            "question": "Q 7: What are frequently seen/ known 2D grey scale & Doppler findings in endometrial carcinoma?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q7.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a. Colour score 3 or 4"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b. Thick endometrium "
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c. Non uniform distribution of colour"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d. Most vessels run a parallel course"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e. Most vessels are seen crossing the endo-myometrial junction"
+                                },
+                                {
+                                    "id": "f",
+                                    "value": "f. Homogeneous endometrium"
+                                },
+                                {
+                                    "id": "g",
+                                    "value": "g. Intracavitory fluid"
+                                }
+                            ]
+                        }
+                     ]
+                 },
+                {
+                    "talkId": 13,
+                    "questions": [
+		                {
+		                    "id": 1,
+		                    "question": "Q 1: What is the ultrasound diagnosis of this case shown in the video clip ",
+		                    "quedsc": "(Choose a single option)",
+		                    "ans": "c",
+		                    "istext": false,
+		                    "isimage": false,
+		                    "ismultiimage": false,
+		                    "isvideo": true,
+		                    "ismultyplenas": false,
+		                    "ismultyimgopt": false,
+		                    "videosrc": "/gynacApp/local/img/question/Talk13/T13Q1.mp4",
+		                    "option": [
+				                {
+				                    "id": "a",
+				                    "value": "a) Sub endometrial fibrosis"
+				                },
+				                {
+				                    "id": "b",
+				                    "value": "b)  Endometritis"
+				                },
+				                {
+				                    "id": "c",
+				                    "value": "c) Asherman’s Syndrome"
+				                },
+				                {
+				                    "id": "d",
+				                    "value": "d) Menstruating endometrium"
+				                }
+		                    ]
+		                },
+		                {
+		                    "id": 2,
+		                    "question": "Q 2: All these are known ultrasound features of Asherman’s Syndrome except: ",
+		                    "quedsc": "(Note: there may be more than one option)",
+		                    "ans": "b,d",
+		                    "istext": false,
+		                    "isimage": true,
+		                    "ismultiimage": false,
+		                    "isvideo": false,
+		                    "ismultyplenas": true,
+		                    "ismultyimgopt": false,
+		                    "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q2.PNG",
+		                    "option": [
+				                {
+				                    "id": "a",
+				                    "value": "a. Seen as breaks in the endometrial continuity"
+				                },
+				                {
+				                    "id": "b",
+				                    "value": "b. Are seen as hyperechoic bands "
+				                },
+				                {
+				                    "id": "c",
+				                    "value": "c. Endometrial margins may be irregular"
+				                },
+				                {
+				                    "id": "d",
+				                    "value": "d.  Fluid is never seen in the endometrial tissue of cases with Asherman’s Syndrome"
+				                },
+				                {
+				                    "id": "e",
+				                    "value": "e. Scarred area may extend on to adjoining myometrium "
+				                },
+				                {
+				                    "id": "e",
+				                    "value": "e. 3D evaluation of the endometrial cavity is useful in assessing the extent of scarring"
+				                }
+		                    ]
+		                },
+		                {
+		                    "id": 3,
+		                    "question": "Q 3: Intracavitory fluid (in the endometrial cavity) may be associated with all of the following except:",
+		                    "quedsc": "(Note - there may be more than one option)",
+		                    "ans": "b,e",
+		                    "istext": false,
+		                    "isimage": true,
+		                    "ismultiimage": false,
+		                    "isvideo": false,
+		                    "ismultyplenas": true,
+		                    "ismultyimgopt": false,
+		                    "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q3.PNG",
+		                    "option": [
+				                {
+				                    "id": "a",
+				                    "value": "a. Endometrial polyps"
+				                },
+				                {
+				                    "id": "b",
+				                    "value": "b. Subserous fibroids"
+				                },
+				                {
+				                    "id": "c",
+				                    "value": "c. Endometrial carcinoma"
+				                },
+				                {
+				                    "id": "d",
+				                    "value": "d. Cervical carcinoma"
+				                },
+				                {
+				                    "id": "e",
+				                    "value": "e. Ovarian carcinoma"
+				                },
+				                {
+				                    "id": "f",
+				                    "value": "f. Fallopian tube carcinoma"
+				                },
+				                {
+				                    "id": "g",
+				                    "value": "g. Postmenopausal uterus in the absence of pathology"
+				                }
+		                    ]
+		                },
+		                {
+		                    "id": 4,
+		                    "question": "Q 4: What statements of endometritis mentioned here are incorrect?",
+		                    "quedsc": "(Note - there may be more than one option)",
+		                    "ans": "a,e",
+		                    "istext": false,
+		                    "isimage": true,
+		                    "ismultiimage": false,
+		                    "isvideo": false,
+		                    "ismultyplenas": true,
+		                    "ismultyimgopt": false,
+		                    "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q4.PNG",
+		                    "option": [
+				                {
+				                    "id": "a",
+				                    "value": "a. Endometritis – infection of the endometrium, is one of the commonest findings of the spectrum of PID "
+				                },
+				                {
+				                    "id": "b",
+				                    "value": "b. May be florid when it is seen in the post partum period"
+				                },
+				                {
+				                    "id": "c",
+				                    "value": "c. May be associated with RPOC"
+				                },
+				                {
+				                    "id": "d",
+				                    "value": "d. May be seen associated with endometrial carcinoma"
+				                },
+				                {
+				                    "id": "e",
+				                    "value": "e. The endometrium becomes polypoidal "
+				                },
+				                {
+				                    "id": "f",
+				                    "value": "f. Presence of bright echoes often showing acoustic shadowing implies likely infection with gas forming organisms"
+				                }
+		                    ]
+		                },
+		                {
+		                    "id": 5,
+		                    "question": "Q 5: What is the ultrasound diagnosis of this case shown in the video clip. Patient had a myomectomy 2-3 yrs back and presently has an IUCD.",
+		                    "quedsc": "(Choose a single option)",
+		                    "ans": "a",
+		                    "istext": false,
+		                    "isimage": false,
+		                    "ismultiimage": false,
+		                    "isvideo": true,
+		                    "ismultyplenas": false,
+		                    "ismultyimgopt": false,
+		                    "videosrc": "/gynacApp/local/img/question/Talk13/T13Q5.mp4",
+		                    "option": [
+				                {
+				                    "id": "a",
+				                    "value": "a. Sub endometrial fibrosis"
+				                },
+				                {
+				                    "id": "b",
+				                    "value": "b. Endometritis"
+				                },
+				                {
+				                    "id": "c",
+				                    "value": "c. Asherman’s Syndrome"
+				                },
+				                {
+				                    "id": "d",
+				                    "value": "d. Menstruating endometrium"
+				                },
+				                {
+				                    "id": "e",
+				                    "value": "e.  IUCD with no abnormal findings"
+				                }
+		                    ]
+		                }
+                    ]
+                },
                 {
                     "talkId": 14,
                     "questions": [
@@ -2482,7 +2935,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2513,7 +2966,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2544,7 +2997,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2583,7 +3036,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2613,7 +3066,7 @@
                                 "ans": "a,c,e",
                                 "istext": true,
                                 "isimage": false,
-                                "ismultiimage": false,                                
+                                "ismultiimage": false,
                                 "isvideo": false,
                                 "ismultyplenas": true,
                                 "ismultyimgopt": false,
@@ -2649,7 +3102,7 @@
                                 "istext": true,
                                 "isimage": false,
                                 "ismultiimage": false,
-                                "isvideo": false,                                
+                                "isvideo": false,
                                 "ismultyplenas": false,
                                 "ismultyimgopt": false,
                                 //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2680,7 +3133,7 @@
                                     }
                                 ]
                             }
-                        ]
+                    ]
                 },
                 {
                     "talkId": 15,
@@ -2693,7 +3146,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2720,7 +3173,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2755,7 +3208,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2794,7 +3247,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2833,7 +3286,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2873,7 +3326,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": false,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
@@ -2904,7 +3357,7 @@
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,                            
+                            "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
