@@ -24,5 +24,7 @@ namespace Gynac
         public string Institution_Work_Place { get; set; }
         public string Where_Hear { get; set; }
         public string Guid { get; set; }
+        public bool? Isparticipate { get; set; }
+        public string TutorialSummaryTitle { get; set; }     
     }
 }

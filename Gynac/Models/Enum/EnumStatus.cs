@@ -15,7 +15,9 @@ namespace Gynac.Models.Enum
         IsExam = 0,
         IsExamClear = 1,
         IsVideo = 0,
-        IsVideoClear = 1
+        IsVideoClear = 1,
+        IsModule = 0,
+        IsModuleClear = 1
     }
 
     [JsonConverter(typeof(StringEnumConverter))]

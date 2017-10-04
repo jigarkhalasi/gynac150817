@@ -733,7 +733,7 @@ namespace Gynac
         }
 
         //update exam clear
-        public int UpdateUserTalkExam(int userTalkId)
+        public int UpdateUserTalkExam(int userTalkId, int moduleId, int userId)
         {
             int res = 0;
             try
@@ -746,7 +746,9 @@ namespace Gynac
                         SqlCommand command = new SqlCommand("Update_UserTalk_Exam", con);
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@UserTalkId", userTalkId);                        
+                        command.Parameters.AddWithValue("@UserTalkId", userTalkId);
+                        command.Parameters.AddWithValue("@ModuleId", moduleId);
+                        command.Parameters.AddWithValue("@User_Id", userId);
 
                         res = Convert.ToInt32(command.ExecuteScalar());
                     }
@@ -795,7 +797,7 @@ namespace Gynac
         }
 
         //get all user ratings
-        public DataSet GetUserRatings(int userId)
+        public DataSet GetUserRatings(int userId, int talkId)
         {
             DataSet dsResult = new DataSet();
             try
@@ -809,6 +811,7 @@ namespace Gynac
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@User_Id", userId);
+                        command.Parameters.AddWithValue("@TalkId", talkId);
 
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = command;
@@ -845,6 +848,8 @@ namespace Gynac
                         command.Parameters.AddWithValue("@User_Id", model.UserId);
                         command.Parameters.AddWithValue("@RatingId", model.RatingId);
                         command.Parameters.AddWithValue("@RateMark", model.RateMark);
+                        command.Parameters.AddWithValue("@TalkId", model.TalkId);
+                        command.Parameters.AddWithValue("@Status", model.IsEdit);
 
                         res = Convert.ToInt32(command.ExecuteScalar());
                     }
@@ -938,7 +943,7 @@ namespace Gynac
                         SqlCommand command = new SqlCommand("Delete_User_BookMark", con);
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@User_Id", userBookmarkId);
+                        command.Parameters.AddWithValue("@BookMarkId", userBookmarkId);
 
                         cost = Convert.ToInt32(command.ExecuteScalar());
                     }
@@ -982,6 +987,100 @@ namespace Gynac
             }
 
             return res;
+        }
+
+        //get tutorial summary
+        public DataSet GetTutorialSummary(int userId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_Tutorial_Summary", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
+        }
+
+        //get UpdateisParticipate 
+        public int UpdateisParticipate(int userId, bool part)
+        {
+            int res = 0;
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Update_IsParticipate", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@User_Id", userId);
+                        command.Parameters.AddWithValue("@IsParticipate", part);
+
+                        res = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return res;
+        }
+
+
+        public DataSet GetFacultyId(int facultyId)
+        {
+            DataSet dsResult = new DataSet();
+            try
+            {
+                using (TransactionScope trScope = new TransactionScope())
+                {
+                    using (SqlConnection con = new SqlConnection(CONNECTION_STRING))
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("Get_Faculty_Info", con);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@FacultyId", facultyId);
+
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = command;
+
+                        da.Fill(dsResult);
+                    }
+                    trScope.Complete();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dsResult;
         }
     }
 }

@@ -92,7 +92,7 @@ namespace Gynac
                 {
                     if (!result.IsLogin && result.EmailVerificationPending != true && result.IsTalkExist)
                     {
-                        if (result.UserAgent != ipModel.UserAgent && result.IpAddress != ipModel.UserIpAddress)
+                        if (result.UserAgent != ipModel.UserAgent && result.IpAddress != ipModel.UserIpAddress && result.UserInfo.User_Id != 45)
                         {
                             var IsSendSms = result.UserInfo.Country.Equals("India", StringComparison.OrdinalIgnoreCase);
                             result.Otp = GenerateOTP(IsSendSms, result.UserInfo.Email, result.UserInfo.Mobile);
@@ -320,6 +320,9 @@ namespace Gynac
             model.ModuleId = Convert.ToInt32(httpRequest.Form[1]);
             model.ModuleImageId = Convert.ToInt32(httpRequest.Form[2]);
             model.UserModuleImageId = Convert.ToInt32(httpRequest.Form[3]);
+            model.ModuleName = httpRequest.Form[4];
+            model.UserEmail = httpRequest.Form[5];
+            model.FacultyId = Convert.ToInt32(httpRequest.Form[6]);
 
             foreach (string file in httpRequest.Files)
             {
@@ -327,7 +330,7 @@ namespace Gynac
                 if (postedFile != null && postedFile.ContentLength > 0)
                 {
 
-                    int MaxContentLength = 1024 * 1024 * 1; //Size = 1 MB  
+                    int MaxContentLength = 1024 * 1024 * 20; //Size = 20 MB  
 
                     IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".jpeg", ".gif", ".png" };
                     var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
@@ -347,7 +350,7 @@ namespace Gynac
                         postedFile.SaveAs(filePath);
 
                         model.ImagePath = "/Images/" + fileName;
-                        result = _businessLayer.UploadModuleImages(model);
+                        result = _businessLayer.UploadModuleImages(model, fileName);
 
                         return Ok(result);
                     }
@@ -395,12 +398,12 @@ namespace Gynac
         //update the usertalks comment
         [HttpPost]
         [Route("updateusertalkexam")]
-        public int UpdateUserTalkExam(int userTalkId)
+        public int UpdateUserTalkExam(int userTalkId, int moduleId, int userId)
         {
             int result = 0;
             try
             {
-                result = _businessLayer.UpdateUserTalkExam(userTalkId);
+                result = _businessLayer.UpdateUserTalkExam(userTalkId, moduleId, userId);
             }
             catch (Exception ex)
             {
@@ -429,13 +432,13 @@ namespace Gynac
         //get all user talks
         [HttpGet]
         [Route("getuserratings")]
-        public IEnumerable<UserRatingsModel> GetUserRatings(int userId)
+        public IEnumerable<UserRatingsModel> GetUserRatings(int userId, int talkId)
         {
             var result = new List<UserRatingsModel>();
             try
             {
                 userId = (userId != 0) ? userId : 0;
-                result = _businessLayer.GetUserRatings(userId).ToList();
+                result = _businessLayer.GetUserRatings(userId, talkId).ToList();
             }
             catch (Exception ex)
             {
@@ -453,7 +456,16 @@ namespace Gynac
             {
                 for (int i = 0; i < model.Count(); i++)
                 {
-                    result = _businessLayer.UpdateUserRating(model[i]);    
+                    if (model[i].RateMark != 0 && model[i].UserRatingId != 0) {
+                        model[i].IsEdit = 0;
+                        result = _businessLayer.UpdateUserRating(model[i]);    
+                    }
+                    else if (model[i].RateMark != 0 && model[i].UserRatingId == 0)
+                    {
+                        model[i].IsEdit = 1;
+                        result = _businessLayer.UpdateUserRating(model[i]);    
+                    }
+                    
                 }
                 
             }
@@ -561,6 +573,39 @@ namespace Gynac
             model.UserAgent = HttpContext.Current.Request.UserAgent;
             //var CalledUrl = HttpContext.Current.Request.Url.OriginalString;
             return model;
-        }    
+        }
+
+        //get tutorial summary
+        [HttpGet]
+        [Route("gettutorialsummary")]
+        public IEnumerable<TutorialSummaryModel> GetTutorialSummary(int userId)
+        {
+            var result = new List<TutorialSummaryModel>();
+            try
+            {
+                result = _businessLayer.GetTutorialSummary(userId).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
+        //is participate the or not
+        [HttpPost]
+        [Route("isparticipate")]
+        public int iSparticipate(int userId, string userEmail, bool part)
+        {
+            int result = 0;
+            try
+            {
+                result = _businessLayer.isParticipate(userId, userEmail, part);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return result;
+        }
     }
 }

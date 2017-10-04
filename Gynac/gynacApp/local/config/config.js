@@ -104,7 +104,6 @@ app.run(function ($rootScope, dataService, $state) {
                 $rootScope.$emit('getNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
             }
             else {
-
             }
         });
     $rootScope.$on('signOut', function (event, userId) {

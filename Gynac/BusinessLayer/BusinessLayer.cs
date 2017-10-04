@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
@@ -62,7 +63,7 @@ namespace Gynac
                                     + "   <td>" + user.Where_Hear + "</td>"
                                     + " </tr>"
                                     + "</table>");
-                    //SendMail(support, EmailType.Registration, "", body, "");
+                    SendMail(support, EmailType.Registration, "", body, "");
                     result = 1;
 
                 }
@@ -95,9 +96,23 @@ namespace Gynac
                     message.From = new MailAddress(toAddress);
                     message.To.Add(ConfigurationManager.AppSettings["ContactUsEmailAddress"].ToString());
                 }
-                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp) || emailType.Equals(EmailType.Comment))
+                else if (emailType.Equals(EmailType.Comment))
                 {
-                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString()); ;
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
+                    message.To.Add(toAddress);
+                    string copy = ConfigurationManager.AppSettings["EmailFromAddress"].ToString();
+                    message.CC.Add(copy);
+                }
+                else if (emailType.Equals(EmailType.ImageSubmission))
+                {
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
+                    message.To.Add(toAddress);
+                    string copy = ConfigurationManager.AppSettings["EmailFromAddress"].ToString();
+                    message.CC.Add(copy);
+                }
+                else if (emailType.Equals(EmailType.Registration) || emailType.Equals(EmailType.VerifyEmail) || emailType.Equals(EmailType.Otp) || emailType.Equals(EmailType.isParticipate))
+                {
+                    message.From = new MailAddress(ConfigurationManager.AppSettings["SmtpUser"].ToString());
                     message.To.Add(toAddress);
                 }
                 else
@@ -114,27 +129,25 @@ namespace Gynac
                 {
                     case EmailType.VerifyEmail:
                         subject = "Email Verification";
-                        mailUrl = ConfigurationManager.AppSettings["VerifyEmailUrl"].ToString();                        
+                        mailUrl = ConfigurationManager.AppSettings["VerifyEmailUrl"].ToString();
+                        var body1 = new StringBuilder();
+                        //body1.AppendLine(@"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/>");
+                        //body1.AppendLine("<a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>");
+                        //body = body1.ToString();
                         if (toAddress.Contains("gmail.com"))
                         {
                             body = @"<b>Click the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Verify Email</a>";
                         }
-                        else {
+                        else
+                        {
                             body = @"<b>Copy Paste the link below to verify your email address. After successful verification, our support staff will reach out to you for further details on the course and payment.</b> <br/><br/><br/> " + mailUrl + "/" + guid + "/" + toAddress + "";
                         }
-                        
+
                         break;
                     case EmailType.ForgotPassword:
                         subject = "Reset Password";
                         mailUrl = ConfigurationManager.AppSettings["ForgotPasswordUrl"].ToString();
-                        if (toAddress.Contains("gmail.com"))
-                        {
-                            body = @"<b>Click the link below to reset your password</b> <br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Reset Password</a>";
-                        }
-                        else
-                        {
-                            body = @"<b>Copy Paste the link below to reset your password.</b> <br/><br/>" + mailUrl + "/" + guid + "/" + toAddress + "";
-                        }   
+                        body = @"<b>Click the link below to reset your password</b> <br/><br/> <a target='_blank' href='" + mailUrl + "/" + guid + "/" + toAddress + "'>Reset Password</a>";
                         break;
                     case EmailType.ResetPassword:
                         subject = "Password Changed";
@@ -157,8 +170,18 @@ namespace Gynac
                         body = bodyData;
                         break;
                     case EmailType.Comment:
-                        subject = "User Comment";
+                        subject = "New Query";
                         mailUrl = "comment";
+                        body = bodyData;
+                        break;
+                    case EmailType.isParticipate:
+                        subject = "Participate For Exam";
+                        mailUrl = "Exam";
+                        body = bodyData;
+                        break;
+                    case EmailType.ImageSubmission:
+                        subject = "New Image Submission";
+                        mailUrl = "New Image Submission";
                         body = bodyData;
                         break;
                     default:
@@ -272,6 +295,12 @@ namespace Gynac
                     verifiedUser.UserInfo.Institution_Work_Place = drUser["Institution_Work_Place"].ToString();
                     verifiedUser.IpAddress = drUser["IpAddress"].ToString();
                     verifiedUser.UserAgent = drUser["UserAgent"].ToString();
+                    verifiedUser.UserInfo.TutorialSummaryTitle = drUser["TutorialSummaryTitle"].ToString();
+                    
+                    if (drUser["Isparticipate"].ToString() != "")
+                    {
+                        verifiedUser.UserInfo.Isparticipate = (Convert.ToBoolean(drUser["Isparticipate"].ToString()) == true) ? true : false;
+                    }
 
                     verifiedUser.PendingUserCourse = new List<User_Course>();
                     verifiedUser.ActiveUserCourse = new List<User_Course>();
@@ -606,6 +635,7 @@ namespace Gynac
         public IEnumerable<UserTalksModel> GetUserTalk(int userId)
         {
             var model = new List<UserTalksModel>();
+            var moduleList = new List<UserModuleModel>();
             try
             {
                 DataSet ds = _dataAccessLayer.GetUserTalk(userId);
@@ -613,7 +643,7 @@ namespace Gynac
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
                     {
-                        var data = new UserTalksModel();
+                        var data = new UserTalksModel();                        
 
                         int sId = Convert.ToInt32(row["SessionId"].ToString());
                         int mId = Convert.ToInt32(row["ModuleId"].ToString());
@@ -630,7 +660,7 @@ namespace Gynac
                         data.Talkdesc = row["Talkdesc"].ToString();
                         data.Duration = row["Duration"].ToString();
 
-                        if (ds.Tables[1] != null)
+                        if (ds.Tables[1] != null && ds.Tables[1].Rows.Count > 0)
                         {
                             foreach (DataRow usertalk in ds.Tables[1].Rows)
                             {
@@ -638,13 +668,24 @@ namespace Gynac
                                 {
                                     data.UserTalkId = Convert.ToInt32(usertalk["UserTalkId"].ToString());
                                     data.Comment = usertalk["Comment"].ToString();
-                                    data.IsActive = (usertalk["IsActive"].ToString() == "0") ? EnumUserTalk.IsPending : EnumUserTalk.IsActive;
-                                    data.IsExam = (usertalk["IsExamlear"].ToString() == "0") ? EnumUserTalk.IsExam : EnumUserTalk.IsExamClear;
-                                    data.IsVideo = (usertalk["IsVideoStatus"].ToString() == "0") ? EnumUserTalk.IsVideo : EnumUserTalk.IsVideoClear;
-                                }
+                                    data.IsActive = (usertalk["IsActive"].ToString() == "0") ? "IsPending" : "IsActive";
+                                    data.IsExam = (usertalk["IsExamlear"].ToString() == "0") ? "IsPending" : "IsActive";
+                                    data.IsVideo = (usertalk["IsVideoStatus"].ToString() == "0") ? "IsPending" : "IsActive";
+                                    if (usertalk["IsModuleClear"].ToString() == "0")
+                                    {
+                                        data.IsModuleClear = "IsPending";
+                                    }
+                                    else if (usertalk["IsModuleClear"].ToString() == "1") { 
+                                        data.IsModuleClear ="IsActive";
+                                    }
+                                    else if (usertalk["IsModuleClear"].ToString() == "2")
+                                    {
+                                        data.IsModuleClear="IsCompleted";
+                                    }                                     
+                                }                                
                             }
-                        }
-                        model.Add(data);
+                        }                                                
+                        model.Add(data);                        
                     }
                 }
             }
@@ -672,12 +713,37 @@ namespace Gynac
         }
 
         //upload image 
-        public int UploadModuleImages(UploadModuleImagesModel model)
+        public int UploadModuleImages(UploadModuleImagesModel model, string fileName)
         {
             int result = 0;
             try
             {
                 result = _dataAccessLayer.UploadModuleImages(model);
+
+                DataSet facultyRes = _dataAccessLayer.GetFacultyId(model.FacultyId);
+
+                string facultyEmail = string.Empty;
+                string toAddress = string.Empty;
+
+                if(facultyRes != null){
+                     facultyEmail = facultyRes.Tables[0].Rows[0]["Email"].ToString();
+                     toAddress = model.UserEmail + "," + facultyEmail;
+                }
+
+                string body = string.Empty;
+                string path = HttpContext.Current.Server.MapPath("~/gynacApp/local/emailTemplates/ImageSubmittion.html");
+
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    body = reader.ReadToEnd();
+                }
+
+                body = body.Replace("{modulename}", model.ModuleName);
+                //body = body.Replace("{moduleimage}", fileName);                
+
+               SendMail(toAddress, EmailType.ImageSubmission, "", body);
+               result = 1;
+
             }
             catch
             {
@@ -759,8 +825,17 @@ namespace Gynac
             try
             {
                 result = _dataAccessLayer.UpdateUserTalkComment(model);
-                string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
-                SendMail(model.Email, EmailType.Comment, "", bodyData);
+                string body = string.Empty;
+                string path = HttpContext.Current.Server.MapPath("~/gynacApp/local/emailTemplates/QueryEmail.html");
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    body = reader.ReadToEnd();
+                }
+                body = body.Replace("{userEmailId}", model.UserEmail);
+                body = body.Replace("{query}", model.Comment);
+
+                //string bodyData = @"<b> Comment :- " + model.Comment + "Send By</b> <br><br> " + model.UserEmail;
+                SendMail(model.Email, EmailType.Comment, "", body);
                 result = 1;
             }
             catch
@@ -771,12 +846,12 @@ namespace Gynac
         }
 
         //update usertalk exam
-        public int UpdateUserTalkExam(int userTalkId)
+        public int UpdateUserTalkExam(int userTalkId, int moduleId, int userId)
         {
             int result = 0;
             try
             {
-                result = _dataAccessLayer.UpdateUserTalkExam(userTalkId);
+                result = _dataAccessLayer.UpdateUserTalkExam(userTalkId, moduleId, userId);
                 result = 1;
             }
             catch
@@ -788,9 +863,7 @@ namespace Gynac
 
         public IEnumerable<UserModuleImageModel> GetModuleImages(int moduleId, int userId)
         {
-            var model = new List<UserModuleImageModel>();
-            // var moduleMasterModel = new List<ModuleMasterModel>();
-            //var userImageModel = new List<UserImageModel>();
+            var model = new List<UserModuleImageModel>();            
             try
             {
                 DataSet ds = _dataAccessLayer.GetModuleImages(moduleId, userId);
@@ -808,7 +881,10 @@ namespace Gynac
                         data.ModuleImageId = Convert.ToInt32(row["ModuleImageId"].ToString());
 
                         data.ModuleDesc = row["ModuleDesc"].ToString();
-                        data.SampleImage = row["SampleImage"].ToString();
+                        data.ModuleImageDesc = row["ModuleImageDesc"].ToString();
+                        var backEndUrl = System.Configuration.ConfigurationManager.AppSettings["BackendUrl"];
+                        data.SampleImage = backEndUrl + row["SampleImage"].ToString();
+                        data.FacultyId = Convert.ToInt32(row["FacultyId"].ToString());
 
                         foreach (DataRow row1 in ds.Tables[1].Rows)
                         {
@@ -966,12 +1042,12 @@ namespace Gynac
             return result;
         }
 
-        public IEnumerable<UserRatingsModel> GetUserRatings(int userId)
+        public IEnumerable<UserRatingsModel> GetUserRatings(int userId, int talkId)
         {
             var model = new List<UserRatingsModel>();
             try
             {
-                DataSet ds = _dataAccessLayer.GetUserRatings(userId);
+                DataSet ds = _dataAccessLayer.GetUserRatings(userId, talkId);
                 if (ds != null)
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
@@ -992,6 +1068,7 @@ namespace Gynac
                                     data.UserRatingId = Convert.ToInt32(userRate["UserRatingId"].ToString());
                                     data.UserId = Convert.ToInt32(userRate["UserId"].ToString());
                                     data.RateMark = Convert.ToInt32(userRate["RateMark"].ToString());
+                                    data.TalkId = Convert.ToInt32(userRate["TalkId"].ToString());
                                 }
                             }
                         }
@@ -1054,7 +1131,7 @@ namespace Gynac
 
                         data.Id = Convert.ToInt32(row["Id"].ToString());
                         data.UserId = Convert.ToInt32(row["UserId"].ToString());
-                        data.BookMarkName = row["BookMarkName"].ToString();                        
+                        data.BookMarkName = row["BookMarkName"].ToString();
                         data.BookMarkTime = row["BookMarkTime"].ToString();
                         data.TalkId = Convert.ToInt32(row["TalkId"].ToString());
 
@@ -1101,6 +1178,131 @@ namespace Gynac
             }
             return result;
         }
+
+        //get tutorial summary
+        public IEnumerable<TutorialSummaryModel> GetTutorialSummary(int userId)
+        {
+            var model = new List<TutorialSummaryModel>();
+            try
+            {
+                DataSet ds = _dataAccessLayer.GetTutorialSummary(userId);
+
+                if (ds != null && ds.Tables[0].Rows[0][0].ToString() == "Session 1")
+                {
+                    int i = 0;
+                    int moduleCountCompleted = 0;
+                    int moduleCountPending = 0;
+                    int finalmoduleCountCompleted = 0;
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var data = new TutorialSummaryModel();
+                        if (row["SessionName"].ToString() == ds.Tables[1].Rows[i]["SessionName"].ToString())
+                        {
+                            data.SessionName = row["SessionName"].ToString();
+                            data.TotalTalks = Convert.ToInt32(row["TotalTalks"].ToString());
+                            if (row["TotalCompletedTalks"].ToString() != "")
+                            {
+                                
+                                    data.TotalCompletedTalks = (row["TotalCompletedTalks"].ToString() != "") ? Convert.ToInt32(row["TotalCompletedTalks"].ToString()) : 0;
+                                    data.TotalPendingTalks = (row["TotalCompletedTalks"].ToString() != "") ? data.TotalTalks - data.TotalCompletedTalks : data.TotalTalks;
+                                    data.TotalModules = Convert.ToInt32(ds.Tables[1].Rows[i]["TotalModules"].ToString());
+                                
+                            }
+                            else {
+                                data.TotalCompletedTalks = 0;
+                                data.TotalPendingTalks = 0;
+                                data.TotalTalks = 0;
+                                data.TotalModules = 0;
+                            }                           
+
+                            moduleCountCompleted = 0;
+                            moduleCountPending = 0;
+                            finalmoduleCountCompleted = 0;
+                            data.TotalCompletedModules = 0;
+
+                            if (ds.Tables[2] != null && ds.Tables[2].Rows.Count > i)
+                            {
+
+                                if (Convert.ToInt32(ds.Tables[1].Rows[i]["SessionId"].ToString()) == Convert.ToInt32(ds.Tables[2].Rows[i]["SessionId"].ToString()))
+                                {
+                                    if (ds.Tables[3] != null && ds.Tables[3].Rows.Count > 0)
+                                    {
+
+                                        foreach (DataRow row1 in ds.Tables[3].Rows)
+                                        {
+                                            if (Convert.ToInt32(ds.Tables[2].Rows[i]["ModuleId"].ToString()) == Convert.ToInt32(row1["ModulId"].ToString()))
+                                            {
+                                                if (row1["isStatus"].ToString() == "1")
+                                                {
+                                                    moduleCountCompleted++;
+                                                }
+                                                else
+                                                {
+                                                    moduleCountPending++;
+                                                }
+
+                                                if (Convert.ToInt32(ds.Tables[2].Rows[i]["TotalModuleImage"].ToString()) == moduleCountCompleted)
+                                                {
+                                                    finalmoduleCountCompleted++;
+                                                    data.TotalCompletedModules = finalmoduleCountCompleted;
+                                                }
+
+                                                data.TotalPendingModules = (data.TotalCompletedModules != 0 && data.TotalCompletedModules != null) ? data.TotalModules - data.TotalCompletedModules : data.TotalModules;
+                                            }
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        data.TotalCompletedModules = 0;
+                                        data.TotalPendingModules = data.TotalModules;
+                                    }
+                                }
+                                else
+                                {
+                                    data.TotalPendingModules = 0;
+                                    data.TotalCompletedModules = 0;
+                                }
+                            }
+                            else
+                            {
+                                data.TotalPendingModules = data.TotalModules;
+                                data.TotalCompletedModules = 0;
+                                //data.TotalModules = 0;                                
+                            }
+                            model.Add(data);
+                        }
+                        i++;
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return model;
+        }
+
+        //set the participate for exam
+        public int isParticipate(int userId, string Email, bool part)
+        {
+            int result = 0;
+            try
+            {
+                result = _dataAccessLayer.UpdateisParticipate(userId, part);
+
+                string support = ConfigurationManager.AppSettings["EmailForRegisterUser"].ToString();
+                string isYes = (part) ? "yes" : "no";
+                string body = (@"Hello, he/she want to participate the exam " + isYes + "by this is user" + Email);
+                SendMail(Email, EmailType.isParticipate, "", body);
+                result = 1;
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
+        }
     }
 
     public enum EmailType
@@ -1111,6 +1313,8 @@ namespace Gynac
         ContactUs = 3,
         Otp = 4,
         Registration = 5,
-        Comment = 6
+        Comment = 6,
+        isParticipate = 7,
+        ImageSubmission = 8
     }
 }

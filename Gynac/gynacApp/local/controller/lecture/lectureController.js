@@ -1,8 +1,7 @@
 app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
 
     $scope.userBookmark = {};
-
-   
+      
 
     $scope.pauseVideo = function () {
 
@@ -23,7 +22,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                     });
                    
                 }).catch(function (error) {
-                    alert(error);
+                    //alert(error);
                 });
             }
         }).catch(function (error) {
@@ -48,7 +47,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             $scope.userBookmark.Sethhmmss = seconds;
             $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
-            alert(error);
+            //alert(error);
         });
     }
 
@@ -86,26 +85,17 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.userTalkList = {};
     $scope.overviewDisplay = false;    
-
-    $scope.userId = 45;//($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
         var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
-        dataService.getData(webURL).then(function (data) {
-            $scope.userTalkList = data;
+        dataService.getData(webURL).then(function (data) {            
+            $scope.userTalkList = data;            
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
-            console.log($scope.getUserTalks);
-            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
-            //{
-            //    $scope.timeIcon = true;
-            //}
-            //if (data.IsActive === "IsActive" && data.IsActive === "IsPending" && data.IsActive === "IsPending")
-            //{
-            //    $scope.timeIcon = true;
-            //}
-            //if (data.IsActive === "IsPending" && data.IsActive === "IsPending" && data.IsActive === "IsPending") {
-            //}
+            console.log($scope.getUserTalks);            
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -114,7 +104,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     
 
     $scope.getUserRatings = function () {
-        var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
+        var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId + '&&talkId=' + $scope.modalData.TalkId;
         dataService.getData(webURL).then(function (data) {
             $scope.userRatingsList = data;
         }, function (errorMessage) {
@@ -129,6 +119,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             if ($scope.userRatingsList[i].RatingId === userRateingData.RatingId) {
                 $scope.userRatingsList[i].RateMark = currentRate;
                 $scope.userRatingsList[i].UserId = $scope.userId;
+                $scope.userRatingsList[i].TalkId = $scope.modalData.TalkId;
             }
         }
     }
@@ -137,6 +128,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.savRatings = function () {
         var webURL = 'api/gynac/updateuserratings';
         dataService.postData(webURL, $scope.userRatingsList).then(function (data) {
+            $scope.getUserRatings();
             $scope.setAccording('rating', true);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
@@ -250,6 +242,16 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             alert("You only assign 10 Book mark only!!");
             return;
         }
+
+        if ($scope.userBookmark.BookMarkName == undefined) {
+            alert("Please enter the bookmark!!");
+            return;
+        }
+
+        if ($scope.userBookmark.BookMarkName == "") {
+            alert("Please enter the bookmark!!");
+            return;
+        }
         var webURL = 'api/gynac/adduserbookmark';
         $scope.data = {};
         $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
@@ -276,6 +278,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     //open question model
     $scope.openQuestionModal = function (que) {
+        console.log(que);
         var modalInstance = $uibModal.open({
             templateUrl: 'gynacApp/local/controller/lecture/questionModelPage.html',
             controller: 'questionModalController as qmc',

@@ -217,6 +217,7 @@
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\NotificationModel.cs" />
     <Compile Include="Models\TalkVideoModel.cs" />
+    <Compile Include="Models\TutorialSummaryModel.cs" />
     <Compile Include="Models\UpdateUserTalkCommentModel.cs" />
     <Compile Include="Models\UpdateUserTalkModel.cs" />
     <Compile Include="Models\UploadModuleImagesModel.cs" />
@@ -279,11 +280,8 @@
     <Content Include="gynacApp\local\controller\lecture\lectureModalController.js" />
     <Content Include="gynacApp\local\controller\lecture\lectureModalPage.html" />
     <Content Include="gynacApp\local\controller\lecture\lecturePage.html" />
-    <Content Include="gynacApp\local\controller\lecture\Questions.html" />
     <Content Include="gynacApp\local\controller\lecture\questionModelController.js" />
     <Content Include="gynacApp\local\controller\lecture\questionModelPage.html" />
-    <Content Include="gynacApp\local\controller\lecture\videoModalController.js" />
-    <Content Include="gynacApp\local\controller\lecture\videoModalPage.html" />
     <Content Include="gynacApp\local\controller\main\mainController.js" />
     <Content Include="gynacApp\local\controller\myProfile\myProfileController.js" />
     <Content Include="gynacApp\local\controller\myProfile\myProfilePage.html" />
@@ -298,6 +296,8 @@
     <Content Include="gynacApp\local\css\bootstrap.min.css" />
     <Content Include="gynacApp\local\css\font-awesome.min.css" />
     <Content Include="gynacApp\local\css\style.css" />
+    <Content Include="gynacApp\local\emailTemplates\ImageSubmittion.html" />
+    <Content Include="gynacApp\local\emailTemplates\QueryEmail.html" />
     <Content Include="gynacApp\local\fonts\AvantGardeLT-Book.eot" />
     <Content Include="gynacApp\local\fonts\AvantGardeLT-Book.svg" />
     <Content Include="gynacApp\local\fonts\AvantGardeLT-Book.ttf" />
@@ -384,12 +384,14 @@
     <Content Include="gynacApp\local\img\question\Talk4\T4Q3_3.PNG" />
     <Content Include="gynacApp\local\img\question\Talk4\T4Q3_4.PNG" />
     <Content Include="gynacApp\local\img\question\Talk5\T5Q2.PNG" />
+    <Content Include="gynacApp\local\img\question\Talk6\T6Q2.png" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_1.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_2.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_3.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_4.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_5.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q2_6.PNG" />
+    <Content Include="gynacApp\local\img\question\Talk6\T6Q3.png" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q3_1.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q3_2.PNG" />
     <Content Include="gynacApp\local\img\question\Talk6\T6Q3_3.PNG" />
@@ -1445,7 +1447,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="gynacApp\local\ModuleImage\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

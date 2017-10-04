@@ -15,5 +15,7 @@ namespace Gynac.Models
         public int UserId { get; set; }
         public int FacultyId { get; set; }
         public string Comment { get; set; }
+        public string ModuleName { get; set; }
+        public string UserEmail { get; set; }        
     }
 }

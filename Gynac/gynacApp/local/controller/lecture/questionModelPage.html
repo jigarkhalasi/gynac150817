@@ -105,12 +105,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <iframe id="quevideoId" src="" width="100%"></iframe>
-                                                <!--<video width="100%" controls>
-                                                    
+                                                <video width="100%" controls controlslist="nodownload">
                                                     <source src="{{q.videosrc}}" type="video/webm">
                                                     Your browser does not support the audio element.
-                                                </video>-->
+                                                </video>
                                             </div>
 
                                         </div>
@@ -195,7 +193,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div ng-repeat="i in q.ImagePath" ng-disabled="displayquestion" class="col-md-6">
-                                                <img ng-src="{{i.value}}" alt="{{q.id}}" style="padding:2px;">
+                                                <img ng-src="{{i.value}}" alt="{{q.id}}">
                                             </div>
 
                                         </div>
@@ -226,7 +224,7 @@
                                         <tr ng-repeat="useans in qmc.ansUser">
                                             <td>{{useans.questionno}}</td>
                                             <td>
-                                                <span ng-if="useans.status === true" ng-init="qmc.countScore = qmc.countScore + 1"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+                                                <span ng-if="useans.status === true"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
                                                 <span ng-if="useans.status === false"><i class="fa fa-times" aria-hidden="true"></i></span>
                                             </td>
                                         </tr>

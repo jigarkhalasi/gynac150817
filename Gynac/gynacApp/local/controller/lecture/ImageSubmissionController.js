@@ -1,13 +1,12 @@
 ﻿app.controller("imageSubmissionController", ["$scope", "dataService", "$rootScope", "$state", "$stateParams", "$http", function ($scope, dataService, $rootScope, $state, $stateParams, $http) {
 
-    $scope.display = true;
-
-    if ($stateParams.userTalkId != "0") {
-        $scope.display = false;
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    if ($scope.userId == "0") {
+        $state.go('home');
     }
 
     $scope.getModuleImages = function () {
-        var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";        
+        var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var moduleId = $stateParams.moduleId;
         var webURL = 'api/gynac/getmoduleimages?moduleId=' + moduleId + '&&userId=' + userId;
         dataService.getData(webURL, {}).then(function (data) {
@@ -20,6 +19,7 @@
     $scope.getModuleImages();
 
     $scope.uploadFile = function (input) {
+        $('#loading').show();
         var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var fd = new FormData();
         //Take the first selected file
@@ -32,6 +32,9 @@
         fd.append("ModuleId", $stateParams.moduleId);
         fd.append("ModuleImageId", ModuleImageId);
         fd.append("userModuleImageId", UserImageId);
+        fd.append("ModuleName", $scope.moduleImages[0].ModuleName);
+        fd.append("UserEmail", $rootScope.authenticatedUser.UserInfo.Email);
+        fd.append("FacultyId", $scope.moduleImages[0].FacultyId);
 
         var webURL = 'api/gynac/uploadmoduleimage';
 
@@ -41,9 +44,12 @@
             transformRequest: angular.identity,
             headers: { 'Content-Type': undefined }
         }).success(function () {
-            alert("upload!!");
+            alert("Upload Image Successfully!!");            
+            $scope.getModuleImages();
+            $('#loading').hide();
         }).error(function () {
-            alert("Error");
+            $('#loading').hide();
+            //alert("Error");            
         });
 
     };
@@ -65,9 +71,12 @@
         $state.go('home');
     }
 
-
     $scope.getAllNotification = function () {
         $rootScope.$emit('updateNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
     }
+    
+    $scope.openBigImageModal = function (src) {
+        $('#imagepreview').attr('src', src);        
+    }   
 
 }]);

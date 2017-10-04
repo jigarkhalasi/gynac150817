@@ -16,15 +16,15 @@
                             <li class="li-1 state-active"><a class="a-1" href="#/lecture">Lectures</a></li>
                             <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
                             <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
-                            <ul class="dropdown-menu">
-                                <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
-                                <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
-                            </ul>
-                        </li>-->
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Detail</a></li>
+                                </ul>
+                            </li>-->
                             <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
                             <!--<li class="li-1">
-                            <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
-                        </li>-->
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
                             <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
                             <li class="dropdown li-1">
                                 <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
@@ -43,7 +43,7 @@
                                 <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
                             </li>
                             <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                        <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -90,7 +90,11 @@
                                     <h3 class="panel-title">{{module}}</h3>
                                 </div>
                                 <div class="col-xs-3 text-right">
-                                    <button disabled type="button" class="btn btn-md btn-success btn-create" ng-click="goToImageSubmission(module)"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>
+                                    <img src="/gynacApp/local/img/lecture_icon/1.svg" ng-if="moduleValue[0].UserTalkId === 0" style="width:10%;height:10%;" />                                                                        
+                                    <img src="/gynacApp/local/img/lecture_icon/3.svg" ng-if="moduleValue[0].IsModuleClear === 'IsPending'" style="width:10%;height:10%;" />
+                                    <img src="/gynacApp/local/img/lecture_icon/2.svg" ng-if="moduleValue[0].IsModuleClear === 'IsActive'" style="width:10%;height:10%;" />
+                                    <img src="/gynacApp/local/img/lecture_icon/4.svg" ng-if="moduleValue[0].IsModuleClear === 'IsCompleted'" style="width:10%;height:10%;" />
+                                    <button type="button" ng-disabled="moduleValue[0].UserTalkId === 0" class="btn btn-md btn-success btn-create" ng-click="goToImageSubmission(module)"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Image Submission</button>                                    
                                 </div>
                             </div>
                         </div>
@@ -109,16 +113,16 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="talk in moduleValue" ng-init="talkIndex = $index">
-                                        <td align="center" style="vertical-align: middle;">                                            
-                                            <img src="/gynacApp/local/img/lecture_icon/1.svg" ng-if="talk.UserTalkId === 0" style="width:30%;height:30%;"/>
+                                        <td align="center" style="vertical-align: middle;">
+                                            <img src="/gynacApp/local/img/lecture_icon/1.svg" ng-if="talk.UserTalkId === 0" style="width:30%;height:30%;" />
                                             <img src="/gynacApp/local/img/lecture_icon/3.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
                                             <img src="/gynacApp/local/img/lecture_icon/2.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'" style="width:30%;height:30%;" />
                                             <img src="/gynacApp/local/img/lecture_icon/4.svg" ng-if="talk.UserTalkId != 0 && talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'" style="width:30%;height:30%;" />
                                             <!--<i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
-                                            <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
-                                            <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
-                                            <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'"></i>
-                                            <i class="fa fa-check-square text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'"></i>-->
+                                <i class="fa fa-clock-o text-warning fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
+                                <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsPending' && talk.IsExam == 'IsPending'"></i>
+                                <i class="fa fa-bullseye text-primary fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsPending'"></i>
+                                <i class="fa fa-check-square text-success fa-fw fa-2x" aria-hidden="true" style="font-size: 2.3em;" ng-if="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'"></i>-->
                                         </td>
                                         <!--{{talk.UserTalkId}}-->
                                         <!--<td class="hidden-xs">{{ outerIndex * userTalkList.length + $index + 1 }}</td>-->
@@ -134,7 +138,9 @@
                                             <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk);" data-toggle="modal" data-target="#video-ID1" data-backdrop="static" data-keyboard="false"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
                                         </td>
                                         <td>
-                                            <button type="button" ng-disabled="talk.UserTalkId === 0" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                            <button type="button" disabled ng-if="talk.UserTalkId === 0" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                            <button type="button" ng-disabled="talk.IsActive == 'IsPending' && talk.IsVideo == 'IsPending'" ng-if="talk.UserTalkId != 0 && talk.IsExam == 'IsPending'" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
+                                            <button type="button" ng-disabled="talk.IsActive == 'IsActive' && talk.IsVideo == 'IsActive' && talk.IsExam == 'IsActive'" ng-if="talk.UserTalkId != 0 && talk.IsExam == 'IsActive'" class=" btn btn-sm btn-primary btn-create" ng-click="openQuestionModal(talk)" data-toggle="modal" data-target="#video-ID5"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Self Assessment</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -206,7 +212,7 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">LogIn</h3>
+                    <h3 class="modal-title">Login</h3>
                 </div>
                 <div class="modal-body">
                     <p class="text-center">Login required!! </p>
@@ -473,7 +479,7 @@
                                             <p class="text">Email the speaker for questions related to the talk</p>
                                             <div class="form-group">
                                                 <textarea rows="3" class="form-control" ng-model="currentLecture.Comment"></textarea>
-                                                <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn" style="float:right;margin:1px;"><i class="fa fa-paper-plane left-none inner"></i> Send</button>                                                
+                                                <button type="button" ng-click="updateVideoComment()" class="btn btn-primary cust-btn" style="float:right;margin:1px;"><i class="fa fa-paper-plane left-none inner"></i> Send</button>
                                             </div>
                                         </div>
                                     </ul>
@@ -485,7 +491,7 @@
                                             <input class="form-control" type="text" name="starttime" placeholder="Name the bookmark" ng-model="userBookmark.BookMarkName" value="0" maxlength="15" />
                                             <label class="tags" style="width:60px;margin-top:3px;" id="bookmarktime">{{userBookmark.BookMarkTime}}</label>
                                             <button style="margin-top:1px; float:right;" type="button" ng-click="addUserBookmark()" class="btn btn-primary cust-btn"><i class="fa fa-floppy-o left-none inner"></i> Save</button>
-                                        </div>                                        
+                                        </div>
                                     </ul>
                                 </li>
                                 <li ng-class="bookmarkList? 'open' : ''">
@@ -515,18 +521,19 @@
                                                     <button type="button" class="btn btn-xs" ng-class="ratings.RateMark > 4 ? 'btn-warning':'btn-grey'" aria-label="Left Align" ng-click="updateRatings(ratings,'5')"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> </button>
                                                 </div>
                                             </div>
-                                            <button style="margin-top:2px;" type="button" ng-click="savRatings()" class="btn btn-primary cust-btn" style="float:right">Submit</button>                                         
+                                            <button style="margin-top:2px;" type="button" ng-click="savRatings()" class="btn btn-primary cust-btn" style="float:right">Submit</button>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-9 videoWrappermain" ng-mouseover="closeAllAccordin()">                            
+                        <div class="col-md-9 videoWrappermain" ng-mouseover="closeAllAccordin()">
                             <iframe id="myIframe" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div class="row" ng-show="!display">                    
-                    <iframe id="myIframe1" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+                    <div class="row" ng-show="!display">
+                        <iframe id="myIframe1" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>

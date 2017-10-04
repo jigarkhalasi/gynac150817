@@ -67,3 +67,36 @@
 
 //image path settings
 //video link set up
+
+//user table also set isparticipate
+//ALTER TABLE ModuleMaster
+//ADD ModuleDesc nvarchar(max) NULL
+
+//ALTER TABLE UserModuleImage
+//ADD IsModuleClear int NULL
+//CONSTRAINT isModule_clear DEFAULT 0
+
+//--update UserModuleImage set IsModuleClear=0 where userid=45
+
+//ALTER TABLE Usertalks
+//ADD ModuleId int NULL
+//CONSTRAINT isModule_Id DEFAULT 0
+
+//ALTER TABLE Usertalks
+//ADD IsModuleClear int NULL
+//CONSTRAINT isModuleuser_clear DEFAULT 0
+
+//====================19/09/2017
+//ALTER TABLE [gynac].[dbo].[User]
+//ADD StartDate datetime null 
+
+//ALTER TABLE [gynac].[dbo].[User]
+//ADD EndDate datetime null 
+
+//select * from [user]
+//2017-09-19 22:40:10.107
+
+//update [user] set StartDate = '2017-09-19 22:40:10.107' , EndDate = '2017-12-19 22:40:10.107' where user_id=45
+
+//ALTER TABLE userrating
+//ADD TalkId int NULL

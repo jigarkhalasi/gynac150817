@@ -1282,3 +1282,7 @@ margin: auto !important;
     width:65%;
     /*height:65%;*/
 }
+
+.imagepointer {
+        cursor:pointer;
+    }
