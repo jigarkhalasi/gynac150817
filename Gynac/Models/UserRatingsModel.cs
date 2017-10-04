@@ -13,5 +13,7 @@ namespace Gynac.Models
         public int UserRatingId { get; set; }
         public int UserId { get; set; }        
         public int RateMark { get; set; }
+        public int TalkId { get; set; }
+        public int IsEdit { get; set; }
     }
 }

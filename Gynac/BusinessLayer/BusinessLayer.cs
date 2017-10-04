@@ -1042,12 +1042,12 @@ namespace Gynac
             return result;
         }
 
-        public IEnumerable<UserRatingsModel> GetUserRatings(int userId)
+        public IEnumerable<UserRatingsModel> GetUserRatings(int userId, int talkId)
         {
             var model = new List<UserRatingsModel>();
             try
             {
-                DataSet ds = _dataAccessLayer.GetUserRatings(userId);
+                DataSet ds = _dataAccessLayer.GetUserRatings(userId, talkId);
                 if (ds != null)
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
@@ -1068,6 +1068,7 @@ namespace Gynac
                                     data.UserRatingId = Convert.ToInt32(userRate["UserRatingId"].ToString());
                                     data.UserId = Convert.ToInt32(userRate["UserId"].ToString());
                                     data.RateMark = Convert.ToInt32(userRate["RateMark"].ToString());
+                                    data.TalkId = Convert.ToInt32(userRate["TalkId"].ToString());
                                 }
                             }
                         }

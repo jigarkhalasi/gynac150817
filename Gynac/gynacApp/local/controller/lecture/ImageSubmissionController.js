@@ -1,5 +1,10 @@
 ﻿app.controller("imageSubmissionController", ["$scope", "dataService", "$rootScope", "$state", "$stateParams", "$http", function ($scope, dataService, $rootScope, $state, $stateParams, $http) {
 
+    $scope.userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
+    if ($scope.userId == "0") {
+        $state.go('home');
+    }
+
     $scope.getModuleImages = function () {
         var userId = ($rootScope.authenticatedUser.UserInfo.User_Id) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
         var moduleId = $stateParams.moduleId;
@@ -66,12 +71,11 @@
         $state.go('home');
     }
 
-
     $scope.getAllNotification = function () {
         $rootScope.$emit('updateNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
     }
     
-    $scope.openBigImageModal = function (src, index) {
+    $scope.openBigImageModal = function (src) {
         $('#imagepreview').attr('src', src);        
     }   
 

@@ -797,7 +797,7 @@ namespace Gynac
         }
 
         //get all user ratings
-        public DataSet GetUserRatings(int userId)
+        public DataSet GetUserRatings(int userId, int talkId)
         {
             DataSet dsResult = new DataSet();
             try
@@ -811,6 +811,7 @@ namespace Gynac
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@User_Id", userId);
+                        command.Parameters.AddWithValue("@TalkId", talkId);
 
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = command;
@@ -847,6 +848,8 @@ namespace Gynac
                         command.Parameters.AddWithValue("@User_Id", model.UserId);
                         command.Parameters.AddWithValue("@RatingId", model.RatingId);
                         command.Parameters.AddWithValue("@RateMark", model.RateMark);
+                        command.Parameters.AddWithValue("@TalkId", model.TalkId);
+                        command.Parameters.AddWithValue("@Status", model.IsEdit);
 
                         res = Convert.ToInt32(command.ExecuteScalar());
                     }

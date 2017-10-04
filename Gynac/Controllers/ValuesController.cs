@@ -330,7 +330,7 @@ namespace Gynac
                 if (postedFile != null && postedFile.ContentLength > 0)
                 {
 
-                    int MaxContentLength = 1024 * 1024 * 1; //Size = 1 MB  
+                    int MaxContentLength = 1024 * 1024 * 20; //Size = 20 MB  
 
                     IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".jpeg", ".gif", ".png" };
                     var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
@@ -432,13 +432,13 @@ namespace Gynac
         //get all user talks
         [HttpGet]
         [Route("getuserratings")]
-        public IEnumerable<UserRatingsModel> GetUserRatings(int userId)
+        public IEnumerable<UserRatingsModel> GetUserRatings(int userId, int talkId)
         {
             var result = new List<UserRatingsModel>();
             try
             {
                 userId = (userId != 0) ? userId : 0;
-                result = _businessLayer.GetUserRatings(userId).ToList();
+                result = _businessLayer.GetUserRatings(userId, talkId).ToList();
             }
             catch (Exception ex)
             {
@@ -456,7 +456,16 @@ namespace Gynac
             {
                 for (int i = 0; i < model.Count(); i++)
                 {
-                    result = _businessLayer.UpdateUserRating(model[i]);    
+                    if (model[i].RateMark != 0 && model[i].UserRatingId != 0) {
+                        model[i].IsEdit = 0;
+                        result = _businessLayer.UpdateUserRating(model[i]);    
+                    }
+                    else if (model[i].RateMark != 0 && model[i].UserRatingId == 0)
+                    {
+                        model[i].IsEdit = 1;
+                        result = _businessLayer.UpdateUserRating(model[i]);    
+                    }
+                    
                 }
                 
             }

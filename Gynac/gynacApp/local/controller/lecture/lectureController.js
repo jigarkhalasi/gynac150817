@@ -104,7 +104,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     
 
     $scope.getUserRatings = function () {
-        var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId;
+        var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId + '&&talkId=' + $scope.modalData.TalkId;
         dataService.getData(webURL).then(function (data) {
             $scope.userRatingsList = data;
         }, function (errorMessage) {
@@ -119,6 +119,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             if ($scope.userRatingsList[i].RatingId === userRateingData.RatingId) {
                 $scope.userRatingsList[i].RateMark = currentRate;
                 $scope.userRatingsList[i].UserId = $scope.userId;
+                $scope.userRatingsList[i].TalkId = $scope.modalData.TalkId;
             }
         }
     }
@@ -127,6 +128,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.savRatings = function () {
         var webURL = 'api/gynac/updateuserratings';
         dataService.postData(webURL, $scope.userRatingsList).then(function (data) {
+            $scope.getUserRatings();
             $scope.setAccording('rating', true);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');

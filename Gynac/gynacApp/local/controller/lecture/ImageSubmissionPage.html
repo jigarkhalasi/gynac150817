@@ -115,7 +115,7 @@
                     <div class="row legroom">
                         <div class="col-md-6">
                             <!--<img ng-click="openBigImageModal(imgdata.SampleImage, $index)" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" class="imagepointer" src="{{imgdata.SampleImage}}" style="width:226px;height:174px">-->
-                            <a ng-click="openBigImageModal(imgdata.UserImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.SampleImage }}" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId !== 0"></a>                                        
+                            <a ng-click="openBigImageModal(imgdata.SampleImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.SampleImage }}" alt=" dr.image" style="width:226px;height:174px"></a>                                        
                             <!--<a href="#" class="pop" ng-click="openBigImageModal(imgdata.SampleImage)">
                                 <img src="{{imgdata.SampleImage}}" style="width:226px;height:174px">
                             </a>-->
@@ -164,15 +164,15 @@
     </div>    
 
     <div class="modal fade model-center" id="imagemodal">
-        <div class="modal-dialog">            
+        <div class="modal-dialog modal-xxl" style="width:80%">
             <div class="modal-content">
                 <div class="modal-header">
                     <span>&nbsp;</span>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="">
-                    <img src="" id="imagepreview" style="width: 100%; height:100%;">
-                </div>                
+                <div class="modal-body">
+                    <img src="" id="imagepreview">
+                </div>
             </div>
         </div>
     </div>    

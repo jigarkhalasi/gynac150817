@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="bin/Gynac.dll">
-      <publishTime>09/21/2017 22:26:18</publishTime>
+      <publishTime>10/02/2017 19:10:05</publishTime>
     </File>
     <File Include="bin/MCPG.CCA.Util.dll">
       <publishTime>09/20/2017 21:47:18</publishTime>
@@ -196,7 +196,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/dbscript.js">
-      <publishTime>09/19/2017 22:41:45</publishTime>
+      <publishTime>10/02/2017 16:58:11</publishTime>
     </File>
     <File Include="gynacApp/gynac_03082017C.bak">
       <publishTime>08/16/2017 21:53:27</publishTime>
@@ -211,7 +211,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/config/config.js">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>09/28/2017 09:28:14</publishTime>
     </File>
     <File Include="gynacApp/local/controller.zip">
       <publishTime>08/17/2017 12:24:29</publishTime>
@@ -259,13 +259,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/ImageSubmissionController.js">
-      <publishTime>09/21/2017 22:15:21</publishTime>
+      <publishTime>09/28/2017 10:03:20</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/ImageSubmissionPage.html">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>09/28/2017 10:02:35</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureController.js">
-      <publishTime>09/21/2017 22:16:43</publishTime>
+      <publishTime>10/02/2017 19:04:01</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lectureModalController.js">
       <publishTime>09/20/2017 21:47:18</publishTime>
@@ -274,7 +274,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/lecturePage.html">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>09/21/2017 23:07:15</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelController.js">
       <publishTime>09/21/2017 22:16:58</publishTime>
@@ -319,10 +319,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/controller/training/trainingController.js">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>09/27/2017 09:35:06</publishTime>
     </File>
     <File Include="gynacApp/local/controller/training/trainingPage.html">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>09/27/2017 09:35:26</publishTime>
     </File>
     <File Include="gynacApp/local/css/bootstrap.min.css">
       <publishTime>09/20/2017 21:47:18</publishTime>
@@ -331,7 +331,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/css/style.css">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>09/28/2017 10:33:15</publishTime>
     </File>
     <File Include="gynacApp/local/emailTemplates/ImageSubmittion.html">
       <publishTime>09/21/2017 14:58:32</publishTime>
@@ -3706,7 +3706,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/21/2017 22:26:20</publishTime>
+      <publishTime>09/27/2017 22:43:47</publishTime>
     </File>
   </ItemGroup>
 </Project>
