@@ -76,6 +76,8 @@
     }
     
     $scope.openBigImageModal = function (src) {
+        windowHeight = $(window).innerHeight() - 100;
+        $('.modal-body').css('min-height', windowHeight);
         $('#imagepreview').attr('src', src);        
     }   
 

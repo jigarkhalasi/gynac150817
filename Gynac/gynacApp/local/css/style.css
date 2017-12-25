@@ -1286,3 +1286,8 @@ margin: auto !important;
 .imagepointer {
         cursor:pointer;
     }
+
+.lectalktalkid {
+    vertical-align:middle !important;
+    text-align:center;
+}

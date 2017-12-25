@@ -1,7 +1,13 @@
 app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$filter", "$state", "$interval", "$stateParams", "$uibModal", "jwplayer", function ($scope, $rootScope, dataService, $filter, $state, $interval, $stateParams, $uibModal, jwplayer) {
 
     $scope.userBookmark = {};
-      
+
+
+    //$(function () {
+    //    $('.modal').on('hidden.bs.modal', function (e) {            
+    //        $("#myIframe").attr('src', '');
+    //    });
+    //});
 
     $scope.pauseVideo = function () {
 
@@ -20,7 +26,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                         $scope.userBookmark.Sethhmmss = seconds;
                         $scope.userBookmark.BookMarkName = "";
                     });
-                   
+
                 }).catch(function (error) {
                     //alert(error);
                 });
@@ -39,11 +45,11 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getTime = function () {
         var iframe = document.getElementById("myIframe");
-        var player = new Vimeo.Player(iframe);       
+        var player = new Vimeo.Player(iframe);
 
         player.getCurrentTime().then(function (seconds) {
             var setTime = $scope.SecondsTohhmmss(seconds);
-            $scope.userBookmark.BookMarkTime = setTime== 0 ? "00:00:00":setTime ;
+            $scope.userBookmark.BookMarkTime = setTime == 0 ? "00:00:00" : setTime;
             $scope.userBookmark.Sethhmmss = seconds;
             $scope.userBookmark.BookMarkName = "";
         }).catch(function (error) {
@@ -84,24 +90,24 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     }
 
     $scope.userTalkList = {};
-    $scope.overviewDisplay = false;    
-    
+    $scope.overviewDisplay = false;
+
     $scope.userId = ($rootScope.authenticatedUser.UserInfo.First_Name) ? $rootScope.authenticatedUser.UserInfo.User_Id : "0";
-    
+
     //get user talks
     $scope.getUserTalks = function () {
         $scope.index = 0;
         var webURL = 'api/gynac/getusertalks?userId=' + $scope.userId;
-        dataService.getData(webURL).then(function (data) {            
-            $scope.userTalkList = data;            
+        dataService.getData(webURL).then(function (data) {
+            $scope.userTalkList = data;
             $scope.userTalkList.UserTalkId = ($scope.userTalkList.UserTalkId) ? $scope.userTalkList.UserTalkId : 0;
-            console.log($scope.getUserTalks);            
+            console.log($scope.getUserTalks);
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
         //}
     }
-    
+
 
     $scope.getUserRatings = function () {
         var webURL = 'api/gynac/getuserratings?userId=' + $scope.userId + '&&talkId=' + $scope.modalData.TalkId;
@@ -150,20 +156,20 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
             if ($scope.modalData.UserTalkId) {
                 $scope.display = true;
                 $scope.currentLecture.Comment = $scope.modalData.Comment;
-                if (data.VideoLink != "") {                    
+                if (data.VideoLink != "") {
                     document.getElementById('myIframe').src = (data.IsBackup) ? data.VideoLink + "?quality=720p" : jwplayer.url + data.VideoLink + '?sig=' + $scope.currentLecture.Signature + '&exp=' + $scope.currentLecture.ExpTime;
                 }
-                else {                    
+                else {
                     document.getElementById('myIframe').src = "";
                 }
 
             }
             else {
                 $scope.display = false;
-                if (data.VideoLink != "") {                    
+                if (data.VideoLink != "") {
                     document.getElementById('myIframe1').src = $scope.currentLecture.PreViewVideoLink;
                 }
-                else {                    
+                else {
                     document.getElementById('myIframe1').src = "";
                 }
             }
@@ -174,7 +180,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
         $scope.getUserRatings();
         $scope.getUserBookMark();
-       
+
     }
 
     $scope.getIframeSrc = function () {
@@ -189,7 +195,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
                 $scope.assistance = currentActive ? false : true;
                 break;
             case 'bookmark':
-                $scope.bookmark = currentActive ? false : true;                                
+                $scope.bookmark = currentActive ? false : true;
                 //$scope.pauseVideo();               
                 break;
             case 'bookmarkList':
@@ -219,6 +225,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         $scope.data.comment = $scope.currentLecture.Comment; //self.comment;
         $scope.data.email = $scope.currentLecture.Email;
         $scope.data.userEmail = $rootScope.authenticatedUser.UserInfo.Email;
+        $scope.data.talkId = $scope.modalData.TalkId;
+        $scope.data.talkName = $scope.modalData.TalkName;
         dataService.postData(webURL, $scope.data).then(function (data) {
             $scope.setAccording('assistance', true);
         }, function (errorMessage) {
@@ -228,10 +236,10 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getUserBookMark = function () {
         var webURL = 'api/gynac/getuserbookmark?userId=' + $scope.userId + '&&talkId=' + $scope.modalData.TalkId;
-        dataService.getData(webURL, {}).then(function (data) {            
+        dataService.getData(webURL, {}).then(function (data) {
             $scope.userBookmark = data;
-            var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);            
-            $scope.userBookmark.BookMarkTime = setTime==0? "00:00:00": setTime;
+            var setTime = $scope.SecondsTohhmmss($scope.userBookmark.BookMarkTime);
+            $scope.userBookmark.BookMarkTime = setTime == 0 ? "00:00:00" : setTime;
         }, function (errorMessage) {
             console.log(errorMessage + ' Error......');
         });
@@ -255,7 +263,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var webURL = 'api/gynac/adduserbookmark';
         $scope.data = {};
         $scope.data.UserId = $scope.userId;//$scope.userBookmark.UserId;
-        $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;        
+        $scope.data.BookMarkName = $scope.userBookmark.BookMarkName;
         $scope.data.BookMarkTime = $scope.userBookmark.Sethhmmss;
         $scope.data.TalkId = $scope.modalData.TalkId;
         dataService.postData(webURL, $scope.data).then(function (data) {
@@ -282,8 +290,8 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
         var modalInstance = $uibModal.open({
             templateUrl: 'gynacApp/local/controller/lecture/questionModelPage.html',
             controller: 'questionModalController as qmc',
-            backdrop  : 'static',
-            keyboard  : false,
+            backdrop: 'static',
+            keyboard: false,
             resolve: {
                 modalData: function () {
                     return que;
@@ -322,7 +330,7 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
     $scope.slide = function (dir) {
         $('#carousel-example-generic').carousel(dir);
     };
-    $scope.authenticLecture = function () {        
+    $scope.authenticLecture = function () {
         $scope.getUserTalks();
         //for (var j = 0; j < $rootScope.speakerVideoList.length; j++) {
         //    $rootScope.speakerVideoList[j].isActive = false;
@@ -1437,25 +1445,21 @@ app.controller("lectureController", ["$scope", "$rootScope", "dataService", "$fi
 
     $scope.getAllNotification = function () {
         $rootScope.$emit('updateNotification', $rootScope.authenticatedUser.UserInfo.User_Id);
-    }
+    }     
+
+    $(window).on('popstate', function (e) {
+        $('#video-ID1').modal('dismiss');
+        $('body').removeClass('modal-open');
+    });
 
     //model close and then also close the accordian
     $(function () {
         $('.modal').on('hidden.bs.modal', function (e) {
-            $iframe = $(this).find("iframe");
-            $iframe.attr("src", $iframe.attr("src"));
+            //$iframe = $(this).find("iframe");
+            //$iframe.attr("src", $iframe.attr("src"));
+            $("#myIframe").attr('src', '');
             $scope.closeAllAccordin();
             $scope.getUserTalks();
         });
-
-        //$('#video-ID1').on('shown.bs.modal', function () {
-        //    $(this).find('.modal-dialog').css({
-        //        width: 'auto',
-        //        height: 'auto',
-        //        'max-height': '100%'
-        //    });
-        //});
-
-        //$("#video-ID1").css('max-height', $(window).height() * 10);        
     });
 }]);

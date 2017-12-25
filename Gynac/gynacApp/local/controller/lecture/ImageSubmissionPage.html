@@ -100,7 +100,7 @@
             <div class="col-md-12">
                 <div class="row" ng-if="moduleImages.length == 0">
                     <div class="col-md-12">
-                        <p>There is no Image available!!</p>
+                        <p>Image submission will be available shortly.</p>
                     </div>
                 </div> 
                 <div ng-repeat="imgdata in moduleImages" class="moduleimageborder">
@@ -115,12 +115,12 @@
                     <div class="row legroom">
                         <div class="col-md-6">
                             <!--<img ng-click="openBigImageModal(imgdata.SampleImage, $index)" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" class="imagepointer" src="{{imgdata.SampleImage}}" style="width:226px;height:174px">-->
-                            <a ng-click="openBigImageModal(imgdata.SampleImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.SampleImage }}" alt=" dr.image" style="width:226px;height:174px"></a>                                        
+                            <a ng-click="openBigImageModal(imgdata.SampleImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.SampleImage }}" alt="Upload Image" style="width:226px;height:174px"></a>                                        
                             <!--<a href="#" class="pop" ng-click="openBigImageModal(imgdata.SampleImage)">
                                 <img src="{{imgdata.SampleImage}}" style="width:226px;height:174px">
                             </a>-->
                             <!--<div class="item">
-                                <img ng-src="{{imgdata.SampleImage}}" alt="Dr.image" style="width:226px;height:174px">
+                                <img ng-src="{{imgdata.SampleImage}}" alt="Upload Image" style="width:226px;height:174px">
 
                                 <div class="item-overlay top"></div>
                             </div>-->
@@ -129,8 +129,8 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">                                    
-                                    <img ng-src="../../../../Images/images.jpg" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId === 0">                                        
-                                        <a ng-click="openBigImageModal(imgdata.UserImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.UserImage }}" alt=" dr.image" style="width:226px;height:174px" ng-show="imgdata.UserImageId !== 0"></a>                                        
+                                    <img ng-src="../../../../Images/images.jpg" alt="Upload Image" style="width:226px;height:174px" ng-show="imgdata.UserImageId === 0">                                        
+                                        <a ng-click="openBigImageModal(imgdata.UserImage)" data-toggle="modal" data-target="#imagemodal" data-backdrop="static" data-keyboard="false"><img class="imagepointer" ng-src="{{imgdata.UserImage }}" alt="Upload Image" style="width:226px;height:174px" ng-show="imgdata.UserImageId !== 0"></a>                                        
                                 </div>
                             </div>
                             <br />
@@ -142,10 +142,10 @@
                             <br />
                             <div class="row">
                                 <div class="col-md-12">
-                                    <span>Comment :- </span>{{ imgdata.Comment }}<span ng-if="imgdata.Comment === null">NA</span>
+                                    <span>Comment : </span>{{ imgdata.Comment }}<span ng-if="imgdata.Comment === null">NA</span>
                                     <br />
                                     <span>
-                                        Review :-
+                                        Review :
                                     </span>
                                     <span ng-if="imgdata.IsStatus === 'IsPending'">NA</span>
                                     <i class="fa fa-check-square text-success" aria-hidden="true" ng-if="imgdata.IsStatus === 'IsAccepted'"></i>

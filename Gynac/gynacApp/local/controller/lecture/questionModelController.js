@@ -378,20 +378,13 @@
                             "question": "Q 3: Typical ultrasound features that are likely to help differentiate between this solid & the cystic mass below include:",
                             "quedsc": "(Note: there may be more than one option)",
                             "ans": "a,d",
-                            "istext": true,
-                            "isimage": false,
-                            "ismultiimage": true,
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath": [
-                                {
-                                    "value": "/gynacApp/local/img/question/Talk1/T1Q3_1.PNG",
-                                },
-                                {
-                                    "value": "/gynacApp/local/img/question/Talk1/T1Q3_2.PNG",
-                                }
-                            ],
+                            "ImagePath": "/gynacApp/local/img/question/Talk1/T1Q3.PNG",                            
                             "option": [
                                  {
                                      "id": "a",
@@ -1063,7 +1056,7 @@
                             "id": 5,
                             "question": "Q 5: In 3D, VCI with sectional planes is very useful in studying the following:",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "a,c",
+                            "ans": "b,c",
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
@@ -1214,7 +1207,7 @@
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk5/q4img1.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk5/T5Q4.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -1282,7 +1275,7 @@
                             "id": 1,
                             "question": "Q 1: The image of the uterus that best shows the shape of the uterine cavity & endo-myometrial junction on ultrasound is:",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "e",
+                            "ans": "a,b,c,e",
                             "istext": true,
                             "isimage": false,
                             "ismultiimage": false,
@@ -1354,7 +1347,7 @@
                             "id": 3,
                             "question": "Q 3: Place the below images in likely chronological (age based) order from youngest to oldest. (Neonatal, pediatric, reproductive age & post menopausal)",
                             "quedsc": "(Note: there may be more than one option)",
-                            "ans": "e",
+                            "ans": "g",
                             "istext": false,
                             "isimage": true,
                             "ismultiimage": false,
@@ -2242,8 +2235,8 @@
                         },
                         {
                             "id": 2,
-                            "question": "Q2. Follicular maturity cannot be confirmed without…",
-                            "quedsc": "",
+                            "question": "Q2. All the following are true about measuring the endometrium except",
+                            "quedsc": "(Note: there may be more than one option)",
                             "ans": "e,g",
                             "istext": false,
                             "isimage": true,
@@ -2364,12 +2357,13 @@
                             "question": "Q2. Which features in this video clip of a patient with a thickened appearing endometrium  suggest that this is an endometrial polyp? ",
                             "quedsc": "",
                             "ans": "a,b",
-                            "istext": true,
+                            "istext": false,
                             "isimage": false,
                             "ismultiimage": false,
-                            "isvideo": false,
+                            "isvideo": true,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk11/T11Q2.mp4",
                             //"ImagePath": "\/img\/GynAc-logo.jpg",
                             "option": [
                                 {
@@ -2497,7 +2491,7 @@
                                  },
                                  {
                                      "id": "c",
-                                     "value": "c) Endometrial Carcinoma"
+                                     "value": "c) Endometrial carcinoma"
                                  },
                                  {
                                      "id": "d",
@@ -2546,7 +2540,7 @@
                          },
                          {
                              "id": 3,
-                             "question": "Q 3: Which of these endometrial images raise the possibility of malignancy?",
+                             "question": "Q 3: Which of these images raise the possibility of malignancy?",
                              "quedsc": "(Note - there may be more than one option)",
                              "ans": "b,c",
                              "istext": false,
@@ -2777,7 +2771,7 @@
 		                    "isvideo": false,
 		                    "ismultyplenas": true,
 		                    "ismultyimgopt": false,
-		                    "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q2.PNG",
+		                    "ImagePath": "/gynacApp/local/img/question/Talk13/T13Q2.PNG",
 		                    "option": [
 				                {
 				                    "id": "a",
@@ -2816,7 +2810,7 @@
 		                    "isvideo": false,
 		                    "ismultyplenas": true,
 		                    "ismultyimgopt": false,
-		                    "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q3.PNG",
+		                    "ImagePath": "/gynacApp/local/img/question/Talk13/T13Q3.PNG",
 		                    "option": [
 				                {
 				                    "id": "a",
@@ -2844,7 +2838,7 @@
 				                },
 				                {
 				                    "id": "g",
-				                    "value": "g. Postmenopausal uterus in the absence of pathology"
+				                    "value": "g. Postmenopausal uterus in the absence of obvious pathology"
 				                }
 		                    ]
 		                },
@@ -2859,7 +2853,7 @@
 		                    "isvideo": false,
 		                    "ismultyplenas": true,
 		                    "ismultyimgopt": false,
-		                    "ImagePath": "/gynacApp/local/img/question/Talk12/T12Q4.PNG",
+		                    "ImagePath": "/gynacApp/local/img/question/Talk13/T13Q4.PNG",
 		                    "option": [
 				                {
 				                    "id": "a",
@@ -3063,7 +3057,7 @@
                                 "id": 5,
                                 "question": "Q5. High androgen in PCO presents as:",
                                 "quedsc": "",
-                                "ans": "a,c,e",
+                                "ans": "c,e",
                                 "istext": true,
                                 "isimage": false,
                                 "ismultiimage": false,
@@ -3098,12 +3092,12 @@
                                 "id": 6,
                                 "question": "Q6. Obese PCOS patients have:",
                                 "quedsc": "",
-                                "ans": "d",
+                                "ans": "b,c,d",
                                 "istext": true,
                                 "isimage": false,
                                 "ismultiimage": false,
                                 "isvideo": false,
-                                "ismultyplenas": false,
+                                "ismultyplenas": true,
                                 "ismultyimgopt": false,
                                 //"ImagePath": "\/img\/GynAc-logo.jpg",
                                 "option": [
@@ -3617,6 +3611,2040 @@
                                 }
                             ]
                         }
+                    ]
+                },
+                {
+                    "talkId": 18,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. What statements of nabothian follicles are false?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "d,e,f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk18/T18Q1.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Also known as Nabothian cysts"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Typically seen on either side of the cervical canal mucosa"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Usually multiple"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Are tender to touch on TVS"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Rare findings in women"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Women with nabothian cysts are generally symptomatic with pain and discharge"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. What statements of cervical polyps are true? ",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,d,f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk18/T18Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Usually better seen on Gel Sonovaginography"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Doppler helps to confirm their presence and sight of origin"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Sometimes the only evidence of a polyp at the cervix is a vessel in the cervical canal on Doppler"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) May cause post coital spotting"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Are usually malignant"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Polyps seen at the cervix may originate from the walls of the cervix or the endometrial cavity higher up"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. Which facts of cervical cancer are false?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "b,e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk18/T18Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Are generally very vascular"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Ultrasound is the standard modality used for staging"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Adenocarcinomas are often isoechoic – making their margins difficult to delineate on grey scale"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) 3D Doppler with Glass body display, may show abnormal vascular morphology"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Are usually very tender"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) May bleed on touch/TVS"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Parametrial infiltration appears as irregular margins of the tumor with hypoechoic, bud-like vascular extensions into the adjoining parametrium"
+                                 }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talkId": 19,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. Which statements of septate vagina are true? ",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk19/T19Q1.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a) Often seen in association with cases of complete septate uterus"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b) At TVS, a hyperechoic line which helps to detect the  septum, is the lumen of the collapsed contralateral hemivagina"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c) Usually multiple"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d) Gel sonovaginography can be used to confirm presence of septum"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. Which statements of imperforate hymen are false?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk19/T19Q2.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a) Cases typically present with pain abdomen at around the age of menarche"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b) A transperineal scan helps to assess presence & thickness of the hymen "
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c) Typical finding is hematocolpos"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d) Requires a major surgery to relieve the patient of her symptoms"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. Which of the following facts about vaginal cysts are false?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk19/T19Q3.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a) Patients are usually symptomatic"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b) May have turbid contents"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c) Common vaginal cysts are Gartner duct, Mullerian and Bartholin gland cysts"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d) Gartner duct & Mullerian cysts are located posterolateral to the vaginal introitus"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e) Presence of solid tissue and septae in a Bartholin gland cyst raise the possibility of malignancy"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. The following are true about vaginal cancer:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"ImagePath": "\/img\/GynAc-logo.jpg",
+                            "ImagePath": "/gynacApp/local/img/question/Talk19/T19Q4.PNG",
+                            "option": [
+                                {
+                                    "id": "a",
+                                    "value": "a) Show high vascularity"
+                                },
+                                {
+                                    "id": "b",
+                                    "value": "b) Typically hypoechoic solid tumors"
+                                },
+                                {
+                                    "id": "c",
+                                    "value": "c) Are well assessed with the help of gel sonovaginography"
+                                },
+                                {
+                                    "id": "d",
+                                    "value": "d) Vaginal cancer lesion - involving the cervix (considered so if the external os is involved) is considered a primary cervical cancer"
+                                },
+                                {
+                                    "id": "e",
+                                    "value": "e) Vaginal cancer lesion - involving the vulva – is considered a  primary vaginal cancer"
+                                }
+                            ]
+                        }
+                    ]
+                },                
+                {
+                    "talkId": 20,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Features & techniques that may help locate post menopausal ovaries include all of the following except:",
+                            "quedsc": "",
+                            "ans": "c",
+                            "istext": false, 
+                            "isimage": true, 
+                            "ismultiimage": false, 
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk20/T20Q1.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Tracing along the medial margins of the external iliac vessels, in transverse section"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Following the hypoechoic utero-ovarian ligament from the cornual end of the uterus, laterally"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Presence of multiple follicles in the ovaries"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Following the anastomosis of the utero-ovarian vessels from the cornual end of the uterus, laterally, with Doppler"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Which of these features are likely help in deciding that the cyst in the image is extra-ovarian?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,b,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk20/T20Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Absence of crescent sign"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Presence of splitting sign"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Presence of antral follicles along the adjoining margins of the ovary beside it "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Presence of wedge of tissue between the ovary and cyst"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Presence of Iliac vessels beside it"
+                                 }
+                            ]
+                        },                        
+                        {
+                            "id": 3,
+                            "question": "Q 3: Which of these are  adnexal lesions? ",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk20/T20Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c)"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: Which of the following statements is false?",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "e",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk20/T20Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Ovarian follicles may be seen in neonatal ovaries"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Ovarian volume of > 4 cc & 6 or more follicles in girls less than 7 years, should raise the suspicion of precocious puberty"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) In pregnancy, the corpus luteum may be larger and persist for a longer period"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Ovaries are generally easy to identify in women prior to menopause because of the presence of follicles"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) In premature ovarian failure, menopause sets in before the age of 45"
+                                 }
+                            ]
+                        },
+                    ]
+                },                
+                {
+                    "talkId": 21,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. While evaluating an adnexal cyst, presence of the ‘crescent sign’ implies that:",
+                            "quedsc": " (Note - there may be more than one option)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk22/T22Q1.png",
+                            "ImagePath": "/gynacApp/local/img/question/Talk21/T21Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) The lesion is intraovarian"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) The lesion is extraovarian"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) The lesion is likely to be a hydrosalpinx"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) The entire ovary is crescent shaped"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2.  A papilla is any solid projections into the cavity from a cyst wall if it measures (height):",
+                            "quedsc": "  (Note: there is only one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk21/T21Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Equal to or more than 7 mm from the inner margins of the cyst wall"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Equal to or more than 5 mm from the inner margins of the cyst wall"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Equal to or more than 3 mm from the inner margins of the cyst wall"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Equal to or less than 7 mm from the outer margins of the cyst wall"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Equal to or less than 5 mm from the outer margins of the cyst wall"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Equal to or less than 3 mm from the outer margins of the cyst wall"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. Which of the following facts about acoustic shadowing are false? ",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk28/media3.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk21/T21Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Is loss of echoes beyond a sound - absorbing structure"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Is a typical finding in a fibroma"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Is a typical feature of a hydrosalpinx"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Suggests that the mass is likely to be malignant"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Is typical of a Dermoid"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Is typical of a papilla in a cystadenofibroma"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. The following is true about ‘morphological classification’ of persistent adnexal masses:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk21/T21Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) There are 5 types in the classification"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Doppler evaluation is essential"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) A papilla is not considered to be solid for the classificatio"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) A mass is considered to be ‘ Solid’ if at least 90% of the mass on subjective evaluation is made up of solid tissue"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5.  The following are true about simple descriptors:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk21/T21Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) There are 4 benign and 2 malignant simple descriptors "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) There are 2 benign and 4 malignant simple descriptors"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) In the benign descriptors – all the masses are unilocular"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) In the malignant descriptors – either the woman is postmenopausal or above the age of 50 "
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) It provides easy instant diagnosis for about 20 to 25 % of adnexal masses"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "question": "Q 6.   The following are true about simple rules:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk21/T21Q6.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) There are 5 benign and 5 malignant simple rules "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Presence of more than 2 papillary projections is a malignant feature"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) If there are 3 malignant and only one benign feature, as per the simple rules, the mass is malignant"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) In inconclusive cases about half of them are likely to be malignant "
+                                 }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talkId": 22,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. Features that suggest that a hyperechoic area within a cyst is a clot (and not solid tissue) include all of the following except:",
+                            "quedsc": " (Note: there may be more than one option)",
+                            "ans": "a,f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk22/T22Q1.png",
+                            "ImagePath": "/gynacApp/local/img/question/Talk22/T22Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Entire margins facing the wall are usually firmly adherent to the cyst wall"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) No flow within a clot on Doppler (with optimal settings)"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Clots may retract away from the cyst wall & the demarcation may be seen"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Usually a clot has concave margins facing the lumen"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Clot may move (jelly like movements) on touch"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) No change in appearance with time (on repeat scan a few days/weeks later)"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. For optimal Doppler evaluation of adnexal masses the recommendations are:",
+                            "quedsc": "  (Note: there may be more than one option)",
+                            "ans": "a,d,e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk22/T22Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Use of Power Doppler or HD flow"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Use of Colour Doppler"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) PRF should be set at 1.0 or 1.3"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) The mass being evaluated should not be far away from the probe"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) The Doppler gain should be maximum possible without artefacts ( ie., gain to be increased till artefacts appear, then one should stop, and then gradually decrease the gain till the artefacts just disappear)"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q3. Ovarian adnexal masses can be secondary to all these various etiologies except:",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,b,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk28/media3.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk22/T22Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Functional "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Endometriosis"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Infection"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Diabetes"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Neoplastic"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Torsion"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Ectopic pregnancy"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. The following are true of hypoechoic cysts:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "b,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk22/T22Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) In premenopausal they are definitely endometriotic"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) In post menopausal they are most often malignant"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) If there are hyperechoic foci along their walls they are very likely to be endometriotic "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) At times regressing hemorrhagic cysts can appear hypoechoic"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5. Which of these statements are true?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,c,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk22/T22Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) In Van Wyk-Grumbach Syndrome – there are bilateral enlarged multicystic ovaries seen, secondary to juvenile hypothyroidism "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Theca lutein cysts are seen in Gestational Trophoblastic Disease"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Endometriotic cysts regress naturally with time"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Endometriotic cysts are often multiple "
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Presence of decidualized endometriotic cysts, suggests that there is an ectopic pregnancy – causing the decidual changes"
+                                 }
+                            ]
+                        },
+
+                    ]
+                },
+                {
+                    "talkId": 23,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Of these 3 neoplastic serous cysts one is benign, one is malignant and the third is borderline. Which of these is likely to be borderline?",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk22/T22Q1.png",
+                            "ImagePath": "/gynacApp/local/img/question/Talk23/T23Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) "
+                                 }                                 
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. Which of the following statements are not true for epithelial ovarian neoplasms?",
+                            "quedsc": "  (Note: there may be more than one option)",
+                            "ans": "a,b",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk22/T22Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Only malignant ones are bilateral"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Papillae are more common in mucinous as compared to serous cysts"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Both mucinous and serous benign cysts may show septae"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Presence of solid tissue and papillae increase the probability of malignancy"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) They are the commonest category of ovarian neoplasms "
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Brenner tumor is rare "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Malignant epithelial masses are more common in older women"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. What features in this videoclip suggest that this is likely to be a case of ovarian  malignancy?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,d",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk23/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk22/T22Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Bilateral adnexal masses "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Significant amount of solid tissue"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Irregular margins of the solid tissue"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Presence of ascites"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Presence of deposits along the pelvic side walls"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. What is the most likely diagnosis for this left ovarian lesion?",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "e",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk23/media2.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk22/T22Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Papillary serous cystadenoma"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Mucinous cystadenoma"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Borderline serous cyst "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Malignant serous cyst"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Papillary Serous Cystadenofibroma "
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Brenner tumor"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5. Which of the following statements is/are not true for mucinous epithelial ovarian neoplasms?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,e",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk22/T22Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Often bilateral "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Usually multilocular and only occasionally unilocular"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) If multilocular, the locules often vary in echogenicity"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) They can reach a very large size "
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Mucinous cysts are less likely to show internal echoes as compared to serous epithelial cysts"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Borderline mucinous cyst typically show a cluster of tiny locules "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Solid tissue showing vascularity is usually seen in malignant mucinous tumors"
+                                 }
+                            ]
+                        },
+
+                    ]
+                },
+                {
+                    "talkId": 24,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. What is the most likely diagnosis of this mass? ",
+                            "quedsc": " (Choose a single option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk24/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk21/T21Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Germ cell tumor"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Granulosa cell tumor"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Fibroma"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Dermoid"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Immature teratoma"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Krukenberg tumor"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. Which of these statements are true about germ cell tumors?",
+                            "quedsc": "  (Note - there may be more than one option)",
+                            "ans": "a,c,d,f",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk21/T21Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Includes Dermoids, Immature Teratomas, Dysgerminomas, Yolk Sac Tumors, Embryonal Carcinoma etc."
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Seen in older perimenopausal women"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Often mixed variety with 2 to 3 cell types coexisting"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Dermoids are benign; others are malignant"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Malignant germ cell tumors are often bilateral "
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Malignant germ cell tumors are predominantly solid masses"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. What is the most likely diagnosis of this mass?  ",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "f",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk24/media2.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk21/T21Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Mature Cystic Teratoma"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Immature Teratoma"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Dysgerminoma"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Granulosa Cell Tumor"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Germ Cell Tumor"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Fibroma "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Krukenberg Tumor "
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. Which of these statements are true about Sex Cord Stromal tumors?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,c,d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk21/T21Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Many are hormone producing"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Typically bilateral"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Include Granulosa Cell Tumors, Sertoli & Sertoli Leydig Cell Tumors, Fibromas & Thecomas"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Granulosa Cell Tumors may show a solid or Swiss-cheese appearance"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5. Typical features of Dermoid tumors include all of the following except:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "c,d,f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk24/T24Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Show mixed echoes "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Acoustic shadowing by the  hyperechoic areas "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Show multiple septae"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Show small papillae "
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Fine/linear scattered echoes"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Abundant flow in its walls "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Solid protuberance from its walls from which often hair are seen radiating outwards"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "question": "Q 6. These are 2 metastatic tumors. Based on their morphology their primaries are likely to be:",
+                            "quedsc": "(Choose any one option)",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk24/T24Q6.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) 1. Primary-breast cancer; 2. Primary-colorectal cancer "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) 1. Primary-colorectal cancer ; 2. Primary-breast cancer"
+                                 }                                 
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talkId": 25,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. Which of the following facts about fallopian tube are false?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk22/T22Q1.png",
+                            "ImagePath": "/gynacApp/local/img/question/Talk25/T25Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Normal fallopian tube is not generally seen easily on ultrasound"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) The fimbrial end of the tube appears as sold tissue with irregular margins and may be seen floating within some fliud in the POD"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Flow in tubal tissue typically shows a protodiastolic notch"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Normal fallopian tube, if seen, is about 20 to 30 mm wide"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) An adnexal cystic mass with incomplete septae is most often of tubal origin"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. Which of the following facts about Pelvic inflammatory Disease are true? ",
+                            "quedsc": " (Note - there may be more than one option)",
+                            "ans": "a,d,e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk25/T25Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) More in – women in multiple sexual partners, use of IUCD, post abortal or puerperal and those who have undergone  intrauterine or laparoscopic procedures"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) PID is generally unilateral"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Infection primarily involves the ovaries, but fallopian tubes and endometrium may be involved"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Pus may be seen in the POD"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Very often the tubes are adherent to the ovaries forming a Tubo-ovarian mass or abscess "
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. What is the likely diagnosis in order of the images (1, 2, 3, 4)?",
+                            "quedsc": "(Note – please select only one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk23/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk25/T25Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Pyosalpinx, Fallopian tube Carcinoma, Hydrosalpinx, Tubo-ovarian mass "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Fallopian tube Carcinoma, Hydrosalpinx, Pyosalpinx, Tubo-ovarian mass"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Pyosalpinx, Hydrosalpinx, Tubo-ovarian mass, Fallopian tube Carcinoma"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Pyosalpinx, Hydrosalpinx, Fallopian tube Carcinoma, Tubo-ovarian mass,"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Fallopian tube Carcinoma, Hydrosalpinx, Pyosalpinx, Tubo-ovarian mass"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. The following are true about fallopian Tube Carcinoma except:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk23/media2.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk25/T25Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Some amount of clear fluid in the endometrial cavity is a common ultrasound finding"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) A hydrosalpinx is commonly seen inn association with it"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Is usually secondary to Ovarian Carcinoma"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) If solid vascular tissue is seen protruding into a hydrosalpinx – highly s/o fallopian tube malignancy"
+                                 }                                 
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 26,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. Which of these is likely to be a paraovarian (and not an ovarian cyst)?  ",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk22/T22Q1.png",
+                            "ImagePath": "/gynacApp/local/img/question/Talk26/T26Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) "
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. The following are true about Peritoneal inclusion Cysts (PIC) except:",
+                            "quedsc": " (Note - there may be more than one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk26/T26Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) PIC are basically loculated fluid trapped between adhesions"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) May be secondary to endometriosis, PID, previous pelvic surgery"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) They are usually the cause for the patient being symptomatic"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) If a patient with PIC is symptomatic  - it is not because of PIC itself but usually that of underlying pathology "
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. What is the most likely diagnosis for the case in this video clip? ",
+                            "quedsc": "(Note – Please select one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk26/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk25/T25Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Right Ovarian Cyst with torsion"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Left Paraovarian Cyst with torsion"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Right Paraovarian Cyst with torsion"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Left Ovarian Cyst with torsion"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Right Ovarian Cyst with no torsion"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Left Ovarian Cyst with no torsion"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. Which of these are true about ultrasound features of Peritoneal inclusion Cysts (PIC)?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,c,d,f,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk23/media2.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk26/T26Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Multilocular masses "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Contents are typically turbid"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Bizarre shaped with pointed beak- like or narrow extensions along outer margins"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Adhesion bands/septae may show ‘Flapping Sail Sign’"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Incomplete septae are never seen "
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Minimal flow may be seen in septae/adhesions"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Ovaries are often seen lying within or beside it"
+                                 }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 27,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1. Which is the morphological class/name for the mass in this video?",
+                            "quedsc": "(Note: there is only one option)",
+                            "ans": "e",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk25/T25Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Unilocula"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Multilocula"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Unilocular solid"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Multilocular solid"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Solid"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2. Which of these of these simple descriptors will help classify the mass in this video (same as in question 1) into benign or malignant",
+                            "quedsc": " (Note: there is only one option)",
+                            "ans": "g",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk25/T25Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Unilocular ground glass in premenopausal (endometriotic)"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Unilocular with mixed echogenicity & acoustic shadowing in premenopausal (Dermoid)"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Unilocular anechoic < 10cm with regular walls (Cystadenoma)"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)  Remaining unilocular with regular walls (physiological, eg; hemorrhagic)"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Postmenopausal, ascites & at least moderate flow (colour score of 3 or 4)"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f)  Age > 50y & CA 125 >100 IU/mL "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) NONE OF THE ABOVE"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3. Which of these of these simple rules are applicable to & will help classify the mass in this video (same as in question 1) into benign or malignant",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,e",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk25/T25Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  Ascites    (Fluid outside POD"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  Irregular solid tumor   (>/= 80% solid)"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) At least 4 papillary structures"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Irregular multilocular solid - largest diameter >/= 10cms"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Strong blood flow (colour score 4)"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Unilocular – no solid"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Unilocular solid,  largest diam. <7mm"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h)  Acoustic shadowing"
+                                 },
+                                 {
+                                     "id": "i",
+                                     "value": "i) Smooth multiloculated < 10cm"
+                                 },
+                                 {
+                                     "id": "j",
+                                     "value": "j) No blood flow - Colour score 1"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) NONE OF THE ABOVE"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4. The mass in this video (same as in question 1) is:",
+                            "quedsc": "(Note: there is only one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk25/T25Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Benign – using ‘simple descriptors’"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Malignant – using ‘simple descriptors’"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Benign – using ‘simple rules’"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Malignant – using ‘simple rules’"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Inconclusive"
+                                 }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 28,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Features in favour of endometriosis in this video clip include all of the following except:",
+                            "quedsc": " (Note: there may be more than one option)",
+                            "ans": "e,k",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk28/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk28/T28Q1.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Presence of hypoechoic cysts"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Bilateral cysts"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Multiple cysts in each ovary"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Ovaries adherent to the uterine wall"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Vascular papillary projections"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Loculated fluid within adhesions"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Kissing ovaries"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) Hyperechoic area in cyst with no flow on Doppler"
+                                 },
+                                 {
+                                     "id": "i",
+                                     "value": "i) Hyperechoic foci in the cyst wall"
+                                 },
+                                 {
+                                     "id": "j",
+                                     "value": "j) Posterior wall adenomyosis"
+                                 },
+                                 {
+                                     "id": "k",
+                                     "value": "k) Free fluid"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: The differential diagnosis for this cyst, in a pregnant known case of endometriosis, in order of probability include: 1) Endometriotic cyst with a clot within 2) Decidualized endometriotic cyst 3) Clear cell carcinoma or endometroid carcinoma",
+                            "quedsc": " (Choose a single option)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk28/T28Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) 2, 1, 3"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) 1, 2, 3"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) 3, 1, 2 "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) 3, 2, 1"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: Features in this clip that suggest that this is a decidualized endometriotic cyst and not a neoplastic cyst include:",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,b,d,f",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk28/media3.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk28/T28Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Gravid uterus"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Hypoechoic cyst with turbid contents"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Papillary (hyperechoic areas with flow within) projections having irregular margins"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Rounded papillary (hyperechoic areas with flow within) projections with smooth contour"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Presence of septae"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Hyperechoic foci along the cyst walls"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: The following facts about Deep Infiltrating Endometriosis are false:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "b,f,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk28/T28Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Lesions may show cystic areas"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Uterosacral DIE is easier to diagnose than bowel DIE"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Usually tender"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Diagnosis prior to surgery is very useful in planning surgery"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Often diagnosis is missed on pelvic ultrasound"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Uterus in patients with bowel DIE is often anteflexed and shows posterior wall adenomyosis"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Show moderate to high vascularity"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5: What is the diagnosis in this case as seen in the image?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk28/T28Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Rectovaginal DIE"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Ovarian endometrioma"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Uterosacral DIE"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Large bowel DIE "
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Bladder DIE"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "question": "Q 6: What facts of the ‘Red Indian Hair Dress Sign’ are correct?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "b,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk28/T28Q6.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Is suggestive of vaginal DIE"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) It is due to fibrotic retraction of the DIE nodule"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Suggests the sub-mucosa of bowel is involved "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Is a striking feature on pelvic ultrasound that helps to pick up DIE lesions"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) It suggests ureteric involvement"
+                                 }
+
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "question": "Q 7: The following facts about scar endometriosis are false:",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "",
+                            "ImagePath": "/gynacApp/local/img/question/Talk28/T28Q7.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Margins are usually well delineated"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Better seen on ultrasound with linear high frequency probes"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Usually tender"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Often difficult to diagnose"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Symptoms are noted or worsen cyclically (during periods)"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Difficult to diagnose and require a careful search"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Show moderate to high vascularity"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) Comparison with normal abdominal wall elsewhere provides a convenient control"
+                                 }
+                            ]
+                        },
                     ]
                 },
             ]

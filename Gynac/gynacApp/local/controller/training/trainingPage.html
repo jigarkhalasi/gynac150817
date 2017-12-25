@@ -116,8 +116,10 @@
                                     <td>{{ t.TotalCompletedTalks }}</td>
                                     <td>{{ t.TotalPendingTalks }}</td>
                                     
-                                    <td>{{ t.TotalCompletedModules}}</td>
-                                    <td>{{ t.TotalPendingModules }}</td>
+                                    <td ng-show="t.TotalPendingTalks == 0 "> 0 </td>
+                                    <td ng-show="t.TotalPendingTalks == 0 "> 0 </td>
+                                    <td ng-show="t.TotalPendingTalks != 0 ">{{ t.TotalCompletedModules}}</td>
+                                    <td ng-show="t.TotalPendingTalks != 0 ">{{ t.TotalPendingModules }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -136,7 +138,7 @@
                         <div class="training-title-left">
                             <h3>Final Test</h3>
                         </div>
-                        <p style="padding-left:20px;">Date of course completion final test  (for certification of competency to be held in Bangalore): January 7th, 2018</p>
+                        <p style="padding-left:20px;">Date of Final Test, on completion of course (for certification of competency) to be held in Bangalore: January 7th, 2018</p>
                         <br />
                         <span style="padding-left:20px;">Do you wish to participate?</span>
                         <label class="radio-inline">
@@ -160,7 +162,7 @@
                         <div>
                             <div class="col-md-4"></div>
                             <select ng-model="selectuserTalk" class="col-md-4" ng-options="i.TalkName for i in userTalks" ng-change="getBookmark()">
-                                <option value="">Select a TalkName</option>
+                                <option value="">Select lecture name</option>
                             </select>
                             <div class="col-md-4"></div>
                             <div>
@@ -185,7 +187,7 @@
                                     </tbody>
                                 </table>
                                 <div ng-show="userBookmark.length == 0" style="text-align:center;">
-                                    No any bookmark ! Please select Talk.
+                                    This lecture has no bookmark! 
                                 </div>
                             </div>
                         </div>
