@@ -5647,6 +5647,1104 @@
                         },
                     ]
                 },
+                {
+                    "talkId": 29,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Rhombencephalon appears at ",
+                            "quedsc": "",
+                            "ans": "b",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) 6 weeks"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) 7 weeks"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) 8 weeks"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) 12 weeks"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Bad prognosis for the pregnancy is suspected when… ",
+                            "quedsc": "",
+                            "ans": "d",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Fetal pole is not seen in a GS of 15 mm"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Yolk sac is not seen in a GS of 10mm"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Embryonic heart rate < 100 at 7 weeks "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) All of the above"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: Which of these yolk sacs are normal",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk29/T29Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c)"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: LMP is to be corrected when there is difference of ",
+                            "quedsc": "",
+                            "ans": "a",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) 7 days in first trimester"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) 10 days in first trimester"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) 10 days in third trimester"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) 5 days in first trimester"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5: Abnormalities that should not be missed in first trimester",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "d,e,f",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Left ventricular hypoplasia"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Total AVSD"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Hydrocephaly"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Alobar holoprosencephaly"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Encephalocoele"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Anencephaly "
+                                 }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 30,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: The following features of a tubal ectopic mass may help differentiate it from a corpus luteum:",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "c,d,e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk30/T30Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Peripheral vascularity"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Central cystic area"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Extra ovarian location"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Presence of a fetal pole with FHR"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Presence of thick hyperechoic tissue around the central cytic area"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Findings that may be seen in a case of a tubal ectopic pregnancy include all of the following except: ",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk30/T30Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Slow rise of beta hCG (< 66% in 48hrs)"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Turbid fluid in the POD, suggestive of blood"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) An extra ovarian circumscribed mass"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) A corpus luteum in an ovary"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Tenderness during TVS examination"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Endometrium showing increased vascularity"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Endometrium showing tiny cystic spaces  (decidualized endometrium)"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: Which of these ultrasound features are seen in the video clip of this case of a tubal ectopic?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,f",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk30/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk30/T30Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Turbid fluid in the POD, suggestive of blood"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) An extra ovarian right tubal ectopic mass"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) A yolk sac and fetal pole in the ectopic GS"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) A corpus luteum on the same side as the ectopic"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Endometrium showing increased vascularity"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) To the extent seen endometrial cavity appeared empty"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: In a case of PUL , beta hCG is done twice with a gap of 48hrs. Which of the following would be considered high risk?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk30/T30Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) A rise of >66 %"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Fall of >13% or any fall"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Slow rise of less than 50%"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5: What is the likely diagnosis of this case?",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk30/T30Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Cornual ectopic"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Interstitial ectopic"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Tubal ectopic"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Cervical ectopic"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Intrauterine pregnancy"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Ovarian ectopic"
+                                 }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 31,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: A detailed transabdominal scan is suggested in every case, following a recent abortion or delivery, while evaluating for RPOC because:",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,b,c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk31/T31Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) The uterus is typically bulky/large resulting in suboptimal evaluation of the upper endometrium due to increased distance from the probe, during TVS"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) The uterus is often midpositioned & on grey scale, on TVS, the endometrial cavity lies parallel to the ultrasound beam resulting in suboptimal evaluation of the endometrium"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) In the frequently midpositioned uterus, flows to the endometrium from the anterior and posterior uterine wall lie perpendicular to the TVS probe and therefore not visualized."
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Patient may be bleeding making evaluation with TVS difficult"
+                                 }                                 
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: The following are not true of ultrasound features of retained products of conception?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk31/T31Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) They typically appear as solid heterogeneous tissue within the endometrial cavity"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) RPOC always show some vascularity"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Flow is seen approaching it form the adjoining myometrium"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) The endomyometrial junction may be poorly defined"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Their ultrasound appearance often changes with time (since abortion)"
+                                 },                                 
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: Of these possible differential diagnoses, what is the most likely diagnosis?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "f",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk31/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk30/T30Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Blood & clots in the uterine cavity"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Invasive mole"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Increased placental bed vascularity"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Submucous adenomyomas"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Fibroid polyp"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) RPOC"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Endometrial polyps"
+                                 }
+                            ]
+                        },                        
+                    ]
+                },
+                {
+                    "talkId": 32,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Which of the following are not true about GTD? ",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk32/T32Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) It is a spectrum of disorders of trophoblastic origin"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Beta hCG is typically increased in most cases of GTD"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) In persistent GTD tissue diagnosis is not required for appropriate management"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Invasive moles are typically seen in the first 6 months following an abortion, molar pregnancy or normal delivery"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) GTN like invasive mole, choriocarcinoma & PSTT appear similar and may be difficult to differentiate on ultrasound"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Which of the following are true for partial mole?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,b,e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk32/T32Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) A gestational sac is often seen"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) A fetal pole may be seen"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Theca lutein cysts are commonly seen"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Beta hCG values are usually higher than in complete moles"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) The placenta typically shows cystic spaces within"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Follow up with beta hCG is not required"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: What is the likely diagnosis ",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk30/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk32/T32Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Complete molar pregnancy"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Partial molar pregnancy"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Invasive mole"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Placental Site Trophoblastic Tumor"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: What is the likely diagnosis",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk32/T32Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Complete molar pregnancy"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Partial molar pregnancy"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Invasive mole"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Placental Site Trophoblastic Tumor"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Choriocarcinoma"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5: What is the likely diagnosis ",
+                            "quedsc": "(Choose a single option)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk32/T32Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Complete molar pregnancy"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Partial molar pregnancy"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Invasive mole"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Placental Site Trophoblastic Tumor"
+                                 }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 33,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Which of these are not typical findings in cases of torsion?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "b,e,g,h,j",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk33/T33Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Follicular Ring Sign"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Bulky uterus"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Enlarged ovary"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Cysts showing thick walls and turbid fluid"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) DIE"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Whirlpool Sign"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Endometriotic cysts"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) Loculated fluid with adhesions"
+                                 },
+                                 {
+                                     "id": "i",
+                                     "value": "i) Target sign - of cross section of pedicle"
+                                 },
+                                 {
+                                     "id": "j",
+                                     "value": "j) Subserous pedunculated fibroid"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Which of these are the three specific features of torsion?",
+                            "quedsc": "  (Note: there may be more than one option)",
+                            "ans": "a,b,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk33/T33Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Follicular Ring Sign"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Absence of flow on Doppler"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Enlarged ovary"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Cysts showing thick walls and turbid fluid"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Free fluid in POD"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f)  An elongated heterogeneous mass suggestive of a pedicle"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Whirlpool Sign"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) Oedematous ovarian stroma with peripherally arranged antral follicles"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: What features of torsion are seen in this video clip (TAS & TVS) of a case of torsion?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,d,e,f,h",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk33/media1.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  Follicular Ring Sign"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  Whirlpool Sign"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Absence of flow on Doppler"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Enlarged ovary"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Free fluid in pelvis"
+                                 },
+                                {
+                                    "id": "f",
+                                    "value": "f) Target sign - of cross section of pedicle"
+                                },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Cysts with thick walls"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) Oedematous ovarian stroma"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: All these features of torsion are seen in this video clip of a 11yr old girl with torsion except …..",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "e",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk33/media2.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  Follicular Ring Sign"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  Whirlpool Sign"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Absence of flow on Doppler "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Enlarged ovary"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Cysts showing thick walls and turbid fluid"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Free fluid in POD "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Target sign - of cross section of pedicle"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h) Oedematous ovarian stroma"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5: What is the likely diagnosis?",
+                            "quedsc": "(Choose one option)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk33/media3.mp4",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk34/T34Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Torsion of a Paraovarian Cyst"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  Torsion of Ovary"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Torsion of hydrosalpinx "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) No Torsion"
+                                 }                                 
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "question": "Q 6: Which of these are limitations of Doppler assessment in Torsion?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk33/T33Q6.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)   It is a late feature in torsion and good flows may be seen in cases with torsion"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  In torsion of hydrosalpinx and paraovarian cysts because of minimal tissue in the torsed structure, it is difficult to assess absence of flows"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) If the torsed mass is far away from the probe, Doppler may falsely show no flow, even when flow exists in the mass "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)  If Doppler settings are not proper assessment may be erroneous (wrong)"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Comparison with the normal contralateral ovary provides a convenient control"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "question": "Q 7: Which of these features are useful in diagnosis of torsion of a hydrosalpinx?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk33/T33Q7.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  Whirlpool Sign"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Turbid fluid in a cystic mass showing an incomplete septum with normal appearing ovaries"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c)Follicular Ring Sign"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Thick walls of a hydrosalpinx showing no flow on Doppler"
+                                 }                                 
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "talkId": 34,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: What features may be seen in common - in cases with tubal ectopic pregnancy and hemorrhage from a corpus luteum that present with acute pelvic pain?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,c,e",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk34/T34Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Hemoperitoneum"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) An extraovarian circumscribed mass with a gestational sac"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Clots in the adnexa"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Positive pregnancy test"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Corpus luteum in an ovary"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Acute pelvic pain during periods/menstruation is a known possibility in all the following except? ",
+                            "quedsc": " (Note: there may be more than one option)",
+                            "ans": "a,e,f,g,h",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk34/T34Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Tubal ectopic pregnancy"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Adenomyosis"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Submucous fibroid "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)   DIE (Deep Infiltrating Endometriosis)"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) PID"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f)  Cystitis "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Appendicitis"
+                                 },
+                                 {
+                                     "id": "h",
+                                     "value": "h)  Torsion "
+                                 },
+                                 {
+                                     "id": "i",
+                                     "value": "i) Endometriosis"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: Patients with OHSS (Ovarian Hyperstimulation Syndrome) may have abdominopelvic pain because of the following?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,c,d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            //"videosrc": "/gynacApp/local/img/question/Talk27/media1.mp4",
+                            "ImagePath": "/gynacApp/local/img/question/Talk34/T34Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  Torsion"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  Hypovolemic shock"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Enlarged ovary and ascites "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Hemorrhage from the ovaries"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Multiple gestations in early pregnancy"
+                                 }
+                            ]
+                        },                        
+                    ]
+                },
             ]
         }
 

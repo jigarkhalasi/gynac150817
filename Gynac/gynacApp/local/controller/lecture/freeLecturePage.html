@@ -1,0 +1,177 @@
+﻿<section class="home about" style="margin-bottom:100px;">
+    <div class="slider-relative">
+        <nav class="navbar navbar-default nav-header">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-list-main" id="bs-example-navbar-collapse-1">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav navbar-center">
+                            <li class="li-1"><a class="a-1" href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="li-1"><a class="a-1" href="#/about">About GynAc</a></li>
+                            <li class="li-1"><a class="a-1" href="#/course">Course</a></li>
+                            <li class="li-1"><a class="a-1" href="#/lecture">Lectures</a></li>
+                            <li class="li-1 state-active"><a class="a-1" href="#/freelecture">Free Video</a></li>
+                            <li class="li-1"><a class="a-1" href="#/faculty">Faculty</a></li>
+                            <!--<li class="dropdown li-1"><a class="a-1" href="javascript:;">My Page</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Details</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/contact">Contact</a></li>
+                            <!--<li class="li-1">
+                                <a class="a-1" style="visibility: hidden;" href="javascript:;"></a>
+                            </li>-->
+                            <li class="li-1"><a class="a-1" href="#/signIn" ng-hide="authenticatedUser.UserInfo.First_Name">Login</a></li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-show="authenticatedUser.UserInfo.First_Name">{{authenticatedUser.UserInfo.First_Name}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="li-2"><a class="a-2" href="#/myProfile">My Profile</a></li>
+                                    <li class="li-2"><a class="a-2" href="#/training">Training Details</a></li>
+                                    <li class="li-2" ng-click="signOut()"><a class="a-2" href="javascript:;">Log-out</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown li-1">
+                                <a class="a-1" href="javascript:;" ng-click="getAllNotification()">
+                                    <i class="fa fa-bell" aria-hidden="true" ng-show="authenticatedUser.UserInfo.First_Name">{{notificationCount.length}}</i>
+                                </a>
+                            </li>
+                            <li class="li-3">
+                                <a href="https://www.facebook.com/Gynecology-Academy-1776711995945554Gynecology-Academy-1776711995945554" class="btn btn-social-icon btn-facebook" target="_blank"> <i class="fa fa-facebook"></i></a>
+                            </li>
+                            <!--<li class="li-3"><a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="li-3"><a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>-->
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row page-header banner-page">
+                <div class="col-sm-12 col-md-2 sm-center"><img src="gynacApp/local/img/logo.png" alt="logo" /> </div>
+                <div class="col-sm-12 col-md-8 sm-center">
+                    <h2>ULTRASOUND IN GYNECOLOGY</h2>
+                    <h2>Four Month Certification Course</h2>
+                </div>
+                <div class="col-sm-12 col-md-2 sm-center">
+                    <div class='btn-toolbar pull-right'>
+                        <div class='btn-group button-effect'> <a href="#/signUp#signTop" class="btn effect custom-effect">APPLY NOW</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container" ng-init="slide('next')">       
+        <div class="row talk">
+            <div>
+                <p>&nbsp;</p>
+                <h1>Free Session</h1>
+                <p>&nbsp;</p>
+                <div class="col-md-12">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-9 module-name">
+                                    <h3 class="panel-title">Free Module</h3>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th class="hidden-xs">ID</th>
+                                        <th style="width: 500px;">Name</th>
+                                        <th>Speaker Name</th>
+                                        <th style="width: 50px;">Duration</th>
+                                        <th style="width: 100px;">Talk Overview</th>
+                                        <th style="width: 100px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="talk in freeTalkList.List">
+                                        <td align="center" class="lectalktalkid">{{ talk.TalkId}}</td>
+                                        <td class="lectalkname">{{ talk.TalkName}}</td>
+                                        <td class="lectalkname">{{ talk.SpeakerName}}</td>
+                                        <td>{{ talk.Duration}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-default" ng-click="getTalkOverview(talk.TalkId)" data-toggle="modal" data-target="#overview-ID1" data-backdrop="static" data-keyboard="false"><i class="fa fa-search fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Overview</button>
+                                            {{ talk.OverView}}
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" ng-click="openSpeakerVideo(talk.TalkId);" data-toggle="modal" data-target="#video-ID1" data-backdrop="static" data-keyboard="false" ng-show="userId != '0'"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-create btn-custom" data-toggle="modal" data-target="#overview-ID2" data-backdrop="static" data-keyboard="false" ng-show="userId == '0'"><i class="fa fa-play-circle-o fa-fw fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Play</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Methodology (TAS & TVS) and Tricks to Scan the Pelvis-->
+    <div class="modal fade model-center" id="overview-ID1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
+                    <h4 class="modal-title">{{ overViewDetails[0].TalkName}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{ overViewDetails[0].Talkdesc}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade video" id="video-ID1">
+        <div class="modal-dialog modal-xxl" style="width:80%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="pauseVideo()" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>
+                    <h4 class="modal-title">{{  talkVideo[0].TalkName }} </h4>
+                    <small ng-if="!display" style="color:red;">You are currently watching a preview. To access the entire talk, please contact at support@gynac.org or call us at +91 7019849711.</small>
+                </div>
+                <div class="videoWrappermain">
+                    <div class="container-fluid">                       
+                        <div class="row">
+                            <iframe id="myIframe1" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen onload="scroll(0,0)"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade model-center" id="overview-ID2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">&times;</span> </button>                    
+                    <h4 class="modal-title">Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You are not authorized. Please login !!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

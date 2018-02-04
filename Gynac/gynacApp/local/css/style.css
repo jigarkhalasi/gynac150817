@@ -359,7 +359,7 @@ display: none;}
 .home .header-container .header-inner .header-left { padding-top: 2%; text-align: left; }
 .home .header-container .header-inner .header-left img { width: 70%; }
 
-.home .navbar-center .li-1{width: 11%; text-align: center;border-top-right-radius: 3px;
+.home .navbar-center .li-1{width: 10%; text-align: center;border-top-right-radius: 3px;
     border-top-left-radius: 3px;} 
 .home .navbar-center .li-1 .a-1{padding-left: 0px; padding-right: 0px;}
 .home .navbar-center .dropdown:hover .dropdown-menu{top: 100%; left:0; }
