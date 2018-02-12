@@ -6746,6 +6746,174 @@
                     ]
                 },
                 {
+                    "talkId": 35,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Which of these features are not true of uterine vascular abnormalities (or AVMs)?",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "a,f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk35/T35Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Congenital AVMs are more common than acquired"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) On Doppler, flows typically show high filling of vessels, mosaic pattern, high velocity and low resistance"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Primarily composed of vascular channels only"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)  The corresponding arcuate and parametrial vessels may also show prominent (large diameter) vessels"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) During a uterine contraction flow to the area may decrease significantly "
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Primarily located in the endometrium but often extends into the adjoining myometrium"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: Which of these features of Uterine Vascular Malformations are likely to suggest the diagnosis of a true AVM rather than RPOC?",
+                            "quedsc": " (Note: there may be more than one option)",
+                            "ans": "a,b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk35/T35Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Lesion is seen primarily in the myometrium"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) The entire lesion fills up with colour – ie., comprises of vascular channels only"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Presence of heterogeneous complex echoes picking up minimal colour in the endometrial cavity "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)  High vascularity"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Poorly defined EMJ in the involved area"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f)  Clinical symptom of excessive bleeding "
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g)  Elevated beta hCG"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: What is the most likely diagnosis ?",
+                            "quedsc": "(Choose one option)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk35/T35Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  AVM"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Invasive Mole "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) RPOC"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: What is the most likely diagnosis ?",
+                            "quedsc": "(Choose one option)",
+                            "ans": "c",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk35/T35Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  AVM"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Invasive Mole "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) RPOC"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "question": "Q 5: What is the most likely diagnosis ?",
+                            "quedsc": "(Choose one option)",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk35/T35Q5.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  AVM"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Invasive Mole "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) RPOC"
+                                 }
+                            ]
+                        },
+                    ]
+                },
+                {
                     "talkId": 36,
                     "questions": [
                         {
@@ -6864,7 +7032,7 @@
                             "isvideo": false,
                             "ismultyplenas": true,
                             "ismultyimgopt": false,
-                            "ImagePath": "/gynacApp/local/img/question/Talk36/T36Q4.PNG",
+                            //"ImagePath": "/gynacApp/local/img/question/Talk36/T36Q4.PNG",
                             "option": [
                                  {
                                      "id": "a",
@@ -6888,6 +7056,296 @@
                                  }
                             ]
                         },
+                    ]
+                },
+                {
+                     "talkId": 37,
+                     "questions": [
+                         {
+                             "id": 1,
+                             "question": "Q 1: Which of the following is/are not true regarding CSD (Cesarean Scar Defect? ",
+                             "quedsc": "(Note: there may be more than one option)",
+                             "ans": "b",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": false,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk37/T37Q1.png",
+                             "option": [
+                                  {
+                                      "id": "a",
+                                      "value": "a) Multiple caesarean sections, and retroflexed uterus – increase the risk for CSDs "
+                                  },
+                                  {
+                                      "id": "b",
+                                      "value": "b) Ideally evaluated one month after LSCS"
+                                  },
+                                  {
+                                      "id": "c",
+                                      "value": "c) 3D ultrasound is very useful in evaluating a cesarean scar defect"
+                                  },
+                                  {
+                                      "id": "d",
+                                      "value": "d)  Often there is a small hematometra –seen in cases with a CSD"
+                                  },
+                                  {
+                                      "id": "e",
+                                      "value": "e) CSD can be evaluated on transvaginal scans accurately, but the relation of their appearance & measurement to associated symptoms and complications - has not yet been established"
+                                  }                                  
+                             ]
+                         },
+                         {
+                             "id": 2,
+                             "question": "Q 2: Which of these symptoms are typical of Cesarean Scar Defects?",
+                             "quedsc": " (Note: there may be more than one option)",
+                             "ans": "c,e",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": true,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk37/T37Q2.PNG",
+                             "option": [
+                                  {
+                                      "id": "a",
+                                      "value": "a) Pre-menstrual spotting"
+                                  },
+                                  {
+                                      "id": "b",
+                                      "value": "b) Inter-menstrual spotting"
+                                  },
+                                  {
+                                      "id": "c",
+                                      "value": "c) Post-menstrual spotting"
+                                  },
+                                  {
+                                      "id": "d",
+                                      "value": "d) Spotting - bright red blood - indicative of fresh blood"
+                                  },
+                                  {
+                                      "id": "e",
+                                      "value": "e) Spotting - dark brownish blood - indicative of retained blood"
+                                  }
+                             ]
+                         },
+                         {
+                             "id": 3,
+                             "question": "Q 3: The scar defect has been measured in which order in the video clip?",
+                             "quedsc": "(Choose one option)",
+                             "ans": "d",
+                             "istext": false,
+                             "isimage": false,
+                             "ismultiimage": false,
+                             "isvideo": true,
+                             "ismultyplenas": false,
+                             "ismultyimgopt": false,
+                             "videosrc": "/gynacApp/local/img/question/Talk37/media1.mp4",
+                             "option": [
+                                  {
+                                      "id": "a",
+                                      "value": "a)  Length, Width, Depth & Residual Myometrial Thickness"
+                                  },
+                                  {
+                                      "id": "b",
+                                      "value": "b) Length, Depth, Width & Residual Myometrial Thickness "
+                                  },
+                                  {
+                                      "id": "c",
+                                      "value": "c) Residual Myometrial Thickness, Width, Depth & Length"
+                                  },
+                                  {
+                                      "id": "d",
+                                      "value": "d) Width, Depth, Length & Residual Myometrial Thickness "
+                                  },
+                                  {
+                                      "id": "e",
+                                      "value": "e)Depth, Length, Width & Residual Myometrial Thickness "
+                                  }
+                             ]
+                         },
+                         {
+                             "id": 4,
+                             "question": "Q 4: Which of the following is/are not true about Retroflexed (RF) Uterus?",
+                             "quedsc": "(Note: there may be more than one option)",
+                             "ans": "a",
+                             "istext": false,
+                             "isimage": true,
+                             "ismultiimage": false,
+                             "isvideo": false,
+                             "ismultyplenas": false,
+                             "ismultyimgopt": false,
+                             "ImagePath": "/gynacApp/local/img/question/Talk37/T37Q4.PNG",
+                             "option": [
+                                  {
+                                      "id": "a",
+                                      "value": "a)  A RF uterus is one where the axis of the uterine cavity is bent forwards towards the bladder as compared to that of the cervical canal "
+                                  },
+                                  {
+                                      "id": "b",
+                                      "value": "b) It is a normal variant"
+                                  },
+                                  {
+                                      "id": "c",
+                                      "value": "c) Most women are asymptomatic"
+                                  },
+                                  {
+                                      "id": "d",
+                                      "value": "d) Acute retroflexion may cause post menstrual spotting"
+                                  },
+                                  {
+                                      "id": "e",
+                                      "value": "e) A gravid retroflexed uterus could cause urinary retention"
+                                  }
+                             ]
+                         }
+                     ]
+                },
+                {
+                    "talkId": 38,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Which of the following is/are not true regarding IUCDs? ",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk38/T38Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) They are commonly used contraceptive devices"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) 3D ultrasound is very useful in locating the position of the IUCD in relation to the uterine cavity"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Hormone producing IUCDs may be used for management of menorrhagia"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) It is very easy to assess the endometrium, for any pathology, when an IUCD is seen in the endometrial cavity"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Perforation of the uterus by an IUCD typically is caused at the time of insertion but may not be diagnosed till much later"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: The following are known complications of an IUCD?",
+                            "quedsc": "(Note - there may be more than one option)",
+                            "ans": "a,b,c,e,g",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk38/T38Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Displaced IUCD"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Impaction of IUCD"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Pelvic inflammatory disease"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Adenomyosis"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) Coexisting pregnancy (intrauterine/ectopic)"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Endometrial polyps"
+                                 },
+                                 {
+                                     "id": "g",
+                                     "value": "g) Perforation"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: What is the most likely diagnosis ?",
+                            "quedsc": "(Choose one option only)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk38/media1.mp4",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  Copper IUCD; normal position"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Copper IUCD; displaced"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Mirena; normal position"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Mirena; displaced"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: What is the most likely diagnosis ?",
+                            "quedsc": "(Choose one option only)",
+                            "ans": "a",
+                            "istext": false,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": true,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,
+                            "videosrc": "/gynacApp/local/img/question/Talk38/media2.mp4",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Copper IUCD; normal position "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Copper IUCD; displaced"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Mirena; normal position"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Mirena; displaced"
+                                 }
+                            ]
+                        }
                     ]
                 },
             ]
