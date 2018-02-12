@@ -25,6 +25,7 @@ namespace Gynac
         public string Where_Hear { get; set; }
         public string Guid { get; set; }
         public bool? Isparticipate { get; set; }
-        public string TutorialSummaryTitle { get; set; }     
+        public string TutorialSummaryTitle { get; set; }
+        public bool? IsInterestedIOTA { get; set; } 
     }
 }

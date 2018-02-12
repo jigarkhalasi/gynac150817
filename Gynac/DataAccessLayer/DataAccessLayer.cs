@@ -45,8 +45,9 @@ namespace Gynac
                         command.Parameters.AddWithValue("@Country", user.Country);
                         command.Parameters.AddWithValue("@Institution_Work_Place", user.Institution_Work_Place);
                         command.Parameters.AddWithValue("@Where_Hear", user.Where_Hear);
+                        command.Parameters.AddWithValue("@IsInterestedIOTA", user.IsInterestedIOTA);
 
-                        result = command.ExecuteScalar().ToString();
+                        result = command.ExecuteScalar().ToString();                        
                     }
                     trScope.Complete();
                 }

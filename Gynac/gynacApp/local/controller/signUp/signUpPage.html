@@ -101,6 +101,7 @@
                                 <li ng-show="errorSignUp.Password">Password required!</li>
                                 <li ng-show="errorSignUp.rePassword">Password and repeat password do not match</li>
                                 <li ng-show="errorSignUp.Where_Hear">How did you hear about Us? required!</li>
+                                <li ng-show="errorSignUp.IsInterestedIOTA">Are you interested in IOTA registration? required!</li>
                             </ul>
                         </div>
                     </div>
@@ -200,6 +201,13 @@
                                 <option value="Facebook">Facebook</option>
                                 <option value="Other">Other</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-form">
+                        <div class="col-md-6 input-name">Are you interested in IOTA registration? :</div>
+                        <div class="col-md-6 input-form">
+                            <input type="radio" name="IOTA" ng-click="getIOTA('true')">Yes
+                            <input type="radio" name="IOTA" ng-click="getIOTA('false')">False
                         </div>
                     </div>
                     <div class="col-md-12 all-form">

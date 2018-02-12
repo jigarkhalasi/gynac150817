@@ -33,6 +33,7 @@ namespace Gynac
                 else if (!String.IsNullOrWhiteSpace(response) && !response.Trim().Equals("0"))
                 {
                     SendMail(user.Email, EmailType.VerifyEmail, response);
+                    string IsIOTA = (user.IsInterestedIOTA == true ? "Yes" : "False");
                     string support = ConfigurationManager.AppSettings["EmailForRegisterUser"].ToString();
                     string body = (@"<b>New User Register " + user.First_Name + " " + user.Last_Name + "</b><br/></br>"
                                         + "<table>"
@@ -48,6 +49,7 @@ namespace Gynac
                                        + "<th>Work Place</th>"
                                        + "<th>Email</th>"
                                        + "<th>How did you hear about Us?</th>"
+                                       + "<th>Are you interested in IOTA registration?</th>"
                                     + " </tr>"
                                     + " <tr>"
                                     + "   <td>" + user.First_Name + "</td>"
@@ -61,6 +63,7 @@ namespace Gynac
                                     + "   <td>" + user.Institution_Work_Place + "</td>"
                                     + "   <td>" + user.Email + "</td>"
                                     + "   <td>" + user.Where_Hear + "</td>"
+                                    + "   <td>" + IsIOTA + "</td>"
                                     + " </tr>"
                                     + "</table>");
                     SendMail(support, EmailType.Registration, "", body, "");

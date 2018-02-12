@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="bin/Gynac.dll">
-      <publishTime>01/26/2018 18:44:07</publishTime>
+      <publishTime>02/04/2018 15:23:01</publishTime>
     </File>
     <File Include="bin/MCPG.CCA.Util.dll">
       <publishTime>09/20/2017 21:47:18</publishTime>
@@ -259,10 +259,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/freeLectureController.js">
-      <publishTime>01/26/2018 18:24:03</publishTime>
+      <publishTime>01/30/2018 21:37:09</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/freeLecturePage.html">
-      <publishTime>01/26/2018 18:29:06</publishTime>
+      <publishTime>01/30/2018 23:09:30</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/ImageSubmissionController.js">
       <publishTime>10/08/2017 18:13:33</publishTime>
@@ -283,7 +283,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/26/2018 18:26:50</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelController.js">
-      <publishTime>01/07/2018 12:13:29</publishTime>
+      <publishTime>01/28/2018 20:10:08</publishTime>
     </File>
     <File Include="gynacApp/local/controller/lecture/questionModelPage.html">
       <publishTime>09/20/2017 21:47:18</publishTime>
@@ -310,13 +310,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2017 21:47:18</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signIn/signInPage.html">
-      <publishTime>01/26/2018 18:27:06</publishTime>
+      <publishTime>01/26/2018 18:50:57</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signUp/signUpController.js">
-      <publishTime>09/20/2017 21:47:18</publishTime>
+      <publishTime>02/04/2018 15:10:05</publishTime>
     </File>
     <File Include="gynacApp/local/controller/signUp/signUpPage.html">
-      <publishTime>01/26/2018 18:27:13</publishTime>
+      <publishTime>02/04/2018 15:09:53</publishTime>
     </File>
     <File Include="gynacApp/local/controller/testimonial/testimonial.html">
       <publishTime>01/26/2018 18:27:20</publishTime>
@@ -750,6 +750,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="gynacApp/local/img/question/Talk28/T28Q7.png">
       <publishTime>11/19/2017 16:43:21</publishTime>
     </File>
+    <File Include="gynacApp/local/img/question/Talk29/T29Q3.png">
+      <publishTime>01/28/2018 19:16:09</publishTime>
+    </File>
     <File Include="gynacApp/local/img/question/Talk3/DOPPLER test .docx">
       <publishTime>08/31/2017 13:23:55</publishTime>
     </File>
@@ -785,6 +788,45 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="gynacApp/local/img/question/Talk3/T3Q5_4.PNG">
       <publishTime>09/01/2017 08:56:53</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk30/media1.mp4">
+      <publishTime>01/28/2018 20:00:07</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk30/T30Q1.png">
+      <publishTime>01/28/2018 19:48:56</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk30/T30Q2.png">
+      <publishTime>01/28/2018 19:48:56</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk30/T30Q4.png">
+      <publishTime>01/28/2018 19:48:56</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk30/T30Q5.png">
+      <publishTime>01/28/2018 19:48:56</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk31/media1.mp4">
+      <publishTime>01/28/2018 20:12:42</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk31/T31Q1.png">
+      <publishTime>01/28/2018 19:59:46</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk31/T31Q2.png">
+      <publishTime>01/28/2018 19:59:46</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk32/T32Q1.png">
+      <publishTime>01/28/2018 20:12:17</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk32/T32Q2.png">
+      <publishTime>01/28/2018 20:12:17</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk32/T32Q3.png">
+      <publishTime>01/28/2018 20:12:17</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk32/T32Q4.png">
+      <publishTime>01/28/2018 20:12:17</publishTime>
+    </File>
+    <File Include="gynacApp/local/img/question/Talk32/T32Q5.png">
+      <publishTime>01/28/2018 20:12:17</publishTime>
     </File>
     <File Include="gynacApp/local/img/question/Talk33/media1.mp4">
       <publishTime>01/07/2018 12:06:40</publishTime>

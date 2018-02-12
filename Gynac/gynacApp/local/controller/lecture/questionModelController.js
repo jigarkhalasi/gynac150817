@@ -6745,6 +6745,151 @@
                         },                        
                     ]
                 },
+                {
+                    "talkId": 36,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "question": "Q 1: Iatrogenic uterine perforation at the time of injury (intrauterine procedure) may present with any of the following except:",
+                            "quedsc": "(Note: there may be more than one option)",
+                            "ans": "d",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,                            
+                            "ImagePath": "/gynacApp/local/img/question/Talk36/T36Q1.png",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) Intrauterine or extrauterine hemorrhage"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Inability to distend the uterine cavity during hysteroscopy"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Presence of omental/bowel fat at suction"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) Watery or white discharge"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) No apparent symptoms or findings"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f) Severe pain"
+                                 }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "question": "Q 2: On ultrasound a perforation:",
+                            "quedsc": " (Note: there may be more than one option)",
+                            "ans": "a,c,d,f",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,                            
+                            "ImagePath": "/gynacApp/local/img/question/Talk36/T36Q2.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) May not be visualised"
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Is always visualised"
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) May be seen as a hyperechoic thick tract  "
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d)  May be seen as a hyperechoic thin linear tract"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) May be seen as an anechoic thick tract"
+                                 },
+                                 {
+                                     "id": "f",
+                                     "value": "f)  May be seen as a transiently filling anechoic/hypoechoic tract "
+                                 }                                
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "question": "Q 3: Which of these is likely to be a fistula ?",
+                            "quedsc": "(Choose one option)",
+                            "ans": "b",
+                            "istext": false,
+                            "isimage": true,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": false,
+                            "ismultyimgopt": false,                            
+                            "ImagePath": "/gynacApp/local/img/question/Talk36/T36Q3.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a)  "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b)  "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) "
+                                 }                                
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "question": "Q 4: Which of the following is true about uterovesical fistulas? ",
+                            "quedsc": "(Note: there may be more than one option) ",
+                            "ans": "b,c,d,e",
+                            "istext": true,
+                            "isimage": false,
+                            "ismultiimage": false,
+                            "isvideo": false,
+                            "ismultyplenas": true,
+                            "ismultyimgopt": false,
+                            "ImagePath": "/gynacApp/local/img/question/Talk36/T36Q4.PNG",
+                            "option": [
+                                 {
+                                     "id": "a",
+                                     "value": "a) On ultrasound it appears as a hyperechoic tract extending  between the bladder and the uterine cavity "
+                                 },
+                                 {
+                                     "id": "b",
+                                     "value": "b) Often a consequence of a previous cesarean section "
+                                 },
+                                 {
+                                     "id": "c",
+                                     "value": "c) Most often they complain of bleeding per urethra during menstruation"
+                                 },
+                                 {
+                                     "id": "d",
+                                     "value": "d) The bladder is seen adherent to the anterior wall of uterus at the site of the fistulous connection (most often site of LSCS scar)"
+                                 },
+                                 {
+                                     "id": "e",
+                                     "value": "e) It may be missed on ultrasound, especially if the scan is done with an empty bladder"
+                                 }
+                            ]
+                        },
+                    ]
+                },
             ]
         }
 

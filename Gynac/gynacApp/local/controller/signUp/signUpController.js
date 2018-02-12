@@ -13,6 +13,7 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
     
     $scope.user = {};
     $scope.user.isChecked = false;
+    $scope.user.IsInterestedIOTA = '';
     
     $scope.slide = function (dir) {
         $('#carousel-example-generic').carousel(dir);
@@ -75,6 +76,11 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
             $scope.errorSignUp.rePassword = true;
             valid = false;
         }
+        
+        if ($scope.user.IsInterestedIOTA == "") {                    
+            $scope.errorSignUp.IsInterestedIOTA = true;
+            valid = false;
+        }        
         /*if(!$scope.user.Where_Hear){
             $scope.errorSignUp.Where_Hear = true;
             valid = false;
@@ -130,6 +136,12 @@ app.controller("signUpController",["$scope", "dataService", "$rootScope", "$stat
             $scope.submitData();            
         }
         $event.preventDefault();
+    };
+
+    $scope.getIOTA = function (IsInterestedIOTA) {
+        debugger;
+        $scope.user.IsInterestedIOTA = IsInterestedIOTA;
+        return true;
     };
 	
 }]);
